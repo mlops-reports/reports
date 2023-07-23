@@ -1,0 +1,5 @@
+* basic authentication
+https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-server-wsgi-application-via-flask-or-fastapi
+* build a docker image
+* run on a url
+* add ci/cd

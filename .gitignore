@@ -1,0 +1,67 @@
+# Compiled python modules.
+*.py[co]
+__pycache__*
+
+# Setuptools distribution and build folder.
+/dist/
+/build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+src/*.egg-info
+src/*.egg
+/*.egg-info
+/*.egg
+
+# OS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Data
+python_executables
+sql
+
+# Icon must end with two \r
+Icon
+
+# Testing & environment
+dev*/
+**node_modules
+venv
+.venv
+.env
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Documentation
+!README.md
+
+# IDE
+.ipynb_checkpoints
+.idea
+.vscode
+
+# tmp items
+tmp/**
+!tmp/.gitkeep
+!tmp/credentials
+!tmp/credentials/.gitkeep
+credentials/**
+!credentials/.gitkeep
+
+notebooks/csv
+notebooks/data
