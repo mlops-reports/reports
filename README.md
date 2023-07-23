@@ -5,9 +5,7 @@ This is a template for the ml experimentation use cases
 
 ## Creating a Virtual Environment
 ```
-python3.10 -m venv venv
-source venv/bin/activate
-pip install -e .
+poetry install
 ```
 
 ## Usage on local machine
