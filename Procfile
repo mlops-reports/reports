@@ -1,0 +1,1 @@
+web: label-studio -db postgresql
