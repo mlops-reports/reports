@@ -3,3 +3,12 @@ https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-serve
 * build a docker image
 * run on a url
 * add ci/cd
+
+
+
+Genel olarak 3-4 kategori olsun mesela beyin bt için:
+
+1) Acil
+2) Acil değil ama bir an önce doktora gitmesi gereken vakalar
+3) Herhangi bir zmaanda doktora gitmesi gereken vakalar
+4) Normal bulgular
