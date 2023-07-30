@@ -1,2 +1,2 @@
-label-studio==1.7.2
+label-studio==1.8.0
 python-dotenv==1.0.0
