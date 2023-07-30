@@ -1,13 +1,27 @@
+## Data Cleaning
+* how many studies per patient
+* get the first study for someone
+
+## Ontology
+Genel olarak 3-4 kategori olsun mesela beyin bt için:
+
+* Acil
+* Acil değil ama bir an önce doktora gitmesi gereken vakalar
+* Herhangi bir zmaanda doktora gitmesi gereken vakalar
+* Normal bulgular
+
+## spaCy
+https://github.com/turkish-nlp-suite/turkish-spacy-models
+https://spacy.io/api/textcategorizer
+https://towardsdatascience.com/named-entity-recognition-and-classification-with-scikit-learn-f05372f07ba2
+### extra ML
+https://elements.heroku.com/buttons/heartexlabs/label-studio
+https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-using-spacy-v3/
+https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
+
+## mlflow
 * basic authentication
 https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-server-wsgi-application-via-flask-or-fastapi
 * build a docker image
 * run on a url
 * add ci/cd
-
-
-Genel olarak 3-4 kategori olsun mesela beyin bt için:
-
-1) Acil
-2) Acil değil ama bir an önce doktora gitmesi gereken vakalar
-3) Herhangi bir zmaanda doktora gitmesi gereken vakalar
-4) Normal bulgular
