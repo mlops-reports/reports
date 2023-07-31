@@ -1,1 +1,0 @@
-heroku ps:scale web=0 --app er-reports

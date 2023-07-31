@@ -1,6 +1,5 @@
 ## Data Cleaning
-* how many studies per patient
-* get the first study for someone
+***
 
 ## Ontology
 Genel olarak 3-4 kategori olsun mesela beyin bt için:
@@ -14,7 +13,7 @@ Genel olarak 3-4 kategori olsun mesela beyin bt için:
 https://github.com/turkish-nlp-suite/turkish-spacy-models
 https://spacy.io/api/textcategorizer
 https://towardsdatascience.com/named-entity-recognition-and-classification-with-scikit-learn-f05372f07ba2
-### extra ML
+### Extra ML
 https://elements.heroku.com/buttons/heartexlabs/label-studio
 https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-using-spacy-v3/
 https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
