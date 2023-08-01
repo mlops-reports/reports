@@ -9,6 +9,10 @@ Genel olarak 3-4 kategori olsun mesela beyin bt için:
 * Herhangi bir zmaanda doktora gitmesi gereken vakalar
 * Normal bulgular
 
+## TensorFlow
+ * Reference: https://www.youtube.com/watch?v=Y_hzMnRXjhI&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S&index=3
+ * ChatGPT: TensorFlow Multiclass Loss Functions
+
 ## spaCy
 https://github.com/turkish-nlp-suite/turkish-spacy-models
 https://spacy.io/api/textcategorizer
