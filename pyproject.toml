@@ -20,6 +20,7 @@ boto3 = "^1.28.9"
 psycopg2-binary = "^2.9.6"
 xlrd = "^2.0.1"
 greenlet = "^2.0.2"
+tensorflow = "^2.13.0"
 
 
 [tool.poetry.group.dev.dependencies]
