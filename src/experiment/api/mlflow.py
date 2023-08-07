@@ -12,7 +12,6 @@ from typing import Any
 
 
 class MLFlow:
-
     MLFLOW_HOST = "http://127.0.0.1"
     MLFLOW_TRACKING_PORT = 9999
     MLFLOW_MODEL_PORT = 1234
@@ -117,7 +116,6 @@ class MLFlow:
             experiment_id=experiment_id,
             tags=tags,
         ) as run:
-
             run_id = run.info.run_id
 
             for param, value in log_dict["params"].items():
