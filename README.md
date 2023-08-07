@@ -1,4 +1,4 @@
-# mlflow
+# experiment
 
 ## Description
 This is a template for the ml experimentation use cases
