@@ -1,0 +1,19 @@
+{
+    "skip_pre_lemmatasation": [
+        "saptandı",
+        "saptanmadı"
+    ],
+    "fix_post_lemmatasation": {
+        "hemisfert": "hemisfer",
+        "tavanınd": "tavan",
+        "poster": "posterior",
+        "fos": "fossa",
+        "sınırlanabi": "sınırlanabilen",
+        "konveksit": "konveksite",
+        "al": "alan",
+        "dansit": "dansite",
+        "serebel": "serebellar",
+        "hematoma": "hematom",
+        "maksil": "maksiller"
+    }
+}
