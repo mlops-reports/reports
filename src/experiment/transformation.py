@@ -124,12 +124,10 @@ def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
       text (str): The `text` parameter is a string that represents the text in which we want to find and
     remove a specific pattern.
       pattern (str): The `pattern` parameter is a string that represents the pattern you want to find in
-    the `text` parameter. It can be any valid regular expression pattern.
+    the `text` parameter.
     
     Returns:
-      The function `pattern_find_and_remove` returns a tuple containing two elements. The first element
-    is the extracted pattern found in the text, and the second element is the text with the extracted
-    pattern removed and stripped of leading and trailing whitespace.
+      The function `pattern_find_and_remove` returns a tuple containing two elements.
     """
     try:
         extracted_pattern = re.findall(pattern, text)[0]
