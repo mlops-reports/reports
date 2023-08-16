@@ -40,3 +40,7 @@ LABEL_STUDIO_PASSWORD=<LABEL_STUDIO_PASSWORD>
 
 ## Deployment with docker-compose
 https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
+
+
+## Running Label Studio
+label-studio -db postgresql
