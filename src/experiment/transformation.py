@@ -32,9 +32,10 @@ def sentence_cleaning_pipeline(sentences):
     """
     1. Remove punctuation
     2. Only lower letters
-    3. Lemmatize
-    4. Remove stop words
-    5. Manual corrections
+    3. skip_pre_lemmatasation
+    4. Lemmatize
+    5. Remove stop words
+    6. fix_post_lemmatasation
     """
     # tokenizer without punctuation
     regexp_tokenizer = nltk.tokenize.RegexpTokenizer(r"\w+")

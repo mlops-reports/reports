@@ -44,3 +44,6 @@ https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
 
 ## Running Label Studio
 label-studio -db postgresql
+
+## Dummy Data Generator
+https://mockaroo.com/
