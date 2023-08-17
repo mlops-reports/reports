@@ -5,7 +5,7 @@ This is a template for the ml experimentation use cases
 
 ## Creating a Virtual Environment
 ```
-poetry install
+bash make.sh
 ```
 
 ## Usage on local machine
