@@ -6,4 +6,5 @@ install:
 	rm -rf .venv;
 	curl -sSL https://install.python-poetry.org | python3 - --version $(POETRY_VERSION); 
 	$(POETRY) env use $(PYTHON_PATH);
-	$(POETRY) install 
+	$(POETRY) install
+	
