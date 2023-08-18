@@ -5,7 +5,7 @@ This is a template for the ml experimentation use cases
 
 ## Creating a Virtual Environment
 ```
-bash make.sh
+make install
 ```
 
 ## Usage on local machine
@@ -31,6 +31,11 @@ POSTGRE_PORT=<POSTGRE_PORT>
 DISABLE_SIGNUP_WITHOUT_LINK=<DISABLE_SIGNUP_WITHOUT_LINK>
 LABEL_STUDIO_USERNAME=<LABEL_STUDIO_USERNAME>
 LABEL_STUDIO_PASSWORD=<LABEL_STUDIO_PASSWORD>
+
+# db connection
+PSQL_DB_USERNAME=<PSQL_DB_USERNAME>
+PSQL_DB_PASSWORD=<PSQL_DB_PASSWORD>
+PSQL_DB_HOST=<PSQL_DB_HOST>
 ```
 ## External storage of metadata and artifacts
 
