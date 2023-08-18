@@ -1,11 +1,11 @@
-# Define variables
+# Defines variables
 POETRY := poetry
 POETRY_VERSION := 1.5.1
 PYTHON_PATH := $(shell which python3.11)
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 HEROKU_APP_NAME := "er-reports"
 
-# Install the poetry environment
+# Installs the poetry environment
 install:
 	rm -rf .venv;
 	curl -sSL https://install.python-poetry.org | python3 - --version $(POETRY_VERSION); 
