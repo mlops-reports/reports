@@ -10,11 +10,16 @@ HEROKU := heroku
 HEROKU_APP_NAME := "er-reports"
 
 
+
 # Installs the dependencies
 install_dependencies:
 	rm -rf .venv;
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+
+# Activates poetry environment
+activate_environment:
+	$(POETRY) shell
 
 # Installs Heroku and authenticates the user
 setup_labeling_server_connection:
