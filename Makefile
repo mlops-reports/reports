@@ -1,17 +1,26 @@
 # Defines variables
-POETRY := poetry
-HEROKU := heroku
-POETRY_VERSION := 1.5.1
 PYTHON_PATH := $(shell which python3.11)
+
+POETRY := poetry
+POETRY_VERSION := 1.5.1
+
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
+
+HEROKU := heroku
 HEROKU_APP_NAME := "er-reports"
 
-# Installs the poetry environment
-install:
+
+# Installs the dependencies
+install_dependencies:
 	rm -rf .venv;
-	curl -sSL https://install.python-poetry.org | python3 - --version $(POETRY_VERSION); 
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+
+# Installs Heroku and authenticates the user
+setup_labeling_server_connection:
+	brew tap $(HEROKU)/brew && brew install $(HEROKU);
+	$(HEROKU) login;
+	$(HEROKU) keys:add
 	
 # Starts the Label Studio server
 start_labeling_server:
@@ -21,4 +30,5 @@ start_labeling_server:
 # Stops the Label Studio server
 stop_labeling_server:
 	$(HEROKU) ps:scale web=0 --app $(HEROKU_APP_NAME)
+
 

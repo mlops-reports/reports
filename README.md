@@ -3,7 +3,10 @@
 ## Description
 This is a template for the ml experimentation use cases
 
-## Creating a Virtual Environment
+## Building the environment
+1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) & [oh-my-zsh](https://ohmyz.sh/)
+2. Install [poetry](https://python-poetry.org/docs/)
+3. Run the command(s) below
 ```
 make install
 ```
@@ -42,10 +45,8 @@ PSQL_DB_HOST=<PSQL_DB_HOST>
 * [Backend Store (PostgreSQL)](https://mlflow.org/docs/latest/tracking.html#id77)
 * [Artifact Store (S3)](https://mlflow.org/docs/latest/tracking.html#amazon-s3-and-s3-compatible-storage)
 
-
 ## Deployment with docker-compose
 https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
-
 
 ## Running Label Studio
 label-studio -db postgresql
