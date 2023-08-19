@@ -64,7 +64,6 @@ credentials/**
 !credentials/.gitkeep
 
 notebooks/csv
-notebooks/data
 
 # mlflow
 mlartifacts
