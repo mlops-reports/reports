@@ -54,6 +54,7 @@ Temporary Items
 .ipynb_checkpoints
 .idea
 .vscode
+.metals
 
 # tmp items
 tmp/**

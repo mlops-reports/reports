@@ -1,14 +1,6 @@
 ## Data Cleaning
 Raporları İngilizce'ye çevir(?)
 
-## Ontology
-Genel olarak 3-4 kategori olsun mesela beyin bt için:
-
-* Acil
-* Acil değil ama bir an önce doktora gitmesi gereken vakalar
-* Herhangi bir zmaanda doktora gitmesi gereken vakalar
-* Normal bulgular
-
 ## TensorFlow
  * Reference: https://www.youtube.com/watch?v=Y_hzMnRXjhI&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S&index=3
  * ChatGPT: TensorFlow Multiclass Loss Functions
@@ -26,14 +18,9 @@ https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-usi
 https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
 
 ## mlflow
-* basic authentication
-https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-server-wsgi-application-via-flask-or-fastapi
-* build a docker image
-* run on a url
-* add ci/cd
-
-* fix cem authentication
-* fix deployment
+* fix cem authentication aws
+* basic authentication: https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-server-wsgi-application-via-flask-or-fastapi
+* docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
 
 ## ChatGPT
 * https://colab.research.google.com/drive/1DEBPsccVLF_aUnmD0FwPeHFrtdC0QIUP?usp=sharing

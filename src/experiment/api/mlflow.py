@@ -90,23 +90,33 @@ class MLFlow:
         user_id: str = "anon",
         tags: dict[str, str] = {},
         artifact_path: str = "",
+        ml_library: str = "tensorflow"
     ) -> str:
         """
-        > This function takes a model, experiment name, run name, a dictionary of parameters and metrics,
-        a registered model name, and an artifact path. It then creates an experiment if it doesn't exist,
-        starts a run, logs the parameters and metrics, and logs the model. It returns the run ID
-
+        The `log_mlflow` function logs model parameters, metrics, and the model itself to MLflow for
+        tracking and experimentation purposes.
+        
         Args:
-          model (Any): Any
-          experiment_name (str): The name of the experiment to log to.
-          run_name (str): The name of the run.
-          log_dict (dict): a dictionary of parameters and metrics to log
-          registered_model_name (str): The name of the model in the MLflow Model Registry.
-          artifact_path (str): The directory in which to save the model. If you don't specify anything,
-        MLflow will save the model in a directory with the same name as the run ID.
-
+          model (Any): The `model` parameter is the machine learning model that you want to log.
+          experiment_name (str): The `experiment_name` parameter is a string that represents the name of
+        the MLflow experiment where the run will be logged.
+          run_name (str): The `run_name` parameter is a string that represents the name of the MLflow
+        run.
+          log_dict (dict[str, Any]): The `log_dict` parameter is a dictionary that contains two keys:
+        "params" and "metrics".
+          registered_model_name (str): The parameter "registered_model_name" is the name of the model
+        that will be registered in the MLflow model registry.
+          user_id (str): The `user_id` parameter is an optional parameter that represents the user
+        identifier.
+          tags (dict[str, str]): The `tags` parameter is a dictionary that allows you to add custom
+        key-value pairs as tags to the MLflow run.
+          artifact_path (str): The `artifact_path` parameter is the directory within the MLflow run
+        where the model artifacts will be saved.
+          ml_library (str): The `ml_library` parameter is used to specify the machine learning library
+        that was used to train the model.
+        
         Returns:
-          The run_id
+          the `run_id` of the MLflow run.
         """
         experiment_id = self.get_or_create_experiment(experiment_name)
         tags = {**tags, **{"mlflow.user": user_id}}
@@ -124,11 +134,19 @@ class MLFlow:
             for metric, value in log_dict["metrics"].items():
                 mlflow.log_metric(metric, value)
 
-            mlflow.sklearn.log_model(
-                sk_model=model,
-                artifact_path=artifact_path,
-                registered_model_name=registered_model_name,
-            )
+            if ml_library == "tensorflow":
+                mlflow.tensorflow.log_model(
+                    model=model,
+                    artifact_path=artifact_path,
+                    registered_model_name=registered_model_name,
+                    keras_model_kwargs={"save_format": "h5"}
+                )
+            elif ml_library == "sklearn":
+                mlflow.sklearn.log_model(
+                    sk_model=model,
+                    artifact_path=artifact_path,
+                    registered_model_name=registered_model_name,
+                )
 
         return run_id
 
@@ -189,11 +207,25 @@ class MLFlow:
 
         return response
 
-    def clean(self):
+    def clean(self, gc: bool = False):
         """
-        > It kills the local ports used by MLFlow and removes the artifacts, experiments, and runs
+        The `clean` function kills processes running on specific ports, removes certain files and
+        directories, and optionally performs garbage collection on a specified backend store URI.
+        
+        Args:
+          gc (bool): The `gc` parameter is a boolean flag that determines whether to perform garbage
+        collection on the MLFlow backend store. If `gc` is set to `True`, the code will execute the
+        MLFlow garbage collection command to clean up any unused artifacts and metadata in the backend
+        store.
         """
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
         os.system("rm -rf mlartifacts experiments.sqlite mlruns predictions.csv")
+
+        if gc:
+            os.system(
+                f"""
+                    mlflow gc --backend-store-uri {MLFlow.BACKEND_URI_STORE}
+                """
+            )
