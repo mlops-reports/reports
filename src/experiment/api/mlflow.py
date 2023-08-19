@@ -31,11 +31,11 @@ class MLFlow:
         self.local_storage = local_storage
 
         if not self.local_storage:
-            db_username = os.getenv("DB_USERNAME")
-            db_password = parse.quote(os.getenv("DB_PASSWORD"))
-            db_host = os.getenv("DB_HOST")
-            db_name = os.getenv("DB_NAME")
-            aws_bucket = os.getenv("AWS_BUCKET")
+            db_username = os.getenv("MLFLOW_DB_USERNAME")
+            db_password = parse.quote(os.getenv("MLFLOW_DB_PASSWORD"))
+            db_host = os.getenv("MLFLOW_DB_HOST")
+            db_name = os.getenv("MLFLOW_DB_NAME")
+            aws_bucket = os.getenv("MLFLOW_AWS_BUCKET")
 
             MLFlow.BACKEND_URI_STORE = (
                 f"postgresql://{db_username}:{db_password}@{db_host}:5432/{db_name}"
