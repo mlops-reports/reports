@@ -32,6 +32,9 @@ https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-serve
 * run on a url
 * add ci/cd
 
+* fix cem authentication
+* fix deployment
+
 ## ChatGPT
 * https://colab.research.google.com/drive/1DEBPsccVLF_aUnmD0FwPeHFrtdC0QIUP?usp=sharing
 * https://shishirpatil.github.io/gorilla/
