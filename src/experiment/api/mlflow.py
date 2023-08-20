@@ -9,6 +9,7 @@ from urllib import parse
 import requests
 
 import mlflow
+import logging
 
 from typing import Any, Union
 
@@ -31,6 +32,7 @@ class MLFlow:
         """
 
         self.local_storage = local_storage
+        self.logger = logging.getLogger('mlflow')
 
         if not self.local_storage:
             db_username = os.getenv("MLFLOW_DB_USERNAME")
