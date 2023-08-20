@@ -1,13 +1,15 @@
 """MLflow utils for ml experiments"""
 
 import pathlib
-
 # import logging
+import numpy as np
 import json
 import os
-import mlflow
 from urllib import parse
 import requests
+
+import mlflow
+
 from typing import Any, Union
 
 
@@ -35,12 +37,12 @@ class MLFlow:
             db_password = parse.quote(os.getenv("MLFLOW_DB_PASSWORD"))
             db_host = os.getenv("MLFLOW_DB_HOST")
             db_name = os.getenv("MLFLOW_DB_NAME")
-            aws_bucket = os.getenv("MLFLOW_AWS_BUCKET")
+            self.aws_bucket = os.getenv("MLFLOW_AWS_BUCKET")
 
             MLFlow.BACKEND_URI_STORE = (
                 f"postgresql://{db_username}:{db_password}@{db_host}:5432/{db_name}"
             )
-            MLFlow.DEFAULT_ARTIFACT_ROOT = f"{aws_bucket}/mlartifacts"
+            MLFlow.DEFAULT_ARTIFACT_ROOT = f"{self.aws_bucket}/mlartifacts"
 
         self.set_tracking_uri(f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_TRACKING_PORT}")
 
@@ -215,8 +217,8 @@ class MLFlow:
                 mlflow.log_metric(metric, value)
 
             if extra_artifacts:
-              for paths in extra_artifacts.values():
-                  mlflow.log_artifact(paths["local_path"], paths["save_path"])
+                for paths in extra_artifacts.values():
+                    mlflow.log_artifact(paths["local_path"], paths["save_path"])
 
             if ml_library == "tensorflow":
                 mlflow.tensorflow.log_model(
@@ -296,37 +298,37 @@ class MLFlow:
 
         os.system(
             f"""
-                mlflow models serve --model-uri '{MODAL_URI}' \
+                mlflow models serve  \
+                --model-uri '{MODAL_URI}' \
                 --port {MLFlow.MLFLOW_MODEL_PORT} \
                 --no-conda {'&' if background else ''}
             """
         )
 
-    def get_predictions(self, run_id: str, data: dict) -> Any:
+    def get_predictions(self, data: list) -> Any:
         """
         The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
         given run ID and input data.
-        
+
         Args:
-          run_id (str): The `run_id` parameter is a string that represents the unique identifier of the
-        MLflow run.
-          data (dict): The `data` parameter is a dictionary that contains the input data for
+          data (list): The `data` parameter is a list that contains the input data for
         making predictions.
-        
+
         Returns:
           the response object from the POST request.
         """
         headers = {"Content-Type": "application/json"}
-
-        input_data = {"data": data}
+        input_data = {"instances": data}
 
         response = requests.post(
-            f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_MODEL_PORT}/invocations/{run_id}/predict",
+            f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_MODEL_PORT}/invocations",
             json=input_data,
             headers=headers,
         )
 
-        return response
+        predictions = [np.argmax(prediction) for prediction in response.json()["predictions"]]
+
+        return predictions
 
     def clean(self, gc: bool = False) -> None:
         """
@@ -342,7 +344,9 @@ class MLFlow:
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
-        os.system("rm -rf mlartifacts experiments.sqlite mlruns predictions.csv ml-experiment-reports")
+        os.system(
+            "rm -rf mlartifacts experiments.sqlite mlruns"
+        )
 
         if gc:
             os.system(

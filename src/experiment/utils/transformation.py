@@ -6,10 +6,20 @@ import simplemma
 import pathlib
 import json
 # import numpy as np
+import os
 import re
 import matplotlib.pyplot as plt
 
-working_dir = pathlib.Path.cwd()
+
+def get_project_root() -> pathlib.Path:
+    """
+    The function `get_project_root()` returns the root directory of the current project.
+    
+    Returns:
+      The function `get_project_root()` returns the root directory of the project.
+    """
+    return pathlib.Path(os.getenv("MLFLOW_PROJECT_ROOT", None))
+    
 
 def find_and_replace_exact_word(input_word, replacements):
     """
@@ -28,6 +38,7 @@ def find_and_replace_exact_word(input_word, replacements):
             return value
     return input_word
 
+
 def sentence_cleaning_pipeline(sentences):
     """
     1. Remove punctuation
@@ -41,12 +52,12 @@ def sentence_cleaning_pipeline(sentences):
     regexp_tokenizer = nltk.tokenize.RegexpTokenizer(r"\w+")
 
     # get Turkish stopwords
-    nltk.download("stopwords")
+    nltk.download("stopwords", quiet=True)
     turkish_stopwords = nltk.corpus.stopwords.words("turkish")
 
     # word corrections
     with open(
-        working_dir.parent / "data" / "input" / "manuel_corrections.json", "r"
+        get_project_root() / "data" / "input" / "manuel_corrections.json", "r"
     ) as file:
         manuel_corrections = json.load(file)
 
@@ -62,6 +73,7 @@ def sentence_cleaning_pipeline(sentences):
         )
         for sentence in sentences
     ]
+
 
 def find_longest_sentence_length(sentences):
     """
