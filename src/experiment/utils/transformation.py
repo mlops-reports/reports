@@ -97,24 +97,6 @@ def plot_graphs(history, string):
     plt.show()
 
 
-def calculate_matching_ratio(list1, list2):
-    """
-    The function calculates the matching ratio between two lists by comparing the elements at
-    corresponding indices.
-    
-    Args:
-      list1: The first list of elements to compare.
-      list2: The `list2` parameter is a list of values that will be compared to the values in `list1` to
-    calculate the matching ratio.
-    
-    Returns:
-      the matching ratio between two lists.
-    """
-    if len(list1) != len(list2):
-        return "Lists are not of the same length"
-    matches = sum(i == j for i, j in zip(list1, list2))
-    return matches / len(list1)
-
 def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
     """
     The function `pattern_find_and_remove` takes a text and a pattern as input, finds the first
@@ -136,6 +118,7 @@ def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
         extracted_pattern = ""
 
     return extracted_pattern, text.replace(extracted_pattern, "").strip()
+
 
 def replace_patterns_from_text(
     text: str, patterns: list[str], replace_with: str = ""

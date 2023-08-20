@@ -1,0 +1,12 @@
+{
+    "test_and_train_studies": 45,
+    "vocab_size": 10000,
+    "embedding_dim": 16,
+    "max_input_length": 70,
+    "trunc_type": "post",
+    "padding_type": "post",
+    "oov_token": null,
+    "training_percent": 80,
+    "num_epochs": 30,
+    "batch_size": 15
+}

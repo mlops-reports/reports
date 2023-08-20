@@ -2,4 +2,4 @@
 max-complexity = 15
 max-line-length = 120
 exclude = legacy, .archive, .venv, __init__.py
-extend-ignore = E203, E501
+extend-ignore = E203, E501, W293, W291

@@ -8,7 +8,7 @@ import os
 import mlflow
 from urllib import parse
 import requests
-from typing import Any
+from typing import Any, Union
 
 
 class MLFlow:
@@ -53,6 +53,59 @@ class MLFlow:
         """
         mlflow.set_tracking_uri(uri)
 
+    def get_model_config(self, path: Union[str, pathlib.Path]) -> dict:
+        """
+        The function `get_model_config` reads a JSON file from the specified path and returns its
+        contents as a dictionary.
+
+        Args:
+          path (Union[str, pathlib.Path]): The `path` parameter is the path to the JSON file that
+        contains the model configuration.
+
+        Returns:
+          a dictionary containing the data from the JSON file.
+        """
+
+        model_config = {}
+        with open(path, "r") as file:
+            model_config = json.load(file)
+
+        return model_config
+    
+    def log_artifact(self, path: str) -> None:
+        """
+        The function logs an artifact file to the MLflow tracking server.
+        
+        Args:
+          path (str): The `path` parameter is a string that represents the file or directory path of the
+        artifact that you want to log.
+        """
+        mlflow.log_artifact(path)
+
+    def set_model_config(
+        self, path: Union[str, pathlib.Path], update_fields: dict
+    ) -> None:
+        """
+        The function `set_model_config` updates the model configuration with the provided fields and
+        saves the updated configuration.
+        
+        Args:
+          path (Union[str, pathlib.Path]): The `path` parameter is the path to the model configuration
+        file.
+          update_fields (dict): A dictionary containing the fields and their updated values that need to
+        be added or modified in the model configuration.
+        
+        Returns:
+          a dictionary.
+        """
+        model_config = self.get_model_config(path)
+        model_config = {**model_config, **update_fields}
+
+        with open(
+            path, "w", encoding="utf-8",
+        ) as json_file:
+            json_file.write(json.dumps(model_config, indent=4, ensure_ascii=False))
+
     def get_or_create_experiment(
         self, experiment_name: str, tags: dict[str, str] = {}
     ) -> str:
@@ -87,15 +140,15 @@ class MLFlow:
         run_name: str,
         log_dict: dict[str, Any],
         registered_model_name: str,
-        user_id: str = "anon",
+        user_id: str = os.getenv("MLFLOW_USERNAME", "anon"),
         tags: dict[str, str] = {},
         artifact_path: str = "",
-        ml_library: str = "tensorflow"
+        ml_library: str = "tensorflow",
     ) -> str:
         """
         The `log_mlflow` function logs model parameters, metrics, and the model itself to MLflow for
         tracking and experimentation purposes.
-        
+
         Args:
           model (Any): The `model` parameter is the machine learning model that you want to log.
           experiment_name (str): The `experiment_name` parameter is a string that represents the name of
@@ -114,7 +167,7 @@ class MLFlow:
         where the model artifacts will be saved.
           ml_library (str): The `ml_library` parameter is used to specify the machine learning library
         that was used to train the model.
-        
+
         Returns:
           the `run_id` of the MLflow run.
         """
@@ -139,7 +192,7 @@ class MLFlow:
                     model=model,
                     artifact_path=artifact_path,
                     registered_model_name=registered_model_name,
-                    keras_model_kwargs={"save_format": "h5"}
+                    keras_model_kwargs={"save_format": "h5"},
                 )
             elif ml_library == "sklearn":
                 mlflow.sklearn.log_model(
@@ -162,6 +215,43 @@ class MLFlow:
                 {'&' if background else ''}
             """
         )
+
+    def get_best_run_by_metric(
+        self, experiment_name: str, metric_name: str = None, all_metrics: bool = False
+    ) -> dict[str:str]:
+        """
+        The function `get_best_run_by_metric` retrieves the best run from an MLflow experiment
+        based on a specified metric, and returns the run ID and corresponding metric value.
+
+        Args:
+          experiment_name (str): The name of the MLflow experiment you want to search for runs in.
+          metric_name (str): The `metric_name` parameter is a string that specifies the name of the
+        metric you want to use to determine the best run.
+          all_metrics (bool): The `all_metrics` parameter is a boolean flag that determines whether to
+        return all metrics for the best run or just the value of the specified metric.
+
+        Returns:
+          a dictionary with the best run ID and the metrics.
+        """
+        runs = mlflow.search_runs(
+            experiment_ids=[
+                mlflow.get_experiment_by_name(experiment_name).experiment_id
+            ]
+        )
+
+        # Filter the runs to exclude those without the specified metric
+        runs_with_metric = runs[runs[f"metrics.{metric_name}"].notnull()]
+
+        # Find the run with the highest value of the specified metric
+        best_run = runs_with_metric.loc[
+            runs_with_metric[f"metrics.{metric_name}"].idxmax()
+        ]
+        metrics = best_run
+
+        if not all_metrics:
+            metrics = best_run[f"metrics.{metric_name}"]
+
+        return {"run_id": best_run.run_id, "metrics": metrics}
 
     def serve_model(self, run_id: str, background: bool = True) -> None:
         """
@@ -207,11 +297,11 @@ class MLFlow:
 
         return response
 
-    def clean(self, gc: bool = False):
+    def clean(self, gc: bool = False) -> None:
         """
         The `clean` function kills processes running on specific ports, removes certain files and
         directories, and optionally performs garbage collection on a specified backend store URI.
-        
+
         Args:
           gc (bool): The `gc` parameter is a boolean flag that determines whether to perform garbage
         collection on the MLFlow backend store. If `gc` is set to `True`, the code will execute the

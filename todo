@@ -16,6 +16,8 @@ https://towardsdatascience.com/named-entity-recognition-and-classification-with-
 https://elements.heroku.com/buttons/heartexlabs/label-studio
 https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-using-spacy-v3/
 https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
+https://keras.io/examples/nlp/ner_transformers/
+https://huggingface.co/docs/transformers/main/en/tasks/token_classification
 
 ## mlflow
 * fix cem authentication aws
