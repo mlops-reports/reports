@@ -71,11 +71,11 @@ class MLFlow:
             model_config = json.load(file)
 
         return model_config
-    
+
     def log_artifact(self, path: str) -> None:
         """
         The function logs an artifact file to the MLflow tracking server.
-        
+
         Args:
           path (str): The `path` parameter is a string that represents the file or directory path of the
         artifact that you want to log.
@@ -88,13 +88,13 @@ class MLFlow:
         """
         The function `set_model_config` updates the model configuration with the provided fields and
         saves the updated configuration.
-        
+
         Args:
           path (Union[str, pathlib.Path]): The `path` parameter is the path to the model configuration
         file.
           update_fields (dict): A dictionary containing the fields and their updated values that need to
         be added or modified in the model configuration.
-        
+
         Returns:
           a dictionary.
         """
@@ -102,7 +102,9 @@ class MLFlow:
         model_config = {**model_config, **update_fields}
 
         with open(
-            path, "w", encoding="utf-8",
+            path,
+            "w",
+            encoding="utf-8",
         ) as json_file:
             json_file.write(json.dumps(model_config, indent=4, ensure_ascii=False))
 
@@ -133,7 +135,30 @@ class MLFlow:
 
         return experiment_id
 
-    def log_mlflow(
+    def download_artifacts(
+        self,
+        run_id: str,
+        artifact_path=Union[str, pathlib.Path],
+        dst_path=Union[str, pathlib.Path],
+    ) -> None:
+        """
+        The function `download_artifacts` is used to download artifacts from a specific MLflow run to a
+        specified destination path.
+
+        Args:
+          run_id (str): The `run_id` parameter is a unique identifier for a specific MLflow run.
+          artifact_path: The `artifact_path` parameter specifies the path of the artifact within the
+        run.
+          dst_path: The `dst_path` parameter is the destination path where the artifacts will be
+        downloaded to.
+        """
+        mlflow.artifacts.download_artifacts(
+            run_id=run_id,
+            artifact_path=artifact_path,
+            dst_path=dst_path,
+        )
+
+    def log_experiment_run(
         self,
         model: Any,
         experiment_name: str,
@@ -143,10 +168,11 @@ class MLFlow:
         user_id: str = os.getenv("MLFLOW_USERNAME", "anon"),
         tags: dict[str, str] = {},
         artifact_path: str = "",
+        extra_artifacts: dict[str:str] = None,
         ml_library: str = "tensorflow",
     ) -> str:
         """
-        The `log_mlflow` function logs model parameters, metrics, and the model itself to MLflow for
+        The `log_experiment_run` function logs model parameters, metrics, and the model itself to MLflow for
         tracking and experimentation purposes.
 
         Args:
@@ -167,6 +193,7 @@ class MLFlow:
         where the model artifacts will be saved.
           ml_library (str): The `ml_library` parameter is used to specify the machine learning library
         that was used to train the model.
+          extra_artifacts (dict): If exists, upload extra artifacts.
 
         Returns:
           the `run_id` of the MLflow run.
@@ -186,6 +213,10 @@ class MLFlow:
 
             for metric, value in log_dict["metrics"].items():
                 mlflow.log_metric(metric, value)
+
+            if extra_artifacts:
+              for paths in extra_artifacts.values():
+                  mlflow.log_artifact(paths["local_path"], paths["save_path"])
 
             if ml_library == "tensorflow":
                 mlflow.tensorflow.log_model(
@@ -217,7 +248,7 @@ class MLFlow:
         )
 
     def get_best_run_by_metric(
-        self, experiment_name: str, metric_name: str = None, all_metrics: bool = False
+        self, experiment_name: str, metric_name: str = None
     ) -> dict[str:str]:
         """
         The function `get_best_run_by_metric` retrieves the best run from an MLflow experiment
@@ -227,11 +258,9 @@ class MLFlow:
           experiment_name (str): The name of the MLflow experiment you want to search for runs in.
           metric_name (str): The `metric_name` parameter is a string that specifies the name of the
         metric you want to use to determine the best run.
-          all_metrics (bool): The `all_metrics` parameter is a boolean flag that determines whether to
-        return all metrics for the best run or just the value of the specified metric.
 
         Returns:
-          a dictionary with the best run ID and the metrics.
+          a dictionary with the best run
         """
         runs = mlflow.search_runs(
             experiment_ids=[
@@ -246,12 +275,8 @@ class MLFlow:
         best_run = runs_with_metric.loc[
             runs_with_metric[f"metrics.{metric_name}"].idxmax()
         ]
-        metrics = best_run
 
-        if not all_metrics:
-            metrics = best_run[f"metrics.{metric_name}"]
-
-        return {"run_id": best_run.run_id, "metrics": metrics}
+        return best_run
 
     def serve_model(self, run_id: str, background: bool = True) -> None:
         """
@@ -277,21 +302,27 @@ class MLFlow:
             """
         )
 
-    def get_predictions(self, data: dict[Any, Any] = {}) -> Any:
+    def get_predictions(self, run_id: str, data: dict) -> Any:
         """
-        It takes in a dictionary of data, and returns the response from the MLflow model server
-
+        The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
+        given run ID and input data.
+        
         Args:
-          data (dict): The data to be passed to the model for predictions.
-
+          run_id (str): The `run_id` parameter is a string that represents the unique identifier of the
+        MLflow run.
+          data (dict): The `data` parameter is a dictionary that contains the input data for
+        making predictions.
+        
         Returns:
-          The response object.
+          the response object from the POST request.
         """
         headers = {"Content-Type": "application/json"}
 
+        input_data = {"data": data}
+
         response = requests.post(
-            f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_MODEL_PORT}/invocations",
-            data=json.dumps(data),
+            f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_MODEL_PORT}/invocations/{run_id}/predict",
+            json=input_data,
             headers=headers,
         )
 
@@ -311,7 +342,7 @@ class MLFlow:
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
-        os.system("rm -rf mlartifacts experiments.sqlite mlruns predictions.csv")
+        os.system("rm -rf mlartifacts experiments.sqlite mlruns predictions.csv ml-experiment-reports")
 
         if gc:
             os.system(
