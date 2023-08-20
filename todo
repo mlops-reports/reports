@@ -23,8 +23,3 @@ https://huggingface.co/docs/transformers/main/en/tasks/token_classification
 * fix cem authentication aws
 * basic authentication: https://mlflow.org/docs/latest/auth/index.html
 * docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
-
-## ChatGPT
-* https://colab.research.google.com/drive/1DEBPsccVLF_aUnmD0FwPeHFrtdC0QIUP?usp=sharing
-* https://shishirpatil.github.io/gorilla/
-
