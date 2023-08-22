@@ -33,7 +33,7 @@ def main():
     # """
     sentences = [argument]
     
-    print(f"sentence: {sentences}")
+    mlflow.logger.info(f"Input sentence: {sentences}")
     
     # clean_labels = [0]
     # print(f"gold standard: {clean_labels}")
