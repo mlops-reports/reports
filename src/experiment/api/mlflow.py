@@ -245,6 +245,7 @@ class MLFlow:
         os.system(
             f"""
                 mlflow server --port {MLFlow.MLFLOW_TRACKING_PORT} \
+                --host 192.168.0.68 \
                 --backend-store-uri {MLFlow.BACKEND_URI_STORE} \
                 --default-artifact-root {MLFlow.DEFAULT_ARTIFACT_ROOT} \
                 {'&' if background else ''}
