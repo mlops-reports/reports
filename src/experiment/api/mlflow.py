@@ -245,12 +245,14 @@ class MLFlow:
         os.system(
             f"""
                 mlflow server --port {MLFlow.MLFLOW_TRACKING_PORT} \
-                --host 192.168.0.68 \
+                --host 10.121.120.4 \
                 --backend-store-uri {MLFlow.BACKEND_URI_STORE} \
                 --default-artifact-root {MLFlow.DEFAULT_ARTIFACT_ROOT} \
                 {'&' if background else ''}
             """
         )
+
+        # 192.168.0.230 | 195.88.86.196 | 10.121.120.4
 
     def get_best_run_by_metric(
         self, experiment_name: str, metric_name: str = None
