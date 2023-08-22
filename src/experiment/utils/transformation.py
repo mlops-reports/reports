@@ -6,10 +6,20 @@ import simplemma
 import pathlib
 import json
 # import numpy as np
+import os
 import re
 import matplotlib.pyplot as plt
 
-working_dir = pathlib.Path.cwd()
+
+def get_project_root() -> pathlib.Path:
+    """
+    The function `get_project_root()` returns the root directory of the current project.
+    
+    Returns:
+      The function `get_project_root()` returns the root directory of the project.
+    """
+    return pathlib.Path(os.getenv("MLFLOW_PROJECT_ROOT", None))
+    
 
 def find_and_replace_exact_word(input_word, replacements):
     """
@@ -28,6 +38,7 @@ def find_and_replace_exact_word(input_word, replacements):
             return value
     return input_word
 
+
 def sentence_cleaning_pipeline(sentences):
     """
     1. Remove punctuation
@@ -41,12 +52,12 @@ def sentence_cleaning_pipeline(sentences):
     regexp_tokenizer = nltk.tokenize.RegexpTokenizer(r"\w+")
 
     # get Turkish stopwords
-    nltk.download("stopwords")
+    nltk.download("stopwords", quiet=True)
     turkish_stopwords = nltk.corpus.stopwords.words("turkish")
 
     # word corrections
     with open(
-        working_dir.parent / "data" / "input" / "manuel_corrections.json", "r"
+        get_project_root() / "data" / "input" / "manuel_corrections.json", "r"
     ) as file:
         manuel_corrections = json.load(file)
 
@@ -62,6 +73,7 @@ def sentence_cleaning_pipeline(sentences):
         )
         for sentence in sentences
     ]
+
 
 def find_longest_sentence_length(sentences):
     """
@@ -97,24 +109,6 @@ def plot_graphs(history, string):
     plt.show()
 
 
-def calculate_matching_ratio(list1, list2):
-    """
-    The function calculates the matching ratio between two lists by comparing the elements at
-    corresponding indices.
-    
-    Args:
-      list1: The first list of elements to compare.
-      list2: The `list2` parameter is a list of values that will be compared to the values in `list1` to
-    calculate the matching ratio.
-    
-    Returns:
-      the matching ratio between two lists.
-    """
-    if len(list1) != len(list2):
-        return "Lists are not of the same length"
-    matches = sum(i == j for i, j in zip(list1, list2))
-    return matches / len(list1)
-
 def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
     """
     The function `pattern_find_and_remove` takes a text and a pattern as input, finds the first
@@ -136,6 +130,7 @@ def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
         extracted_pattern = ""
 
     return extracted_pattern, text.replace(extracted_pattern, "").strip()
+
 
 def replace_patterns_from_text(
     text: str, patterns: list[str], replace_with: str = ""

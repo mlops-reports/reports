@@ -16,13 +16,10 @@ https://towardsdatascience.com/named-entity-recognition-and-classification-with-
 https://elements.heroku.com/buttons/heartexlabs/label-studio
 https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-using-spacy-v3/
 https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
+https://keras.io/examples/nlp/ner_transformers/
+https://huggingface.co/docs/transformers/main/en/tasks/token_classification
 
 ## mlflow
 * fix cem authentication aws
-* basic authentication: https://stackoverflow.com/questions/71687131/how-to-import-mlflow-tracking-server-wsgi-application-via-flask-or-fastapi
+* basic authentication: https://mlflow.org/docs/latest/auth/index.html
 * docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
-
-## ChatGPT
-* https://colab.research.google.com/drive/1DEBPsccVLF_aUnmD0FwPeHFrtdC0QIUP?usp=sharing
-* https://shishirpatil.github.io/gorilla/
-

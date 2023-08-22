@@ -1,12 +1,13 @@
-import pathlib
+# import pathlib
 import os
 import dotenv
 import time
 
+from experiment.utils import transformation
+
 dotenv.load_dotenv()
-working_dir = pathlib.Path.cwd()
 LABEL_STUDIO_HOST = "https://label.drgoktugasci.com"
-ANNOTATIONS_PATH = working_dir.parent / "data" / "output" / "annotations.json"
+ANNOTATIONS_PATH = transformation.get_project_root() / "data" / "output" / "annotations.json"
 
 
 def start_label_studio(waiting_time: int = 15):

@@ -60,13 +60,17 @@ Temporary Items
 tmp/**
 !tmp/.gitkeep
 !tmp/credentials
+!tmp/data
+!tmp/data/.gitkeep
 !tmp/credentials/.gitkeep
-credentials/**
 !credentials/.gitkeep
+credentials/**
 
+**/mlruns
 notebooks/csv
 
 # mlflow
 mlartifacts
 experiments.sqlite
 predictions.csv
+ml-experiment-reports
