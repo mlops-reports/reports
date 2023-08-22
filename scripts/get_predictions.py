@@ -1,8 +1,9 @@
 from experiment.api import mlflow as mlflow_api
 from experiment.utils import transformation
 
-import pandas as pd
+# import pandas as pd
 import json
+import sys
 
 import mlflow as mlflow_lib
 
@@ -24,15 +25,18 @@ def main():
         3: "Non Emergency [No Doctor]",
     }
 
-    # get an example report
-    clean_annotations = pd.read_csv(
-        transformation.get_project_root() / "data" / "output" / "clean_annotations.csv"
-    )
-    sentences = clean_annotations["relevant_text"].to_list()[-1:]
-    clean_labels = clean_annotations["classifications"].to_list()[-1:]
+    argument = sys.argv[1]
 
-    print(f"sentences: {sentences}")
-    print(f"gold standard: {clean_labels}")
+    # get an example report
+    # example_sentence = """
+    #     Sağ maksiller sinüste retansiyon kisti izlenmiştir.    
+    # """
+    sentences = [argument]
+    
+    print(f"sentence: {sentences}")
+    
+    # clean_labels = [0]
+    # print(f"gold standard: {clean_labels}")
 
     # get model config
     model_config_path = (

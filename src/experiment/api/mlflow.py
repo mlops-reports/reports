@@ -349,13 +349,14 @@ class MLFlow:
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
-        os.system(
-            "rm -rf mlartifacts experiments.sqlite mlruns"
-        )
-
+        
         if gc:
             os.system(
                 f"""
                     mlflow gc --backend-store-uri {MLFlow.BACKEND_URI_STORE}
                 """
             )
+
+        os.system(
+            "rm -rf mlartifacts experiments.sqlite mlruns"
+        )
