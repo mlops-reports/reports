@@ -1,6 +1,7 @@
 """MLflow utils for ml experiments"""
 
 import pathlib
+
 # import logging
 import numpy as np
 import json
@@ -32,7 +33,7 @@ class MLFlow:
         """
 
         self.local_storage = local_storage
-        self.logger = logging.getLogger('mlflow')
+        self.logger = logging.getLogger("mlflow")
 
         if not self.local_storage:
             db_username = os.getenv("MLFLOW_DB_USERNAME")
@@ -227,7 +228,6 @@ class MLFlow:
                     model=model,
                     artifact_path=artifact_path,
                     registered_model_name=registered_model_name,
-                    keras_model_kwargs={"save_format": "h5"},
                 )
             elif ml_library == "sklearn":
                 mlflow.sklearn.log_model(
@@ -331,7 +331,9 @@ class MLFlow:
             headers=headers,
         )
 
-        predictions = [np.argmax(prediction) for prediction in response.json()["predictions"]]
+        predictions = [
+            np.argmax(prediction) for prediction in response.json()["predictions"]
+        ]
 
         return predictions
 
@@ -349,7 +351,7 @@ class MLFlow:
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
-        
+
         if gc:
             os.system(
                 f"""
@@ -357,6 +359,4 @@ class MLFlow:
                 """
             )
 
-        os.system(
-            "rm -rf mlartifacts experiments.sqlite mlruns"
-        )
+        os.system("rm -rf mlartifacts experiments.sqlite mlruns")
