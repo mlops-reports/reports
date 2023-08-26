@@ -235,7 +235,6 @@ class MLFlow:
                     artifact_path=artifact_path,
                     registered_model_name=registered_model_name,
                 )
-
             elif ml_library == "pytorch":
                 mlflow.pytorch.log_model(
                     sk_model=model,
