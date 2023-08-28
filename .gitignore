@@ -74,3 +74,8 @@ mlartifacts
 experiments.sqlite
 predictions.csv
 ml-experiment-reports
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
