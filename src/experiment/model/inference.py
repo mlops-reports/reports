@@ -6,7 +6,7 @@ from typing import List, Dict, Any, Optional
 
 from torch.nn import CrossEntropyLoss
 from transformers import AutoModelForSequenceClassification
-from dataset import ReportDataset, batch_collate_fn
+from experiment.model.dataset import ReportDataset, batch_collate_fn
 
 DATASETS = {
     "report_dataset": ReportDataset,

@@ -60,17 +60,17 @@ class MLFlow:
 
     def get_model_config(self, path: Union[str, pathlib.Path]) -> dict:
         """
-        The function `get_model_config` reads a JSON file from the specified path and returns its
-        contents as a dictionary.
-
+        The function `get_model_config` reads a JSON file from the given path and returns its contents
+        as a dictionary.
+        
         Args:
-          path (Union[str, pathlib.Path]): The `path` parameter is the path to the JSON file that
-        contains the model configuration.
-
+          path (Union[str, pathlib.Path]): The `path` parameter is the path to the file containing the
+        model configuration. It can be either a string representing the file path or a `pathlib.Path`
+        object.
+        
         Returns:
-          a dictionary containing the data from the JSON file.
+          a dictionary object, which is the model configuration loaded from the specified file.
         """
-
         model_config = {}
         with open(path, "r") as file:
             model_config = json.load(file)

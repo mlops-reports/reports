@@ -9,8 +9,8 @@ from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
 from torch.nn.modules.loss import _Loss
 from transformers import AutoModelForSequenceClassification
-from dataset import ReportDataset, batch_collate_fn
-from utils import EarlyStopping
+from experiment.model.dataset import ReportDataset, batch_collate_fn
+from experiment.model.utils import EarlyStopping
 
 from torch.backends import cudnn
 
@@ -68,12 +68,12 @@ class BaseTrainer:
         self.loss_name = loss_name
         self.layer_sizes = layer_sizes
         self.model_name = model_name
-        self.model_save_path = os.path.join(FILE_PATH, "models", model_name)
+        self.model_save_path = os.path.join(FILE_PATH, "parameters", model_name)
         if not os.path.exists(self.model_save_path):
             os.makedirs(self.model_save_path)
 
         self.model_params_save_path = os.path.join(
-            FILE_PATH, "models", model_name + "_params.json"
+            FILE_PATH, "parameters", model_name + "_params.json"
         )
         with open(self.model_params_save_path, "w") as f:
             json.dump(self.__dict__, f, indent=4)
