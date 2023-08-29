@@ -35,6 +35,11 @@ flake8 = "^6.1.0"
 black = "^23.7.0"
 
 
+
+[tool.poetry.group.scraping.dependencies]
+webdriver-manager = "^4.0.0"
+selenium = "^4.11.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
