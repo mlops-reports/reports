@@ -23,6 +23,7 @@ sqlalchemy = "^2.0.20"
 python-dateutil = "^2.8.2"
 awscli = "^1.29.37"
 setuptools = "^68.1.2"
+dbt-postgres = "1.6.1"
 
 
 [tool.poetry.group.dev.dependencies]

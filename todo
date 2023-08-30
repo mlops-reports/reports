@@ -1,7 +1,7 @@
 ## de
-* english translation of the reports
-* local airbyte deployment to move everything to one place
+* dbt seeds | https://www.youtube.com/watch?v=CWetaAaEdKw
 * dbt deployment to keep the database clean
+* english translation of the reports
 
 ## mlops
 * mlflow docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
