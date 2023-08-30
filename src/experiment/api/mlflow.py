@@ -223,7 +223,7 @@ class MLFlow:
                 for paths in extra_artifacts.values():
                     mlflow.log_artifact(paths["local_path"], paths["save_path"])
 
-            if ml_library == "pytorch":
+            if ml_library == "tensorflow":
                 mlflow.tensorflow.log_model(
                     model=model,
                     artifact_path=artifact_path,

@@ -1,25 +1,7 @@
 ## Data Cleaning
 Raporları İngilizce'ye çevir(?)
 
-## TensorFlow
- * Reference: https://www.youtube.com/watch?v=Y_hzMnRXjhI&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S&index=3
- * ChatGPT: TensorFlow Multiclass Loss Functions
- * https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%203%20-%20NLP/Course%203%20-%20Week%201%20-%20Lesson%201.ipynb#scrollTo=zaCMcjMQifQc
- * https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%203%20-%20NLP/Course%203%20-%20Week%201%20-%20Lesson%202.ipynb
- * https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%203%20-%20NLP/Course%203%20-%20Week%202%20-%20Lesson%202.ipynb
-
-## spaCy
-https://github.com/turkish-nlp-suite/turkish-spacy-models
-https://spacy.io/api/textcategorizer
-https://towardsdatascience.com/named-entity-recognition-and-classification-with-scikit-learn-f05372f07ba2
-### Extra ML
-https://elements.heroku.com/buttons/heartexlabs/label-studio
-https://www.analyticsvidhya.com/blog/2022/06/custom-named-entity-recognition-using-spacy-v3/
-https://www.kaggle.com/code/kiruthigaa/ner-model-train-test-using-spacy-label-studio
-https://keras.io/examples/nlp/ner_transformers/
-https://huggingface.co/docs/transformers/main/en/tasks/token_classification
-
 ## mlflow
-* fix cem authentication aws
+* fix oytun authentication aws
 * basic authentication: https://mlflow.org/docs/latest/auth/index.html
 * docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker

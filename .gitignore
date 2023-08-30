@@ -56,6 +56,8 @@ Temporary Items
 .vscode
 .metals
 
+notebooks/data
+
 # tmp items
 tmp/**
 !tmp/.gitkeep
