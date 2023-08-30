@@ -256,7 +256,6 @@ def get_select_values(
         output_format=output_format
     )
 
-    
     return output
 
 
