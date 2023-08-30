@@ -56,8 +56,6 @@ Temporary Items
 .vscode
 .metals
 
-notebooks/data
-
 # tmp items
 tmp/**
 !tmp/.gitkeep
@@ -70,6 +68,7 @@ credentials/**
 
 **/mlruns
 notebooks/csv
+notebooks/**/data
 
 # mlflow
 mlartifacts
