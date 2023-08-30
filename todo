@@ -1,5 +1,7 @@
 ## de
 * english translation of the reports
+* local airbyte deployment to move everything to one place
+* dbt deployment to keep the database clean
 
 ## mlops
 * mlflow docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
