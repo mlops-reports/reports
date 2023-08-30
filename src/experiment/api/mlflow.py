@@ -170,7 +170,7 @@ class MLFlow:
         run_name: str,
         log_dict: dict[str, Any],
         registered_model_name: str,
-        user_id: str = os.getenv("MLFLOW_USERNAME", "anon"),
+        user_id: str = os.getenv("MLFLOW_TRACKING_USERNAME", "anon"),
         tags: dict[str, str] = {},
         artifact_path: str = "",
         extra_artifacts: dict[str:str] = None,
