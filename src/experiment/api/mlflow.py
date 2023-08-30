@@ -22,7 +22,7 @@ class MLFlow:
     BACKEND_URI_STORE = "sqlite:///experiments.sqlite"
     DEFAULT_ARTIFACT_ROOT = pathlib.Path("mlartifacts")
 
-    def __init__(self, local_storage: bool = False):
+    def __init__(self, local_storage: bool = False) -> None:
         """
         If the local_storage flag is set to False, then the MLFlow.BACKEND_URI_STORE is set to the
         postgresql database URI, and the MLFlow.DEFAULT_ARTIFACT_ROOT is set to the AWS S3 bucket
@@ -292,14 +292,18 @@ class MLFlow:
         return best_run
 
     def serve_model(self, run_id: str, background: bool = True) -> None:
-        """
-        `serve_model` takes a run_id and serves the model associated with that run_id on port
-        `MLFlow.MLFLOW_MODEL_PORT`
-
-        Args:
-          run_id (str): The run ID of the model you want to serve.
-        """
-
+        '''The `serve_model` function serves a machine learning model using MLflow's `mlflow models serve`
+        command.
+        
+        Parameters
+        ----------
+        run_id : str
+          The `run_id` parameter is a string that represents the unique identifier of a MLflow run. It is
+        used to locate the model artifacts associated with the specified run.
+        background : bool, optional
+          The `background` parameter is a boolean flag that determines whether the model serving command
+        should run in the background or not.
+        '''
         if self.local_storage:
             MODAL_URI = (
                 pathlib.Path(MLFlow.DEFAULT_ARTIFACT_ROOT) / run_id / "artifacts"
@@ -317,17 +321,20 @@ class MLFlow:
         )
 
     def get_predictions(self, data: list) -> Any:
-        """
-        The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
-        given run ID and input data.
-
-        Args:
-          data (list): The `data` parameter is a list that contains the input data for
-        making predictions.
-
-        Returns:
-          the response object from the POST request.
-        """
+        '''The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
+        given list of data.
+        
+        Parameters
+        ----------
+        data : list
+          The `data` parameter is a list of input instances for which you want to get predictions. Each
+        instance in the list should be in a format that is compatible with the ML model you are using.
+        
+        Returns
+        -------
+          a list of predictions.
+        
+        '''
         headers = {"Content-Type": "application/json"}
         input_data = {"instances": data}
 
@@ -344,16 +351,17 @@ class MLFlow:
         return predictions
 
     def clean(self, gc: bool = False) -> None:
-        """
-        The `clean` function kills processes running on specific ports, removes certain files and
-        directories, and optionally performs garbage collection on a specified backend store URI.
-
-        Args:
-          gc (bool): The `gc` parameter is a boolean flag that determines whether to perform garbage
-        collection on the MLFlow backend store. If `gc` is set to `True`, the code will execute the
-        MLFlow garbage collection command to clean up any unused artifacts and metadata in the backend
-        store.
-        """
+        '''The `clean` function kills processes running on specified ports and removes mlartifacts,
+        experiments.sqlite, and mlruns directories.
+        
+        Parameters
+        ----------
+        gc : bool, optional
+          The `gc` parameter is a boolean flag that determines whether garbage collection should be
+        performed. If `gc` is set to `True`, the code will execute the `mlflow gc` command to perform
+        garbage collection on the MLFlow backend store.
+        
+        '''
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )
