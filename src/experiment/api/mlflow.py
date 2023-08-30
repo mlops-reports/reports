@@ -45,7 +45,7 @@ class MLFlow:
             MLFlow.BACKEND_URI_STORE = (
                 f"postgresql://{db_username}:{db_password}@{db_host}:5432/{db_name}"
             )
-            MLFlow.DEFAULT_ARTIFACT_ROOT = f"{self.aws_bucket}/mlartifacts"
+            MLFlow.DEFAULT_ARTIFACT_ROOT = f"s3://{self.aws_bucket}/mlartifacts"
 
         self.set_tracking_uri(f"{MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_TRACKING_PORT}")
 
@@ -223,13 +223,7 @@ class MLFlow:
                 for paths in extra_artifacts.values():
                     mlflow.log_artifact(paths["local_path"], paths["save_path"])
 
-            if ml_library == "tensorflow":
-                mlflow.tensorflow.log_model(
-                    model=model,
-                    artifact_path=artifact_path,
-                    registered_model_name=registered_model_name,
-                )
-            elif ml_library == "sklearn":
+            if ml_library == "sklearn":
                 mlflow.sklearn.log_model(
                     sk_model=model,
                     artifact_path=artifact_path,
@@ -244,9 +238,9 @@ class MLFlow:
 
         return run_id
 
-    def run_server(self, background: bool = True) -> None:
+    def run_tracking_server(self, background: bool = True) -> None:
         """
-        `run_server` starts an MLflow server on the port specified in the `MLFlow` class
+        `run_tracking_server` starts an MLflow server on the port specified in the `MLFlow` class
         """
         os.system(
             f"""
@@ -291,8 +285,8 @@ class MLFlow:
 
         return best_run
 
-    def serve_model(self, run_id: str, background: bool = True) -> None:
-        '''The `serve_model` function serves a machine learning model using MLflow's `mlflow models serve`
+    def run_inference_server(self, run_id: str, background: bool = True) -> None:
+        '''The `run_inference_server` function serves a machine learning model using MLflow's `mlflow models serve`
         command.
         
         Parameters

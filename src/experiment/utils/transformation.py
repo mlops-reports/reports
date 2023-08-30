@@ -1,5 +1,3 @@
-# import tensorflow as tf
-# from tensorflow import keras
 import nltk
 import simplemma
 # import pandas as pd
