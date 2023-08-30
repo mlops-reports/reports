@@ -8,8 +8,6 @@ LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 
 HEROKU := heroku
 HEROKU_LABEL_APP_NAME := "label-reports"
-HEROKU_TRAIN_APP_NAME := "label-reports"
-
 
 
 # Installs the dependencies

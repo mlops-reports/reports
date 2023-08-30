@@ -7,12 +7,6 @@ import sys
 
 import mlflow as mlflow_lib
 
-# import tensorflow as tf
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-
-from keras.preprocessing.text import tokenizer_from_json
-
 
 def main():
     mlflow = mlflow_api.MLFlow()
