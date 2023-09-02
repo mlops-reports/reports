@@ -144,7 +144,11 @@ def query_db(
         db_name=db_name,
     ).connect() as con:
         result = con.execute(db.text(build_query(sql)))
-        data = result.fetchall()
+
+        try:
+            data = result.fetchall()
+        except:
+            return None
 
         output = None
 
@@ -261,7 +265,7 @@ def upsert_values(
     cols_to_upsert: list[str],
     values: list[tuple],
     timestamp_col_name: str = None,
-    engine: db.Engine = None,
+    db_engine: db.Engine = None,
 ) -> Any:
     """The `upsert_values` function performs an upsert operation (insert or update) on a specified table in
     a database, using the provided values and constraints.
@@ -292,8 +296,8 @@ def upsert_values(
     timestamp_col_name : str
         The `timestamp_col_name` parameter is used to specify the name of the column that stores the
     timestamp or last update time in the database table.
-    engine : db.Engine
-        The `engine` parameter is used to specify the db connection
+    db_engine : db.Engine
+        The `db_engine` parameter is used to specify the db connection
 
     Returns
     -------
@@ -301,26 +305,30 @@ def upsert_values(
 
     """
 
-    metadata = db.MetaData(bind=engine if engine else get_db_engine())
+    metadata = db.MetaData()
+    engine = db_engine if db_engine else get_db_engine()
+    metadata.bind = engine
 
-    if timestamp_col_name == "Django":
-        set_values: dict = {
-            "created_at": datetime.datetime.utcnow(),
-            "updated_at": datetime.datetime.utcnow(),
-        }
+    set_values: dict = {}
 
-        cols_to_upsert.remove(timestamp_col_name)
-        cols_to_upsert.append("updated_at")
+    # if timestamp_col_name == "Django":
+    #     set_values: dict = {
+    #         "created_at": datetime.datetime.utcnow(),
+    #         "updated_at": datetime.datetime.utcnow(),
+    #     }
 
-        select_cols["created_at"] = {"type": "DateTime"}
-        select_cols["updated_at"] = {"type": "DateTime"}
-    else:
-        if timestamp_col_name is None:
-            timestamp_col_name = "last_update"
+    #     cols_to_upsert.remove(timestamp_col_name)
+    #     cols_to_upsert.append("updated_at")
 
-        set_values: dict = {timestamp_col_name: datetime.datetime.utcnow()}
-        cols_to_upsert.append(timestamp_col_name)
-        select_cols[timestamp_col_name] = {"type": "DateTime"}
+    #     select_cols["created_at"] = {"type": "DateTime"}
+    #     select_cols["updated_at"] = {"type": "DateTime"}
+    # else:
+    #     if timestamp_col_name is None:
+    #         timestamp_col_name = "last_update"
+
+    #     set_values: dict = {timestamp_col_name: datetime.datetime.utcnow()}
+    #     cols_to_upsert.append(timestamp_col_name)
+    #     select_cols[timestamp_col_name] = {"type": "DateTime"}
 
     col_builders = [
         db.Column(
@@ -345,9 +353,10 @@ def upsert_values(
 
     query = query.on_conflict_do_update(constraint=constraint, set_=set_values)
 
-    response = engine.execute(query)
+    with engine.connect() as conn:
+        result = conn.execute(query)
 
-    return response
+    return result
 
 
 def get_unique_value_col(df: pd.DataFrame, col_name: str) -> int:
