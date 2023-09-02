@@ -2,7 +2,6 @@
 PYTHON_PATH := $(shell which python3.11)
 
 POETRY := poetry
-POETRY_VERSION := 1.5.1
 
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 
