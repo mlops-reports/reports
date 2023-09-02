@@ -8,6 +8,7 @@ from torch import Tensor
 from sklearn.model_selection import KFold
 from transformers import AutoTokenizer
 from transformers import DataCollatorWithPadding
+from experiment.utils.dbutils import DatabaseUtils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -34,6 +35,7 @@ class BaseDataset(Dataset):
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
+        batch_size: int = 0,
         in_memory: bool = False,
     ):
         """
@@ -63,6 +65,11 @@ class BaseDataset(Dataset):
         self.in_memory = in_memory
         self.path_to_data = path_to_data
         self.current_fold = current_fold
+        self.batch_size = batch_size
+
+        self.database_table_name = "annotations"
+        self.dbutils = DatabaseUtils()
+        self.dbutils.connect_database()
 
         self.n_samples_total = self.get_number_of_samples()
 
@@ -133,9 +140,7 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        with open(self.path_to_data) as fp:
-            n_lines = len(fp.readlines())
-        return n_lines - 1
+        return self.dbutils.get_table_size(self.database_table_name)
 
     def get_labels(self) -> np.ndarray:
         """
@@ -164,16 +169,12 @@ class BaseDataset(Dataset):
         tensor: torch Tensor
             A torch tensor represents the data for the sample.
         """
-
-        def skip_unselected(row_idx: int) -> bool:
-            if row_idx == 0:
-                return False
-            return row_idx != (self.selected_indices[index] + 1)
-
-        sample_data_row = pd.read_csv(self.path_to_data, skiprows=skip_unselected)
-        sample_data = self.preprocess(sample_data_row["full_text"])
+        sample_data_batch = self.dbutils.pandas_read_table_in_chunks(
+            self.database_table_name, self.batch_size, index
+        )
+        sample_data = self.preprocess(sample_data_batch["full_text"])
         sample_data = torch.from_numpy(sample_data).float().to(device)
-        sample_label = torch.from_numpy(sample_data_row["classifications"].values).to(
+        sample_label = torch.from_numpy(sample_data_batch["classifications"].values).to(
             device
         )
         return sample_data, sample_label

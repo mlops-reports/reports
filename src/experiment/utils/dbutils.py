@@ -167,6 +167,12 @@ class DatabaseUtils:
         query = self._build_sql_query(table_name, limit=limit, offset=offset)
         return self.pandas_read_sql_query(query)
 
+    def get_table_size(self, table_name: str) -> int:
+        """Returns the number of rows of the specified table."""
+        query = f"SELECT COUNT(*) AS NUMBER_OF_ROWS FROM {table_name}"
+        df = self.pandas_read_sql_query(query)
+        return df["NUMBER_OF_ROWS"].values[0]
+
     def get_select_values(
         self,
         query: str,
