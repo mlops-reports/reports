@@ -170,11 +170,11 @@ class MLFlow:
         run_name: str,
         log_dict: dict[str, Any],
         registered_model_name: str,
-        user_id: str = os.getenv("MLFLOW_USERNAME", "anon"),
+        user_id: str = os.getenv("MLFLOW_TRACKING_USERNAME", "anon"),
         tags: dict[str, str] = {},
         artifact_path: str = "",
         extra_artifacts: dict[str:str] = None,
-        ml_library: str = "tensorflow",
+        ml_library: str = "pytorch",
     ) -> str:
         """
         The `log_experiment_run` function logs model parameters, metrics, and the model itself to MLflow for
@@ -231,7 +231,7 @@ class MLFlow:
                 )
             elif ml_library == "pytorch":
                 mlflow.pytorch.log_model(
-                    sk_model=model,
+                    pytorch_model=model,
                     artifact_path=artifact_path,
                     registered_model_name=registered_model_name,
                 )

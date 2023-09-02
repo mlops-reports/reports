@@ -1,7 +1,11 @@
-## Data Cleaning
-Raporları İngilizce'ye çevir(?)
+## de
+* dbt seeds | https://www.youtube.com/watch?v=CWetaAaEdKw
+* dbt deployment to keep the database clean
+* english translation of the reports
 
-## mlflow
-* fix oytun authentication aws
-* basic authentication: https://mlflow.org/docs/latest/auth/index.html
-* docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
+## mlops
+* mlflow docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
+* mlflow authentication: https://mlflow.org/docs/latest/auth/index.html
+
+## ml
+* tag models with the translation method
