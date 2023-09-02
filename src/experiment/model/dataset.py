@@ -19,6 +19,10 @@ DATA_PATH = os.path.join(ROOT_PATH, "..", "data", "output")
 np.random.seed(35813)
 
 
+class DataError(Exception):
+    pass
+
+
 def batch_collate_fn(batch_data: List[Tensor]) -> Tensor:
     """Definition of how the batched data will be treated."""
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
@@ -192,7 +196,10 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        return pd.read_csv(self.path_to_data)[["full_text", "classifications"]].values
+        df = self.dbutils.pandas_read_sql_table(self.database_table_name)
+        if df is None:
+            raise DataError("Data couldnt be retrieved from database.")
+        return df[["full_text", "classifications"]].values
 
     def get_fold_indices(
         self, all_data_size: int, n_folds: int, fold_id: int = 0
