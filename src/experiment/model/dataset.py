@@ -34,6 +34,7 @@ class BaseDataset(Dataset):
     def __init__(
         self,
         database_table_name: str,
+        database_schema_name: str = "dbo",
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
@@ -66,11 +67,12 @@ class BaseDataset(Dataset):
         self.n_folds = n_folds
         self.in_memory = in_memory
         self.database_table_name = database_table_name
+        self.database_schema_name = database_schema_name
         self.current_fold = current_fold
         self.batch_size = batch_size
 
         self.dbutils = DatabaseUtils()
-        self.dbutils.connect_database()
+        self.dbutils.connect_database("report_labeling")
 
         self.n_samples_total = self.get_number_of_samples()
 
@@ -141,7 +143,10 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size(self.database_table_name)
+        return self.dbutils.get_table_size(
+            self.database_table_name,
+            self.database_schema_name,
+        )
 
     def get_labels(self) -> np.ndarray:
         """
@@ -153,11 +158,13 @@ class BaseDataset(Dataset):
             An array stores the labels for each sample.
         """
         df = self.dbutils.read_sql_table(
-            self.database_table_name, columns=["classifications"]
+            self.database_table_name,
+            self.database_schema_name,
+            columns=["annotation_value_flag"],
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[["classifications"]].values
+        return df[["annotation_value_flag"]].values
 
     def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
         """
@@ -176,15 +183,18 @@ class BaseDataset(Dataset):
             A torch tensor represents the data for the sample.
         """
         sample_data_batch = self.dbutils.read_table_in_chunks(
-            self.database_table_name, self.batch_size, index
+            self.database_table_name,
+            self.batch_size,
+            index,
+            self.database_schema_name,
         )
         if sample_data_batch is None:
             raise DataError("SQL returned None instead of a dataframe.")
         sample_data = self.preprocess(sample_data_batch["full_text"])
         sample_data = torch.from_numpy(sample_data).float().to(device)
-        sample_label = torch.from_numpy(sample_data_batch["classifications"].values).to(
-            device
-        )
+        sample_label = torch.from_numpy(
+            sample_data_batch["annotation_value_flag"].values
+        ).to(device)
         return sample_data, sample_label
 
     def preprocess(self, data: np.ndarray) -> Tensor:
@@ -201,7 +211,7 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.read_sql_table(
-            self.database_table_name, columns=["full_text"]
+            self.database_table_name, self.database_schema_name, columns=["full_text"]
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
@@ -253,14 +263,18 @@ class ReportDataset(BaseDataset):
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
+        batch_size: int = 0,
         in_memory: bool = False,
     ):
-        data_table_name = "reports"
+        data_table_name = "choices"
+        data_schema_name = "annotation"
         super().__init__(
             data_table_name,
+            data_schema_name,
             mode,
             n_folds,
             current_fold,
+            batch_size,
             in_memory,
         )
         self.tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")

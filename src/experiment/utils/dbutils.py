@@ -203,14 +203,18 @@ class DatabaseUtils:
     def read_sql_table(
         self,
         table_name: str,
+        schema_name: str = "dbo",
         columns: Optional[List[str]] = None,
     ) -> Optional[pd.DataFrame]:
-        """Wrapper function that prepares a query and reads data columns in specified table."""
-        query = self._build_sql_query_chunk(table_name, columns=columns)
+        """Toplevel function that prepares a query and reads data columns in specified table(s) for machine learning."""
+        # TODO: JOIN operation will be needed here if annotations and report text are stored in separate tables.
+        query = self._build_sql_query_chunk(
+            table_name, schema_name=schema_name, columns=columns
+        )
         return self.read_sql_query(query)
 
     def read_table_in_chunks(
-        self, table_name: str, chunk_size: int, chunk_idx: int
+        self, table_name: str, chunk_size: int, chunk_idx: int, schema_name: str = "dbo"
     ) -> Optional[pd.DataFrame]:
         """
         Lazy load for the database read operation.
@@ -226,16 +230,18 @@ class DatabaseUtils:
 
         """
         limit, offset = chunk_size, chunk_idx * chunk_size
-        query = self._build_sql_query_chunk(table_name, limit=limit, offset=offset)
+        query = self._build_sql_query_chunk(
+            table_name, schema_name=schema_name, limit=limit, offset=offset
+        )
         return self.read_sql_query(query)
 
-    def get_table_size(self, table_name: str) -> int:
+    def get_table_size(self, table_name: str, schema_name: str = "dbo") -> int:
         """Returns the number of rows of the specified table."""
-        query = f"SELECT COUNT(*) AS NUMBER_OF_ROWS FROM {table_name}"
+        query = f"SELECT COUNT(*) AS number_of_rows FROM {schema_name}.{table_name}"
         df = self.read_sql_query(query)
         if df is None:
             return 0
-        return df["NUMBER_OF_ROWS"].values[0]
+        return df["number_of_rows"].values[0]
 
     def upsert_values(
         self, df: pd.DataFrame, primary_key_col: str, **kwargs: Any
