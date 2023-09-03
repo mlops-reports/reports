@@ -6,7 +6,7 @@ import os
 from typing import Any, Dict, List, Optional, Union, Tuple
 import pandas as pd
 import sqlalchemy
-
+import datetime
 
 class DatabaseUtils:
     """
@@ -16,11 +16,18 @@ class DatabaseUtils:
     --------
     >>> dbutils = DatabaseUtils()
     >>> dbutils.connect_database()
-    >>> df = dbutils.pandas_read_sql_table("annotations")
-    >>> df = dbutils.pandas_read_sql_query("select * from annotations")
+    >>> df = dbutils.read_sql_query("select * from annotations")
     """
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        auto_connect: bool = True,
+        db_host: str = os.environ.get("PSQL_DB_HOST", "localhost"),
+        db_port: Union[str, int] = os.environ.get("PSQL_DB_PORT", 5432),
+        db_username: str = os.environ.get("PSQL_DB_USERNAME", ""),
+        db_password: str = os.environ.get("PSQL_DB_PASSWORD", ""),
+        db_name: str = "report_labeling",
+    ) -> None:
         """
         Parameters
         ----------
@@ -40,15 +47,17 @@ class DatabaseUtils:
         default value is set to "report_labeling".
 
         """
-        self.host: str = os.environ.get("PSQL_DB_HOST", "localhost")
-        self.port: Union[str, int] = os.environ.get("PSQL_DB_PORT", 5432)
-        self.username: str = os.environ.get("PSQL_DB_USERNAME", "")
-        self.password: str = os.environ.get("PSQL_DB_PASSWORD", "")
-        # Database name can also be env variable.
-        self.database: str = "report_labeling"
+        self.host: str = db_host
+        self.port: Union[str, int] = db_port
+        self.username: str = db_username
+        self.password: str = db_password
+        self.database: str = db_name
 
         self.engine: Optional[sqlalchemy.engine.Engine]
         self.metadata: Optional[sqlalchemy.MetaData]
+
+        if auto_connect:
+            self.connect_database()
 
     def _build_connection_string(self, database: Optional[str] = None) -> str:
         """Build and store a connection string based on the provided parameters."""
@@ -80,24 +89,53 @@ class DatabaseUtils:
         self.close_connection()
         self.connect_database()
 
-    def pandas_read_sql_table(self, table_name: str) -> Optional[pd.DataFrame]:
-        """Reads the specified table from postgres database."""
+    def read_sql_query(self, sql: str, output_format: str = "dataframe", db_name: str = None) -> Optional[pd.DataFrame]:
+        '''The function `read_sql_query` is used to execute a SQL query on a database and return the result in a
+        specified output format, such as a pandas DataFrame.
+        
+        Parameters
+        ----------
+        sql : str
+            The `sql` parameter is a string that represents the SQL query you want to execute on the
+        database. It can be any valid SQL statement, such as a SELECT, INSERT, UPDATE, or DELETE
+        statement.
+        output_format : str, optional
+            The `output_format` parameter specifies the format in which the query results should be
+        returned. The default value is "dataframe", which means that the query results will be returned
+        as a pandas DataFrame.
+        db_name : str
+            The `db_name` parameter is used to specify the name of the database you want to query. If you
+        provide a value for `db_name`, it will update the `self.database` attribute of the object and
+        refresh the connection to the database using the new database name.
+        
+        Returns
+        -------
+            the output of the database query in the specified format. If the output format is "dataframe",
+        it returns a pandas DataFrame containing the query results. If the output format is not
+        "dataframe", it raises a NotImplementedError.
+        
+        '''
+        
+        if db_name is not None:
+            self.database = db_name
+            self.refresh_connection()
+
         if self.engine is None:
             self.refresh_connection()
             assert self.engine is not None
 
         with self.engine.connect() as connection:
-            try:
-                df = pd.read_sql_table(table_name, connection)
-            except Exception as e:
-                print(e)
-                return None
-        return df
+            result = connection.execute(sqlalchemy.text(sql))
+            data = result.fetchall()
+            output = None
 
-    def pandas_read_sql_query(self, query: str) -> pd.DataFrame:
-        """"""
-        # Same function with pandas_read_sql_table but with sql query directly. Maybe should be handled together?
-        pass
+            if output_format == "dataframe":
+                column_names = result.keys()  # Get column names from the result set
+                output = pd.DataFrame(data, columns=column_names)
+            else:
+                raise NotImplementedError
+
+        return output
 
     def _build_sql_query(
         self,
@@ -147,7 +185,7 @@ class DatabaseUtils:
 
         return query
 
-    def pandas_read_table_in_chunks(
+    def read_table_in_chunks(
         self, table_name: str, chunk_size: int, chunk_idx: int
     ) -> pd.DataFrame:
         """
@@ -165,41 +203,13 @@ class DatabaseUtils:
         """
         limit, offset = chunk_size, chunk_idx * chunk_size
         query = self._build_sql_query(table_name, limit=limit, offset=offset)
-        return self.pandas_read_sql_query(query)
+        return self.read_sql_query(query)
 
     def get_table_size(self, table_name: str) -> int:
         """Returns the number of rows of the specified table."""
         query = f"SELECT COUNT(*) AS NUMBER_OF_ROWS FROM {table_name}"
-        df = self.pandas_read_sql_query(query)
+        df = self.read_sql_query(query)
         return df["NUMBER_OF_ROWS"].values[0]
-
-    def get_select_values(
-        self,
-        query: str,
-        output_format: str = "dataframe",
-    ) -> Union[Dict[Any, Any], pd.DataFrame]:
-        """The function `get_select_values` retrieves data from a PostgreSQL database using a provided SQL
-        query and returns the result in the specified output format.
-
-        Parameters
-        ----------
-        query : str
-            The `sql` parameter is a string that represents the SQL query you want to execute on the database.
-        output_format : str, optional
-            The `output_format` parameter specifies the format in which the query results should be returned.
-        It has a default value of "dataframe", which means that the query results will be returned as a
-        pandas DataFrame object.
-
-        Returns
-        -------
-            The function `get_select_values` returns the output of the `query_db` function, which is a list of
-        tuples.
-
-        """
-        if output_format == "dataframe":
-            return self.pandas_read_sql_query(query)
-        else:
-            raise NotImplementedError
 
     def upsert_values(
         self,
@@ -254,24 +264,13 @@ class DatabaseUtils:
 
         set_values: dict = {}
 
-        # if timestamp_col_name == "Django":
-        #     set_values: dict = {
-        #         "created_at": datetime.datetime.utcnow(),
-        #         "updated_at": datetime.datetime.utcnow(),
-        #     }
+        
+        if timestamp_col_name is None:
+            timestamp_col_name = "last_update"
 
-        #     cols_to_upsert.remove(timestamp_col_name)
-        #     cols_to_upsert.append("updated_at")
-
-        #     select_cols["created_at"] = {"type": "DateTime"}
-        #     select_cols["updated_at"] = {"type": "DateTime"}
-        # else:
-        #     if timestamp_col_name is None:
-        #         timestamp_col_name = "last_update"
-
-        #     set_values: dict = {timestamp_col_name: datetime.datetime.utcnow()}
-        #     cols_to_upsert.append(timestamp_col_name)
-        #     select_cols[timestamp_col_name] = {"type": "DateTime"}
+        set_values: dict = {timestamp_col_name: datetime.datetime.utcnow()}
+        cols_to_upsert.append(timestamp_col_name)
+        select_cols[timestamp_col_name] = {"type": "DateTime"}
 
         col_builders = [
             sqlalchemy.Column(
