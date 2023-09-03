@@ -8,6 +8,8 @@ import pandas as pd
 import sqlalchemy
 import datetime
 
+
+
 class DatabaseUtils:
     """
     Start and manage all Postgresql database connections.
@@ -137,45 +139,46 @@ class DatabaseUtils:
 
         return output
 
-    def _build_sql_query(
+    def _build_sql_query_chunk(
         self,
+        schema_name: str,
         table_name: str,
         columns: Optional[List[str]] = None,
-        where: Optional[Tuple[str, Any]] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
     ) -> str:
-        """
-        Based on the specified parameters, build and return an sql query.
-        Handle where clause, columns and column items here.
-
+        '''The `_build_sql_query_chunk` function builds a SQL query string based on the provided schema
+        name, table name, columns, limit, and offset.
+        
         Parameters
         ----------
-
+        schema_name : str
+            The `schema_name` parameter is a string that represents the name of the database schema where
+        the table is located.
+        table_name : str
+            The `table_name` parameter is a string that represents the name of the table in the database
+        that you want to query.
+        columns : Optional[List[str]]
+            The `columns` parameter is a list of column names that you want to select from the table. If
+        this parameter is provided, the SQL query will include only these columns in the SELECT
+        statement.
+        limit : Optional[int]
+            The `limit` parameter is used to specify the maximum number of rows to be returned in the SQL
+        query result. It restricts the number of rows returned by the query.
+        offset : Optional[int]
+            The `offset` parameter is used to specify the number of rows to skip before starting to return
+        rows from the query result. 
+    
         Returns
         -------
-
-        """
+            a SQL query string.
+        
+        '''
         if columns is not None:
             columns_string = ",".join(columns)
-            query = f"SELECT {columns_string} FROM {table_name}"
+            query = f"SELECT {columns_string} FROM {schema_name}.{table_name}"
         else:
-            query = f"SELECT * FROM {table_name}"
-
-        if where is not None:
-            where_col, where_val = where
-            if isinstance(where_val, int) or isinstance(where_val, float):
-                query += f" WHERE {where_col}={where_val}"
-            elif isinstance(where_val, str):
-                query += f" WHERE {where_col}='{where_val}'"
-            else:
-                raise ValueError("Unsupported where clause value type.")
-
-            # TODO: Add filter_by_column and column items when needed here.
-            # if len(column_items) > 1:
-            #     query += f"AND {column_name} in {tuple(column_items)}"
-            # else:
-            #     query += f"AND {column_name} = '{column_items[0]}'"
+            query = f"SELECT * FROM {schema_name}.{table_name}"
 
         if limit is not None:
             query += f" LIMIT {limit}"
@@ -202,9 +205,9 @@ class DatabaseUtils:
 
         """
         limit, offset = chunk_size, chunk_idx * chunk_size
-        query = self._build_sql_query(table_name, limit=limit, offset=offset)
+        query = self._build_sql_query_chunk(table_name, limit=limit, offset=offset)
         return self.read_sql_query(query)
-
+    
     def get_table_size(self, table_name: str) -> int:
         """Returns the number of rows of the specified table."""
         query = f"SELECT COUNT(*) AS NUMBER_OF_ROWS FROM {table_name}"
@@ -213,100 +216,64 @@ class DatabaseUtils:
 
     def upsert_values(
         self,
-        schema_name: str,
-        table_name: str,
-        select_cols: dict,
-        constraint: str,
-        cols_to_upsert: list[str],
-        values: list[tuple],
-    ) -> Any:
-        """The `upsert_values` function performs an upsert operation (insert or update) on a specified table in
-        a database, using the provided values and constraints.
+        df: pd.DataFrame,
+        primary_key_col: str,
+        **kwargs
+    ) -> bool:
+        # enhance upserting by using only sqlalchemy
+        '''The function `upsert_values` takes a DataFrame, sets the index using a specified primary key
+        column, and inserts the DataFrame into a SQL database table using the specified engine and
+        connection parameters.
+        
+        Parameters
+        ----------
+        df : pd.DataFrame
+            A pandas DataFrame containing the data to be upserted into a database table.
+        primary_key_col : str
+            The `primary_key_col` parameter is the name of the column in the DataFrame that serves as the
+        primary key for the table in the database.
+        
+        Returns
+        -------
+            a boolean value. If the try block is executed successfully, it will return True. If an
+        exception occurs, it will return False.
+        
+        '''
+        try:
+            # set index by the primary key col
+            df["INDEX"] = df[primary_key_col]
+            df.set_index('INDEX')
+
+            df.to_sql(
+                con=self.engine,
+                **kwargs
+            )
+
+            return True
+        except:
+            return False
+
+    @staticmethod
+    def get_sql_tuple(column_items: list[str]) -> str:
+        """The function `get_sql_tuple` takes a list of column items and returns a string representation of a
+        SQL tuple for use in a query.
 
         Parameters
         ----------
-        schema_name : str
-            The `schema_name` parameter is a string that represents the name of the database schema where the
-        table is located.
-        table_name : str
-            The `table_name` parameter is a string that represents the name of the table in the database where
-        the upsert operation will be performed.
-        select_cols : dict
-            The `select_cols` parameter is a dictionary that specifies the columns to be selected from the
-        table.
-        constraint : str
-            The `constraint` parameter is a string that specifies the conflict resolution constraint for the
-        upsert operation. It is used to determine which columns or combination of columns should be used to
-        identify conflicts and update existing rows instead of inserting new ones.
-        cols_to_upsert : list[str]
-            The `cols_to_upsert` parameter is a list of column names that should be updated if a conflict
-        occurs during the upsert operation. These columns will be included in the `set_` clause of the
-        `on_conflict_do_update` method.
-        values : list[tuple]
-            The `values` parameter is a list of tuples representing the values to be upserted into the table.
-        Each tuple should contain the values for each column in the order specified by the `select_cols`
-        parameter.
-        timestamp_col_name : str
-            The `timestamp_col_name` parameter is used to specify the name of the column that stores the
-        timestamp or last update time in the database table.
-        db_engine : db.Engine
-            The `db_engine` parameter is used to specify the db connection
+        column_items : list[str]
+            A list of strings representing the items in a column.
 
         Returns
         -------
-            the response from executing the query on the database engine.
+            a string that represents a SQL tuple.
 
         """
-        if self.metadata is None or self.engine is None:
-            self.refresh_connection()
-            assert self.metadata is not None
-            assert self.engine is not None
+        if len(column_items) > 1:
+            sql_tuple = f"in {tuple(column_items)}"
+        else:
+            sql_tuple = f"= '{column_items[0]}'"
 
-        set_values: dict = {}
-
-        
-        if timestamp_col_name is None:
-            timestamp_col_name = "last_update"
-
-        set_values: dict = {timestamp_col_name: datetime.datetime.utcnow()}
-        cols_to_upsert.append(timestamp_col_name)
-        select_cols[timestamp_col_name] = {"type": "DateTime"}
-
-        col_builders = [
-            sqlalchemy.Column(
-                col_name,
-                getattr(sqlalchemy, col_data["type"]),
-                primary_key=col_data.get("primary_key", False),
-            )
-            for col_name, col_data in select_cols.items()
-        ]
-
-        table = sqlalchemy.Table(
-            table_name,
-            self.metadata,
-            *col_builders,
-            schema=schema_name,
-        )
-
-        query = sqlalchemy.dialects.postgresql.insert(table).values(values)
-
-        for col in cols_to_upsert:
-            set_values[col] = getattr(query.excluded, col)
-
-        query = query.on_conflict_do_update(constraint=constraint, set_=set_values)
-
-        with self.engine.connect() as conn:
-            try:
-                conn.execute(query)
-                conn.commit()
-                is_success = True
-            except Exception as e:
-                print("Data write failed, rolling back...")
-                print(f"Exception: {e}")
-                conn.rollback()
-                is_success = False
-
-        return is_success
+        return sql_tuple
 
     @staticmethod
     def convert_to_chunks(iterable: List[Any], chunk_size: int) -> list:
@@ -357,3 +324,5 @@ class DatabaseUtils:
             raise ValueError("Column value is not Unique!")
 
         return list(df[col_name].unique())[0]
+    
+
