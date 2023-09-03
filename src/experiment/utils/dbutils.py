@@ -200,7 +200,8 @@ class DatabaseUtils:
 
         return query
 
-    def read_table(self, table_name: str) -> Optional[pd.DataFrame]:
+    def read_sql_table(self, table_name: str) -> Optional[pd.DataFrame]:
+        """Wrapper function that prepares a query and reads all data in specified table."""
         query = self._build_sql_query_chunk(table_name)
         return self.read_sql_query(query)
 
