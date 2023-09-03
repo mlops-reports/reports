@@ -3,11 +3,9 @@
 __author__ = "Göktuğ Aşcı"
 
 import os
-from typing import Any, Dict, List, Optional, Union, Tuple
+from typing import Any, List, Optional, Union
 import pandas as pd
 import sqlalchemy
-import datetime
-
 
 
 class DatabaseUtils:
@@ -91,10 +89,12 @@ class DatabaseUtils:
         self.close_connection()
         self.connect_database()
 
-    def read_sql_query(self, sql: str, output_format: str = "dataframe", db_name: str = None) -> Optional[pd.DataFrame]:
-        '''The function `read_sql_query` is used to execute a SQL query on a database and return the result in a
+    def read_sql_query(
+        self, sql: str, output_format: str = "dataframe", db_name: Optional[str] = None
+    ) -> Optional[pd.DataFrame]:
+        """The function `read_sql_query` is used to execute a SQL query on a database and return the result in a
         specified output format, such as a pandas DataFrame.
-        
+
         Parameters
         ----------
         sql : str
@@ -109,15 +109,15 @@ class DatabaseUtils:
             The `db_name` parameter is used to specify the name of the database you want to query. If you
         provide a value for `db_name`, it will update the `self.database` attribute of the object and
         refresh the connection to the database using the new database name.
-        
+
         Returns
         -------
             the output of the database query in the specified format. If the output format is "dataframe",
         it returns a pandas DataFrame containing the query results. If the output format is not
         "dataframe", it raises a NotImplementedError.
-        
-        '''
-        
+
+        """
+
         if db_name is not None:
             self.database = db_name
             self.refresh_connection()
@@ -141,15 +141,15 @@ class DatabaseUtils:
 
     def _build_sql_query_chunk(
         self,
-        schema_name: str,
         table_name: str,
+        schema_name: str = "dbo",
         columns: Optional[List[str]] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
     ) -> str:
-        '''The `_build_sql_query_chunk` function builds a SQL query string based on the provided schema
+        """The `_build_sql_query_chunk` function builds a SQL query string based on the provided schema
         name, table name, columns, limit, and offset.
-        
+
         Parameters
         ----------
         schema_name : str
@@ -167,13 +167,13 @@ class DatabaseUtils:
         query result. It restricts the number of rows returned by the query.
         offset : Optional[int]
             The `offset` parameter is used to specify the number of rows to skip before starting to return
-        rows from the query result. 
-    
+        rows from the query result.
+
         Returns
         -------
             a SQL query string.
-        
-        '''
+
+        """
         if columns is not None:
             columns_string = ",".join(columns)
             query = f"SELECT {columns_string} FROM {schema_name}.{table_name}"
@@ -207,24 +207,23 @@ class DatabaseUtils:
         limit, offset = chunk_size, chunk_idx * chunk_size
         query = self._build_sql_query_chunk(table_name, limit=limit, offset=offset)
         return self.read_sql_query(query)
-    
+
     def get_table_size(self, table_name: str) -> int:
         """Returns the number of rows of the specified table."""
         query = f"SELECT COUNT(*) AS NUMBER_OF_ROWS FROM {table_name}"
         df = self.read_sql_query(query)
+        if df is None:
+            return 0
         return df["NUMBER_OF_ROWS"].values[0]
 
     def upsert_values(
-        self,
-        df: pd.DataFrame,
-        primary_key_col: str,
-        **kwargs
+        self, df: pd.DataFrame, primary_key_col: str, **kwargs: Any
     ) -> bool:
         # enhance upserting by using only sqlalchemy
-        '''The function `upsert_values` takes a DataFrame, sets the index using a specified primary key
+        """The function `upsert_values` takes a DataFrame, sets the index using a specified primary key
         column, and inserts the DataFrame into a SQL database table using the specified engine and
         connection parameters.
-        
+
         Parameters
         ----------
         df : pd.DataFrame
@@ -232,25 +231,23 @@ class DatabaseUtils:
         primary_key_col : str
             The `primary_key_col` parameter is the name of the column in the DataFrame that serves as the
         primary key for the table in the database.
-        
+
         Returns
         -------
             a boolean value. If the try block is executed successfully, it will return True. If an
         exception occurs, it will return False.
-        
-        '''
-        try:
-            # set index by the primary key col
-            df["INDEX"] = df[primary_key_col]
-            df.set_index('INDEX')
 
-            df.to_sql(
-                con=self.engine,
-                **kwargs
-            )
+        """
+        try:
+            # set index by the primary key col
+            df["INDEX"] = df[primary_key_col]
+            df.set_index("INDEX")
+
+            df.to_sql(con=self.engine, **kwargs)
 
             return True
-        except:
+        except Exception as e:
+            print(e)
             return False
 
     @staticmethod
@@ -324,5 +321,3 @@ class DatabaseUtils:
             raise ValueError("Column value is not Unique!")
 
         return list(df[col_name].unique())[0]
-    
-
