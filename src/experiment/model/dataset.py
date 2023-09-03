@@ -13,7 +13,6 @@ from experiment.utils.dbutils import DatabaseUtils
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ROOT_PATH = os.path.dirname(__file__)
-DATA_PATH = os.path.join(ROOT_PATH, "..", "data", "output")
 
 # You can use such a random seed 35813 (part of the Fibonacci Sequence).
 np.random.seed(35813)
@@ -35,7 +34,7 @@ class BaseDataset(Dataset):
 
     def __init__(
         self,
-        path_to_data: str,
+        database_table_name: str,
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
@@ -67,11 +66,10 @@ class BaseDataset(Dataset):
         self.mode = mode
         self.n_folds = n_folds
         self.in_memory = in_memory
-        self.path_to_data = path_to_data
+        self.database_table_name = database_table_name
         self.current_fold = current_fold
         self.batch_size = batch_size
 
-        self.database_table_name = "annotations"
         self.dbutils = DatabaseUtils()
         self.dbutils.connect_database()
 
@@ -251,9 +249,9 @@ class ReportDataset(BaseDataset):
         current_fold: int = 0,
         in_memory: bool = False,
     ):
-        data_path = os.path.join(DATA_PATH, "clean_annotations.csv")
+        data_table_name = "reports"
         super().__init__(
-            data_path,
+            data_table_name,
             mode,
             n_folds,
             current_fold,
