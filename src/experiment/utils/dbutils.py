@@ -251,7 +251,7 @@ class DatabaseUtils:
             return False
 
     @staticmethod
-    def get_sql_tuple(column_items: list[str]) -> str:
+    def get_sql_tuple(column_items: List[str]) -> str:
         """The function `get_sql_tuple` takes a list of column items and returns a string representation of a
         SQL tuple for use in a query.
 
