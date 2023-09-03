@@ -2,7 +2,6 @@ import os
 from typing import Tuple, List, Optional
 import torch
 import numpy as np
-import pandas as pd
 from torch.utils.data import Dataset
 from torch import Tensor
 from sklearn.model_selection import KFold
@@ -153,7 +152,12 @@ class BaseDataset(Dataset):
         labels: numpy ndarray
             An array stores the labels for each sample.
         """
-        return pd.read_csv(self.path_to_data)["classifications"].values
+        df = self.dbutils.read_sql_table(
+            self.database_table_name, columns=["classifications"]
+        )
+        if df is None:
+            raise DataError("Data couldnt be retrieved from database.")
+        return df[["classifications"]].values
 
     def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
         """
@@ -196,10 +200,12 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        df = self.dbutils.read_sql_table(self.database_table_name)
+        df = self.dbutils.read_sql_table(
+            self.database_table_name, columns=["full_text"]
+        )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[["full_text", "classifications"]].values
+        return df[["full_text"]].values
 
     def get_fold_indices(
         self, all_data_size: int, n_folds: int, fold_id: int = 0

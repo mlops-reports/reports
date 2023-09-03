@@ -200,9 +200,13 @@ class DatabaseUtils:
 
         return query
 
-    def read_sql_table(self, table_name: str) -> Optional[pd.DataFrame]:
-        """Wrapper function that prepares a query and reads all data in specified table."""
-        query = self._build_sql_query_chunk(table_name)
+    def read_sql_table(
+        self,
+        table_name: str,
+        columns: Optional[List[str]] = None,
+    ) -> Optional[pd.DataFrame]:
+        """Wrapper function that prepares a query and reads data columns in specified table."""
+        query = self._build_sql_query_chunk(table_name, columns=columns)
         return self.read_sql_query(query)
 
     def read_table_in_chunks(
