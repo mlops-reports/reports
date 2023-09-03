@@ -173,9 +173,11 @@ class BaseDataset(Dataset):
         tensor: torch Tensor
             A torch tensor represents the data for the sample.
         """
-        sample_data_batch = self.dbutils.pandas_read_table_in_chunks(
+        sample_data_batch = self.dbutils.read_table_in_chunks(
             self.database_table_name, self.batch_size, index
         )
+        if sample_data_batch is None:
+            raise DataError("SQL returned None instead of a dataframe.")
         sample_data = self.preprocess(sample_data_batch["full_text"])
         sample_data = torch.from_numpy(sample_data).float().to(device)
         sample_label = torch.from_numpy(sample_data_batch["classifications"].values).to(
@@ -196,7 +198,7 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        df = self.dbutils.pandas_read_sql_table(self.database_table_name)
+        df = self.dbutils.read_sql_table(self.database_table_name)
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
         return df[["full_text", "classifications"]].values
