@@ -8,6 +8,10 @@ import pandas as pd
 import sqlalchemy
 
 
+class QueryError(Exception):
+    pass
+
+
 class DatabaseUtils:
     """
     Start and manage all Postgresql database connections.
@@ -99,8 +103,7 @@ class DatabaseUtils:
         ----------
         sql : str
             The `sql` parameter is a string that represents the SQL query you want to execute on the
-        database. It can be any valid SQL statement, such as a SELECT, INSERT, UPDATE, or DELETE
-        statement.
+        database. It can be only valid SELECT SQL statement.
         output_format : str, optional
             The `output_format` parameter specifies the format in which the query results should be
         returned. The default value is "dataframe", which means that the query results will be returned
@@ -126,9 +129,18 @@ class DatabaseUtils:
             self.refresh_connection()
             assert self.engine is not None
 
+        if not sql.lower().startswith("select"):
+            raise QueryError(
+                "An SQL write statement passed to the read operation function."
+            )
+
         with self.engine.connect() as connection:
-            result = connection.execute(sqlalchemy.text(sql))
-            data = result.fetchall()
+            try:
+                result = connection.execute(sqlalchemy.text(sql))
+                data = result.fetchall()
+            except Exception as e:
+                print("Data read operation failed.")
+                print(e)
             output = None
 
             if output_format == "dataframe":
@@ -188,9 +200,13 @@ class DatabaseUtils:
 
         return query
 
+    def read_table(self, table_name: str) -> Optional[pd.DataFrame]:
+        query = self._build_sql_query_chunk(table_name)
+        return self.read_sql_query(query)
+
     def read_table_in_chunks(
         self, table_name: str, chunk_size: int, chunk_idx: int
-    ) -> pd.DataFrame:
+    ) -> Optional[pd.DataFrame]:
         """
         Lazy load for the database read operation.
 
@@ -238,17 +254,23 @@ class DatabaseUtils:
         exception occurs, it will return False.
 
         """
-        try:
-            # set index by the primary key col
-            df["INDEX"] = df[primary_key_col]
-            df.set_index("INDEX")
+        # set index by the primary key col
+        df["INDEX"] = df[primary_key_col]
+        df.set_index("INDEX")
 
-            df.to_sql(con=self.engine, **kwargs)
+        if self.engine is None:
+            self.refresh_connection()
+            assert self.engine is not None
 
-            return True
-        except Exception as e:
-            print(e)
-            return False
+        with self.engine.connect() as conn:
+            try:
+                df.to_sql(con=conn, **kwargs)
+                return True
+            except Exception as e:
+                print("Data write failed, rolling back...")
+                print(f"Exception: {e}")
+                conn.rollback()
+                return False
 
     @staticmethod
     def get_sql_tuple(column_items: List[str]) -> str:
