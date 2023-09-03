@@ -2,20 +2,23 @@ import os
 from typing import Tuple, List, Optional
 import torch
 import numpy as np
-import pandas as pd
 from torch.utils.data import Dataset
 from torch import Tensor
 from sklearn.model_selection import KFold
 from transformers import AutoTokenizer
 from transformers import DataCollatorWithPadding
+from experiment.utils.dbutils import DatabaseUtils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ROOT_PATH = os.path.dirname(__file__)
-DATA_PATH = os.path.join(ROOT_PATH, "..", "data", "output")
 
 # You can use such a random seed 35813 (part of the Fibonacci Sequence).
 np.random.seed(35813)
+
+
+class DataError(Exception):
+    pass
 
 
 def batch_collate_fn(batch_data: List[Tensor]) -> Tensor:
@@ -30,10 +33,12 @@ class BaseDataset(Dataset):
 
     def __init__(
         self,
-        path_to_data: str,
+        database_table_name: str,
+        database_schema_name: str = "dbo",
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
+        batch_size: int = 0,
         in_memory: bool = False,
     ):
         """
@@ -61,8 +66,13 @@ class BaseDataset(Dataset):
         self.mode = mode
         self.n_folds = n_folds
         self.in_memory = in_memory
-        self.path_to_data = path_to_data
+        self.database_table_name = database_table_name
+        self.database_schema_name = database_schema_name
         self.current_fold = current_fold
+        self.batch_size = batch_size
+
+        self.dbutils = DatabaseUtils()
+        self.dbutils.connect_database("report_labeling")
 
         self.n_samples_total = self.get_number_of_samples()
 
@@ -133,9 +143,10 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        with open(self.path_to_data) as fp:
-            n_lines = len(fp.readlines())
-        return n_lines - 1
+        return self.dbutils.get_table_size(
+            self.database_table_name,
+            self.database_schema_name,
+        )
 
     def get_labels(self) -> np.ndarray:
         """
@@ -146,7 +157,14 @@ class BaseDataset(Dataset):
         labels: numpy ndarray
             An array stores the labels for each sample.
         """
-        return pd.read_csv(self.path_to_data)["classifications"].values
+        df = self.dbutils.read_sql_table(
+            self.database_table_name,
+            self.database_schema_name,
+            columns=["annotation_value_flag"],
+        )
+        if df is None:
+            raise DataError("Data couldnt be retrieved from database.")
+        return df[["annotation_value_flag"]].values
 
     def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
         """
@@ -164,18 +182,19 @@ class BaseDataset(Dataset):
         tensor: torch Tensor
             A torch tensor represents the data for the sample.
         """
-
-        def skip_unselected(row_idx: int) -> bool:
-            if row_idx == 0:
-                return False
-            return row_idx != (self.selected_indices[index] + 1)
-
-        sample_data_row = pd.read_csv(self.path_to_data, skiprows=skip_unselected)
-        sample_data = self.preprocess(sample_data_row["full_text"])
-        sample_data = torch.from_numpy(sample_data).float().to(device)
-        sample_label = torch.from_numpy(sample_data_row["classifications"].values).to(
-            device
+        sample_data_batch = self.dbutils.read_table_in_chunks(
+            self.database_table_name,
+            self.batch_size,
+            index,
+            self.database_schema_name,
         )
+        if sample_data_batch is None:
+            raise DataError("SQL returned None instead of a dataframe.")
+        sample_data = self.preprocess(sample_data_batch["full_text"])
+        sample_data = torch.from_numpy(sample_data).float().to(device)
+        sample_label = torch.from_numpy(
+            sample_data_batch["annotation_value_flag"].values
+        ).to(device)
         return sample_data, sample_label
 
     def preprocess(self, data: np.ndarray) -> Tensor:
@@ -191,7 +210,12 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        return pd.read_csv(self.path_to_data)[["full_text", "classifications"]].values
+        df = self.dbutils.read_sql_table(
+            self.database_table_name, self.database_schema_name, columns=["full_text"]
+        )
+        if df is None:
+            raise DataError("Data couldnt be retrieved from database.")
+        return df[["full_text"]].values
 
     def get_fold_indices(
         self, all_data_size: int, n_folds: int, fold_id: int = 0
@@ -239,14 +263,18 @@ class ReportDataset(BaseDataset):
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
+        batch_size: int = 0,
         in_memory: bool = False,
     ):
-        data_path = os.path.join(DATA_PATH, "clean_annotations.csv")
+        data_table_name = "choices"
+        data_schema_name = "annotation"
         super().__init__(
-            data_path,
+            data_table_name,
+            data_schema_name,
             mode,
             n_folds,
             current_fold,
+            batch_size,
             in_memory,
         )
         self.tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
