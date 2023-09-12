@@ -10,7 +10,7 @@ from torch.nn import CrossEntropyLoss
 from torch.nn.modules.loss import _Loss
 from transformers import AutoModelForSequenceClassification
 from experiment.model.dataset import ReportDataset, batch_collate_fn
-from experiment.model.utils import EarlyStopping
+from experiment.model.early_stopping import EarlyStopping
 
 from torch.backends import cudnn
 
