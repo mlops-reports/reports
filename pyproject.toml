@@ -25,6 +25,7 @@ awscli = "^1.29.37"
 setuptools = "^68.1.2"
 dbt-postgres = "1.6.1"
 ipywidgets = "^8.1.0"
+openai = "^0.28.0"
 
 
 [tool.poetry.group.dev.dependencies]

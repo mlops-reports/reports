@@ -6,6 +6,12 @@ import os
 from typing import Any, List, Optional, Union
 import pandas as pd
 import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.dialects.postgresql import insert
+
+# from experiment.utils.tables.reports_raw import ReportsRaw
+
+
 
 
 class QueryError(Exception):
@@ -59,6 +65,7 @@ class DatabaseUtils:
 
         self.engine: Optional[sqlalchemy.engine.Engine]
         self.metadata: Optional[sqlalchemy.MetaData]
+        self.session: Optional[sqlalchemy.orm.Engine]
 
         if auto_connect:
             self.connect_database()
@@ -77,6 +84,7 @@ class DatabaseUtils:
 
         self.connection_string = self._build_connection_string()
         self.engine = sqlalchemy.create_engine(self.connection_string)
+        self.session = sessionmaker(bind=self.engine)()
         self.metadata = sqlalchemy.MetaData()
         self.metadata.reflect(bind=self.engine)
 
@@ -243,45 +251,42 @@ class DatabaseUtils:
             return 0
         return df["number_of_rows"].values[0]
 
-    def upsert_values(
-        self, df: pd.DataFrame, primary_key_col: str, **kwargs: Any
-    ) -> bool:
-        # enhance upserting by using only sqlalchemy
-        """The function `upsert_values` takes a DataFrame, sets the index using a specified primary key
-        column, and inserts the DataFrame into a SQL database table using the specified engine and
-        connection parameters.
-
+    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list) -> bool:
+        '''The `upsert_values` function inserts or updates data in a table based on specified columns to
+        upsert.
+        
         Parameters
         ----------
-        df : pd.DataFrame
-            A pandas DataFrame containing the data to be upserted into a database table.
-        primary_key_col : str
-            The `primary_key_col` parameter is the name of the column in the DataFrame that serves as the
-        primary key for the table in the database.
+        table_metadata : object
+            The `table_metadata` parameter is an object that represents the metadata of the table where the
+        data will be inserted or updated.
+        data_to_insert : dict
+            The `data_to_insert` parameter is a dictionary that contains the values to be inserted into the
+        table. The keys of the dictionary represent the column names, and the values represent the
+        corresponding values to be inserted.
+        cols_to_upsert : list
+            cols_to_upsert is a list of column names that should be updated if a conflict occurs during the
+        upsert operation.
+        
+        '''
+        
+        set_values: dict = {}
+        
+        stmt = insert(table_metadata).values(data_to_insert)
+    
+        for col in cols_to_upsert:
+            set_values[col] = getattr(stmt.excluded, col)
 
-        Returns
-        -------
-            a boolean value. If the try block is executed successfully, it will return True. If an
-        exception occurs, it will return False.
+        # Specify the conflict resolution
+        stmt = stmt.on_conflict_do_update(
+            index_elements=["id"], set_=set_values
+        )
 
-        """
-        # set index by the primary key col
-        df["INDEX"] = df[primary_key_col]
-        df.set_index("INDEX")
+        # Execute the upsert statement
+        self.session.execute(stmt)
 
-        if self.engine is None:
-            self.refresh_connection()
-            assert self.engine is not None
-
-        with self.engine.connect() as conn:
-            try:
-                df.to_sql(con=conn, **kwargs)
-                return True
-            except Exception as e:
-                print("Data write failed, rolling back...")
-                print(f"Exception: {e}")
-                conn.rollback()
-                return False
+        # Commit the transaction
+        self.session.commit()
 
     @staticmethod
     def get_sql_tuple(column_items: List[str]) -> str:
