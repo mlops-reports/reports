@@ -251,7 +251,7 @@ class DatabaseUtils:
             return 0
         return df["number_of_rows"].values[0]
 
-    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list) -> bool:
+    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list) -> None:
         '''The `upsert_values` function inserts or updates data in a table based on specified columns to
         upsert.
         
