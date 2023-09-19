@@ -8,7 +8,7 @@ def UploadTasksTable():
     class UploadTasksTable(Base):
         __tablename__ = "upload_tasks"
 
-        id = Column(Integer, primary_key=True)
+        report_id = Column(Integer, primary_key=True)
         patient_no = Column(String)
         full_name = Column(String)
         report_original = Column(String)

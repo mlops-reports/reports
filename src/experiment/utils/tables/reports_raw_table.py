@@ -8,7 +8,7 @@ def ReportsRawTable():
     class ReportsRawTable(Base):
         __tablename__ = 'reports'
 
-        id = Column(Integer, primary_key=True)
+        report_id = Column(Integer, primary_key=True)
         patient_no = Column(String)
         full_name = Column(String)
         report_original = Column(String)

@@ -250,9 +250,9 @@ class DatabaseUtils:
             return 0
         return df["number_of_rows"].values[0]
 
-    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list) -> None:
-        '''The `upsert_values` function inserts or updates data in a table based on specified columns to
-        upsert.
+    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list, unique_cols: str = ["id"]) -> None:
+        '''The `upsert_values` function performs an upsert operation on a database table using SQLAlchemy,
+        where it inserts new data or updates existing data based on specified columns.
         
         Parameters
         ----------
@@ -260,12 +260,16 @@ class DatabaseUtils:
             The `table_metadata` parameter is an object that represents the metadata of the table where the
         data will be inserted or updated.
         data_to_insert : dict
-            The `data_to_insert` parameter is a dictionary that contains the values to be inserted into the
-        table. The keys of the dictionary represent the column names, and the values represent the
-        corresponding values to be inserted.
+            The `data_to_insert` parameter is a dictionary that contains the data to be inserted or updated
+        in the table. The keys of the dictionary represent the column names, and the values represent
+        the corresponding values to be inserted or updated.
         cols_to_upsert : list
-            cols_to_upsert is a list of column names that should be updated if a conflict occurs during the
-        upsert operation.
+            The `cols_to_upsert` parameter is a list of column names that you want to update if a conflict
+        occurs during the upsert operation. These columns will be updated with the values from the
+        `data_to_insert` dictionary.
+        unique_cols : str
+            The `unique_cols` parameter is a list of column names that are used to determine uniqueness in
+        the table. These columns are used to identify if a row already exists in the table or not.
         
         '''
         
@@ -278,7 +282,7 @@ class DatabaseUtils:
 
         # Specify the conflict resolution
         stmt = stmt.on_conflict_do_update(
-            index_elements=["id"], set_=set_values
+            index_elements=unique_cols, set_=set_values
         )
 
         # Execute the upsert statement
