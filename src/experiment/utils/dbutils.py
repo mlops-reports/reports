@@ -4,13 +4,12 @@ __author__ = "Göktuğ Aşcı"
 
 import os
 from typing import Any, List, Optional, Union
+
 import pandas as pd
+
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert
-
-# from experiment.utils.tables.reports_raw import ReportsRaw
-
 
 
 
@@ -137,7 +136,7 @@ class DatabaseUtils:
             self.refresh_connection()
             assert self.engine is not None
 
-        if not sql.lower().startswith("select"):
+        if not sql.lower().strip().startswith("select"):
             raise QueryError(
                 "An SQL write statement passed to the read operation function."
             )
