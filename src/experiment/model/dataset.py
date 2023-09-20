@@ -33,8 +33,7 @@ class BaseDataset(Dataset):
 
     def __init__(
         self,
-        database_table_name: str,
-        database_schema_name: str = "dbo",
+        sql_query: str,
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
@@ -46,8 +45,8 @@ class BaseDataset(Dataset):
 
         Parameters
         ----------
-        path_to_data: string
-            Path where the expected data is stored.
+        sql_query: string
+            SQL query to data
         mode: string
             Which split to return, can be 'train', 'validation', 'test', or 'inference'.
             Use 'inference' to load all data if you have a pretrained model and want to use
@@ -66,8 +65,7 @@ class BaseDataset(Dataset):
         self.mode = mode
         self.n_folds = n_folds
         self.in_memory = in_memory
-        self.database_table_name = database_table_name
-        self.database_schema_name = database_schema_name
+        self.sql_query = sql_query
         self.current_fold = current_fold
         self.batch_size = batch_size
 
@@ -144,11 +142,10 @@ class BaseDataset(Dataset):
         E.g., number of images in the target folder, number of rows in dataframe.
         """
         return self.dbutils.get_table_size(
-            self.database_table_name,
-            self.database_schema_name,
+            self.sql_query
         )
 
-    def get_labels(self) -> np.ndarray:
+    def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
         Method to read and store labels in a numpy array
 
@@ -158,13 +155,11 @@ class BaseDataset(Dataset):
             An array stores the labels for each sample.
         """
         df = self.dbutils.read_sql_table(
-            self.database_table_name,
-            self.database_schema_name,
-            columns=["annotation_value_flag"],
+            self.sql_query,
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[["annotation_value_flag"]].values
+        return df[[label_flag]].values
 
     def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
         """
@@ -211,7 +206,7 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.read_sql_table(
-            self.database_table_name, self.database_schema_name, columns=["full_text"]
+            self.sql_query
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
@@ -266,11 +261,11 @@ class ReportDataset(BaseDataset):
         batch_size: int = 0,
         in_memory: bool = False,
     ):
-        data_table_name = "choices"
-        data_schema_name = "annotation"
+        sql_query = """ SELECT * FROM annotation.choices """
+        
+
         super().__init__(
-            data_table_name,
-            data_schema_name,
+            sql_query,
             mode,
             n_folds,
             current_fold,
