@@ -26,39 +26,39 @@ def get_project_root() -> pathlib.Path:
 
 
 def hash_value(text: str) -> str:
-    '''The function `hash_value` takes a string as input, encrypts it using a secret key, and returns the
+    """The function `hash_value` takes a string as input, encrypts it using a secret key, and returns the
     encrypted value as a string.
-    
+
     Parameters
     ----------
     text : str
       The `text` parameter is a string that represents the text that you want to hash.
-    
+
     Returns
     -------
       a hashed value of the input text.
-    
-    '''
+
+    """
     secret_key = os.getenv("FERNET_KEY")
     cipher_suite = Fernet(secret_key)
     return cipher_suite.encrypt(text.encode("utf-8")).decode("utf-8")
 
 
 def unhash_value(hashed_text: str) -> str:
-    '''The function `unhash_value` takes a hashed text as input, decrypts it using a secret key, and
+    """The function `unhash_value` takes a hashed text as input, decrypts it using a secret key, and
     returns the original text.
-    
+
     Parameters
     ----------
     hashed_text : str
       The `hashed_text` parameter is a string that represents the encrypted value that needs to be
     decrypted.
-    
+
     Returns
     -------
       the decrypted value of the hashed text.
-    
-    '''
+
+    """
     secret_key = os.getenv("FERNET_KEY")
     cipher_suite = Fernet(secret_key)
     return cipher_suite.decrypt(hashed_text.encode("utf-8")).decode("utf-8")
@@ -87,42 +87,6 @@ def find_and_replace_exact_word(input_word, replacements):
     return input_word
 
 
-def sentence_cleaning_pipeline(sentences):
-    """
-    1. Remove punctuation
-    2. Only lower letters
-    3. skip_pre_lemmatasation
-    4. Lemmatize
-    5. Remove stop words
-    6. fix_post_lemmatasation
-    """
-    # tokenizer without punctuation
-    regexp_tokenizer = nltk.tokenize.RegexpTokenizer(r"\w+")
-
-    # get Turkish stopwords
-    nltk.download("stopwords", quiet=True)
-    turkish_stopwords = nltk.corpus.stopwords.words("turkish")
-
-    # word corrections
-    with open(
-        get_project_root() / "data" / "input" / "manuel_corrections.json", "r"
-    ) as file:
-        manuel_corrections = json.load(file)
-
-    return [
-        " ".join(
-            find_and_replace_exact_word(
-                simplemma.lemmatize(word, lang="tr").lower(),
-                manuel_corrections["fix_post_lemmatasation"],
-            )
-            for word in regexp_tokenizer.tokenize(sentence)
-            if word
-            not in turkish_stopwords + manuel_corrections["skip_pre_lemmatasation"]
-        )
-        for sentence in sentences
-    ]
-
-
 def find_longest_sentence_length(sentences):
     """The function `find_longest_sentence_length` takes a list of sentences as input and returns the
     length of the longest sentence in terms of the number of words.
@@ -139,28 +103,6 @@ def find_longest_sentence_length(sentences):
     """
     longest_length = max(len(sentence.split()) for sentence in sentences)
     return longest_length
-
-
-def plot_graphs(history, string):
-    """The function `plot_graphs` plots the training and validation values of a given metric over epochs.
-
-    Parameters
-    ----------
-    history
-      The "history" parameter is the history object returned by the fit() method of a Keras model. It
-    contains the training and validation metrics for each epoch.
-    string
-      The "string" parameter is a string that represents the name of the metric or loss function that you
-    want to plot. For example, if you want to plot the accuracy, you would pass "accuracy" as the value
-    for the "string" parameter.
-
-    """
-    plt.plot(history.history[string])
-    plt.plot(history.history["val_" + string])
-    plt.xlabel("Epochs")
-    plt.ylabel(string)
-    plt.legend([string, "val_" + string])
-    plt.show()
 
 
 def pattern_find_and_remove(text: str, pattern: str) -> tuple[str]:
@@ -300,3 +242,39 @@ def prepare_data_transformations(text) -> tuple[str]:
     rapor_tarihi, text = pattern_find_and_remove(text, rapor_tarihi_pattern)
 
     return text.strip(), rapor_tarihi, film_no
+
+
+# def sentence_cleaning_pipeline(sentences):
+#     """
+#     1. Remove punctuation
+#     2. Only lower letters
+#     3. skip_pre_lemmatasation
+#     4. Lemmatize
+#     5. Remove stop words
+#     6. fix_post_lemmatasation
+#     """
+#     # tokenizer without punctuation
+#     regexp_tokenizer = nltk.tokenize.RegexpTokenizer(r"\w+")
+
+#     # get Turkish stopwords
+#     nltk.download("stopwords", quiet=True)
+#     turkish_stopwords = nltk.corpus.stopwords.words("turkish")
+
+#     # word corrections
+#     with open(
+#         get_project_root() / "data" / "input" / "manuel_corrections.json", "r"
+#     ) as file:
+#         manuel_corrections = json.load(file)
+
+#     return [
+#         " ".join(
+#             find_and_replace_exact_word(
+#                 simplemma.lemmatize(word, lang="tr").lower(),
+#                 manuel_corrections["fix_post_lemmatasation"],
+#             )
+#             for word in regexp_tokenizer.tokenize(sentence)
+#             if word
+#             not in turkish_stopwords + manuel_corrections["skip_pre_lemmatasation"]
+#         )
+#         for sentence in sentences
+#     ]
