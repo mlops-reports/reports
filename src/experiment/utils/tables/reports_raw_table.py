@@ -12,6 +12,5 @@ def ReportsRawTable():
         patient_no = Column(String)
         full_name = Column(String)
         report_original = Column(String)
-        report_english = Column(String, default=None)
 
     return ReportsRawTable, Base
