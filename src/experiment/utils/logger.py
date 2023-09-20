@@ -23,6 +23,7 @@ class Logger:
 
         if output_path:
             self.output_to_file(output_path)
+            
 
     def output_to_file(self, output_path: str):
         """The function `output_to_file` adds a file handler to the logger to log messages to a specified

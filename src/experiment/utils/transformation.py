@@ -4,6 +4,7 @@ import simplemma
 # import pandas as pd
 import pathlib
 import json
+from cryptography.fernet import Fernet
 
 # import numpy as np
 import os
@@ -22,6 +23,45 @@ def get_project_root() -> pathlib.Path:
 
     """
     return pathlib.Path(os.getenv("MLFLOW_PROJECT_ROOT", None))
+
+
+def hash_value(text: str) -> str:
+    '''The function `hash_value` takes a string as input, encrypts it using a secret key, and returns the
+    encrypted value as a string.
+    
+    Parameters
+    ----------
+    text : str
+      The `text` parameter is a string that represents the text that you want to hash.
+    
+    Returns
+    -------
+      a hashed value of the input text.
+    
+    '''
+    secret_key = os.getenv("FERNET_KEY")
+    cipher_suite = Fernet(secret_key)
+    return cipher_suite.encrypt(text.encode("utf-8")).decode("utf-8")
+
+
+def unhash_value(hashed_text: str) -> str:
+    '''The function `unhash_value` takes a hashed text as input, decrypts it using a secret key, and
+    returns the original text.
+    
+    Parameters
+    ----------
+    hashed_text : str
+      The `hashed_text` parameter is a string that represents the encrypted value that needs to be
+    decrypted.
+    
+    Returns
+    -------
+      the decrypted value of the hashed text.
+    
+    '''
+    secret_key = os.getenv("FERNET_KEY")
+    cipher_suite = Fernet(secret_key)
+    return cipher_suite.decrypt(hashed_text.encode("utf-8")).decode("utf-8")
 
 
 def find_and_replace_exact_word(input_word, replacements):
@@ -182,20 +222,20 @@ def replace_patterns_from_text(
 
 
 def translate_report(report: str) -> str:
-    '''The `translate_report` function uses OpenAI's GPT-3.5-turbo model to translate a given report from
+    """The `translate_report` function uses OpenAI's GPT-3.5-turbo model to translate a given report from
     an unspecified language into English.
-    
+
     Parameters
     ----------
     report : str
       The `report` parameter is a string that represents the text that needs to be translated into
     English.
-    
+
     Returns
     -------
       The function `translate_report` is returning the translated report as a string.
-    
-    '''
+
+    """
     openai.api_key = os.getenv("OPEN_AI_API_KEY")
 
     response = openai.ChatCompletion.create(
@@ -211,6 +251,7 @@ def translate_report(report: str) -> str:
         raise ValueError("Translation failed.")
 
     return translated_report
+
 
 def prepare_data_transformations(text) -> tuple[str]:
     """The function `prepare_data_transformations` takes in a text and performs various transformations on

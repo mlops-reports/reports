@@ -10,7 +10,6 @@ def UploadTasksTable():
 
         report_id = Column(Integer, primary_key=True)
         patient_no = Column(String)
-        full_name = Column(String)
         report_original = Column(String)
         report_original_clean = Column(String, default=None)
         report_english_clean = Column(String, default=None)

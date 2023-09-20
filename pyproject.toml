@@ -55,6 +55,11 @@ sentencepiece = "^0.1.99"
 sacremoses = "^0.0.53"
 torch = "^2.0.1"
 
+
+
+[tool.poetry.group.data.dependencies]
+cryptography = "^41.0.4"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
