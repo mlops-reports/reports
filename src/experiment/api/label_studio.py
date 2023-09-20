@@ -7,16 +7,19 @@ from experiment.utils import transformation
 
 dotenv.load_dotenv()
 LABEL_STUDIO_HOST = "https://label.drgoktugasci.com"
+LABEL_STUDIO_API_KEY = os.getenv("LABEL_STUDIO_API_KEY")
 LABEL_STUDIO_LABEL_APP_NAME = "label-reports"
 ANNOTATIONS_PATH = (
     transformation.get_project_root() / "data" / "output" / "annotations.json"
 )
 
 
-def start_label_studio(waiting_time: int = 15, app_name: str = LABEL_STUDIO_LABEL_APP_NAME) -> None:
-    '''The function starts a Label Studio application on Heroku and waits for a specified amount of time
+def start_label_studio(
+    waiting_time: int = 15, app_name: str = LABEL_STUDIO_LABEL_APP_NAME
+) -> None:
+    """The function starts a Label Studio application on Heroku and waits for a specified amount of time
     before continuing.
-    
+
     Parameters
     ----------
     waiting_time : int, optional
@@ -25,24 +28,48 @@ def start_label_studio(waiting_time: int = 15, app_name: str = LABEL_STUDIO_LABE
     app_name : str
         The `app_name` parameter is a string that represents the name of the Label Studio app on Heroku. It
     is used in the `os.system` command to scale the web dyno of the app to 1.
-    
-    '''
+
+    """
     os.system(f"heroku ps:scale web=1 --app {app_name}")
     time.sleep(waiting_time)
 
 
 def stop_label_studio(app_name: str = LABEL_STUDIO_LABEL_APP_NAME) -> None:
-    '''The function `stop_label_studio` stops the Label Studio application on Heroku by scaling down the
+    """The function `stop_label_studio` stops the Label Studio application on Heroku by scaling down the
     web dynos to 0.
-    
+
     Parameters
     ----------
     app_name : str
         The `app_name` parameter is a string that represents the name of the Label Studio application on
     Heroku.
+
+    """
+    os.system(f"heroku ps:scale web=0 --app {app_name}")
+
+
+def upload_csv_tasks(csv_path: str, project_id: int) -> None:
+    '''The function `upload_csv_tasks` uploads a CSV file to a Label Studio project using the Label Studio
+    API.
+    
+    Parameters
+    ----------
+    csv_path : str
+        The `csv_path` parameter is a string that represents the file path of the CSV file that you want to
+    upload.
+    project_id : int
+        The `project_id` parameter is an integer that represents the ID of the project in which you want to
+    upload the CSV tasks.
     
     '''
-    os.system(f"heroku ps:scale web=0 --app {app_name}")
+    os.system(
+        f"""
+            curl \
+            -H 'Authorization: Token {LABEL_STUDIO_API_KEY}' \
+            -X POST '{LABEL_STUDIO_HOST}/api/projects/{project_id}/import' \
+            -F 'file=@{csv_path}' \
+        """
+    )
 
 
 def download_annotations() -> None:
@@ -54,7 +81,7 @@ def download_annotations() -> None:
         f"""
             curl \
             -X GET {LABEL_STUDIO_HOST}/api/projects/4/export?exportType=JSON \
-            -H 'Authorization: Token {os.getenv("LABEL_STUDIO_API_KEY")}' \
+            -H 'Authorization: Token {LABEL_STUDIO_API_KEY}' \
             --output {ANNOTATIONS_PATH.as_posix()}
         """
     )
