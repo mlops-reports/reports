@@ -11,6 +11,7 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 
 # Installs the dependencies
 install_dependencies:
+	heroku update;
 	rm -rf .venv;
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
