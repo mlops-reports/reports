@@ -8,35 +8,36 @@ class Logger:
         self,
         logging_level: str = "DEBUG",
         logger_name: str = "Reports",
-        output_path: str = None,
+        log_file: str = None,
     ):
+        self.log_file = log_file
         self.logger = logging.getLogger(logger_name)
-        self.formatter = logging.Formatter(
+        self.logger.setLevel(getattr(logging, logging_level))
+
+        formatter = logging.Formatter(
             "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         )
 
-        # Stream Handler for console output
-        sh = logging.StreamHandler()
-        self.logger.setLevel(getattr(logging, logging_level))
-        sh.setFormatter(self.formatter)
-        self.logger.addHandler(sh)
+        # Create a file handler for writing logs to a file
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setFormatter(formatter)
 
-        if output_path:
-            self.output_to_file(output_path)
-            
+        # Create a stream handler for displaying logs on the terminal
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
 
-    def output_to_file(self, output_path: str):
-        """The function `output_to_file` adds a file handler to the logger to log messages to a specified
-        output file.
+        # Add both handlers to the logger
+        self.logger.addHandler(file_handler)
+        self.logger.addHandler(stream_handler)
 
-        Parameters
-        ----------
-        output_path : str
-            The `output_path` parameter is a string that represents the file path where the log messages
-        will be written to.
-
-        """
-        fh = logging.FileHandler(output_path)
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(self.formatter)
-        self.logger.addHandler(fh)
+    def log(self, message, level="INFO"):
+        if level == "DEBUG":
+            self.logger.debug(message)
+        elif level == "INFO":
+            self.logger.info(message)
+        elif level == "WARNING":
+            self.logger.warning(message)
+        elif level == "ERROR":
+            self.logger.error(message)
+        elif level == "CRITICAL":
+            self.logger.critical(message)
