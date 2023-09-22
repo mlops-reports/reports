@@ -87,8 +87,6 @@ def upload_csv_tasks(csv_path: str, project_id: int) -> None:
         """
     )
 
-    stop_label_studio()
-
 
 def download_annotations() -> None:
     """The `download_annotations` function uses the `os.system` function to execute a curl command that

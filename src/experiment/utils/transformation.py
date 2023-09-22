@@ -105,7 +105,7 @@ def prompt_report(report: str, prompt: str = "Remove dates and film numbers, tra
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": f"{prompt}: {report}"}
+            {"role": "user", "content": f"{prompt}: {report}"}
         ],
     )
 
@@ -115,6 +115,3 @@ def prompt_report(report: str, prompt: str = "Remove dates and film numbers, tra
         raise ValueError("Prompting failed.")
 
     return prompted_report
-
-
-# remove dates and film numbers, strip spaces between sentences, translate to English, and append the date to end:
