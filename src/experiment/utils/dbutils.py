@@ -12,7 +12,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert
 
 
-
 class QueryError(Exception):
     pass
 
@@ -250,10 +249,16 @@ class DatabaseUtils:
             return 0
         return df["number_of_rows"].values[0]
 
-    def upsert_values(self, table_metadata: object, data_to_insert: dict, cols_to_upsert: list, unique_cols: str = ["id"]) -> None:
-        '''The `upsert_values` function performs an upsert operation on a database table using SQLAlchemy,
+    def upsert_values(
+        self,
+        table_metadata: object,
+        data_to_insert: dict,
+        cols_to_upsert: list,
+        unique_cols: str = ["id"],
+    ) -> None:
+        """The `upsert_values` function performs an upsert operation on a database table using SQLAlchemy,
         where it inserts new data or updates existing data based on specified columns.
-        
+
         Parameters
         ----------
         table_metadata : object
@@ -270,20 +275,18 @@ class DatabaseUtils:
         unique_cols : str
             The `unique_cols` parameter is a list of column names that are used to determine uniqueness in
         the table. These columns are used to identify if a row already exists in the table or not.
-        
-        '''
-        
+
+        """
+
         set_values: dict = {}
-        
+
         stmt = insert(table_metadata).values(data_to_insert)
-    
+
         for col in cols_to_upsert:
             set_values[col] = getattr(stmt.excluded, col)
 
         # Specify the conflict resolution
-        stmt = stmt.on_conflict_do_update(
-            index_elements=unique_cols, set_=set_values
-        )
+        stmt = stmt.on_conflict_do_update(index_elements=unique_cols, set_=set_values)
 
         # Execute the upsert statement
         self.session.execute(stmt)
@@ -363,6 +366,18 @@ class DatabaseUtils:
 
         return list(df[col_name].unique())[0]
 
+    def run_dbt_model(self, model: str) -> None:
+        '''The `run_dbt_model` function changes the current working directory to the specified DBT project
+        path and then executes a bash command to run a specific DBT model.
+        
+        Parameters
+        ----------
+        model : str
+            The `model` parameter is a string that represents the specific model you want to run in your
+        dbt project. It is used as an argument in the `run.sh` script to specify which model to execute.
+        
+        '''
+        dbt_project_path = os.getenv("DBT_PROJECT_PATH")
 
-    def run_dbt_model(model:str) -> None:
-        pass
+        os.chdir(dbt_project_path)
+        os.system(f"bash run.sh {model}")

@@ -16,7 +16,7 @@ create `.env` file in working directory containing required access tokens
 ```
 # general
 FERNET_KEY=<FERNET_KEY>
-
+DBT_PROJECT_PATH=<DBT_PROJECT_PATH>
 
 # mlflow
 MLFLOW_DB_USERNAME=<DB_HOST>
