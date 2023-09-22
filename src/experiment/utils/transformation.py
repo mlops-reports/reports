@@ -82,8 +82,8 @@ def find_longest_sentence_length(sentences):
     return longest_length
 
 
-def nlp_prompt_report(report: str, prompt: str = "Remove dates and film numbers, translate to English, and remove spaces between sentences") -> str:
-    '''The `nlp_prompt_report` function takes a report in a specified language and uses OpenAI's
+def prompt_report(report: str, prompt: str = "Remove dates and film numbers, translate to English, and remove spaces between sentences") -> str:
+    '''The `prompt_report` function takes a report in a specified language and uses OpenAI's
     GPT-3.5-turbo model to translate it into English.
     
     Parameters
@@ -97,7 +97,7 @@ def nlp_prompt_report(report: str, prompt: str = "Remove dates and film numbers,
     
     Returns
     -------
-      The function `nlp_prompt_report` returns the translated report as a string.
+      The function `prompt_report` returns the translated report as a string.
     
     '''
     openai.api_key = os.getenv("OPEN_AI_API_KEY")
@@ -109,12 +109,12 @@ def nlp_prompt_report(report: str, prompt: str = "Remove dates and film numbers,
         ],
     )
 
-    translated_report = response.choices[0].message.content
+    prompted_report = response.choices[0].message.content
 
-    if translated_report == "":
-        raise ValueError("Translation failed.")
+    if prompted_report == "":
+        raise ValueError("Prompting failed.")
 
-    return translated_report
+    return prompted_report
 
 
 # remove dates and film numbers, strip spaces between sentences, translate to English, and append the date to end:

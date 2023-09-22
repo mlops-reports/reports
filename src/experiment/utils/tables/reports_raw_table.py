@@ -10,6 +10,7 @@ def ReportsRawTable():
 
         report_id = Column(Integer, primary_key=True)
         patient_no = Column(String)
+        protocol_no = Column(Integer)
         full_name = Column(String)
         report_original = Column(String)
 

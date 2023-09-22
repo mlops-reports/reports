@@ -362,3 +362,7 @@ class DatabaseUtils:
             raise ValueError("Column value is not Unique!")
 
         return list(df[col_name].unique())[0]
+
+
+    def run_dbt_model(model:str) -> None:
+        pass
