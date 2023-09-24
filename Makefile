@@ -1,5 +1,5 @@
 # Defines variables
-PYTHON_PATH := $(shell which python3)
+PYTHON_PATH := $(shell which python3.11)
 
 POETRY := poetry
 
