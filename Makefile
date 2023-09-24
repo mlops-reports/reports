@@ -1,6 +1,4 @@
 # Defines variables
-PYTHON_PATH := $(shell which python3)
-
 POETRY := poetry
 
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
@@ -12,7 +10,7 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 # Installs the dependencies
 install_dependencies:
 	rm -rf .venv;
-	$(POETRY) env use $(PYTHON_PATH);
+	$(POETRY) env use $(shell which python3.11);
 	$(POETRY) install
 
 # Activates poetry environment
