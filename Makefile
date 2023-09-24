@@ -9,13 +9,16 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 
 # Installs the dependencies
 install_dependencies:
-	rm -rf .venv;
 	$(POETRY) env use $(shell which python3.11);
 	$(POETRY) install
 
 # Activates poetry environment
 activate_environment:
 	$(POETRY) shell
+
+# Removes the existing environment
+remove_environment:
+	rm -rf .venv;
 
 setup_label_server_dependencies:
 	$(HEROKU) run pip install -r requirements-label.txt --app $(HEROKU_LABEL_APP_NAME);
