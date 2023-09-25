@@ -2,6 +2,7 @@
 PYTHON_PATH := $(shell which python3.11)
 
 POETRY := poetry
+MAKE := make
 
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 
@@ -11,10 +12,15 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 
 # Installs the dependencies
 install_dependencies:
+	$(MAKE) remove_environment;
 	$(HEROKU) update;
 	rm -rf .venv;
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+
+# Removes the existing environment
+remove_environment:
+	rm -rf .venv
 
 # Activates poetry environment
 activate_environment:

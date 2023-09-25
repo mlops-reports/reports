@@ -8,7 +8,8 @@ This is a template for the ml experimentation use cases
 2. Install [poetry](https://python-poetry.org/docs/)
 3. Run the command(s) below
 ```
-make install
+make install_dependencies
+make activate_environment
 ```
 
 ## Usage on local machine
