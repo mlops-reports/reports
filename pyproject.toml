@@ -25,6 +25,8 @@ awscli = "^1.29.37"
 setuptools = "^68.1.2"
 dbt-postgres = "1.6.1"
 ipywidgets = "^8.1.0"
+openai = "^0.28.0"
+cryptography = "^41.0.4"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -32,6 +34,7 @@ pytest = "^7.4.0"
 ipykernel = "^6.24.0"
 flake8 = "^6.1.0"
 black = "^23.7.0"
+mypy = "^1.5.1"
 
 
 
@@ -52,6 +55,8 @@ torchvision = "^0.15.2"
 sentencepiece = "^0.1.99"
 sacremoses = "^0.0.53"
 torch = "^2.0.1"
+
+
 
 [build-system]
 requires = ["poetry-core"]
