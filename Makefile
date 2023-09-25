@@ -1,5 +1,6 @@
 # Defines variables
 PYTHON_PATH := $(shell which python3.11)
+PIP_REQUIREMENTS := requirements-dev.txt
 
 POETRY := poetry
 MAKE := make
@@ -17,6 +18,10 @@ install_dependencies:
 	rm -rf .venv;
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+
+# Export dependencies for pip install
+export_dependencies:
+	$(POETRY) export --without-hashes --format=requirements.txt > $(PIP_REQUIREMENTS) --with mlops,ml
 
 # Removes the existing environment
 remove_environment:
