@@ -26,9 +26,6 @@ remove_environment:
 activate_environment:
 	$(POETRY) shell
 
-setup_label_server_dependencies:
-	$(HEROKU) run pip install -r requirements-label.txt --app $(HEROKU_LABEL_APP_NAME);
-
 # Installs Heroku and authenticates the user
 setup_labeling_server_connection:
 	brew tap $(HEROKU)/brew && brew install $(HEROKU);
