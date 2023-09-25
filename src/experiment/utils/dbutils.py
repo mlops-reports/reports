@@ -140,9 +140,33 @@ class DatabaseUtils:
                 "An SQL write statement passed to the read operation function."
             )
 
+        return self.query_database(sql, output_format)
+    
+    def query_database(self, query, output_format="dataframe") -> Any:
+        '''The function `query_database` executes a SQL query on a database using SQLAlchemy and returns
+        the result in the specified output format, which is currently limited to a pandas DataFrame.
+        
+        Parameters
+        ----------
+        query
+            The `query` parameter is a string that represents the SQL query you want to execute on the
+        database. It can be any valid SQL statement, such as a SELECT, INSERT, UPDATE, or DELETE
+        statement.
+        output_format, optional
+            The `output_format` parameter is used to specify the format in which the query results should
+        be returned. The default value is "dataframe", which means that the query results will be
+        returned as a pandas DataFrame.
+        
+        Returns
+        -------
+            the output of the database query in the specified output format. If the output format is
+        "dataframe", it returns a pandas DataFrame object containing the query results. If the output
+        format is not "dataframe", it raises a NotImplementedError.
+        
+        '''
         with self.engine.connect() as connection:
             try:
-                result = connection.execute(sqlalchemy.text(sql))
+                result = connection.execute(sqlalchemy.text(query))
                 data = result.fetchall()
             except Exception as e:
                 print("Data read operation failed.")
@@ -154,8 +178,9 @@ class DatabaseUtils:
                 output = pd.DataFrame(data, columns=column_names)
             else:
                 raise NotImplementedError
-
+            
         return output
+
 
     def _build_sql_query_chunk(
         self,
@@ -380,4 +405,4 @@ class DatabaseUtils:
         dbt_project_path = os.getenv("DBT_PROJECT_PATH")
 
         os.chdir(dbt_project_path)
-        os.system(f"bash run.sh {model}")
+        os.system(f"bash run.sh '{model}'")
