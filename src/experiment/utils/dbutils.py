@@ -4,8 +4,12 @@ __author__ = "Göktuğ Aşcı"
 
 import os
 from typing import Any, List, Optional, Union
+
 import pandas as pd
+
 import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.dialects.postgresql import insert
 
 
 class QueryError(Exception):
@@ -59,6 +63,7 @@ class DatabaseUtils:
 
         self.engine: Optional[sqlalchemy.engine.Engine]
         self.metadata: Optional[sqlalchemy.MetaData]
+        self.session: Optional[sqlalchemy.orm.Engine]
 
         if auto_connect:
             self.connect_database()
@@ -77,6 +82,7 @@ class DatabaseUtils:
 
         self.connection_string = self._build_connection_string()
         self.engine = sqlalchemy.create_engine(self.connection_string)
+        self.session = sessionmaker(bind=self.engine)()
         self.metadata = sqlalchemy.MetaData()
         self.metadata.reflect(bind=self.engine)
 
@@ -129,14 +135,38 @@ class DatabaseUtils:
             self.refresh_connection()
             assert self.engine is not None
 
-        if not sql.lower().startswith("select"):
+        if not sql.lower().strip().startswith("select"):
             raise QueryError(
                 "An SQL write statement passed to the read operation function."
             )
 
+        return self.query_database(sql, output_format)
+    
+    def query_database(self, query, output_format="dataframe") -> Any:
+        '''The function `query_database` executes a SQL query on a database using SQLAlchemy and returns
+        the result in the specified output format, which is currently limited to a pandas DataFrame.
+        
+        Parameters
+        ----------
+        query
+            The `query` parameter is a string that represents the SQL query you want to execute on the
+        database. It can be any valid SQL statement, such as a SELECT, INSERT, UPDATE, or DELETE
+        statement.
+        output_format, optional
+            The `output_format` parameter is used to specify the format in which the query results should
+        be returned. The default value is "dataframe", which means that the query results will be
+        returned as a pandas DataFrame.
+        
+        Returns
+        -------
+            the output of the database query in the specified output format. If the output format is
+        "dataframe", it returns a pandas DataFrame object containing the query results. If the output
+        format is not "dataframe", it raises a NotImplementedError.
+        
+        '''
         with self.engine.connect() as connection:
             try:
-                result = connection.execute(sqlalchemy.text(sql))
+                result = connection.execute(sqlalchemy.text(query))
                 data = result.fetchall()
             except Exception as e:
                 print("Data read operation failed.")
@@ -148,8 +178,9 @@ class DatabaseUtils:
                 output = pd.DataFrame(data, columns=column_names)
             else:
                 raise NotImplementedError
-
+            
         return output
+
 
     def _build_sql_query_chunk(
         self,
@@ -244,44 +275,49 @@ class DatabaseUtils:
         return df["number_of_rows"].values[0]
 
     def upsert_values(
-        self, df: pd.DataFrame, primary_key_col: str, **kwargs: Any
-    ) -> bool:
-        # enhance upserting by using only sqlalchemy
-        """The function `upsert_values` takes a DataFrame, sets the index using a specified primary key
-        column, and inserts the DataFrame into a SQL database table using the specified engine and
-        connection parameters.
+        self,
+        table_metadata: object,
+        data_to_insert: dict,
+        cols_to_upsert: list,
+        unique_cols: str = ["id"],
+    ) -> None:
+        """The `upsert_values` function performs an upsert operation on a database table using SQLAlchemy,
+        where it inserts new data or updates existing data based on specified columns.
 
         Parameters
         ----------
-        df : pd.DataFrame
-            A pandas DataFrame containing the data to be upserted into a database table.
-        primary_key_col : str
-            The `primary_key_col` parameter is the name of the column in the DataFrame that serves as the
-        primary key for the table in the database.
-
-        Returns
-        -------
-            a boolean value. If the try block is executed successfully, it will return True. If an
-        exception occurs, it will return False.
+        table_metadata : object
+            The `table_metadata` parameter is an object that represents the metadata of the table where the
+        data will be inserted or updated.
+        data_to_insert : dict
+            The `data_to_insert` parameter is a dictionary that contains the data to be inserted or updated
+        in the table. The keys of the dictionary represent the column names, and the values represent
+        the corresponding values to be inserted or updated.
+        cols_to_upsert : list
+            The `cols_to_upsert` parameter is a list of column names that you want to update if a conflict
+        occurs during the upsert operation. These columns will be updated with the values from the
+        `data_to_insert` dictionary.
+        unique_cols : str
+            The `unique_cols` parameter is a list of column names that are used to determine uniqueness in
+        the table. These columns are used to identify if a row already exists in the table or not.
 
         """
-        # set index by the primary key col
-        df["INDEX"] = df[primary_key_col]
-        df.set_index("INDEX")
 
-        if self.engine is None:
-            self.refresh_connection()
-            assert self.engine is not None
+        set_values: dict = {}
 
-        with self.engine.connect() as conn:
-            try:
-                df.to_sql(con=conn, **kwargs)
-                return True
-            except Exception as e:
-                print("Data write failed, rolling back...")
-                print(f"Exception: {e}")
-                conn.rollback()
-                return False
+        stmt = insert(table_metadata).values(data_to_insert)
+
+        for col in cols_to_upsert:
+            set_values[col] = getattr(stmt.excluded, col)
+
+        # Specify the conflict resolution
+        stmt = stmt.on_conflict_do_update(index_elements=unique_cols, set_=set_values)
+
+        # Execute the upsert statement
+        self.session.execute(stmt)
+
+        # Commit the transaction
+        self.session.commit()
 
     @staticmethod
     def get_sql_tuple(column_items: List[str]) -> str:
@@ -354,3 +390,19 @@ class DatabaseUtils:
             raise ValueError("Column value is not Unique!")
 
         return list(df[col_name].unique())[0]
+
+    def run_dbt_model(self, model: str) -> None:
+        '''The `run_dbt_model` function changes the current working directory to the specified DBT project
+        path and then executes a bash command to run a specific DBT model.
+        
+        Parameters
+        ----------
+        model : str
+            The `model` parameter is a string that represents the specific model you want to run in your
+        dbt project. It is used as an argument in the `run.sh` script to specify which model to execute.
+        
+        '''
+        dbt_project_path = os.getenv("DBT_PROJECT_PATH")
+
+        os.chdir(dbt_project_path)
+        os.system(f"bash run.sh '{model}'")

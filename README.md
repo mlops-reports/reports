@@ -8,12 +8,17 @@ This is a template for the ml experimentation use cases
 2. Install [poetry](https://python-poetry.org/docs/)
 3. Run the command(s) below
 ```
-make install
+make install_dependencies
+make activate_environment
 ```
 
 ## Usage on local machine
 create `.env` file in working directory containing required access tokens
 ```
+# general
+FERNET_KEY=<FERNET_KEY>
+DBT_PROJECT_PATH=<DBT_PROJECT_PATH>
+
 # mlflow
 MLFLOW_DB_USERNAME=<DB_HOST>
 MLFLOW_DB_PASSWORD=<DB_NAME>
@@ -40,16 +45,18 @@ POSTGRE_PORT=<POSTGRE_PORT>
 DISABLE_SIGNUP_WITHOUT_LINK=<DISABLE_SIGNUP_WITHOUT_LINK>
 LABEL_STUDIO_USERNAME=<LABEL_STUDIO_USERNAME>
 LABEL_STUDIO_PASSWORD=<LABEL_STUDIO_PASSWORD>
-
 LABEL_STUDIO_API_KEY=<LABEL_STUDIO_API_KEY>
+
 
 # db connection
 PSQL_DB_USERNAME=<PSQL_DB_USERNAME>
 PSQL_DB_PASSWORD=<PSQL_DB_PASSWORD>
 PSQL_DB_HOST=<PSQL_DB_HOST>
 
-# diğer
+
+# ai
 HUGGINGFACE_TOKEN=<HUGGINGFACE_TOKEN>
+OPEN_AI_API_KEY=<OPEN_AI_API_KEY>
 ```
 ## External storage of metadata and artifacts
 

@@ -1,7 +1,5 @@
 ## de
-* dbt seeds | https://www.youtube.com/watch?v=CWetaAaEdKw
-* dbt deployment to keep the database clean
-* english translation of the reports
+* langchain llm sql
 
 ## mlops
 * mlflow docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker

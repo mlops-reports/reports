@@ -1,5 +1,9 @@
 # Defines variables
+PYTHON_PATH := $(shell which python3.11)
+PIP_REQUIREMENTS := requirements-dev.txt
+
 POETRY := poetry
+MAKE := make
 
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 
@@ -9,19 +13,23 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 
 # Installs the dependencies
 install_dependencies:
-	$(POETRY) env use $(shell which python3.11);
+	$(MAKE) remove_environment;
+	$(HEROKU) update;
+	rm -rf .venv;
+	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+
+# Export dependencies for pip install
+export_dependencies:
+	$(POETRY) export --without-hashes --format=requirements.txt > $(PIP_REQUIREMENTS) --with mlops,ml
+
+# Removes the existing environment
+remove_environment:
+	rm -rf .venv
 
 # Activates poetry environment
 activate_environment:
 	$(POETRY) shell
-
-# Removes the existing environment
-remove_environment:
-	rm -rf .venv;
-
-setup_label_server_dependencies:
-	$(HEROKU) run pip install -r requirements-label.txt --app $(HEROKU_LABEL_APP_NAME);
 
 # Installs Heroku and authenticates the user
 setup_labeling_server_connection:
