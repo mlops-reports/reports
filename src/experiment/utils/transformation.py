@@ -1,15 +1,15 @@
-import nltk
-import simplemma
+# import nltk
+# import simplemma
 
 # import pandas as pd
 import pathlib
-import json
+# import json
 from cryptography.fernet import Fernet
 
 # import numpy as np
 import os
-import re
-import matplotlib.pyplot as plt
+# import re
+# import matplotlib.pyplot as plt
 
 import openai
 
