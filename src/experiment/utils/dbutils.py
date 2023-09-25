@@ -184,27 +184,16 @@ class DatabaseUtils:
 
     def _build_sql_query_chunk(
         self,
-        table_name: str,
-        schema_name: str = "dbo",
-        columns: Optional[List[str]] = None,
+        sql_query: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
     ) -> str:
-        """The `_build_sql_query_chunk` function builds a SQL query string based on the provided schema
-        name, table name, columns, limit, and offset.
+        """The `_build_sql_query_chunk` function builds a SQL query string that can be used to retrieve a chunk
 
         Parameters
         ----------
-        schema_name : str
-            The `schema_name` parameter is a string that represents the name of the database schema where
-        the table is located.
-        table_name : str
-            The `table_name` parameter is a string that represents the name of the table in the database
-        that you want to query.
-        columns : Optional[List[str]]
-            The `columns` parameter is a list of column names that you want to select from the table. If
-        this parameter is provided, the SQL query will include only these columns in the SELECT
-        statement.
+        sql_query : str
+            The `sql_query` parameter return the table in the database.
         limit : Optional[int]
             The `limit` parameter is used to specify the maximum number of rows to be returned in the SQL
         query result. It restricts the number of rows returned by the query.
@@ -217,43 +206,35 @@ class DatabaseUtils:
             a SQL query string.
 
         """
-        if columns is not None:
-            columns_string = ",".join(columns)
-            query = f"SELECT {columns_string} FROM {schema_name}.{table_name}"
-        else:
-            query = f"SELECT * FROM {schema_name}.{table_name}"
-
         if limit is not None:
-            query += f" LIMIT {limit}"
+            sql_query += f" LIMIT {limit}"
 
         if offset is not None:
-            query += f" OFFSET {offset}"
+            sql_query += f" OFFSET {offset}"
 
-        return query
+        return sql_query
 
     def read_sql_table(
         self,
-        table_name: str,
-        schema_name: str = "dbo",
-        columns: Optional[List[str]] = None,
+        sql_query: str,
     ) -> Optional[pd.DataFrame]:
         """Toplevel function that prepares a query and reads data columns in specified table(s) for machine learning."""
         # TODO: JOIN operation will be needed here if annotations and report text are stored in separate tables.
         query = self._build_sql_query_chunk(
-            table_name, schema_name=schema_name, columns=columns
+            sql_query
         )
         return self.read_sql_query(query)
 
     def read_table_in_chunks(
-        self, table_name: str, chunk_size: int, chunk_idx: int, schema_name: str = "dbo"
+        self, sql_query: str, chunk_size: int, chunk_idx: int
     ) -> Optional[pd.DataFrame]:
         """
         Lazy load for the database read operation.
 
         Parameters
         ----------
-        table_name: str
-            Requested table.
+        sql_query: str
+            Requested SQL query.
         chunk_size: int
             Requested max data size.
         chunk_idx: int
@@ -262,17 +243,16 @@ class DatabaseUtils:
         """
         limit, offset = chunk_size, chunk_idx * chunk_size
         query = self._build_sql_query_chunk(
-            table_name, schema_name=schema_name, limit=limit, offset=offset
+            sql_query, limit=limit, offset=offset
         )
         return self.read_sql_query(query)
 
-    def get_table_size(self, table_name: str, schema_name: str = "dbo") -> int:
+    def get_table_size(self, sql_query: str) -> int:
         """Returns the number of rows of the specified table."""
-        query = f"SELECT COUNT(*) AS number_of_rows FROM {schema_name}.{table_name}"
-        df = self.read_sql_query(query)
+        df = self.read_sql_query(sql_query)
         if df is None:
             return 0
-        return df["number_of_rows"].values[0]
+        return df.shape[0]
 
     def upsert_values(
         self,
