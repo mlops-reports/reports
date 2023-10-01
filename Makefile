@@ -4,6 +4,7 @@ PIP_REQUIREMENTS := requirements-dev.txt
 
 POETRY := poetry
 MAKE := make
+PYTHON := python3
 
 LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 
@@ -46,4 +47,7 @@ start_labeling_server:
 stop_labeling_server:
 	$(HEROKU) ps:scale web=0 --app $(HEROKU_LABEL_APP_NAME)
 
-
+# Upload tasks
+upload_tasks:
+	# $(MAKE) activate_environment;
+	$(PYTHON) scripts/prepare_ls_tasks.py
