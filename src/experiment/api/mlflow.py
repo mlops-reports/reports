@@ -14,6 +14,8 @@ import logging
 
 from typing import Any, Union
 
+from experiment.utils import bash as bash_utils
+
 
 class MLFlow:
     MLFLOW_HOST = "http://127.0.0.1"
@@ -62,12 +64,12 @@ class MLFlow:
         """
         The function `get_model_config` reads a JSON file from the given path and returns its contents
         as a dictionary.
-        
+
         Args:
           path (Union[str, pathlib.Path]): The `path` parameter is the path to the file containing the
         model configuration. It can be either a string representing the file path or a `pathlib.Path`
         object.
-        
+
         Returns:
           a dictionary object, which is the model configuration loaded from the specified file.
         """
@@ -242,13 +244,30 @@ class MLFlow:
         """
         `run_tracking_server` starts an MLflow server on the port specified in the `MLFlow` class
         """
+
+        mlflow_host_suffix = MLFlow.MLFLOW_HOST.split("//")[1]
+
+        is_tracking_server_running = bash_utils.is_server_running(
+            mlflow_host_suffix, MLFlow.MLFLOW_TRACKING_PORT
+        )
+
+        if not is_tracking_server_running:
+            os.system(
+                f"""
+                  mlflow server --port {MLFlow.MLFLOW_TRACKING_PORT} \
+                  --host {mlflow_host_suffix} \
+                  --backend-store-uri {MLFlow.BACKEND_URI_STORE} \
+                  --default-artifact-root {MLFlow.DEFAULT_ARTIFACT_ROOT} \
+                  {'&' if background else ''} 
+              """
+            )
+
+        else:
+            logging.info("MLFlow tracking server is already running.")
+
         os.system(
             f"""
-                mlflow server --port {MLFlow.MLFLOW_TRACKING_PORT} \
-                --host 0.0.0.0 \
-                --backend-store-uri {MLFlow.BACKEND_URI_STORE} \
-                --default-artifact-root {MLFlow.DEFAULT_ARTIFACT_ROOT} \
-                {'&' if background else ''}
+                open {MLFlow.MLFLOW_HOST}:{MLFlow.MLFLOW_TRACKING_PORT}
             """
         )
 
@@ -286,9 +305,9 @@ class MLFlow:
         return best_run
 
     def run_inference_server(self, run_id: str, background: bool = True) -> None:
-        '''The `run_inference_server` function serves a machine learning model using MLflow's `mlflow models serve`
+        """The `run_inference_server` function serves a machine learning model using MLflow's `mlflow models serve`
         command.
-        
+
         Parameters
         ----------
         run_id : str
@@ -297,7 +316,7 @@ class MLFlow:
         background : bool, optional
           The `background` parameter is a boolean flag that determines whether the model serving command
         should run in the background or not.
-        '''
+        """
         if self.local_storage:
             MODAL_URI = (
                 pathlib.Path(MLFlow.DEFAULT_ARTIFACT_ROOT) / run_id / "artifacts"
@@ -315,20 +334,20 @@ class MLFlow:
         )
 
     def get_predictions(self, data: list) -> Any:
-        '''The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
+        """The function `get_predictions` sends a POST request to a MLFlow server to get predictions for a
         given list of data.
-        
+
         Parameters
         ----------
         data : list
           The `data` parameter is a list of input instances for which you want to get predictions. Each
         instance in the list should be in a format that is compatible with the ML model you are using.
-        
+
         Returns
         -------
           a list of predictions.
-        
-        '''
+
+        """
         headers = {"Content-Type": "application/json"}
         input_data = {"instances": data}
 
@@ -345,17 +364,17 @@ class MLFlow:
         return predictions
 
     def clean(self, gc: bool = False) -> None:
-        '''The `clean` function kills processes running on specified ports and removes mlartifacts,
+        """The `clean` function kills processes running on specified ports and removes mlartifacts,
         experiments.sqlite, and mlruns directories.
-        
+
         Parameters
         ----------
         gc : bool, optional
           The `gc` parameter is a boolean flag that determines whether garbage collection should be
         performed. If `gc` is set to `True`, the code will execute the `mlflow gc` command to perform
         garbage collection on the MLFlow backend store.
-        
-        '''
+
+        """
         os.system(
             f"kill $(lsof -t -i:{MLFlow.MLFLOW_TRACKING_PORT}) && kill $(lsof -t -i:{MLFlow.MLFLOW_MODEL_PORT})"
         )

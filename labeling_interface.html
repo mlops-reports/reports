@@ -1,0 +1,30 @@
+<View>
+
+    <View
+        style="box-shadow: 2px 2px 5px #999;                padding: 20px; margin-top: 2em;                border-radius: 5px;">
+        <Labels name="label" toName="text">
+            <Label value="Report" background="#FFA39E" /><Label value="Keyword" background="#9ed5ff" />
+        </Labels>
+        <Header value="Clean Report" />
+        <Text name="text" value="$text" />
+        <Header value="Choose Severity" />
+        <Choices name="severity" toName="text" choice="single" showInLine="true">
+            <Choice value="Emergency" />
+            <Choice value="Normal" />
+            <Choice value="Non Emergency [Doctor]" />
+            <Choice value="Non Emergency [No Doctor]" />
+        </Choices>
+        <Header value="Exclude" />
+        <Choices name="exclude" toName="text" choice="single" showInLine="true">
+            <Choice value="Exclude" />
+        </Choices>
+        <Header value="Exclusion Criteria" />
+        <TextArea name="exclusion_criteria" toName="text" showSubmitButton="true" maxSubmissions="5" editable="true"
+            required="false" />
+        <Header value="Pathology" />
+        <TextArea name="pathology" toName="text" showSubmitButton="true" maxSubmissions="5" editable="true"
+            required="false" />
+        <Header value="Original Report" />
+        <Text name="report_original" value="$report_original" />
+    </View>
+</View>
