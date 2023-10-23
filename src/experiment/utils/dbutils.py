@@ -142,7 +142,7 @@ class DatabaseUtils:
 
         return self.query_database(sql, output_format)
 
-    def query_database(self, query, output_format="dataframe") -> Any:
+    def query_database(self, query: str, output_format: str = "dataframe") -> Any:
         """The function `query_database` executes a SQL query on a database using SQLAlchemy and returns
         the result in the specified output format, which is currently limited to a pandas DataFrame.
 
@@ -249,7 +249,9 @@ class DatabaseUtils:
             return 0
         return df.shape[0]
 
-    def get_table_size_by_table_name(self, table: str, schema: str = "public", database: str = "report_labeling") -> int:
+    def get_table_size_by_table_name(
+        self, table: str, schema: str = "public", database: str = "report_labeling"
+    ) -> int:
         """The function `get_table_size_by_table_name` returns the number of rows in a specified table.
 
         Parameters
@@ -276,11 +278,15 @@ class DatabaseUtils:
         return self.read_sql_query(sql_query, db_name=database).iloc[0]["count"]
 
     def select_table_by_columns(
-        self, columns: list, table: str, schema: str = "public", database: str = "report_labeling"
-    ) -> list[str]:
-        '''The function `select_table_by_columns` selects specific columns from a table in a database and
+        self,
+        columns: list,
+        table: str,
+        schema: str = "public",
+        database: str = "report_labeling",
+    ) -> Optional[pd.DataFrame]:
+        """The function `select_table_by_columns` selects specific columns from a table in a database and
         returns the results as a list.
-        
+
         Parameters
         ----------
         columns : list
@@ -295,12 +301,12 @@ class DatabaseUtils:
         database : str, optional
             The `db_name` parameter is the name of the database where the table is located. In this case,
         the default value is set to "report_labeling".
-        
+
         Returns
         -------
             a list of strings.
-        
-        '''
+
+        """
         column_list = ", ".join(columns)
         sql_query = f"SELECT {column_list} FROM {schema}.{table};"
 
