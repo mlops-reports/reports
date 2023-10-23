@@ -140,7 +140,7 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size_by_table_name("choices")
+        return self.dbutils.get_table_size_by_table_name("report_classifications")
 
     def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
@@ -151,7 +151,9 @@ class BaseDataset(Dataset):
         labels: numpy ndarray
             An array stores the labels for each sample.
         """
-        df = self.dbutils.select_table_by_columns(columns=[label_flag], table="choices")
+        df = self.dbutils.select_table_by_columns(
+            columns=[label_flag], table="report_classifications"
+        )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
         return df[[label_flag]].values
@@ -200,7 +202,9 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        df = self.dbutils.select_table_by_columns(columns=["report"], table="choices")
+        df = self.dbutils.select_table_by_columns(
+            columns=["translated_text"], table="report_classifications"
+        )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
         return df[["full_text"]].values
