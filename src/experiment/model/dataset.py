@@ -33,7 +33,6 @@ class BaseDataset(Dataset):
 
     def __init__(
         self,
-        sql_query: str,
         mode: str = "inference",
         n_folds: int = 5,
         current_fold: int = 0,
@@ -65,7 +64,6 @@ class BaseDataset(Dataset):
         self.mode = mode
         self.n_folds = n_folds
         self.in_memory = in_memory
-        self.sql_query = sql_query
         self.current_fold = current_fold
         self.batch_size = batch_size
 
@@ -130,7 +128,8 @@ class BaseDataset(Dataset):
                 label = torch.from_numpy(self.samples_labels[index]).to(device)
             sample_data = self.preprocess(self.loaded_samples[index]).to(device)
         else:
-            sample_data, label = self.get_sample_data(index)
+            raise NotImplementedError
+            # sample_data, label = self.get_sample_data(index)
         return sample_data, label
 
     def __len__(self) -> int:
@@ -141,9 +140,7 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size(
-            self.sql_query
-        )
+        return self.dbutils.get_table_size_by_table_name("choices")
 
     def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
@@ -154,43 +151,41 @@ class BaseDataset(Dataset):
         labels: numpy ndarray
             An array stores the labels for each sample.
         """
-        df = self.dbutils.read_sql_table(
-            self.sql_query,
-        )
+        df = self.dbutils.select_table_by_columns(columns=[label_flag], table="choices")
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
         return df[[label_flag]].values
 
-    def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
-        """
-        If we cannot or do not want to store all the samples in memory, we need to
-        read the data based on selected indices (train, validation or test).
+    # def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
+    #     """
+    #     If we cannot or do not want to store all the samples in memory, we need to
+    #     read the data based on selected indices (train, validation or test).
 
-        Parameters
-        ----------
-        index: integer
-            In-split index of the expected sample.
-            (e.g., 2 means the 3rd sample from validation split if mode is 'validation')
+    #     Parameters
+    #     ----------
+    #     index: integer
+    #         In-split index of the expected sample.
+    #         (e.g., 2 means the 3rd sample from validation split if mode is 'validation')
 
-        Returns
-        -------
-        tensor: torch Tensor
-            A torch tensor represents the data for the sample.
-        """
-        sample_data_batch = self.dbutils.read_table_in_chunks(
-            self.database_table_name,
-            self.batch_size,
-            index,
-            self.database_schema_name,
-        )
-        if sample_data_batch is None:
-            raise DataError("SQL returned None instead of a dataframe.")
-        sample_data = self.preprocess(sample_data_batch["full_text"])
-        sample_data = torch.from_numpy(sample_data).float().to(device)
-        sample_label = torch.from_numpy(
-            sample_data_batch["annotation_value_flag"].values
-        ).to(device)
-        return sample_data, sample_label
+    #     Returns
+    #     -------
+    #     tensor: torch Tensor
+    #         A torch tensor represents the data for the sample.
+    #     """
+    #     sample_data_batch = self.dbutils.read_table_in_chunks(
+    #         self.database_table_name,
+    #         self.batch_size,
+    #         index,
+    #         self.database_schema_name,
+    #     )
+    #     if sample_data_batch is None:
+    #         raise DataError("SQL returned None instead of a dataframe.")
+    #     sample_data = self.preprocess(sample_data_batch["full_text"])
+    #     sample_data = torch.from_numpy(sample_data).float().to(device)
+    #     sample_label = torch.from_numpy(
+    #         sample_data_batch["annotation_value_flag"].values
+    #     ).to(device)
+    #     return sample_data, sample_label
 
     def preprocess(self, data: np.ndarray) -> Tensor:
         return torch.from_numpy(data)
@@ -205,9 +200,7 @@ class BaseDataset(Dataset):
         all_data: np.ndarray
             A numpy array represents all data.
         """
-        df = self.dbutils.read_sql_table(
-            self.sql_query
-        )
+        df = self.dbutils.select_table_by_columns(columns=["report"], table="choices")
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
         return df[["full_text"]].values
@@ -261,11 +254,7 @@ class ReportDataset(BaseDataset):
         batch_size: int = 0,
         in_memory: bool = False,
     ):
-        sql_query = """ SELECT * FROM annotation.choices """
-        
-
         super().__init__(
-            sql_query,
             mode,
             n_folds,
             current_fold,
