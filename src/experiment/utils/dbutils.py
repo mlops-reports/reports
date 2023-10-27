@@ -141,11 +141,11 @@ class DatabaseUtils:
             )
 
         return self.query_database(sql, output_format)
-    
-    def query_database(self, query, output_format="dataframe") -> Any:
-        '''The function `query_database` executes a SQL query on a database using SQLAlchemy and returns
+
+    def query_database(self, query: str, output_format: str = "dataframe") -> Any:
+        """The function `query_database` executes a SQL query on a database using SQLAlchemy and returns
         the result in the specified output format, which is currently limited to a pandas DataFrame.
-        
+
         Parameters
         ----------
         query
@@ -156,14 +156,14 @@ class DatabaseUtils:
             The `output_format` parameter is used to specify the format in which the query results should
         be returned. The default value is "dataframe", which means that the query results will be
         returned as a pandas DataFrame.
-        
+
         Returns
         -------
             the output of the database query in the specified output format. If the output format is
         "dataframe", it returns a pandas DataFrame object containing the query results. If the output
         format is not "dataframe", it raises a NotImplementedError.
-        
-        '''
+
+        """
         with self.engine.connect() as connection:
             try:
                 result = connection.execute(sqlalchemy.text(query))
@@ -178,9 +178,8 @@ class DatabaseUtils:
                 output = pd.DataFrame(data, columns=column_names)
             else:
                 raise NotImplementedError
-            
-        return output
 
+        return output
 
     def _build_sql_query_chunk(
         self,
@@ -220,9 +219,7 @@ class DatabaseUtils:
     ) -> Optional[pd.DataFrame]:
         """Toplevel function that prepares a query and reads data columns in specified table(s) for machine learning."""
         # TODO: JOIN operation will be needed here if annotations and report text are stored in separate tables.
-        query = self._build_sql_query_chunk(
-            sql_query
-        )
+        query = self._build_sql_query_chunk(sql_query)
         return self.read_sql_query(query)
 
     def read_table_in_chunks(
@@ -242,9 +239,7 @@ class DatabaseUtils:
 
         """
         limit, offset = chunk_size, chunk_idx * chunk_size
-        query = self._build_sql_query_chunk(
-            sql_query, limit=limit, offset=offset
-        )
+        query = self._build_sql_query_chunk(sql_query, limit=limit, offset=offset)
         return self.read_sql_query(query)
 
     def get_table_size(self, sql_query: str) -> int:
@@ -253,6 +248,69 @@ class DatabaseUtils:
         if df is None:
             return 0
         return df.shape[0]
+
+    def get_table_size_by_table_name(
+        self, table: str, schema: str = "public", database: str = "report_labeling"
+    ) -> int:
+        """The function `get_table_size_by_table_name` returns the number of rows in a specified table.
+
+        Parameters
+        ----------
+        table : str
+            The "table" parameter is a string that represents the name of the table for which you want to
+        retrieve the size.
+        schema : str, optional
+            The `schema` parameter is used to specify the schema name of the table.
+        db_name : str, optional
+            The `database` parameter is the name of the database where the table is located. In this case,
+        the default value is set to "report_labeling".
+
+        Returns
+        -------
+            the count of rows in the specified table.
+
+        """
+
+        sql_query = f"""
+                SELECT COUNT(*) FROM {schema}.{table}
+            """
+
+        return self.read_sql_query(sql_query, db_name=database).iloc[0]["count"]
+
+    def select_table_by_columns(
+        self,
+        columns: list,
+        table: str,
+        schema: str = "public",
+        database: str = "report_labeling",
+    ) -> Optional[pd.DataFrame]:
+        """The function `select_table_by_columns` selects specific columns from a table in a database and
+        returns the results as a list.
+
+        Parameters
+        ----------
+        columns : list
+            A list of column names that you want to select from the table.
+        table : str
+            The `table` parameter is a string that represents the name of the table from which you want to
+        select columns.
+        schema : str, optional
+            The `schema` parameter is used to specify the schema or database where the table is located. In
+        this case, the default value is set to "public", which means the table is located in the
+        "public" schema.
+        database : str, optional
+            The `db_name` parameter is the name of the database where the table is located. In this case,
+        the default value is set to "report_labeling".
+
+        Returns
+        -------
+            a list of strings.
+
+        """
+        column_list = ", ".join(columns)
+        sql_query = f"SELECT {column_list} FROM {schema}.{table};"
+
+        return self.read_sql_query(sql_query, db_name=database)
 
     def upsert_values(
         self,
@@ -372,16 +430,16 @@ class DatabaseUtils:
         return list(df[col_name].unique())[0]
 
     def run_dbt_model(self, model: str) -> None:
-        '''The `run_dbt_model` function changes the current working directory to the specified DBT project
+        """The `run_dbt_model` function changes the current working directory to the specified DBT project
         path and then executes a bash command to run a specific DBT model.
-        
+
         Parameters
         ----------
         model : str
             The `model` parameter is a string that represents the specific model you want to run in your
         dbt project. It is used as an argument in the `run.sh` script to specify which model to execute.
-        
-        '''
+
+        """
         dbt_project_path = os.getenv("DBT_PROJECT_PATH")
 
         os.chdir(dbt_project_path)

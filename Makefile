@@ -11,6 +11,9 @@ LABEL_STUDIO_HOST := "https://label.drgoktugasci.com"
 HEROKU := heroku
 HEROKU_LABEL_APP_NAME := "label-reports"
 
+EXPERIMENT_NAME := "NLP Experiments"
+EXPERIMENT_METRIC := "accuracy"
+
 
 # Installs the dependencies
 install_dependencies:
@@ -49,5 +52,25 @@ stop_labeling_server:
 
 # Upload tasks
 upload_tasks:
-	# $(MAKE) activate_environment;
+	$(MAKE) activate_environment;
 	$(PYTHON) scripts/prepare_ls_tasks.py
+
+# Runs a tracking server
+run_tracking_server:
+	$(MAKE) activate_environment;
+	$(PYTHON) scripts/run_mlflow_tracking_server.py 
+
+# Runs an inference server
+run_inference_server:
+	$(MAKE) activate_environment;
+	$(PYTHON) scripts/run_mlflow_inference_server.py $(EXPERIMENT_NAME) $(EXPERIMENT_METRIC)
+
+# Stops all running mlflow experiment servers
+stop_ml_servers:
+	$(MAKE) activate_environment;
+	$(PYTHON) scripts/stop_mlflow_servers.py  
+
+# Cleans mlflow database 
+clean_mlflow_db:
+	$(MAKE) activate_environment;
+	$(PYTHON) scripts/stop_mlflow_servers.py --gc
