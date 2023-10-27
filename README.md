@@ -6,7 +6,8 @@ This is a template for the ml experimentation use cases
 ## Building the environment
 1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) & [oh-my-zsh](https://ohmyz.sh/)
 2. Install [poetry](https://python-poetry.org/docs/)
-3. Run the command(s) below
+3. Install [heroku](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+4. Run the command(s) below
 ```
 make install_dependencies
 make activate_environment
