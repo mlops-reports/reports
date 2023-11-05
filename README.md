@@ -12,7 +12,7 @@ This is a template for the ml experimentation use cases
 make install_dependencies
 make activate_environment
 ```
-Note that poetry fails to install torch dependencies related to cudNN for torch>2.0.0
+Note that poetry fails to install torch dependencies related to cudNN for torch > 2.0.0
 so you might consider to install it via pip.
 
 ## Usage on local machine
