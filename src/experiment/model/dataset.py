@@ -68,7 +68,6 @@ class BaseDataset(Dataset):
         self.batch_size = batch_size
 
         self.dbutils = DatabaseUtils()
-        self.dbutils.connect_database("report_labeling")
 
         self.n_samples_total = self.get_number_of_samples()
 
@@ -140,7 +139,7 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size_by_table_name("report_classifications")
+        return self.dbutils.get_table_size_by_table_name("report_classifications", schema="annotation")
 
     def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
@@ -152,7 +151,7 @@ class BaseDataset(Dataset):
             An array stores the labels for each sample.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=[label_flag], table="report_classifications"
+            columns=[label_flag], table="report_classifications", schema="annotation"
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
@@ -203,11 +202,11 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=["translated_text"], table="report_classifications"
+            columns=["translated_text"], table="report_classifications", schema="annotation"
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[["full_text"]].values
+        return df[["translated_text"]].values
 
     def get_fold_indices(
         self, all_data_size: int, n_folds: int, fold_id: int = 0

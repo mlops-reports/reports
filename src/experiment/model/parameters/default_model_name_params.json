@@ -15,6 +15,6 @@
         16
     ],
     "model_name": "default_model_name",
-    "model_save_path": "/home/oytun/GitRepos/reports/models/models/default_model_name",
-    "model_params_save_path": "/home/oytun/GitRepos/reports/models/models/default_model_name_params.json"
+    "model_save_path": "/home/oytun/GitRepos/reports/src/experiment/model/parameters/default_model_name",
+    "model_params_save_path": "/home/oytun/GitRepos/reports/src/experiment/model/parameters/default_model_name_params.json"
 }
