@@ -15,21 +15,29 @@ EXPERIMENT_NAME := "NLP Experiments"
 EXPERIMENT_METRIC := "accuracy"
 
 # Install common dependencies
-install_poetry_dependencies:
+install_dependencies_common:
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
+	$(VENV_LOCATION) -m pip install mlflow accelerate transformers
 
 # Installs the dependencies for MacOS
 install_dependencies_mac:
 	$(MAKE) remove_environment;
-	$(MAKE) install_poetry_dependencies;
-	$(VENV_LOCATION) -m pip install mlflow torch torchvision torchaudio accelerate transformers
+	$(MAKE) install_dependencies_common;
+	$(VENV_LOCATION) -m pip3 install torch torchvision torchaudio
 
 # Installs the dependencies for Windows
 install_dependencies_win:
 	$(MAKE) remove_environment;
-	$(MAKE) install_poetry_dependencies;
-	$(VENV_LOCATION) -m pip install mlflow torch torchvision torchaudio accelerate transformers --index-url https://download.pytorch.org/whl/cu121
+	$(MAKE) install_dependencies_common;
+	$(VENV_LOCATION) -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+install_dependencies_linux:
+	$(MAKE) remove_environment;
+	$(MAKE) install_dependencies_common;
+	$(VENV_LOCATION) -m pip3 install torch torchvision torchaudio
+
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Removes the existing environment
 remove_environment:
