@@ -3,7 +3,7 @@ from typing import Optional, Tuple
 
 import numpy as np
 import torch
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, confusion_matrix
 from torch import Tensor
 from torch.nn import Module
 from torch.utils.data import DataLoader
@@ -11,6 +11,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from experiment.model.dataset import ReportDataset, batch_collate_fn
 from experiment.utils.logging import logger
+from experiment.model.plotting import plot_beautify
 
 DATASETS = {
     "report_dataset": ReportDataset,
@@ -60,7 +61,7 @@ class BaseInferer:
 
         self.metric = metric_name
 
-        if metric_name not in ["accuracy", "f1_score", "roc_auc"]:
+        if metric_name not in ["accuracy", "f1_score", "roc_auc", "confusion_matrix"]:
             raise NotImplementedError()
 
     @torch.no_grad()
@@ -135,6 +136,10 @@ class BaseInferer:
             return f1_score(labels, predictions, average="weighted")
         elif self.metric == "roc_auc":
             return roc_auc_score(labels, predictions, multi_class="ovr")
+        elif self.metric == "confusion_matrix":
+            cm = confusion_matrix(labels, predictions, labels=[1, 2, 3, 4])
+            plot_beautify(cm, ["1", "2", "3", "4"])
+            return cm
         else:
             raise NotImplementedError()
 
