@@ -93,9 +93,9 @@ class BaseTrainer:
         model.eval()
         val_losses = []
         for input_data, target_label in val_dataloader:
-            prediction = model(input_data)
-            val_loss = self.loss_fn(prediction, target_label)
-            val_losses.append(val_loss)
+            input_data["labels"] = target_label
+            output = model(**input_data)
+            val_losses.append(output.loss)
 
         model.train()
         return torch.stack(val_losses).mean().item()
