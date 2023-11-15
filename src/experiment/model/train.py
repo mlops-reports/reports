@@ -6,8 +6,6 @@ import numpy as np
 import torch
 from torch.nn import Module
 from torch.utils.data import DataLoader
-from torch.nn import CrossEntropyLoss
-from torch.nn.modules.loss import _Loss
 from torch.backends import cudnn
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
@@ -68,21 +66,15 @@ class BaseTrainer:
         self.loss_name = loss_name
         self.layer_sizes = layer_sizes
         self.model_name = model_name
-        self.model_save_path = os.path.join(FILE_PATH, "parameters", model_name)
+        self.model_save_path = os.path.join(FILE_PATH, model_name, "models")
         if not os.path.exists(self.model_save_path):
             os.makedirs(self.model_save_path)
 
         self.model_params_save_path = os.path.join(
-            FILE_PATH, "parameters", model_name + "_params.json"
+            self.model_save_path, model_name + "_params.json"
         )
         with open(self.model_params_save_path, "w") as f:
             json.dump(self.__dict__, f, indent=4)
-
-        self.loss_fn: _Loss
-        if loss_name == "cross_entropy":
-            self.loss_fn = CrossEntropyLoss()
-        else:
-            raise NotImplementedError("Specified loss function is not defined.")
 
         self.val_loss_per_epoch: List[float] = []
 

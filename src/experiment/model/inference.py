@@ -155,11 +155,11 @@ class BaseInferer:
             Pretrained model ready for inference, or continue training.
         """
         model = AutoModelForSequenceClassification.from_pretrained(
-            os.path.join(model_path, f"model_fold{fold}.pth"),
+            os.path.join(model_path, f"model_fold{fold}"),
             num_labels=5,
         ).to(device)
         tokenizer = AutoTokenizer.from_pretrained(
-            os.path.join(model_path, f"tokenizer_fold{fold}.pth")
+            os.path.join(model_path, f"tokenizer_fold{fold}")
         )
         print("A previous model and tokenizer are loaded from file.")
         return model, tokenizer

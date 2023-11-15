@@ -17,11 +17,9 @@ class ExperimentPipeline(MLFlow):
         """Initialize with kwargs, all parameters for the Trainer."""
         self.kwargs = kwargs
         self.results_save_path = os.path.join(
-            FILE_PATH, "results", self.kwargs["model_name"]
+            FILE_PATH, self.kwargs["model_name"], "results"
         )
-        self.model_path = os.path.join(
-            FILE_PATH, "parameters", self.kwargs["model_name"]
-        )
+        self.model_path = os.path.join(FILE_PATH, self.kwargs["model_name"], "models")
         self.model_per_fold: List[Tuple[Module, Module]] = []
         self.val_result_per_fold: List[float] = []
         self.test_result_per_fold: List[float] = []
@@ -69,7 +67,5 @@ class ExperimentPipeline(MLFlow):
             }
         )
         # Index of the dataframe will indicate the fold id.
-        if not os.path.exists(self.results_save_path):
-            os.makedirs(self.results_save_path)
-        results_df.to_csv(self.results_save_path + "_results.csv", index=True)
+        results_df.to_csv((self.results_save_path + ".csv"), index=True)
         print("Experiments results are successfully saved.")
