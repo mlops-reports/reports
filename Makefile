@@ -1,6 +1,6 @@
 # Defines variables
 PYTHON_PATH := $(shell which python3.11)
-PIP_REQUIREMENTS := requirements-dev.txt
+VENV_LOCATION := ./.venv/bin/python
 
 POETRY := poetry
 MAKE := make
@@ -14,18 +14,22 @@ HEROKU_LABEL_APP_NAME := "label-reports"
 EXPERIMENT_NAME := "NLP Experiments"
 EXPERIMENT_METRIC := "accuracy"
 
-
-# Installs the dependencies
-install_dependencies:
-	$(MAKE) remove_environment;
-	$(HEROKU) update;
-	rm -rf .venv;
+# Install common dependencies
+install_poetry_dependencies:
 	$(POETRY) env use $(PYTHON_PATH);
 	$(POETRY) install
 
-# Export dependencies for pip install
-export_dependencies:
-	$(POETRY) export --without-hashes --format=requirements.txt > $(PIP_REQUIREMENTS) --with mlops,ml
+# Installs the dependencies for MacOS
+install_dependencies_mac:
+	$(MAKE) remove_environment;
+	$(MAKE) install_poetry_dependencies;
+	$(VENV_LOCATION) -m pip install mlflow torch torchvision torchaudio accelerate transformers
+
+# Installs the dependencies for Windows
+install_dependencies_win:
+	$(MAKE) remove_environment;
+	$(MAKE) install_poetry_dependencies;
+	$(VENV_LOCATION) -m pip install mlflow torch torchvision torchaudio accelerate transformers --index-url https://download.pytorch.org/whl/cu121
 
 # Removes the existing environment
 remove_environment:
