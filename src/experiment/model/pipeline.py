@@ -54,14 +54,18 @@ class ExperimentPipeline(MLFlow):
                     dataset=self.kwargs["dataset"],
                     model=self.model_per_fold[fold_idx][0],
                     tokenizer=self.model_per_fold[fold_idx][1],
+                    metric_name=self.metric_name,
                 )
             else:
                 self.inferer = BaseInferer(
                     dataset=self.kwargs["dataset"],
                     model_path=self.model_path,
+                    metric_name=self.metric_name,
                 )
             self.test_score = self.inferer.run(fold_id=fold_idx)
-            logger.info(f"Fold: {fold_idx} - Test score: {self.test_score}")
+            logger.info(
+                f"Fold: {fold_idx} - Test {self.metric_name} score: {self.test_score}"
+            )
             if self.test_score is not None:
                 self.test_result_per_fold.append(self.test_score)
 
