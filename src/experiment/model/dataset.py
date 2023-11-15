@@ -1,15 +1,15 @@
 import os
-from typing import Tuple, List, Optional
+from typing import Dict, Tuple, List, Optional
 import torch
 import numpy as np
 from torch.utils.data import Dataset
 from torch import Tensor
 from sklearn.model_selection import KFold
 from transformers import AutoTokenizer
-from transformers import DataCollatorWithPadding
 from experiment.utils.dbutils import DatabaseUtils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
 ROOT_PATH = os.path.dirname(__file__)
 
@@ -21,11 +21,14 @@ class DataError(Exception):
     pass
 
 
-def batch_collate_fn(batch_data: List[Tensor]) -> Tensor:
+def batch_collate_fn(batch_data: List[str]) -> Tuple[Dict[str, Tensor], Tensor]:
     """Definition of how the batched data will be treated."""
-    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
-    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-    return data_collator(batch_data)
+    inputs, labels = zip(*batch_data)
+    encoded_inputs = tokenizer(
+        inputs, return_tensors="pt", padding=True, truncation=True
+    ).to(device)
+    batched_labels = torch.stack(labels)
+    return encoded_inputs, batched_labels
 
 
 class BaseDataset(Dataset):
@@ -37,7 +40,7 @@ class BaseDataset(Dataset):
         n_folds: int = 5,
         current_fold: int = 0,
         batch_size: int = 0,
-        in_memory: bool = False,
+        in_memory: bool = True,
     ):
         """
         Dataset class to initialize data operations, cross validation and preprocessing.
@@ -125,9 +128,11 @@ class BaseDataset(Dataset):
                 label = None
             else:
                 label = torch.from_numpy(self.samples_labels[index]).to(device)
-            sample_data = self.preprocess(self.loaded_samples[index]).to(device)
+            sample_data = self.loaded_samples[index][0]
         else:
-            raise NotImplementedError
+            raise NotImplementedError(
+                "Lazy loading not implemented, please use In-Memory execution."
+            )
             # sample_data, label = self.get_sample_data(index)
         return sample_data, label
 
@@ -139,7 +144,9 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size_by_table_name("report_classifications", schema="annotation")
+        return self.dbutils.get_table_size_by_table_name(
+            "report_classifications", schema="annotation"
+        )
 
     def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
@@ -188,8 +195,8 @@ class BaseDataset(Dataset):
     #     ).to(device)
     #     return sample_data, sample_label
 
-    def preprocess(self, data: np.ndarray) -> Tensor:
-        return torch.from_numpy(data)
+    # def preprocess(self, data: np.ndarray) -> Tensor:
+    #     return torch.from_numpy(data)
 
     def get_all_samples(self) -> np.ndarray:
         """
@@ -202,7 +209,9 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=["translated_text"], table="report_classifications", schema="annotation"
+            columns=["translated_text"],
+            table="report_classifications",
+            schema="annotation",
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
@@ -255,7 +264,7 @@ class ReportDataset(BaseDataset):
         n_folds: int = 5,
         current_fold: int = 0,
         batch_size: int = 0,
-        in_memory: bool = False,
+        in_memory: bool = True,
     ):
         super().__init__(
             mode,
@@ -264,7 +273,9 @@ class ReportDataset(BaseDataset):
             batch_size,
             in_memory,
         )
-        self.tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+        # self.tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
 
-    def preprocess(self, data: np.ndarray) -> Tensor:
-        return self.tokenizer(data, truncation=True)
+    # def preprocess(self, text: List[str]) -> Tensor:
+    #     return self.tokenizer(
+    #         text, return_tensors="pt", padding=True, truncation=True
+    #     ).to(device)

@@ -8,11 +8,10 @@ from torch.nn import Module
 from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
 from torch.nn.modules.loss import _Loss
+from torch.backends import cudnn
 from transformers import AutoModelForSequenceClassification
 from experiment.model.dataset import ReportDataset, batch_collate_fn
 from experiment.model.early_stopping import EarlyStopping
-
-from torch.backends import cudnn
 
 # We used 35813 (part of the Fibonacci Sequence) as the seed when we conducted experiments
 np.random.seed(35813)
@@ -123,7 +122,7 @@ class BaseTrainer:
             collate_fn=batch_collate_fn,
         )
         model = AutoModelForSequenceClassification.from_pretrained(
-            "distilbert-base-uncased", num_labels=4
+            "distilbert-base-uncased", num_labels=5
         ).to(device)
         optimizer = torch.optim.AdamW(
             model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay
@@ -133,8 +132,10 @@ class BaseTrainer:
         for epoch in range(self.n_epochs):
             tr_losses = []
             for input_data, target_data in tr_dataloader:
-                pred_data = model(input_data)
-                tr_loss = self.loss_fn(pred_data, target_data)
+                input_data["labels"] = target_data
+                output = model(**input_data)
+                tr_loss = output.loss
+                # tr_loss = self.loss_fn(pred_data, target_data)
                 optimizer.zero_grad()
                 tr_loss.backward()
                 optimizer.step()
@@ -169,6 +170,7 @@ if __name__ == "__main__":
         dataset="report_dataset",
         timepoint=None,
         n_epochs=100,
-        learning_rate=0.01,
+        learning_rate=0.001,
+        batch_size=24,
     )
     trainer.train()
