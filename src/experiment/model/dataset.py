@@ -1,11 +1,14 @@
 import os
-from typing import Tuple, List, Optional
-import torch
+from typing import List, Optional, Tuple
+
 import numpy as np
-from torch.utils.data import Dataset
-from torch import Tensor
+import torch
 from sklearn.model_selection import KFold
+from torch import Tensor
+from torch.utils.data import Dataset
+
 from experiment.utils.dbutils import DatabaseUtils
+from experiment.utils.logging import logger
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -77,7 +80,7 @@ class BaseDataset(Dataset):
             self.samples_labels = self.get_labels()
             assert len(self.samples_labels) == self.n_samples_total
 
-        print(f"Loading {self.n_samples_total} from dataset...")
+        logger.info(f"Loading {self.n_samples_total} from dataset...")
         # Keep half of the data as 'unseen' to be used in inference.
         self.seen_data_indices, self.unseen_data_indices = self.get_fold_indices(
             self.n_samples_total, 2
@@ -95,7 +98,7 @@ class BaseDataset(Dataset):
                 self.n_folds,
                 self.current_fold,
             )
-            print(
+            logger.info(
                 f"Train/Val/Test split is: {len(self.tr_indices)}/{len(self.val_indices)}/{len(self.unseen_data_indices)}"
             )
 

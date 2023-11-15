@@ -1,11 +1,13 @@
 import os
+from typing import Any, List, Tuple
+
 import pandas as pd
-from typing import List, Any, Tuple
 from torch.nn import Module
 
-from experiment.model.train import BaseTrainer
-from experiment.model.inference import BaseInferer
 from experiment.api.mlflow import MLFlow
+from experiment.model.inference import BaseInferer
+from experiment.model.train import BaseTrainer
+from experiment.utils.logging import logger
 
 FILE_PATH = os.path.dirname(__file__)
 
@@ -32,7 +34,7 @@ class ExperimentPipeline(MLFlow):
     def train_model(self) -> None:
         """Run training loop for each cross validation fold."""
         for fold in range(self.n_folds):
-            print(f"--------------------- FOLD {fold} ---------------------")
+            logger.info(f"--------------------- FOLD {fold} ---------------------")
             model = self.trainer.train(current_fold=fold)
             self.model_per_fold.append(model)
             # Last epochs validation score:
@@ -54,7 +56,7 @@ class ExperimentPipeline(MLFlow):
                     model_path=self.model_path,
                 )
             self.test_score = self.inferer.run(fold_id=fold_idx)
-            print(f"Fold: {fold_idx} - Test score: {self.test_score}")
+            logger.info(f"Fold: {fold_idx} - Test score: {self.test_score}")
             if self.test_score is not None:
                 self.test_result_per_fold.append(self.test_score)
 
@@ -68,4 +70,4 @@ class ExperimentPipeline(MLFlow):
         )
         # Index of the dataframe will indicate the fold id.
         results_df.to_csv((self.results_save_path + ".csv"), index=True)
-        print("Experiments results are successfully saved.")
+        logger.info("Experiments results are successfully saved.")

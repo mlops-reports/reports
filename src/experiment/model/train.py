@@ -1,16 +1,17 @@
 import json
 import os
-from typing import Optional, List, Tuple
+from typing import List, Optional, Tuple
 
 import numpy as np
 import torch
+from torch.backends import cudnn
 from torch.nn import Module
 from torch.utils.data import DataLoader
-from torch.backends import cudnn
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
 from experiment.model.dataset import ReportDataset, batch_collate_fn
 from experiment.model.early_stopping import EarlyStopping
+from experiment.utils.logging import logger
 
 # We used 35813 (part of the Fibonacci Sequence) as the seed when we conducted experiments
 np.random.seed(35813)
@@ -146,7 +147,7 @@ class BaseTrainer:
             avg_tr_loss = torch.stack(tr_losses).mean().item()
             if (epoch + 1) % self.validation_period == 0:
                 val_loss = self.validate(model, tokenizer, val_dataloader)
-                print(
+                logger.info(
                     f"Epoch: {epoch+1}/{self.n_epochs} | Tr.Loss: {avg_tr_loss} | Val.Loss: {val_loss}"
                 )
                 self.val_loss_per_epoch.append(val_loss)

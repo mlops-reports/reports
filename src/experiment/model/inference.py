@@ -1,14 +1,16 @@
 import os
+from typing import Optional, Tuple
+
 import numpy as np
-from sklearn.metrics import accuracy_score, roc_auc_score, f1_score
 import torch
+from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 from torch import Tensor
 from torch.nn import Module
 from torch.utils.data import DataLoader
-from typing import Tuple, Optional
-
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
 from experiment.model.dataset import ReportDataset, batch_collate_fn
+from experiment.utils.logging import logger
 
 DATASETS = {
     "report_dataset": ReportDataset,
@@ -117,7 +119,7 @@ class BaseInferer:
         score = None
         if test_split_only:
             assert self.metric is not None
-            print("Running testing loop and evaluation.")
+            logger.info("Running testing loop and evaluation.")
             all_predictions = np.array(predictions_list)
             all_labels = np.array(labels_list)
             score = self.evaluate(all_predictions, all_labels)
@@ -126,8 +128,7 @@ class BaseInferer:
         return score
 
     def evaluate(self, predictions: np.ndarray[int], labels: np.ndarray[int]) -> float:
-        print("Predictions:")
-        print(predictions)
+        logger.info(f"Predictions: {predictions}")
         if self.metric == "accuracy":
             return accuracy_score(labels, predictions)
         elif self.metric == "f1_score":
@@ -163,5 +164,5 @@ class BaseInferer:
         tokenizer = AutoTokenizer.from_pretrained(
             os.path.join(model_path, f"tokenizer_fold{fold}")
         )
-        print("A previous model and tokenizer are loaded from file.")
+        logger.info("A previous model and tokenizer are loaded from file.")
         return model, tokenizer
