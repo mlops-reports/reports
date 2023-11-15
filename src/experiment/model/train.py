@@ -9,6 +9,7 @@ from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
 from torch.nn.modules.loss import _Loss
 from torch.backends import cudnn
+from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 from experiment.model.dataset import ReportDataset, batch_collate_fn
 from experiment.model.early_stopping import EarlyStopping
@@ -89,12 +90,17 @@ class BaseTrainer:
         return str(self.__dict__)
 
     @torch.no_grad()
-    def validate(self, model: Module, val_dataloader: DataLoader) -> float:
+    def validate(
+        self, model: Module, tokenizer: Module, val_dataloader: DataLoader
+    ) -> float:
         model.eval()
         val_losses = []
         for input_data, target_label in val_dataloader:
-            input_data["labels"] = target_label
-            output = model(**input_data)
+            encoded_inputs = tokenizer(
+                input_data, return_tensors="pt", padding=True, truncation=True
+            ).to(device)
+            encoded_inputs["labels"] = target_label
+            output = model(**encoded_inputs)
             val_losses.append(output.loss)
 
         model.train()
@@ -124,6 +130,8 @@ class BaseTrainer:
         model = AutoModelForSequenceClassification.from_pretrained(
             "distilbert-base-uncased", num_labels=5
         ).to(device)
+        tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+
         optimizer = torch.optim.AdamW(
             model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay
         )
@@ -132,8 +140,11 @@ class BaseTrainer:
         for epoch in range(self.n_epochs):
             tr_losses = []
             for input_data, target_data in tr_dataloader:
-                input_data["labels"] = target_data
-                output = model(**input_data)
+                encoded_inputs = tokenizer(
+                    input_data, return_tensors="pt", padding=True, truncation=True
+                ).to(device)
+                encoded_inputs["labels"] = target_data
+                output = model(**encoded_inputs)
                 tr_loss = output.loss
                 # tr_loss = self.loss_fn(pred_data, target_data)
                 optimizer.zero_grad()
@@ -142,7 +153,7 @@ class BaseTrainer:
                 tr_losses.append(tr_loss.detach())
             avg_tr_loss = torch.stack(tr_losses).mean().item()
             if (epoch + 1) % self.validation_period == 0:
-                val_loss = self.validate(model, val_dataloader)
+                val_loss = self.validate(model, tokenizer, val_dataloader)
                 print(
                     f"Epoch: {epoch+1}/{self.n_epochs} | Tr.Loss: {avg_tr_loss} | Val.Loss: {val_loss}"
                 )
@@ -152,9 +163,15 @@ class BaseTrainer:
                     break
 
                 if val_loss < best_loss:
-                    torch.save(
-                        model.state_dict(),
-                        os.path.join(self.model_save_path, f"fold{current_fold}.pth"),
+                    tokenizer.save_pretrained(
+                        os.path.join(
+                            self.model_save_path, f"tokenizer_fold{current_fold}.pth"
+                        )
+                    )
+                    model.save_pretrained(
+                        os.path.join(
+                            self.model_save_path, f"model_fold{current_fold}.pth"
+                        )
                     )
                     best_loss = val_loss
 

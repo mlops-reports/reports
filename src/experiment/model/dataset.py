@@ -5,11 +5,9 @@ import numpy as np
 from torch.utils.data import Dataset
 from torch import Tensor
 from sklearn.model_selection import KFold
-from transformers import AutoTokenizer
 from experiment.utils.dbutils import DatabaseUtils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
 ROOT_PATH = os.path.dirname(__file__)
 
@@ -24,11 +22,8 @@ class DataError(Exception):
 def batch_collate_fn(batch_data: List[str]) -> Tuple[Dict[str, Tensor], Tensor]:
     """Definition of how the batched data will be treated."""
     inputs, labels = zip(*batch_data)
-    encoded_inputs = tokenizer(
-        inputs, return_tensors="pt", padding=True, truncation=True
-    ).to(device)
     batched_labels = torch.stack(labels)
-    return encoded_inputs, batched_labels
+    return inputs, batched_labels
 
 
 class BaseDataset(Dataset):
@@ -73,6 +68,7 @@ class BaseDataset(Dataset):
         self.dbutils = DatabaseUtils()
 
         self.n_samples_total = self.get_number_of_samples()
+        print(f"Loading {self.n_samples_total} from dataset...")
 
         # Keep half of the data as 'unseen' to be used in inference.
         self.seen_data_indices, self.unseen_data_indices = self.get_fold_indices(
@@ -96,6 +92,9 @@ class BaseDataset(Dataset):
                 self.n_samples_seen,
                 self.n_folds,
                 self.current_fold,
+            )
+            print(
+                f"Train/Val/Test split is: {len(self.tr_indices)}/{len(self.val_indices)}/{len(self.unseen_data_indices)}"
             )
 
         if mode == "train":
