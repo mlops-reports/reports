@@ -1,29 +1,26 @@
-#%%
-import time
+# %%
 import datetime
-
-from experiment.utils import dbutils, logger, transformation
-from experiment.utils.tables.upload_tasks_table import UploadTasksTable
-from experiment.api import label_studio
+import time
 
 import openai
 
-#%%
+from experiment.api import label_studio
+from experiment.utils import dbutils, transformation
+from experiment.utils.logging import logger
+from experiment.utils.tables.upload_tasks_table import UploadTasksTable
+
+# %%
 db = dbutils.DatabaseUtils()
-lg = logger.Logger(
-    logging_level="DEBUG",
-    log_file=transformation.get_project_root() / "tmp" / "report_prompting.log",
-)
 
-#%%
+# %%
 PROMPT_N_MORE_REPORTS = 200
-PROMPT = "Perform the following transformation on the report: Translate into English" 
+PROMPT = "Perform the following transformation on the report: Translate into English"
 
 
-#%%
+# %%
 reports_raw, Base = UploadTasksTable()
 
-#%%
+# %%
 # get reports directly from database
 query = """
             SELECT * FROM annotation.upload_tasks ut 
@@ -34,8 +31,8 @@ query = """
 df_reports = db.read_sql_query(query)
 df_reports.head()
 
-#%%
-# get annotated reports 
+# %%
+# get annotated reports
 query = """
             SELECT 
                 DISTINCT data ->> 'patient_no' as patient_no
@@ -46,7 +43,7 @@ query = """
 # get values from the database
 annotated_patient_nos = db.read_sql_query(query)["patient_no"].to_list()
 
-#%%
+# %%
 # get tasks that have been prompted
 query = """
             SELECT 
@@ -58,7 +55,7 @@ query = """
 # get values from the database
 upload_tasks_prompted = db.read_sql_query(query)["report_id"].to_list()
 
-#%%
+# %%
 # use only non-prompted reports & non-annotated patients
 df_upload_tasks = (
     df_reports.loc[~df_reports["patient_no"].isin(annotated_patient_nos)]
@@ -66,7 +63,7 @@ df_upload_tasks = (
     .head(PROMPT_N_MORE_REPORTS)
 )
 
-#%%
+# %%
 cols_to_upsert = df_upload_tasks.columns.to_list()
 cols_to_upsert.remove("report_id")
 data_to_insert = []
@@ -85,18 +82,17 @@ for _, row in df_upload_tasks.iterrows():
                 "patient_report_count": row["patient_report_count"],
             }
         )
-    
 
         db.upsert_values(reports_raw, data_to_insert, cols_to_upsert, ["report_id"])
 
         time.sleep(20)
-    except openai.error.RateLimitError as rate_error:
+    except openai.error.RateLimitError:
         # openai restriction: 3 RPM - 200 RPD
-        lg.log(f"Rate limit for: {datetime.datetime.now()}", "WARNING")
+        logger.warning(f"Rate limit for: {datetime.datetime.now()}")
 
-lg.log(f"Finished prompting {len(data_to_insert)} reports")
+logger.info(f"Finished prompting {len(data_to_insert)} reports")
 
-#%%
+# %%
 # get reports directly from database
 query = """
             SELECT
@@ -122,15 +118,13 @@ query = """
 df_upload_tasks = db.read_sql_query(query)
 
 # output tasks as a csv file
-output_path = (
-    transformation.get_project_root() / "tmp" / "data" / "upload_tasks.csv"
-)
+output_path = transformation.get_project_root() / "tmp" / "data" / "upload_tasks.csv"
 df_upload_tasks.to_csv(output_path, index=False)
 
-#%%
+# %%
 # upload tasks to label studio
 label_studio.upload_csv_tasks(csv_path=output_path, project_id=7)
 
 
-#%%
+# %%
 label_studio.stop_label_studio()

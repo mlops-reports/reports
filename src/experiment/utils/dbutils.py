@@ -6,10 +6,9 @@ import os
 from typing import Any, List, Optional, Union
 
 import pandas as pd
-
 import sqlalchemy
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.orm import sessionmaker
 
 
 class QueryError(Exception):

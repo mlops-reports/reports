@@ -60,6 +60,11 @@ PSQL_DB_HOST=<PSQL_DB_HOST>
 # ai
 HUGGINGFACE_TOKEN=<HUGGINGFACE_TOKEN>
 OPEN_AI_API_KEY=<OPEN_AI_API_KEY>
+
+
+# optional
+LOG_FILE_PATH=<LOG_FILE_PATH>
+LOG_LEVEL=<LOG_LEVEL>
 ```
 ## External storage of metadata and artifacts
 
