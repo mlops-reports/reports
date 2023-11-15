@@ -32,6 +32,7 @@ install_dependencies_win:
 	$(MAKE) install_dependencies_common;
 	$(VENV_LOCATION) -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
+# Installs the dependencies for Linux
 install_dependencies_linux:
 	$(MAKE) remove_environment;
 	$(MAKE) install_dependencies_common;
