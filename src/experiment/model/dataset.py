@@ -1,5 +1,5 @@
 import os
-from typing import Dict, Tuple, List, Optional
+from typing import Tuple, List, Optional
 import torch
 import numpy as np
 from torch.utils.data import Dataset
@@ -19,7 +19,7 @@ class DataError(Exception):
     pass
 
 
-def batch_collate_fn(batch_data: List[str]) -> Tuple[Dict[str, Tensor], Tensor]:
+def batch_collate_fn(batch_data: List[str]) -> Tuple[Tuple[Tensor, ...], Tensor]:
     """Definition of how the batched data will be treated."""
     inputs, labels = zip(*batch_data)
     batched_labels = torch.stack(labels)

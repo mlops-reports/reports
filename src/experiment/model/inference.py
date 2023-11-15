@@ -1,11 +1,13 @@
 import os
+import numpy as np
+from sklearn.metrics import accuracy_score, roc_auc_score, f1_score
 import torch
+from torch import Tensor
 from torch.nn import Module
 from torch.utils.data import DataLoader
-from typing import List, Dict, Any, Optional
+from typing import Tuple, Optional
 
-from torch.nn import CrossEntropyLoss
-from transformers import AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from experiment.model.dataset import ReportDataset, batch_collate_fn
 
 DATASETS = {
@@ -22,10 +24,10 @@ class BaseInferer:
         self,
         dataset: str,
         model: Optional[Module] = None,
+        tokenizer: Optional[Module] = None,
         model_path: Optional[str] = None,
-        model_params: Optional[Dict[str, Any]] = None,
         out_path: Optional[str] = None,
-        metric_name: str = "cross_entropy",
+        metric_name: str = "accuracy",
     ) -> None:
         """
         Initialize the inference (or testing) setup.
@@ -49,28 +51,18 @@ class BaseInferer:
         self.dataset = dataset
         self.model_path = model_path
         self.out_path = out_path
-        self.model_params = model_params
-        self.model: Module
-        if model is None:
-            assert (
-                model_params is not None
-            ), "Specify the model or: specify model_path and model_params"
-            assert (
-                model_path is not None
-            ), "Specify the model or: specify model_path and model_params"
-            self.model = self.load_model_from_file(model_path, model_params)
-        else:
-            self.model = model
 
+        self.model = model
+        self.tokenizer = tokenizer
         self.dataset = dataset
 
-        if metric_name == "cross_entropy":
-            self.metric = CrossEntropyLoss()
-        else:
+        self.metric = metric_name
+
+        if metric_name not in ["accuracy", "f1_score", "roc_auc"]:
             raise NotImplementedError()
 
     @torch.no_grad()
-    def run(self, test_split_only: bool = True) -> List[float]:
+    def run(self, test_split_only: bool = True, fold_id: int = 0) -> Optional[float]:
         """
         Run inference loop whether for testing purposes or in-production.
 
@@ -86,8 +78,14 @@ class BaseInferer:
         test_losses: list of floats
             Test loss for each sample. Or any metric you will define. Calculates only if test_split_only is True.
         """
+        if self.model is None or self.tokenizer is None:
+            assert (
+                self.model_path is not None
+            ), "Specify the model or specify model_path"
+            self.model, self.tokenizer = self.load_model_from_file(
+                self.model_path, fold_id
+            )
         self.model.eval()
-        test_losses = []
 
         if test_split_only:
             mode = "test"
@@ -100,20 +98,47 @@ class BaseInferer:
             batch_size=1,
             collate_fn=batch_collate_fn,
         )
+        predictions_list = []
+        labels_list = []
         for idx, (input_data, target_label) in enumerate(test_dataloader):
-            prediction = self.model(input_data)
+            encoded_inputs = self.tokenizer(
+                input_data, return_tensors="pt", padding=True, truncation=True
+            ).to(device)
+            encoded_inputs["labels"] = target_label
+            output = self.model(**encoded_inputs)
             if self.out_path is not None:
-                torch.save(prediction, os.path.join(self.out_path, f"sample_{idx}.pt"))
+                torch.save(
+                    output.logits, os.path.join(self.out_path, f"sample_{idx}.pt")
+                )
+            predictions_list.append(self.postprocessing(output.logits))
             if test_split_only:
-                test_loss = self.metric(prediction, target_label)
-                test_losses.append(test_loss.item())
+                labels_list.append(target_label.squeeze().detach().cpu().numpy())
+
+        score = None
+        if test_split_only:
+            assert self.metric is not None
+            print("Running testing loop and evaluation.")
+            all_predictions = np.array(predictions_list)
+            all_labels = np.array(labels_list)
+            score = self.evaluate(all_predictions, all_labels)
 
         self.model.train()
-        return test_losses
+        return score
 
-    def load_model_from_file(
-        self, model_path: str, model_params: Dict[str, Any]
-    ) -> Module:
+    def evaluate(self, predictions: np.ndarray[int], labels: np.ndarray[int]) -> float:
+        if self.metric == "accuracy":
+            return accuracy_score(labels, predictions)
+        elif self.metric == "f1_score":
+            return f1_score(labels, predictions)
+        elif self.metric == "accuracy":
+            return roc_auc_score(labels, predictions)
+        else:
+            raise NotImplementedError()
+
+    def postprocessing(self, logit: Tensor) -> int:
+        return int(np.argmax(logit.detach().cpu().numpy()))
+
+    def load_model_from_file(self, model_path: str, fold: int) -> Tuple[Module, Module]:
         """
         Load a pretrained model from file.
 
@@ -129,6 +154,12 @@ class BaseInferer:
         model: pytorch Module
             Pretrained model ready for inference, or continue training.
         """
-        model = AutoModelForSequenceClassification(**model_params).to(device)
-        model.load_state_dict(torch.load(model_path + ".pth"))
-        return model
+        model = AutoModelForSequenceClassification.from_pretrained(
+            os.path.join(model_path, f"model_fold{fold}.pth"),
+            num_labels=5,
+        ).to(device)
+        tokenizer = AutoTokenizer.from_pretrained(
+            os.path.join(model_path, f"tokenizer_fold{fold}.pth")
+        )
+        print("A previous model and tokenizer are loaded from file.")
+        return model, tokenizer

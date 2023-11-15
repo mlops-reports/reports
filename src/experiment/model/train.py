@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Optional, List
+from typing import Optional, List, Tuple
 
 import numpy as np
 import torch
@@ -106,7 +106,7 @@ class BaseTrainer:
         model.train()
         return torch.stack(val_losses).mean().item()
 
-    def train(self, current_fold: int = 0) -> Module:
+    def train(self, current_fold: int = 0) -> Tuple[Module, Module]:
         tr_dataset = DATASETS[self.dataset](
             mode="train",
             n_folds=self.n_folds,
@@ -165,17 +165,15 @@ class BaseTrainer:
                 if val_loss < best_loss:
                     tokenizer.save_pretrained(
                         os.path.join(
-                            self.model_save_path, f"tokenizer_fold{current_fold}.pth"
+                            self.model_save_path, f"tokenizer_fold{current_fold}"
                         )
                     )
                     model.save_pretrained(
-                        os.path.join(
-                            self.model_save_path, f"model_fold{current_fold}.pth"
-                        )
+                        os.path.join(self.model_save_path, f"model_fold{current_fold}")
                     )
                     best_loss = val_loss
 
-        return model
+        return model, tokenizer
 
     def select_model(self) -> None:
         """A post processing method to combine trained cross validation models to be used later for inference."""
