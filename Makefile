@@ -38,8 +38,6 @@ install_dependencies_linux:
 	$(MAKE) install_dependencies_common;
 	$(VENV_LOCATION) -m pip3 install torch torchvision torchaudio
 
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-
 # Removes the existing environment
 remove_environment:
 	rm -rf .venv
