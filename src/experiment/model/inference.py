@@ -132,9 +132,9 @@ class BaseInferer:
         if self.metric == "accuracy":
             return accuracy_score(labels, predictions)
         elif self.metric == "f1_score":
-            return f1_score(labels, predictions)
-        elif self.metric == "accuracy":
-            return roc_auc_score(labels, predictions)
+            return f1_score(labels, predictions, average="weighted")
+        elif self.metric == "roc_auc":
+            return roc_auc_score(labels, predictions, multi_class="ovr")
         else:
             raise NotImplementedError()
 

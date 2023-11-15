@@ -166,8 +166,8 @@ class BaseDataset(Dataset):
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        df = df[df[label_flag] != 0]
-        return df[[label_flag]].values
+        df = df.dropna() + 1
+        return df[[label_flag]].values.astype(np.int64)
 
     def get_all_samples(self) -> np.ndarray:
         """
@@ -186,7 +186,7 @@ class BaseDataset(Dataset):
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        df = df[df["annotation_value_flag"] != 0]
+        df = df.dropna(subset=["annotation_value_flag"])
         return df[["translated_text"]].values
 
     def get_fold_indices(

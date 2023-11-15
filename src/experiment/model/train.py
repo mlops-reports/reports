@@ -1,6 +1,6 @@
 import json
 import os
-from typing import List, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 
 import numpy as np
 import torch
@@ -53,6 +53,7 @@ class BaseTrainer:
         loss_weight: float = 1.0,
         loss_name: str = "cross_entropy",
         model_name: str = "default_model_name",
+        **kwargs: Any,
     ) -> None:
         self.dataset = dataset
         self.timepoint = timepoint

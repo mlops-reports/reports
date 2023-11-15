@@ -31,6 +31,11 @@ class ExperimentPipeline(MLFlow):
         else:
             self.n_folds = 5
 
+        if "metric_name" in self.kwargs.keys():
+            self.metric_name = self.kwargs["metric_name"]
+        else:
+            self.metric_name = "accuracy"
+
     def train_model(self) -> None:
         """Run training loop for each cross validation fold."""
         for fold in range(self.n_folds):
@@ -62,12 +67,21 @@ class ExperimentPipeline(MLFlow):
 
     def get_results_table(self) -> None:
         """Save experiment results in a table, this function should be called at the end."""
-        results_df = pd.DataFrame(
-            {
-                "Avg. Test Scores": self.test_result_per_fold,
-                # "Last Val. Scores": self.val_result_per_fold,
-            }
-        )
+        results = {
+            f"Test {self.metric_name} Scores": self.test_result_per_fold,
+            # "Last Val. Scores": self.val_result_per_fold,
+        }
+        results_df = pd.DataFrame(results)
         # Index of the dataframe will indicate the fold id.
-        results_df.to_csv((self.results_save_path + ".csv"), index=True)
+        if os.path.exists(self.results_save_path + ".csv"):
+            prev_results_df = pd.read_csv(self.results_save_path + ".csv")
+            if f"Test {self.metric_name} Scores" in prev_results_df.columns:
+                logger.info("There are some previous results. Exiting...")
+                return
+            appended_results = pd.concat([prev_results_df, results_df], axis=1)
+            appended_results.to_csv(self.results_save_path + ".csv", index=False)
+        else:
+            results["Folds"] = list(range(self.n_folds))
+            results_df = pd.DataFrame(results)
+            results_df.to_csv(self.results_save_path + ".csv", index=False)
         logger.info("Experiments results are successfully saved.")
