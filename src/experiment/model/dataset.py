@@ -67,19 +67,21 @@ class BaseDataset(Dataset):
 
         self.dbutils = DatabaseUtils()
 
-        self.n_samples_total = self.get_number_of_samples()
-        print(f"Loading {self.n_samples_total} from dataset...")
+        if self.in_memory:
+            self.loaded_samples = self.get_all_samples()
+            self.n_samples_total = len(self.loaded_samples)
+        else:
+            self.n_samples_total = self.get_number_of_samples()
 
+        if not mode == "inference" and in_memory:
+            self.samples_labels = self.get_labels()
+            assert len(self.samples_labels) == self.n_samples_total
+
+        print(f"Loading {self.n_samples_total} from dataset...")
         # Keep half of the data as 'unseen' to be used in inference.
         self.seen_data_indices, self.unseen_data_indices = self.get_fold_indices(
             self.n_samples_total, 2
         )
-
-        if not mode == "inference" and in_memory:
-            self.samples_labels = self.get_labels()
-
-        if self.in_memory:
-            self.loaded_samples = self.get_all_samples()
 
         if mode == "train" or mode == "validation":
             # Here split the 'seen' data to train and validation.
@@ -161,41 +163,8 @@ class BaseDataset(Dataset):
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
+        df = df[df[label_flag] != 0]
         return df[[label_flag]].values
-
-    # def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
-    #     """
-    #     If we cannot or do not want to store all the samples in memory, we need to
-    #     read the data based on selected indices (train, validation or test).
-
-    #     Parameters
-    #     ----------
-    #     index: integer
-    #         In-split index of the expected sample.
-    #         (e.g., 2 means the 3rd sample from validation split if mode is 'validation')
-
-    #     Returns
-    #     -------
-    #     tensor: torch Tensor
-    #         A torch tensor represents the data for the sample.
-    #     """
-    #     sample_data_batch = self.dbutils.read_table_in_chunks(
-    #         self.database_table_name,
-    #         self.batch_size,
-    #         index,
-    #         self.database_schema_name,
-    #     )
-    #     if sample_data_batch is None:
-    #         raise DataError("SQL returned None instead of a dataframe.")
-    #     sample_data = self.preprocess(sample_data_batch["full_text"])
-    #     sample_data = torch.from_numpy(sample_data).float().to(device)
-    #     sample_label = torch.from_numpy(
-    #         sample_data_batch["annotation_value_flag"].values
-    #     ).to(device)
-    #     return sample_data, sample_label
-
-    # def preprocess(self, data: np.ndarray) -> Tensor:
-    #     return torch.from_numpy(data)
 
     def get_all_samples(self) -> np.ndarray:
         """
@@ -208,12 +177,13 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=["translated_text"],
+            columns=["translated_text", "annotation_value_flag"],
             table="report_classifications",
             schema="annotation",
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
+        df = df[df["annotation_value_flag"] != 0]
         return df[["translated_text"]].values
 
     def get_fold_indices(
@@ -272,9 +242,3 @@ class ReportDataset(BaseDataset):
             batch_size,
             in_memory,
         )
-        # self.tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
-
-    # def preprocess(self, text: List[str]) -> Tensor:
-    #     return self.tokenizer(
-    #         text, return_tensors="pt", padding=True, truncation=True
-    #     ).to(device)

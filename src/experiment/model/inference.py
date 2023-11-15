@@ -126,6 +126,8 @@ class BaseInferer:
         return score
 
     def evaluate(self, predictions: np.ndarray[int], labels: np.ndarray[int]) -> float:
+        print("Predictions:")
+        print(predictions)
         if self.metric == "accuracy":
             return accuracy_score(labels, predictions)
         elif self.metric == "f1_score":
