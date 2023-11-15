@@ -180,7 +180,9 @@ def plot_confusion_matrix(
     return fig, ax
 
 
-def plot_beautify(conf_mat: np.ndarray, class_names: List[str]) -> None:
+def plot_beautify(
+    conf_mat: np.ndarray, class_names: List[str], out_path: Optional[str] = None
+) -> None:
     """Plots a confusion matrix with the configured parameters."""
     # binary_25samples = np.array([[23, 23], [2, 298]])
 
@@ -210,6 +212,8 @@ def plot_beautify(conf_mat: np.ndarray, class_names: List[str]) -> None:
     plt.yticks(va="center")
     plt.xticks(rotation=0)
     plt.yticks(rotation=90)
-    plt.tight_layout()
-    # plt.savefig("./conf_mat_comb.png",bbox_inches='tight',dpi=100)
-    plt.show()
+    if out_path is not None:
+        plt.savefig(out_path, bbox_inches="tight", dpi=100)
+    else:
+        plt.tight_layout()
+        plt.show()

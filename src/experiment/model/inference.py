@@ -18,6 +18,7 @@ DATASETS = {
 }
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+FILE_PATH = os.path.dirname(__file__)
 
 
 class BaseInferer:
@@ -123,12 +124,14 @@ class BaseInferer:
             logger.info("Running testing loop and evaluation.")
             all_predictions = np.array(predictions_list)
             all_labels = np.array(labels_list)
-            score = self.evaluate(all_predictions, all_labels)
+            score = self.evaluate(all_predictions, all_labels, fold_id)
 
         self.model.train()
         return score
 
-    def evaluate(self, predictions: np.ndarray[int], labels: np.ndarray[int]) -> float:
+    def evaluate(
+        self, predictions: np.ndarray[int], labels: np.ndarray[int], fold_id: int
+    ) -> float:
         logger.info(f"Predictions: {predictions}")
         if self.metric == "accuracy":
             return accuracy_score(labels, predictions)
@@ -138,7 +141,15 @@ class BaseInferer:
             return roc_auc_score(labels, predictions, multi_class="ovr")
         elif self.metric == "confusion_matrix":
             cm = confusion_matrix(labels, predictions, labels=[1, 2, 3, 4])
-            plot_beautify(cm, ["1", "2", "3", "4"])
+            conf_mat_png_path = None
+            if self.model_path is not None:
+                conf_mat_path = os.path.join(
+                    self.model_path, "..", "confusion_matrices"
+                )
+                conf_mat_png_path = os.path.join(conf_mat_path, f"fold{fold_id}.png")
+                if not os.path.exists(conf_mat_path):
+                    os.makedirs(conf_mat_path)
+            plot_beautify(cm, ["1", "2", "3", "4"], conf_mat_png_path)
             return cm
         else:
             raise NotImplementedError()
