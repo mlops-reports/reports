@@ -166,7 +166,7 @@ class BaseDataset(Dataset):
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        df = df.dropna() + 1
+        df = df.dropna()
         return df[[label_flag]].values.astype(np.int64)
 
     def get_all_samples(self) -> np.ndarray:

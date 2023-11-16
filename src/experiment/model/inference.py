@@ -140,7 +140,7 @@ class BaseInferer:
         elif self.metric == "roc_auc":
             return roc_auc_score(labels, predictions, multi_class="ovr")
         elif self.metric == "confusion_matrix":
-            cm = confusion_matrix(labels, predictions, labels=[1, 2, 3, 4])
+            cm = confusion_matrix(labels, predictions, labels=[0, 1, 2, 3])
             conf_mat_png_path = None
             if self.model_path is not None:
                 conf_mat_path = os.path.join(
@@ -149,7 +149,7 @@ class BaseInferer:
                 conf_mat_png_path = os.path.join(conf_mat_path, f"fold{fold_id}.png")
                 if not os.path.exists(conf_mat_path):
                     os.makedirs(conf_mat_path)
-            plot_beautify(cm, ["1", "2", "3", "4"], conf_mat_png_path)
+            plot_beautify(cm, ["0", "1", "2", "3"], conf_mat_png_path)
             return cm
         else:
             raise NotImplementedError()
@@ -175,7 +175,7 @@ class BaseInferer:
         """
         model = AutoModelForSequenceClassification.from_pretrained(
             os.path.join(model_path, f"model_fold{fold}"),
-            num_labels=5,
+            num_labels=4,
         ).to(device)
         tokenizer = AutoTokenizer.from_pretrained(
             os.path.join(model_path, f"tokenizer_fold{fold}")

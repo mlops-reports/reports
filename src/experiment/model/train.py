@@ -122,7 +122,7 @@ class BaseTrainer:
             collate_fn=batch_collate_fn,
         )
         model = AutoModelForSequenceClassification.from_pretrained(
-            "distilbert-base-uncased", num_labels=5
+            "distilbert-base-uncased", num_labels=4
         ).to(device)
         tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
