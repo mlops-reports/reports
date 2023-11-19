@@ -6,10 +6,11 @@ import os
 from typing import Any, List, Optional, Union
 
 import pandas as pd
-
 import sqlalchemy
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.orm import sessionmaker
+
+from experiment.utils.logging import logger
 
 
 class QueryError(Exception):
@@ -169,8 +170,7 @@ class DatabaseUtils:
                 result = connection.execute(sqlalchemy.text(query))
                 data = result.fetchall()
             except Exception as e:
-                print("Data read operation failed.")
-                print(e)
+                logger.warn(f"Data read operation failed: {e}")
             output = None
 
             if output_format == "dataframe":

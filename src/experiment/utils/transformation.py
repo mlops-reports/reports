@@ -1,17 +1,19 @@
 # import nltk
 # import simplemma
 
+# import numpy as np
+import os
+
 # import pandas as pd
 import pathlib
+
+import openai
+
 # import json
 from cryptography.fernet import Fernet
 
-# import numpy as np
-import os
 # import re
 # import matplotlib.pyplot as plt
-
-import openai
 
 
 def get_project_root() -> pathlib.Path:
@@ -82,10 +84,13 @@ def find_longest_sentence_length(sentences):
     return longest_length
 
 
-def prompt_report(report: str, prompt: str = "Remove dates and film numbers, translate to English, and remove spaces between sentences") -> str:
-    '''The `prompt_report` function takes a report in a specified language and uses OpenAI's
+def prompt_report(
+    report: str,
+    prompt: str = "Remove dates and film numbers, translate to English, and remove spaces between sentences",
+) -> str:
+    """The `prompt_report` function takes a report in a specified language and uses OpenAI's
     GPT-3.5-turbo model to translate it into English.
-    
+
     Parameters
     ----------
     report : str
@@ -94,19 +99,17 @@ def prompt_report(report: str, prompt: str = "Remove dates and film numbers, tra
     prompt : str, optional
       The `prompt` parameter is a string that represents the instruction or question given to the model.
     In this case, the default prompt is "Translate this text into English".
-    
+
     Returns
     -------
       The function `prompt_report` returns the translated report as a string.
-    
-    '''
+
+    """
     openai.api_key = os.getenv("OPEN_AI_API_KEY")
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": f"{prompt}: {report}"}
-        ],
+        messages=[{"role": "user", "content": f"{prompt}: {report}"}],
     )
 
     prompted_report = response.choices[0].message.content

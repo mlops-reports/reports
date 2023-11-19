@@ -12,6 +12,8 @@ This is a template for the ml experimentation use cases
 make install_dependencies
 make activate_environment
 ```
+Note that poetry fails to install torch dependencies related to cudNN for torch > 2.0.0
+so you might consider to install it via pip.
 
 ## Usage on local machine
 create `.env` file in working directory containing required access tokens
@@ -58,6 +60,11 @@ PSQL_DB_HOST=<PSQL_DB_HOST>
 # ai
 HUGGINGFACE_TOKEN=<HUGGINGFACE_TOKEN>
 OPEN_AI_API_KEY=<OPEN_AI_API_KEY>
+
+
+# optional
+LOG_FILE_PATH=<LOG_FILE_PATH>
+LOG_LEVEL=<LOG_LEVEL>
 ```
 ## External storage of metadata and artifacts
 
