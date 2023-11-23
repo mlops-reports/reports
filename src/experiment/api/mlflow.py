@@ -1,20 +1,20 @@
 """MLflow utils for ml experiments"""
 
+import json
+import logging
+import os
 import pathlib
+from typing import Any, Union
+from urllib import parse
+
+import mlflow
 
 # import logging
 import numpy as np
-import json
-import os
-from urllib import parse
 import requests
 
-import mlflow
-import logging
-
-from typing import Any, Union
-
 from experiment.utils import bash as bash_utils
+from experiment.utils.logging import logger
 
 
 class MLFlow:
@@ -35,7 +35,7 @@ class MLFlow:
         """
 
         self.local_storage = local_storage
-        self.logger = logging.getLogger("mlflow")
+        self.logger = logger
 
         if not self.local_storage:
             db_username = os.getenv("MLFLOW_DB_USERNAME")

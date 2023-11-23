@@ -1,13 +1,14 @@
 import os
-from typing import Tuple, List, Optional
-import torch
+from typing import List, Optional, Tuple
+
 import numpy as np
-from torch.utils.data import Dataset
-from torch import Tensor
+import torch
 from sklearn.model_selection import KFold
-from transformers import AutoTokenizer
-from transformers import DataCollatorWithPadding
+from torch import Tensor
+from torch.utils.data import Dataset
+
 from experiment.utils.dbutils import DatabaseUtils
+from experiment.utils.logging import logger
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -21,11 +22,11 @@ class DataError(Exception):
     pass
 
 
-def batch_collate_fn(batch_data: List[Tensor]) -> Tensor:
+def batch_collate_fn(batch_data: List[str]) -> Tuple[Tuple[Tensor, ...], Tensor]:
     """Definition of how the batched data will be treated."""
-    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
-    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-    return data_collator(batch_data)
+    inputs, labels = zip(*batch_data)
+    batched_labels = torch.stack(labels)
+    return inputs, batched_labels
 
 
 class BaseDataset(Dataset):
@@ -37,7 +38,7 @@ class BaseDataset(Dataset):
         n_folds: int = 5,
         current_fold: int = 0,
         batch_size: int = 0,
-        in_memory: bool = False,
+        in_memory: bool = True,
     ):
         """
         Dataset class to initialize data operations, cross validation and preprocessing.
@@ -68,20 +69,22 @@ class BaseDataset(Dataset):
         self.batch_size = batch_size
 
         self.dbutils = DatabaseUtils()
-        self.dbutils.connect_database("report_labeling")
 
-        self.n_samples_total = self.get_number_of_samples()
+        if self.in_memory:
+            self.loaded_samples = self.get_all_samples()
+            self.n_samples_total = len(self.loaded_samples)
+        else:
+            self.n_samples_total = self.get_number_of_samples()
 
+        if not mode == "inference" and in_memory:
+            self.samples_labels = self.get_labels()
+            assert len(self.samples_labels) == self.n_samples_total
+
+        logger.info(f"Loading {self.n_samples_total} from dataset...")
         # Keep half of the data as 'unseen' to be used in inference.
         self.seen_data_indices, self.unseen_data_indices = self.get_fold_indices(
             self.n_samples_total, 2
         )
-
-        if not mode == "inference" and in_memory:
-            self.samples_labels = self.get_labels()
-
-        if self.in_memory:
-            self.loaded_samples = self.get_all_samples()
 
         if mode == "train" or mode == "validation":
             # Here split the 'seen' data to train and validation.
@@ -94,6 +97,9 @@ class BaseDataset(Dataset):
                 self.n_samples_seen,
                 self.n_folds,
                 self.current_fold,
+            )
+            logger.info(
+                f"Train/Val/Test split is: {len(self.tr_indices)}/{len(self.val_indices)}/{len(self.unseen_data_indices)}"
             )
 
         if mode == "train":
@@ -126,9 +132,11 @@ class BaseDataset(Dataset):
                 label = None
             else:
                 label = torch.from_numpy(self.samples_labels[index]).to(device)
-            sample_data = self.preprocess(self.loaded_samples[index]).to(device)
+            sample_data = self.loaded_samples[index][0]
         else:
-            raise NotImplementedError
+            raise NotImplementedError(
+                "Lazy loading not implemented, please use In-Memory execution."
+            )
             # sample_data, label = self.get_sample_data(index)
         return sample_data, label
 
@@ -140,7 +148,9 @@ class BaseDataset(Dataset):
         Method to find how many samples are expected in ALL dataset.
         E.g., number of images in the target folder, number of rows in dataframe.
         """
-        return self.dbutils.get_table_size_by_table_name("report_classifications")
+        return self.dbutils.get_table_size_by_table_name(
+            "report_classifications", schema="annotation"
+        )
 
     def get_labels(self, label_flag: str = "annotation_value_flag") -> np.ndarray:
         """
@@ -152,45 +162,12 @@ class BaseDataset(Dataset):
             An array stores the labels for each sample.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=[label_flag], table="report_classifications"
+            columns=[label_flag], table="report_classifications", schema="annotation"
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[[label_flag]].values
-
-    # def get_sample_data(self, index: int) -> Tuple[Tensor, Tensor]:
-    #     """
-    #     If we cannot or do not want to store all the samples in memory, we need to
-    #     read the data based on selected indices (train, validation or test).
-
-    #     Parameters
-    #     ----------
-    #     index: integer
-    #         In-split index of the expected sample.
-    #         (e.g., 2 means the 3rd sample from validation split if mode is 'validation')
-
-    #     Returns
-    #     -------
-    #     tensor: torch Tensor
-    #         A torch tensor represents the data for the sample.
-    #     """
-    #     sample_data_batch = self.dbutils.read_table_in_chunks(
-    #         self.database_table_name,
-    #         self.batch_size,
-    #         index,
-    #         self.database_schema_name,
-    #     )
-    #     if sample_data_batch is None:
-    #         raise DataError("SQL returned None instead of a dataframe.")
-    #     sample_data = self.preprocess(sample_data_batch["full_text"])
-    #     sample_data = torch.from_numpy(sample_data).float().to(device)
-    #     sample_label = torch.from_numpy(
-    #         sample_data_batch["annotation_value_flag"].values
-    #     ).to(device)
-    #     return sample_data, sample_label
-
-    def preprocess(self, data: np.ndarray) -> Tensor:
-        return torch.from_numpy(data)
+        df = df.dropna()
+        return df[[label_flag]].values.astype(np.int64)
 
     def get_all_samples(self) -> np.ndarray:
         """
@@ -203,11 +180,14 @@ class BaseDataset(Dataset):
             A numpy array represents all data.
         """
         df = self.dbutils.select_table_by_columns(
-            columns=["translated_text"], table="report_classifications"
+            columns=["translated_text", "annotation_value_flag"],
+            table="report_classifications",
+            schema="annotation",
         )
         if df is None:
             raise DataError("Data couldnt be retrieved from database.")
-        return df[["full_text"]].values
+        df = df.dropna(subset=["annotation_value_flag"])
+        return df[["translated_text"]].values
 
     def get_fold_indices(
         self, all_data_size: int, n_folds: int, fold_id: int = 0
@@ -256,7 +236,7 @@ class ReportDataset(BaseDataset):
         n_folds: int = 5,
         current_fold: int = 0,
         batch_size: int = 0,
-        in_memory: bool = False,
+        in_memory: bool = True,
     ):
         super().__init__(
             mode,
@@ -265,7 +245,3 @@ class ReportDataset(BaseDataset):
             batch_size,
             in_memory,
         )
-        self.tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
-
-    def preprocess(self, data: np.ndarray) -> Tensor:
-        return self.tokenizer(data, truncation=True)

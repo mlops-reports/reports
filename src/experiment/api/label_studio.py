@@ -1,7 +1,8 @@
 # import pathlib
 import os
-import dotenv
 import time
+
+import dotenv
 import requests
 
 from experiment.utils import transformation
@@ -14,17 +15,19 @@ ANNOTATIONS_PATH = (
     transformation.get_project_root() / "data" / "output" / "annotations.json"
 )
 
+
 def check_host_up() -> bool:
-    '''The function `check_host_up()` checks if the host is up by sending a HEAD request to the login page
+    """The function `check_host_up()` checks if the host is up by sending a HEAD request to the login page
     and returning True if the response status code is 200 or 302.
-    
+
     Returns
     -------
         The function `check_host_up()` returns a boolean value indicating whether the host is up or not.
-    
-    '''
+
+    """
     response = requests.head(f"{LABEL_STUDIO_HOST}/user/login/")
     return response.status_code in [200, 302]
+
 
 def start_label_studio(
     waiting_time: int = 15, app_name: str = LABEL_STUDIO_LABEL_APP_NAME
@@ -61,9 +64,9 @@ def stop_label_studio(app_name: str = LABEL_STUDIO_LABEL_APP_NAME) -> None:
 
 
 def upload_csv_tasks(csv_path: str, project_id: int) -> None:
-    '''The function `upload_csv_tasks` uploads a CSV file to a Label Studio project using the Label Studio
+    """The function `upload_csv_tasks` uploads a CSV file to a Label Studio project using the Label Studio
     API.
-    
+
     Parameters
     ----------
     csv_path : str
@@ -72,8 +75,8 @@ def upload_csv_tasks(csv_path: str, project_id: int) -> None:
     project_id : int
         The `project_id` parameter is an integer that represents the ID of the project in which you want to
     upload the CSV tasks.
-    
-    '''
+
+    """
 
     if not check_host_up():
         start_label_studio()
