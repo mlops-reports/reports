@@ -1,10 +1,13 @@
 
 # In Progress
 ### Annotation & Data
-- [ ] reduce class number to 2 or 3 (?)
-- [ ] 200-300 normal cases annotation
+- [ ] curate and select 1500 more reports - balanced and unique reports
+- [ ] annotate 1500 more reports
 ### ML & MLOps
-- [ ] train the first model
+- [ ] reverse ML engineering
+- [ ] move 
+### Clinical
+- [ ] write the initial article draft
 
 # Backlog
 ### Annotation & Data
@@ -16,9 +19,10 @@
 - [x] 200-300 normal cases annotation
 - [x] copy the current table
 - [x] dbt snapshot
+- [x] reduce class number to 2 or 3 > We won't reduce classes
 ### ML & MLOps
 - [x] tag models with the translation method
-
+- [x] train the first model
 
 # Reference
 ### Annotation & Data
