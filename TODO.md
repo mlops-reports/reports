@@ -4,8 +4,8 @@
 - [ ] curate and select 1500 more reports - balanced and unique reports
 - [ ] annotate 1500 more reports
 ### ML & MLOps
-- [ ] reverse ML engineering
-- [ ] move 
+- [ ] reverse ML engineering for false predictions 
+- [ ] test the local model with mlflow
 ### Clinical
 - [ ] write the initial article draft
 
