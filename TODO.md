@@ -13,6 +13,8 @@
 - [ ] find & upload reports from other hospitals
 ### ML & MLOps
 - [ ] test the local model with mlflow
+### Clinical
+- [ ] material, method, results first draft
 
 # Done
 ### Annotation & Data
