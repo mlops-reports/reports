@@ -5,7 +5,6 @@
 - [ ] annotate 1500 more reports
 ### ML & MLOps
 - [ ] reverse ML engineering for false predictions 
-- [ ] test the local model with mlflow
 ### Clinical
 - [ ] write the initial article draft
 
@@ -13,6 +12,7 @@
 ### Annotation & Data
 - [ ] find & upload reports from other hospitals
 ### ML & MLOps
+- [ ] test the local model with mlflow
 
 # Done
 ### Annotation & Data
