@@ -1,23 +1,23 @@
-
-# In Progress
+------In-Progress-----
 ### Annotation & Data
-- [ ] curate and select 1500 more reports - balanced and unique reports
-- [ ] annotate 1500 more reports
+- [ ] HO model results + comments
 ### ML & MLOps
-- [ ] reverse ML engineering for false predictions 
+- [ ] O test the local model with mlflow
+- [ ] G deploy a django-mlflow server
 ### Clinical
-- [ ] write the initial article draft
+- [ ] H write the introduction
+- [ ] GO material, method, results first draft
 
-# Backlog
+------Backlog------
 ### Annotation & Data
-- [ ] find & upload reports from other hospitals
+- [ ] H(?) find & upload reports from other hospitals
 ### ML & MLOps
-- [ ] test the local model with mlflow
 ### Clinical
-- [ ] material, method, results first draft
 
-# Done
+------Done------
 ### Annotation & Data
+- [x] curate and select 1500 more reports - balanced and unique reports
+- [x] annotate 1500 more reports
 - [x] complete existing emergency cases
 - [x] 200-300 normal cases annotation
 - [x] copy the current table
@@ -27,7 +27,7 @@
 - [x] tag models with the translation method
 - [x] train the first model
 
-# Reference
+------Reference------
 ### Annotation & Data
 ### ML & MLOps
 - mlflow docker image: https://mlflow.org/docs/latest/cli.html#mlflow-models-build-docker
