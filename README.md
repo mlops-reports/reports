@@ -79,3 +79,14 @@ label-studio -db postgresql
 
 ## Dummy Data Generator
 https://mockaroo.com/
+
+1) totalde kaç hasta vardı, her classtan kaç hasta annotate edildi
+2) kaç hasta hangi nedenlerle exclude edildi
+3) classlara ait patolojiler nelerdi (yazıyoduk ya patolojileri annotate ederken) 
+4) aklımıza gelebilecek diğer tüm veriler
+
+
+["Emergency"] = 0
+["Normal"] = 1
+["Non Emergency [No Doctor]"] = 2
+["Non Emergency [Doctor]"] = 3
