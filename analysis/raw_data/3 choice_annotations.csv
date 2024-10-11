@@ -1,0 +1,1976 @@
+"annotation_id","choice","annotation_type","from_name","completion_id","project_id","task_id","completed_by_id","annotation_value_flag"
+"6ymh3i4EJE","[""Exclude""]",choices,exclude,81,7,235371,18,
+Hvo_8c5toO,"[""Exclude""]",choices,exclude,82,7,235372,18,
+"5Dm_arYOUF","[""Exclude""]",choices,exclude,83,7,235373,18,
+FlhI-kcIju,"[""Exclude""]",choices,exclude,84,7,235374,18,
+Q9KpWaNm8C,"[""Exclude""]",choices,exclude,85,7,235375,18,
+jViMn6P2Wg,"[""Exclude""]",choices,exclude,86,7,235376,18,
+LFVyJwiRlR,"[""Exclude""]",choices,exclude,87,7,235377,18,
+dbFwrZucZU,"[""Exclude""]",choices,exclude,88,7,235378,18,
+uyo_SAnbAl,"[""Exclude""]",choices,exclude,89,7,235379,18,
+K34p2DV5om,"[""Normal""]",choices,severity,662,7,238030,121,1
+mtflw6PYtk,"[""Non Emergency [No Doctor]""]",choices,severity,90,7,235380,18,2
+YNaMsTDH98,"[""Emergency""]",choices,severity,91,7,235381,18,0
+LFqbk7rHQg,"[""Exclude""]",choices,exclude,92,7,235382,18,
+cbwBxALjJY,"[""Emergency""]",choices,severity,93,7,235383,18,0
+m-8BF8yX8H,"[""Exclude""]",choices,exclude,94,7,235384,18,
+gkDKqHVGV1,"[""Non Emergency [No Doctor]""]",choices,severity,141,7,235431,18,2
+SLg4aVErJf,"[""Exclude""]",choices,exclude,283,7,235524,121,
+CmtpclYFn4,"[""Exclude""]",choices,exclude,99,7,235389,18,
+YEMy4GzUAp,"[""Emergency""]",choices,severity,95,7,235385,18,0
+"8_zkY0Et82","[""Exclude""]",choices,exclude,97,7,235387,18,
+X7_FNZDen_,"[""Exclude""]",choices,exclude,98,7,235388,18,
+RBXTJWNyBW,"[""Exclude""]",choices,exclude,464,7,235819,120,
+eQ6r523AuU,"[""Exclude""]",choices,exclude,102,7,235392,18,
+-jT4QMnIU6,"[""Exclude""]",choices,exclude,521,7,235846,120,
+KqrPnCOa8o,"[""Exclude""]",choices,exclude,120,7,235410,18,
+TlRMUDC32w,"[""Emergency""]",choices,severity,96,7,235386,18,0
+QQQjEZdWXV,"[""Exclude""]",choices,exclude,387,7,235622,121,
+tE3Vu7yzHj,"[""Emergency""]",choices,severity,170,7,235702,120,0
+hPDHSIAEVO,"[""Exclude""]",choices,exclude,418,7,235670,121,
+Qz1jHsqb2c,"[""Emergency""]",choices,severity,103,7,235393,18,0
+"6OBUFigb6v","[""Emergency""]",choices,severity,101,7,235391,18,0
+"2YijiyO-Lq","[""Emergency""]",choices,severity,100,7,235390,18,0
+UXGdklwbGB,"[""Emergency""]",choices,severity,104,7,235394,18,0
+sbTCBK5Sm_,"[""Emergency""]",choices,severity,105,7,235395,18,0
+BkvDYwZBOj,"[""Exclude""]",choices,exclude,106,7,235396,18,
+JGD_7j7vWA,"[""Emergency""]",choices,severity,107,7,235397,18,0
+HDXgG7_YbO,"[""Exclude""]",choices,exclude,108,7,235398,18,
+jTK2MWbb40,"[""Non Emergency [No Doctor]""]",choices,severity,109,7,235399,18,2
+dIjCFEEDeO,"[""Exclude""]",choices,exclude,110,7,235400,18,
+ICSKt3KpKL,"[""Exclude""]",choices,exclude,130,7,235420,18,
+"9xUPW2kFcV","[""Normal""]",choices,severity,663,7,238029,121,1
+ovAYRdu_K9,"[""Non Emergency [Doctor]""]",choices,severity,111,7,235401,18,3
+gmWSpV7d1-,"[""Exclude""]",choices,exclude,112,7,235402,18,
+"9Cg6Tlga8o","[""Non Emergency [Doctor]""]",choices,severity,113,7,235403,18,3
+K5Z5g203e5,"[""Exclude""]",choices,exclude,114,7,235404,18,
+tpquDyAa3s,"[""Normal""]",choices,severity,115,7,235405,18,1
+K4M2LW3iLi,"[""Emergency""]",choices,severity,116,7,235406,18,0
+zmAqm_Nuip,"[""Emergency""]",choices,severity,117,7,235407,18,0
+wio5ZXsRa6,"[""Emergency""]",choices,severity,119,7,235409,18,0
+QDxRLU15Dd,"[""Emergency""]",choices,severity,118,7,235408,18,0
+EXk80gtqUO,"[""Non Emergency [Doctor]""]",choices,severity,121,7,235411,18,3
+QmmpDct2LL,"[""Non Emergency [Doctor]""]",choices,severity,122,7,235412,18,3
+bdH-sdjIgw,"[""Emergency""]",choices,severity,123,7,235413,18,0
+thOjKgD6b_,"[""Exclude""]",choices,exclude,124,7,235414,18,
+N24bVRUkwD,"[""Non Emergency [Doctor]""]",choices,severity,125,7,235415,18,3
+oDFlCNriFY,"[""Emergency""]",choices,severity,127,7,235417,18,0
+nDXZDzNXV4,"[""Emergency""]",choices,severity,128,7,235418,18,0
+WDSXblHpmC,"[""Exclude""]",choices,exclude,129,7,235419,18,
+"5fosuajwVv","[""Emergency""]",choices,severity,131,7,235421,18,0
+lJcEnJmus0,"[""Non Emergency [Doctor]""]",choices,severity,132,7,235422,18,3
+WlsbPRz7GD,"[""Non Emergency [Doctor]""]",choices,severity,133,7,235423,18,3
+c-Elkc3-P8,"[""Exclude""]",choices,exclude,134,7,235424,18,
+BWu4uikvIl,"[""Emergency""]",choices,severity,135,7,235425,18,0
+LoqrUlJy71,"[""Emergency""]",choices,severity,136,7,235426,18,0
+gPeoKN-3Ry,"[""Emergency""]",choices,severity,137,7,235427,18,0
+mmEEWRz8Qa,"[""Exclude""]",choices,exclude,138,7,235428,18,
+_YuyCVh_tJ,"[""Exclude""]",choices,exclude,139,7,235429,18,
+Gs49TNcZF_,"[""Emergency""]",choices,severity,142,7,235432,18,0
+_fZ7FlPOyL,"[""Emergency""]",choices,severity,143,7,235433,18,0
+"7KHyAUFI_V","[""Emergency""]",choices,severity,144,7,235434,18,0
+il83itaBcp,"[""Exclude""]",choices,exclude,145,7,235435,18,
+YbNYYubdXz,"[""Emergency""]",choices,severity,146,7,235436,18,0
+-DMwbKkDOg,"[""Emergency""]",choices,severity,147,7,235437,18,0
+qG8ZLoO14y,"[""Emergency""]",choices,severity,169,7,235701,120,0
+RB_-ndT6eb,"[""Emergency""]",choices,severity,151,7,235446,18,0
+nn1lNTjrgd,"[""Exclude""]",choices,exclude,152,7,235442,18,
+"6y9JZgUV1I","[""Exclude""]",choices,exclude,157,7,235447,18,
+gwMsHMS6Jd,"[""Emergency""]",choices,severity,153,7,235441,18,0
+i5GoUQrKHn,"[""Emergency""]",choices,severity,154,7,235443,18,0
+J4rE1WkfJE,"[""Exclude""]",choices,exclude,155,7,235444,18,
+S8YzZWHdC9,"[""Exclude""]",choices,exclude,156,7,235445,18,
+UA8XDE_PEx,"[""Emergency""]",choices,severity,159,7,235449,18,0
+zdi3CScY6r,"[""Non Emergency [Doctor]""]",choices,severity,158,7,235448,18,3
+SkvZZlkGLC,"[""Emergency""]",choices,severity,160,7,235450,18,0
+bOnbpB8s-T,"[""Emergency""]",choices,severity,167,7,235700,120,0
+"3laqi86b-O","[""Emergency""]",choices,severity,161,7,235451,18,0
+BOo72AEEpc,"[""Normal""]",choices,severity,162,7,235452,121,1
+QRkzJ0isBw,"[""Normal""]",choices,severity,664,7,238028,121,1
+jv7AA9vP_j,"[""Emergency""]",choices,severity,222,7,235497,121,0
+hKdoO9Z5eq,"[""Exclude""]",choices,exclude,288,7,235527,121,
+G9PX8-KC7-,"[""Non Emergency [No Doctor]""]",choices,severity,248,7,235511,121,2
+gQSLtBOlRp,"[""Exclude""]",choices,exclude,474,7,235540,121,
+nSEbL35edT,"[""Non Emergency [No Doctor]""]",choices,severity,478,7,235544,121,2
+WejiwP8DPC,"[""Exclude""]",choices,exclude,164,7,235453,121,
+hXfweM-SJu,"[""Emergency""]",choices,severity,173,7,235704,120,0
+wKSkXcxf6r,"[""Exclude""]",choices,exclude,475,7,235541,121,
+scb7mXCDQm,"[""Exclude""]",choices,exclude,479,7,235545,121,
+u0_e3zl1vw,"[""Non Emergency [Doctor]""]",choices,severity,176,7,235705,120,3
+Oh2mC3PbYm,"[""Exclude""]",choices,exclude,348,7,235568,121,
+FgElyFt4LO,"[""Exclude""]",choices,exclude,533,7,235857,120,
+-BO2iUjqRO,"[""Emergency""]",choices,severity,171,7,235703,120,0
+N95c9cZebv,"[""Non Emergency [No Doctor]""]",choices,severity,177,7,235706,120,2
+"3n79UIEHra","[""Emergency""]",choices,severity,175,7,235459,121,0
+dbyj6a7g0e,"[""Non Emergency [Doctor]""]",choices,severity,174,7,235458,121,3
+tR7vCc2Eei,"[""Exclude""]",choices,exclude,180,7,235461,121,
+"7ctD-AJAQ3","[""Emergency""]",choices,severity,181,7,235462,121,0
+ulA6C1IB58,"[""Emergency""]",choices,severity,232,7,235502,121,0
+lnu6eo6QzF,"[""Emergency""]",choices,severity,183,7,235463,121,0
+FXjsjQ0pIk,"[""Emergency""]",choices,severity,184,7,235709,120,0
+z_bqjEoxAl,"[""Normal""]",choices,severity,665,7,238027,121,1
+Tob86TvoWz,"[""Emergency""]",choices,severity,186,7,235711,120,0
+ss5-7N6J_A,"[""Emergency""]",choices,severity,505,7,235601,121,0
+hia-FZhNHw,"[""Emergency""]",choices,severity,189,7,235466,121,0
+igAAmk-9nG,"[""Emergency""]",choices,severity,506,7,235602,121,0
+suhBN2-HbV,"[""Non Emergency [Doctor]""]",choices,severity,191,7,235712,120,3
+_-dx0hdwIm,"[""Exclude""]",choices,exclude,192,7,235713,120,
+"5-58QNvXS1","[""Exclude""]",choices,exclude,235,7,235505,121,
+A9EBuMPNkw,"[""Emergency""]",choices,severity,194,7,235714,120,0
+HIq4q4e9d9,"[""Exclude""]",choices,exclude,523,7,235848,120,
+toIoSgpAmg,"[""Normal""]",choices,severity,197,7,235716,120,1
+tMbWHEQGO8,"[""Emergency""]",choices,severity,198,7,235717,120,0
+"2oU-gVQpxS","[""Non Emergency [No Doctor]""]",choices,severity,199,7,235718,120,2
+dVi7o_SPiD,"[""Emergency""]",choices,severity,236,7,235746,120,0
+iVRl25eMHO,"[""Exclude""]",choices,exclude,534,7,235858,120,
+WmgeOGWT9Y,"[""Exclude""]",choices,exclude,193,7,235468,121,
+Rd5ET2-pBg,"[""Normal""]",choices,severity,666,7,238026,121,1
+avcP_kpxRr,"[""Exclude""]",choices,exclude,244,7,235509,121,
+q4oWoGXz6C,"[""Emergency""]",choices,severity,292,7,235529,121,0
+L3lpVYfYMp,"[""Non Emergency [No Doctor]""]",choices,severity,202,7,235719,120,2
+zqOD9QKa2a,"[""Exclude""]",choices,exclude,507,7,235603,121,
+EqcscHvSIz,"[""Exclude""]",choices,exclude,465,7,235821,120,
+BHcgiVbjbv,"[""Exclude""]",choices,exclude,207,7,235721,120,
+X7niF_Xlbj,"[""Emergency""]",choices,severity,206,7,235720,120,0
+RftLLTyG_e,"[""Emergency""]",choices,severity,208,7,235475,121,0
+QFaC00YWZ9,"[""Exclude""]",choices,exclude,203,7,235472,121,
+Gi5BvbqYbI,"[""Exclude""]",choices,exclude,205,7,235474,121,
+"87hgdnVakD","[""Emergency""]",choices,severity,209,7,235722,120,0
+gcx5BQlMPp,"[""Exclude""]",choices,exclude,349,7,235569,121,
+d-j3jEmwSZ,"[""Exclude""]",choices,exclude,524,7,235849,120,
+jfILJZ6Udn,"[""Exclude""]",choices,exclude,220,7,235496,121,
+"73ibYSRf1D","[""Exclude""]",choices,exclude,237,7,235506,121,
+tA7Rectd-S,"[""Exclude""]",choices,exclude,452,7,235831,120,
+T6Zl1a7YVd,"[""Exclude""]",choices,exclude,251,7,235513,121,
+lYzxmsoDgg,"[""Exclude""]",choices,exclude,535,7,235859,120,
+cK5xoPX2TZ,"[""Exclude""]",choices,exclude,212,7,235477,121,
+epJVH0r3m6,"[""Exclude""]",choices,exclude,214,7,235479,121,
+m9I2cYufn1,"[""Exclude""]",choices,exclude,215,7,235480,121,
+o3YIXxJhdc,"[""Exclude""]",choices,exclude,216,7,235481,121,
+l5kaTW_0j7,"[""Exclude""]",choices,exclude,217,7,235482,121,
+eYBUh_HNaO,"[""Exclude""]",choices,exclude,218,7,235483,121,
+"5-76ZIYnB9","[""Emergency""]",choices,severity,221,7,235724,120,0
+qkqSmhY7oy,"[""Normal""]",choices,severity,667,7,238025,121,1
+"8RuynCBJeH","[""Exclude""]",choices,exclude,223,7,235725,120,
+NKYx7XRxdQ,"[""Exclude""]",choices,exclude,229,7,235743,120,
+OPok8C6EAT,"[""Exclude""]",choices,exclude,231,7,235745,120,
+CZS5R63f_Z,"[""Non Emergency [Doctor]""]",choices,severity,227,7,235726,120,3
+vHHVb656fx,"[""Exclude""]",choices,exclude,230,7,235744,120,
+F9n9o-ldUr,"[""Emergency""]",choices,severity,224,7,235498,121,0
+PaRekikKlq,"[""Exclude""]",choices,exclude,225,7,235499,121,
+jrpVzwtkA_,"[""Exclude""]",choices,exclude,226,7,235500,121,
+Akx60p97qU,"[""Exclude""]",choices,exclude,233,7,235503,121,
+IlpurDiVq3,"[""Exclude""]",choices,exclude,234,7,235504,121,
+"471Yx_PGm2","[""Emergency""]",choices,severity,238,7,235507,121,0
+H2iohi9JLe,"[""Emergency""]",choices,severity,239,7,235747,120,0
+Bf0seNIYmg,"[""Exclude""]",choices,exclude,568,7,235892,120,
+FJ1pNg95MA,"[""Emergency""]",choices,severity,243,7,235508,121,0
+UurNftthdu,"[""Emergency""]",choices,severity,245,7,235751,120,0
+PqVY8D_GgF,"[""Emergency""]",choices,severity,246,7,235510,121,0
+"7BHE-WnA5x","[""Exclude""]",choices,exclude,241,7,235749,120,
+v3JeqCXOqW,"[""Exclude""]",choices,exclude,242,7,235750,120,
+VY1mfbPHjK,"[""Exclude""]",choices,exclude,388,7,235623,121,
+FnwV1ooO2l,"[""Exclude""]",choices,exclude,350,7,235570,121,
+CTrgsDi2Rk,"[""Normal""]",choices,severity,250,7,235512,121,1
+iDI-cEoekL,"[""Emergency""]",choices,severity,321,7,235550,121,0
+gNa1x-5N5T,"[""Exclude""]",choices,exclude,570,7,235894,120,
+H7PuUERgtE,"[""Emergency""]",choices,severity,247,7,235752,120,0
+VEO4jOlnWh,"[""Exclude""]",choices,exclude,584,7,235640,121,
+"4zMnxenBCK","[""Emergency""]",choices,severity,249,7,235753,120,0
+-FNaTd23fq,"[""Emergency""]",choices,severity,252,7,235514,121,0
+ZxJ_D3lxDL,"[""Non Emergency [No Doctor]""]",choices,severity,510,7,235835,120,2
+qEZfgkEpGI,"[""Exclude""]",choices,exclude,522,7,235847,120,
+iZG1ot8Ixz,"[""Normal""]",choices,severity,668,7,238024,121,1
+L-pWg_Jvu9,"[""Emergency""]",choices,severity,254,7,235754,120,0
+vCJ4Adkbgi,"[""Non Emergency [No Doctor]""]",choices,severity,370,7,235607,121,2
+r0EHvkCChL,"[""Non Emergency [Doctor]""]",choices,severity,256,7,235755,120,3
+"7eHSHQBM-P","[""Exclude""]",choices,exclude,253,7,235515,121,
+HwOcRU_9dN,"[""Exclude""]",choices,exclude,258,7,235727,120,
+"4spYr-To36","[""Exclude""]",choices,exclude,511,7,235836,120,
+tprAtNH-xu,"[""Exclude""]",choices,exclude,255,7,235516,121,
+I82Hl2s1sD,"[""Non Emergency [Doctor]""]",choices,severity,262,7,235487,121,3
+"0DHNwyftdK","[""Non Emergency [Doctor]""]",choices,severity,295,7,235531,121,3
+"03nQa05kVV","[""Exclude""]",choices,exclude,261,7,235486,121,
+aE-26KzahP,"[""Exclude""]",choices,exclude,264,7,235489,121,
+NDTwKlOv4E,"[""Exclude""]",choices,exclude,263,7,235488,121,
+aNXV_2KN56,"[""Emergency""]",choices,severity,265,7,235729,120,0
+Emz6hr7weL,"[""Exclude""]",choices,exclude,179,7,235707,120,
+WQtwaXiLV6,"[""Exclude""]",choices,exclude,267,7,235730,120,
+IUI_VjKfvT,"[""Normal""]",choices,severity,669,7,238023,121,1
+Awoal3X8Qn,"[""Exclude""]",choices,exclude,274,7,235517,121,
+W4YMbI8LD-,"[""Exclude""]",choices,exclude,270,7,235732,120,
+"59bG7dXiYz","[""Exclude""]",choices,exclude,346,7,235566,121,
+vG5hq9WtX4,"[""Exclude""]",choices,exclude,290,7,235738,120,
+e8ASYFgxlo,"[""Exclude""]",choices,exclude,320,7,235772,120,
+"3EqlYxphCi","[""Emergency""]",choices,severity,275,7,235733,120,0
+ZlTlFYD3eF,"[""Exclude""]",choices,exclude,272,7,235493,121,
+Jd2a7mhEWg,"[""Exclude""]",choices,exclude,271,7,235492,121,
+kLmXBru_Q3,"[""Exclude""]",choices,exclude,273,7,235494,121,
+m0nyTBEqvo,"[""Emergency""]",choices,severity,277,7,235734,120,0
+V_qwRZVITb,"[""Emergency""]",choices,severity,574,7,235898,120,0
+"32P-gDQYg-","[""Exclude""]",choices,exclude,286,7,235736,120,
+mGim_lwEVD,"[""Emergency""]",choices,severity,282,7,235523,121,0
+LPVpGdv_Pb,"[""Emergency""]",choices,severity,285,7,235735,120,0
+YoC7n-9VJk,"[""Exclude""]",choices,exclude,279,7,235520,121,
+Ta3SwEdfy4,"[""Exclude""]",choices,exclude,280,7,235521,121,
+XvGWplgW7i,"[""Exclude""]",choices,exclude,281,7,235522,121,
+nzqswZx6OT,"[""Exclude""]",choices,exclude,284,7,235525,121,
+I0jwcuhTlB,"[""Exclude""]",choices,exclude,289,7,235528,121,
+ldpvklyZ6T,"[""Emergency""]",choices,severity,291,7,235739,120,0
+"6a2Ww2VC9_","[""Emergency""]",choices,severity,525,7,235634,120,0
+kOEUUhOezg,"[""Exclude""]",choices,exclude,577,7,235901,120,
+E6WJ1EiLdY,"[""Emergency""]",choices,severity,294,7,235740,120,0
+Ks1jz19ix-,"[""Exclude""]",choices,exclude,299,7,235756,120,
+dr-Ppzc9vJ,"[""Exclude""]",choices,exclude,670,7,238022,121,
+"0vUhgBaJCO","[""Emergency""]",choices,severity,298,7,235741,120,0
+PAlbKFwf9i,"[""Emergency""]",choices,severity,300,7,235757,120,0
+CH76AW11KK,"[""Exclude""]",choices,exclude,293,7,235530,121,
+ACCJSQE8O_,"[""Exclude""]",choices,exclude,296,7,235532,121,
+mlmhTtrMqs,"[""Exclude""]",choices,exclude,297,7,235533,121,
+szYpt9GIUm,"[""Emergency""]",choices,severity,303,7,235759,120,0
+gnrx_-9_oG,"[""Emergency""]",choices,severity,540,7,235865,120,0
+tFmmytShb8,"[""Emergency""]",choices,severity,305,7,235761,120,0
+Yp55nLz6MY,"[""Emergency""]",choices,severity,307,7,235763,120,0
+Ye-CC60YTf,"[""Non Emergency [Doctor]""]",choices,severity,310,7,235765,120,3
+"0yOKnUu2rB","[""Exclude""]",choices,exclude,185,7,235710,120,
+tYV_sy04uP,"[""Exclude""]",choices,exclude,304,7,235760,120,
+jBzsPPDbaM,"[""Exclude""]",choices,exclude,306,7,235762,120,
+vOHaLZ3qF8,"[""Emergency""]",choices,severity,311,7,235766,120,0
+OzMucpXckn,"[""Exclude""]",choices,exclude,579,7,235635,121,
+ltsMclwpVN,"[""Normal""]",choices,severity,671,7,238021,121,1
+n15Fzb_SHl,"[""Emergency""]",choices,severity,315,7,235768,120,0
+Nuq5gV4enm,"[""Emergency""]",choices,severity,316,7,235769,120,0
+bxtSJxe9Zr,"[""Emergency""]",choices,severity,317,7,235549,121,0
+h0UekNLziK,"[""Emergency""]",choices,severity,318,7,235770,120,0
+nlDn-OnQ1T,"[""Exclude""]",choices,exclude,319,7,235771,120,
+K0UhwyfC_T,"[""Exclude""]",choices,exclude,259,7,235728,120,
+RCeeQM1C-t,"[""Exclude""]",choices,exclude,313,7,235767,120,
+bwBRGLjARc,"[""Exclude""]",choices,exclude,512,7,235837,120,
+nsgPzm-tTZ,"[""Non Emergency [Doctor]""]",choices,severity,322,7,235773,120,3
+MxCg-VdvRq,"[""Exclude""]",choices,exclude,268,7,235731,120,
+rZ8wvNR1rZ,"[""Non Emergency [No Doctor]""]",choices,severity,453,7,235832,120,2
+erF9dys0NJ,"[""Emergency""]",choices,severity,551,7,235877,120,0
+FWNySNrh8h,"[""Non Emergency [Doctor]""]",choices,severity,327,7,235774,120,3
+O0D3qm5dhF,"[""Non Emergency [Doctor]""]",choices,severity,329,7,235556,121,3
+lUjKc40DA1,"[""Exclude""]",choices,exclude,347,7,235567,121,
+e1uysQolPU,"[""Exclude""]",choices,exclude,324,7,235552,121,
+yW4Oj7U9nZ,"[""Exclude""]",choices,exclude,325,7,235553,121,
+phwtkB2ICU,"[""Exclude""]",choices,exclude,326,7,235554,121,
+ZW5P3dag1V,"[""Exclude""]",choices,exclude,330,7,235557,121,
+IBSvom5O4J,"[""Emergency""]",choices,severity,332,7,235776,120,0
+_zBeBfGxPh,"[""Non Emergency [No Doctor]""]",choices,severity,333,7,235558,121,2
+GPUijCAHDI,"[""Exclude""]",choices,exclude,287,7,235737,120,
+"3hjxIZvsrO","[""Exclude""]",choices,exclude,513,7,235838,120,
+"2Ig20ktGKa","[""Exclude""]",choices,exclude,335,7,235778,120,
+"6iMxpXg3Nx","[""Emergency""]",choices,severity,341,7,235780,120,0
+Lbnj4Mj7sX,"[""Normal""]",choices,severity,342,7,235563,121,1
+EyfSCulRUr,"[""Emergency""]",choices,severity,344,7,235781,120,0
+"2IXlkIHwJf","[""Exclude""]",choices,exclude,338,7,235560,121,
+sWqRv1Eq4o,"[""Exclude""]",choices,exclude,340,7,235562,121,
+N2hmWHPTqL,"[""Non Emergency [Doctor]""]",choices,severity,343,7,235564,121,3
+"5ljzveGB3k","[""Exclude""]",choices,exclude,345,7,235565,121,
+H1ECAQtnid,"[""Emergency""]",choices,severity,352,7,235783,120,0
+U2pN81Mfmc,"[""Emergency""]",choices,severity,454,7,235501,121,0
+iJjCa2rNJe,"[""Emergency""]",choices,severity,354,7,235784,120,0
+td4XAcb7dR,"[""Emergency""]",choices,severity,536,7,235860,120,0
+vGgKTGjId1,"[""Non Emergency [Doctor]""]",choices,severity,356,7,235785,120,3
+btmkAdNtf-,"[""Emergency""]",choices,severity,360,7,235788,120,0
+-yNEp2m7Vy,"[""Exclude""]",choices,exclude,358,7,235573,121,
+nahim0mrYg,"[""Emergency""]",choices,severity,361,7,235574,121,0
+c13u-NV2ix,"[""Emergency""]",choices,severity,362,7,235789,120,0
+TMLN8DQQoH,"[""Exclude""]",choices,exclude,537,7,235862,120,
+Kc4GoiLkSP,"[""Emergency""]",choices,severity,364,7,235790,120,0
+z6KPxkm_Iv,"[""Emergency""]",choices,severity,365,7,235604,121,0
+yZy1JpxgtW,"[""Normal""]",choices,severity,673,7,238019,121,1
+Z3yLkRLBGg,"[""Exclude""]",choices,exclude,385,7,235620,121,
+PdqYNnQmPE,"[""Normal""]",choices,severity,466,7,235822,120,1
+"0AtDGA3LTr","[""Exclude""]",choices,exclude,486,7,235582,121,
+-6IGi1FDmt,"[""Exclude""]",choices,exclude,366,7,235605,121,
+Hxbr1pxllU,"[""Exclude""]",choices,exclude,367,7,235606,121,
+DafxO98WVc,"[""Emergency""]",choices,severity,538,7,235863,120,0
+"1_3VPDXaAH","[""Emergency""]",choices,severity,372,7,235793,120,0
+ghpZ9gElSB,"[""Emergency""]",choices,severity,373,7,235609,121,0
+lYrcq0r_R6,"[""Emergency""]",choices,severity,374,7,235610,121,0
+k7RUsmdK0U,"[""Emergency""]",choices,severity,386,7,235621,121,0
+TxETfbXaSG,"[""Exclude""]",choices,exclude,228,7,235742,120,
+YFiYGhTSZt,"[""Exclude""]",choices,exclude,371,7,235608,121,
+"0b02eS6SzU","[""Exclude""]",choices,exclude,375,7,235611,121,
+SWt5IxscgH,"[""Exclude""]",choices,exclude,369,7,235792,120,
+"1dsDrhgqjD","[""Emergency""]",choices,severity,376,7,235612,121,0
+RqG50OOpC4,"[""Emergency""]",choices,severity,377,7,235613,121,0
+"239T6RGSf-","[""Emergency""]",choices,severity,552,7,235879,120,0
+zTK-3Pg4Wa,"[""Exclude""]",choices,exclude,380,7,235615,121,
+jobPeIJcWb,"[""Non Emergency [Doctor]""]",choices,severity,379,7,235614,121,3
+v-YwrvF2Ot,"[""Exclude""]",choices,exclude,381,7,235616,121,
+"4uZzZMqDkf","[""Emergency""]",choices,severity,382,7,235617,121,0
+_RVyW4X2CG,"[""Non Emergency [Doctor]""]",choices,severity,383,7,235618,121,3
+DHxSYTpvo1,"[""Exclude""]",choices,exclude,384,7,235619,121,
+VjqLyWJSZO,"[""Emergency""]",choices,severity,389,7,235795,120,0
+KIR8uVcFx4,"[""Emergency""]",choices,severity,394,7,235624,121,0
+UniIxEXzv1,"[""Exclude""]",choices,exclude,395,7,235625,121,
+OHOoqMZ6SX,"[""Exclude""]",choices,exclude,240,7,235748,120,
+kVGVSxlrmr,"[""Emergency""]",choices,severity,398,7,235801,120,0
+"8RrvDjUgb8","[""Emergency""]",choices,severity,396,7,235800,120,0
+vA_XQsbmwb,"[""Emergency""]",choices,severity,397,7,235626,121,0
+U9zEeiJFZI,"[""Exclude""]",choices,exclude,399,7,235627,121,
+"3NG3ZX12Gx","[""Exclude""]",choices,exclude,400,7,235628,121,
+AxL_UT-F_V,"[""Exclude""]",choices,exclude,514,7,235839,120,
+oaP_4DkyN5,"[""Exclude""]",choices,exclude,391,7,235797,120,
+"9kHRRhGgcN","[""Exclude""]",choices,exclude,393,7,235799,120,
+mFxHoCJ0kS,"[""Emergency""]",choices,severity,401,7,235802,120,0
+KNy76rcSEi,"[""Non Emergency [Doctor]""]",choices,severity,414,7,235666,121,3
+un2m9-EWfk,"[""Emergency""]",choices,severity,402,7,235629,121,0
+PZfbpKdKFz,"[""Emergency""]",choices,severity,403,7,235630,121,0
+bMR-QnAfEU,"[""Exclude""]",choices,exclude,404,7,235631,121,
+wyImnWirFT,"[""Emergency""]",choices,severity,412,7,235664,121,0
+u6k9UH6qz-,"[""Non Emergency [Doctor]""]",choices,severity,415,7,235667,121,3
+XnAXhC-E-Q,"[""Non Emergency [Doctor]""]",choices,severity,416,7,235668,121,3
+"0z4tY3Ze2E","[""Emergency""]",choices,severity,405,7,235632,121,0
+bX7HXpcUVC,"[""Emergency""]",choices,severity,406,7,235633,121,0
+IuAmlnL7I2,"[""Emergency""]",choices,severity,407,7,235659,121,0
+ZTJ1_V7tew,"[""Emergency""]",choices,severity,408,7,235660,121,0
+DpMHB4S1Jm,"[""Emergency""]",choices,severity,409,7,235661,121,0
+CxFieFqUjV,"[""Non Emergency [Doctor]""]",choices,severity,410,7,235662,121,3
+"6NoRp_BTeq","[""Non Emergency [Doctor]""]",choices,severity,411,7,235663,121,3
+Ps2j5GD3_B,"[""Exclude""]",choices,exclude,413,7,235665,121,
+elAup2Bp4Z,"[""Exclude""]",choices,exclude,417,7,235669,121,
+-JAF7QpeFl,"[""Emergency""]",choices,severity,419,7,235671,121,0
+"2oic9VKjrG","[""Emergency""]",choices,severity,420,7,235672,121,0
+GUy20MPfD5,"[""Non Emergency [No Doctor]""]",choices,severity,421,7,235803,120,2
+ZtsSAVdzZ8,"[""Non Emergency [No Doctor]""]",choices,severity,422,7,235673,121,2
+nA3nVYi0ED,"[""Exclude""]",choices,exclude,423,7,235674,121,
+jdPPBwD8yT,"[""Exclude""]",choices,exclude,424,7,235675,121,
+beJW7UmqGK,"[""Emergency""]",choices,severity,425,7,235676,121,0
+v61Wkw7lHB,"[""Emergency""]",choices,severity,426,7,235804,120,0
+"8OcDzccDbc","[""Normal""]",choices,severity,674,7,238018,121,1
+bfwPY99wI2,"[""Non Emergency [Doctor]""]",choices,severity,428,7,235677,121,3
+"0vT4jKTYZL","[""Exclude""]",choices,exclude,461,7,235816,120,
+UrjjlDv2LC,"[""Non Emergency [Doctor]""]",choices,severity,429,7,235678,121,3
+"2rI6LdUb6Z","[""Emergency""]",choices,severity,541,7,235866,120,0
+hGK9Ih1C3e,"[""Non Emergency [Doctor]""]",choices,severity,431,7,235679,121,3
+-WEvPV9ojb,"[""Non Emergency [No Doctor]""]",choices,severity,432,7,235807,120,2
+Am_I8oWN26,"[""Emergency""]",choices,severity,433,7,235680,121,0
+YIMBlC_wbx,"[""Emergency""]",choices,severity,434,7,235681,121,0
+"17yQ2wbdqh","[""Non Emergency [Doctor]""]",choices,severity,435,7,235808,120,3
+SHrBK8B8pb,"[""Emergency""]",choices,severity,436,7,235682,121,0
+KBu_jjMDSp,"[""Non Emergency [No Doctor]""]",choices,severity,437,7,235809,120,2
+mZNQW8_IXF,"[""Exclude""]",choices,exclude,462,7,235817,120,
+IQjyrron1p,"[""Non Emergency [Doctor]""]",choices,severity,438,7,235683,121,3
+"4proIW5lEw","[""Non Emergency [No Doctor]""]",choices,severity,439,7,235684,121,2
+FHyxnLHIvr,"[""Emergency""]",choices,severity,440,7,235810,120,0
+OSzVuKQHFC,"[""Emergency""]",choices,severity,441,7,235685,121,0
+FDc8KJ_yW4,"[""Emergency""]",choices,severity,442,7,235811,120,0
+nTLLNIT0hH,"[""Non Emergency [Doctor]""]",choices,severity,443,7,235686,121,3
+"4vj7X5gRIC","[""Non Emergency [Doctor]""]",choices,severity,444,7,235825,120,3
+KXd4KcDx2A,"[""Emergency""]",choices,severity,445,7,235826,120,0
+XctRWRYBHe,"[""Emergency""]",choices,severity,542,7,235868,120,0
+m025KAZoi7,"[""Normal""]",choices,severity,447,7,235828,120,1
+EU6kObhCZM,"[""Non Emergency [Doctor]""]",choices,severity,448,7,235688,121,3
+Vmhvi6-z2u,"[""Emergency""]",choices,severity,543,7,235869,120,0
+u9avl-nS0U,"[""Exclude""]",choices,exclude,450,7,235829,120,
+Xj9BWFS7Bs,"[""Normal""]",choices,severity,451,7,235830,120,1
+"8gF0AXYvpe","[""Normal""]",choices,severity,675,7,238017,121,1
+LMIUofYGbE,"[""Non Emergency [Doctor]""]",choices,severity,312,7,235547,121,3
+Ge0PeH8I39,"[""Emergency""]",choices,severity,456,7,235812,120,0
+BIa5eV6DNm,"[""Non Emergency [Doctor]""]",choices,severity,457,7,235535,121,3
+"8vYPOw5Xo4","[""Non Emergency [Doctor]""]",choices,severity,458,7,235813,120,3
+RIxt9Oa44l,"[""Exclude""]",choices,exclude,460,7,235815,120,
+"7Op8fYveNK","[""Exclude""]",choices,exclude,449,7,235820,121,
+IkGw6QOD47,"[""Exclude""]",choices,exclude,455,7,235526,121,
+"9ovvWPs7Oo","[""Exclude""]",choices,exclude,544,7,235870,120,
+glII8SOwKk,"[""Non Emergency [Doctor]""]",choices,severity,468,7,235823,120,3
+_ztojgmRJF,"[""Emergency""]",choices,severity,469,7,235537,121,0
+BDu9HVludc,"[""Exclude""]",choices,exclude,553,7,235880,120,
+O53gpasQVy,"[""Emergency""]",choices,severity,276,7,235518,121,0
+"1IAFcd7WBv","[""Emergency""]",choices,severity,168,7,235456,121,0
+Glm8rhkmkM,"[""Emergency""]",choices,severity,301,7,235534,121,0
+RVi49AFXXM,"[""Emergency""]",choices,severity,476,7,235542,121,0
+"8mRM175Rkx","[""Emergency""]",choices,severity,178,7,235460,121,0
+NvkkhKi9-i,"[""Emergency""]",choices,severity,545,7,235871,120,0
+h8TT8kSRR6,"[""Emergency""]",choices,severity,495,7,235591,121,0
+SDhZSa7b66,"[""Emergency""]",choices,severity,471,7,235687,18,0
+XJIaA8TYXs,"[""Exclude""]",choices,exclude,334,7,235777,120,
+b4CipbUPkh,"[""Exclude""]",choices,exclude,515,7,235840,120,
+EP6TaYd0qy,"[""Exclude""]",choices,exclude,467,7,235536,121,
+J-MtmkGMPB,"[""Non Emergency [No Doctor]""]",choices,severity,182,7,235708,120,2
+J3Fov9IjjG,"[""Emergency""]",choices,severity,166,7,235455,121,0
+IqVagitLHP,"[""Exclude""]",choices,exclude,496,7,235592,121,
+L0SKvATPRf,"[""Exclude""]",choices,exclude,336,7,235779,120,
+dKmn6G-ghS,"[""Exclude""]",choices,exclude,517,7,235842,120,
+kMbCA0aIpL,"[""Emergency""]",choices,severity,165,7,235454,121,0
+__2fiIEgZt,"[""Emergency""]",choices,severity,172,7,235457,121,0
+kl8l4LzTJJ,"[""Emergency""]",choices,severity,188,7,235465,121,0
+"0Mpix_dleH","[""Emergency""]",choices,severity,195,7,235469,121,0
+zYFllFhXZM,"[""Emergency""]",choices,severity,257,7,235484,121,0
+"4o91IIZAEC","[""Exclude""]",choices,exclude,472,7,235538,121,
+YvPUaNzrPx,"[""Emergency""]",choices,severity,200,7,235470,121,0
+ckc0T4B-5j,"[""Non Emergency [Doctor]""]",choices,severity,201,7,235471,121,3
+akI7nCf52P,"[""Exclude""]",choices,exclude,210,7,235476,121,
+yksscTgXsC,"[""Emergency""]",choices,severity,314,7,235548,121,0
+qpdmYioUfC,"[""Emergency""]",choices,severity,213,7,235478,121,0
+cdyeHFuGNe,"[""Emergency""]",choices,severity,260,7,235485,121,0
+sNOFaFSbDG,"[""Emergency""]",choices,severity,266,7,235490,121,0
+il3h4zO_Z_,"[""Non Emergency [No Doctor]""]",choices,severity,278,7,235519,121,2
+zavYTlimcq,"[""Non Emergency [Doctor]""]",choices,severity,269,7,235491,121,3
+c04QUkOrrQ,"[""Exclude""]",choices,exclude,219,7,235495,121,
+JBhlValA3-,"[""Emergency""]",choices,severity,477,7,235543,121,0
+KWQRERQ5I6,"[""Emergency""]",choices,severity,473,7,235539,121,0
+"3owhbgP_0l","[""Emergency""]",choices,severity,308,7,235546,121,0
+nXjEqL1Wsj,"[""Exclude""]",choices,exclude,357,7,235786,120,
+iJDPD_-MXZ,"[""Exclude""]",choices,exclude,518,7,235843,120,
+"8QYDbdU8UV","[""Exclude""]",choices,exclude,337,7,235559,121,
+Y6Trf9TmQm,"[""Emergency""]",choices,severity,323,7,235551,121,0
+NJW34kEblB,"[""Emergency""]",choices,severity,497,7,235593,121,0
+pVPhq0QWrs,"[""Emergency""]",choices,severity,501,7,235597,121,0
+S7LmQqwexd,"[""Non Emergency [No Doctor]""]",choices,severity,546,7,235872,120,2
+g_RBk63dxB,"[""Exclude""]",choices,exclude,390,7,235796,120,
+S6QIRLRU-R,"[""Non Emergency [Doctor]""]",choices,severity,430,7,235806,120,3
+EXgj0bKbTw,"[""Non Emergency [No Doctor]""]",choices,severity,446,7,235827,120,2
+"5or7duKmqt","[""Emergency""]",choices,severity,470,7,235824,120,0
+"9WVS5sWF9p","[""Emergency""]",choices,severity,328,7,235555,121,0
+UbgdSPtWHQ,"[""Emergency""]",choices,severity,498,7,235594,121,0
+"22DQRlsmfE","[""Emergency""]",choices,severity,339,7,235561,121,0
+"0N6yYKDg1U","[""Emergency""]",choices,severity,502,7,235598,121,0
+-mIO06dhV7,"[""Exclude""]",choices,exclude,392,7,235798,120,
+FuXSFbYs_q,"[""Exclude""]",choices,exclude,459,7,235814,120,
+"1j148Jl_LG","[""Non Emergency [No Doctor]""]",choices,severity,331,7,235775,120,2
+"1OYDpP0uoB","[""Non Emergency [No Doctor]""]",choices,severity,211,7,235723,120,2
+MnyJWXYb2X,"[""Emergency""]",choices,severity,480,7,235576,121,0
+zvMWALXkBp,"[""Emergency""]",choices,severity,353,7,235571,121,0
+"1Q9nH0U-b-","[""Emergency""]",choices,severity,355,7,235572,121,0
+"7uEu5LX3QJ","[""Emergency""]",choices,severity,363,7,235575,121,0
+IlexNFktIX,"[""Emergency""]",choices,severity,481,7,235577,121,0
+iCqoQzeQIT,"[""Non Emergency [No Doctor]""]",choices,severity,484,7,235580,121,2
+"7S1R9Asbkh","[""Emergency""]",choices,severity,485,7,235581,121,0
+i7HNzjoXBl,"[""Non Emergency [Doctor]""]",choices,severity,487,7,235583,121,3
+CMl_uFGXbP,"[""Emergency""]",choices,severity,488,7,235584,121,0
+KHuX86jWbD,"[""Emergency""]",choices,severity,489,7,235585,121,0
+b_h9dZ7KF5,"[""Emergency""]",choices,severity,187,7,235464,121,0
+WjX49gMSfy,"[""Emergency""]",choices,severity,490,7,235586,121,0
+"0yaBU25bIL","[""Emergency""]",choices,severity,491,7,235587,121,0
+qRE4RsLIxM,"[""Non Emergency [Doctor]""]",choices,severity,492,7,235588,121,3
+azlQBmyHvQ,"[""Emergency""]",choices,severity,493,7,235589,121,0
+yie6UzhvDh,"[""Emergency""]",choices,severity,494,7,235590,121,0
+fPglf0QwPD,"[""Exclude""]",choices,exclude,499,7,235595,121,
+uuIVRJEPzQ,"[""Emergency""]",choices,severity,503,7,235599,121,0
+nEkQLfUk0f,"[""Normal""]",choices,severity,676,7,238016,121,1
+YE9ivJm7Qd,"[""Emergency""]",choices,severity,190,7,235467,121,0
+Wps2BzgEnm,"[""Exclude""]",choices,exclude,547,7,235873,120,
+voaAX0gmcw,"[""Normal""]",choices,severity,677,7,238015,121,1
+yBH8tA3TF0,"[""Emergency""]",choices,severity,204,7,235473,121,0
+D5hEQaGmG2,"[""Emergency""]",choices,severity,500,7,235596,121,0
+l2p47m4xwD,"[""Emergency""]",choices,severity,504,7,235600,121,0
+aeRxjcZ_wo,"[""Exclude""]",choices,exclude,427,7,235805,120,
+m5pBfBasrt,"[""Exclude""]",choices,exclude,463,7,235818,120,
+M3k0Og6D2c,"[""Emergency""]",choices,severity,378,7,235794,120,0
+tOX4bUDAJG,"[""Non Emergency [No Doctor]""]",choices,severity,309,7,235764,120,2
+eEGZfg-8io,"[""Normal""]",choices,severity,509,7,235834,120,1
+rxA5HL5Nhv,"[""Non Emergency [Doctor]""]",choices,severity,359,7,235787,120,3
+-wYQl-w9L0,"[""Emergency""]",choices,severity,526,7,235850,120,0
+hQ_pnLckWc,"[""Emergency""]",choices,severity,529,7,235853,120,0
+SBvVuTq0gp,"[""Emergency""]",choices,severity,531,7,235855,120,0
+MNsQdt74bh,"[""Exclude""]",choices,exclude,548,7,235874,120,
+Gp40I90KUR,"[""Exclude""]",choices,exclude,554,7,235881,120,
+oGoHvyDW0X,"[""Exclude""]",choices,exclude,580,7,235637,121,
+rDEqQhqftT,"[""Non Emergency [No Doctor]""]",choices,severity,196,7,235715,120,2
+j8DJOqO8DW,"[""Emergency""]",choices,severity,508,7,235833,120,0
+zHk7qtflXU,"[""Emergency""]",choices,severity,519,7,235844,120,0
+sXOYXLxdgD,"[""Emergency""]",choices,severity,520,7,235845,120,0
+"56x43EC_UE","[""Emergency""]",choices,severity,527,7,235851,120,0
+Py1A6rq9yJ,"[""Emergency""]",choices,severity,516,7,235841,120,0
+"28-mwUx-aa","[""Exclude""]",choices,exclude,555,7,235861,120,
+r1RT6GrAkR,"[""Exclude""]",choices,exclude,565,7,235889,120,
+tJA-sfQB2v,"[""Normal""]",choices,severity,678,7,238014,121,1
+jUYaKl1qOd,"[""Exclude""]",choices,exclude,528,7,235852,120,
+-0hyELY7bQ,"[""Non Emergency [No Doctor]""]",choices,severity,302,7,235758,120,2
+KyIJ8q6A2Q,"[""Emergency""]",choices,severity,530,7,235854,120,0
+H0JeddNzpl,"[""Emergency""]",choices,severity,368,7,235791,120,0
+HMJe9wihlG,"[""Emergency""]",choices,severity,532,7,235856,120,0
+"7F8BLdtn3r","[""Emergency""]",choices,severity,549,7,235875,120,0
+eMSvI6PKhY,"[""Exclude""]",choices,exclude,558,7,235882,120,
+yM6VItXy8C,"[""Emergency""]",choices,severity,539,7,235864,120,0
+xYbBvRKpLr,"[""Normal""]",choices,severity,1861,7,236500,121,1
+"69OH1XhkZy","[""Non Emergency [No Doctor]""]",choices,severity,1871,7,236872,120,2
+V4Tp-9MwRw,"[""Emergency""]",choices,severity,1879,7,236904,120,0
+AN9RBeepiJ,"[""Emergency""]",choices,severity,1888,7,236728,120,0
+uiJFAiWI40,"[""Non Emergency [No Doctor]""]",choices,severity,1894,7,236758,120,2
+lIJA6_tYWi,"[""Non Emergency [Doctor]""]",choices,severity,1899,7,237013,121,3
+kOa3DF0frn,"[""Non Emergency [No Doctor]""]",choices,severity,1903,7,236777,120,2
+"317Nbf0GhO","[""Non Emergency [No Doctor]""]",choices,severity,1907,7,236789,120,2
+brXPEIPbSE,"[""Non Emergency [No Doctor]""]",choices,severity,1917,7,236899,120,2
+"8bdU69fVTf","[""Emergency""]",choices,severity,1914,7,237026,121,0
+LedbayAiGS,"[""Emergency""]",choices,severity,1919,7,237030,121,0
+cnboD4pnDD,"[""Emergency""]",choices,severity,1921,7,237031,121,0
+Vbfr3CRQvh,"[""Emergency""]",choices,severity,550,7,235876,120,0
+tqxMqShtIN,"[""Emergency""]",choices,severity,556,7,235867,120,0
+BP9Us2dksU,"[""Emergency""]",choices,severity,557,7,235878,120,0
+_c41lAofKR,"[""Exclude""]",choices,exclude,1862,7,236527,121,
+sS5PnvTy1e,"[""Non Emergency [No Doctor]""]",choices,severity,1872,7,236873,120,2
+uEeupdm8kJ,"[""Emergency""]",choices,severity,1880,7,236669,121,0
+xD_Srs6jLL,"[""Emergency""]",choices,severity,1889,7,236703,121,0
+QNduWNDNZ-,"[""Emergency""]",choices,severity,1895,7,237009,121,0
+J6nO4IFzKs,"[""Non Emergency [No Doctor]""]",choices,severity,1904,7,237017,121,2
+Y0rG_J6is1,"[""Non Emergency [Doctor]""]",choices,severity,1900,7,237014,121,3
+RfouA3PBiz,"[""Non Emergency [No Doctor]""]",choices,severity,1908,7,237012,121,2
+K0f0GcDyZY,"[""Emergency""]",choices,severity,559,7,235883,120,0
+bWmpr7rzTh,"[""Emergency""]",choices,severity,560,7,235884,120,0
+"7kPb4StPMe","[""Non Emergency [Doctor]""]",choices,severity,561,7,235885,120,3
+z6x0xqT6_h,"[""Exclude""]",choices,exclude,1863,7,236530,121,
+"8eYkalmXwL","[""Emergency""]",choices,severity,1873,7,236881,120,0
+"5QWl9qXys0","[""Non Emergency [No Doctor]""]",choices,severity,1881,7,236906,120,2
+FsUX-C4VWp,"[""Non Emergency [No Doctor]""]",choices,severity,1890,7,236738,120,2
+QLqkcTqGnV,"[""Non Emergency [No Doctor]""]",choices,severity,1896,7,236768,120,2
+j4TW58LsSg,"[""Emergency""]",choices,severity,1901,7,236776,120,0
+frSSyf-mmF,"[""Emergency""]",choices,severity,1905,7,236787,120,0
+XojeSk6puB,"[""Non Emergency [No Doctor]""]",choices,severity,1912,7,237024,121,2
+YqF9l9CQgQ,"[""Emergency""]",choices,severity,562,7,235886,120,0
+hhJfkRgkk7,"[""Emergency""]",choices,severity,563,7,235887,120,0
+fn3Q37aif_,"[""Emergency""]",choices,severity,564,7,235888,120,0
+U6bhO-049q,"[""Emergency""]",choices,severity,566,7,235890,120,0
+rJhAhTPIMK,"[""Emergency""]",choices,severity,567,7,235891,120,0
+"8Lq3vNG48F","[""Exclude""]",choices,exclude,581,7,235638,121,
+"1dwziwnMAm","[""Exclude""]",choices,exclude,585,7,235641,121,
+ZVrjVckLf7,"[""Exclude""]",choices,exclude,588,7,235644,121,
+RZsr2sKm8r,"[""Normal""]",choices,severity,680,7,238012,121,1
+"2v0lQ99m-4","[""Emergency""]",choices,severity,569,7,235893,120,0
+H01g9w-fuB,"[""Non Emergency [Doctor]""]",choices,severity,571,7,235895,120,3
+Ev5f5-7-Yx,"[""Emergency""]",choices,severity,572,7,235896,120,0
+_bH-H6bh0H,"[""Emergency""]",choices,severity,573,7,235897,120,0
+krJttaayaz,"[""Emergency""]",choices,severity,575,7,235899,120,0
+cZ7JQVGxJ_,"[""Exclude""]",choices,exclude,582,7,235639,121,
+eidYGlg23x,"[""Exclude""]",choices,exclude,589,7,235645,121,
+Cl_-LLAEij,"[""Exclude""]",choices,exclude,594,7,235648,121,
+GOg0668qgn,"[""Non Emergency [Doctor]""]",choices,severity,576,7,235900,120,3
+KVe9ShnpZF,"[""Non Emergency [Doctor]""]",choices,severity,578,7,235902,120,3
+bB9WQVgFvY,"[""Non Emergency [Doctor]""]",choices,severity,583,7,235903,120,3
+PbSPX-1qTr,"[""Emergency""]",choices,severity,587,7,235643,121,0
+qZ0vyw9z6I,"[""Exclude""]",choices,exclude,590,7,235904,120,
+iG5vNk6lRB,"[""Emergency""]",choices,severity,1864,7,236536,121,0
+BNhLij2wab,"[""Non Emergency [No Doctor]""]",choices,severity,1874,7,236884,120,2
+P9gEGM0fTh,"[""Non Emergency [No Doctor]""]",choices,severity,1882,7,236907,120,2
+zuKFwyb5kw,"[""Emergency""]",choices,severity,1891,7,236748,120,0
+n9Hqhn0dNn,"[""Non Emergency [No Doctor]""]",choices,severity,2076,7,236731,120,2
+xKnOTCrZo1,"[""Non Emergency [No Doctor]""]",choices,severity,592,7,235636,121,2
+ojiWVlbc-x,"[""Emergency""]",choices,severity,593,7,235647,121,0
+"9Q_Xsx8nTd","[""Emergency""]",choices,severity,595,7,235905,120,0
+x720SGy4Bk,"[""Emergency""]",choices,severity,596,7,235649,121,0
+"7tdc2syQUW","[""Exclude""]",choices,exclude,1865,7,236552,121,
+L6XkOHe8Wv,"[""Normal""]",choices,severity,1875,7,236893,120,1
+GWFZIawkFq,"[""Emergency""]",choices,severity,1883,7,236911,120,0
+ksP9rGd958,"[""Non Emergency [Doctor]""]",choices,severity,1892,7,236751,120,3
+hP3KSSTs5e,"[""Non Emergency [Doctor]""]",choices,severity,1897,7,237010,121,3
+cj80lcNWOR,"[""Emergency""]",choices,severity,1961,7,236963,120,0
+"4rH7wjwY4i","[""Exclude""]",choices,exclude,597,7,235651,121,
+cxrGMUBDYq,"[""Non Emergency [Doctor]""]",choices,severity,599,7,235653,121,3
+oqBwODz30y,"[""Exclude""]",choices,exclude,600,7,235654,121,
+YrtKyLYOMG,"[""Emergency""]",choices,severity,601,7,235655,121,0
+fQlxWogode,"[""Exclude""]",choices,exclude,602,7,235656,121,
+TOGhJMujbJ,"[""Emergency""]",choices,severity,603,7,235906,120,0
+bHYZzKDcKA,"[""Emergency""]",choices,severity,604,7,235657,121,0
+Isl4EQg0lj,"[""Emergency""]",choices,severity,605,7,235658,121,0
+JaNN-8Gxlh,"[""Non Emergency [No Doctor]""]",choices,severity,606,7,235689,121,2
+zt12Bw9uEK,"[""Non Emergency [Doctor]""]",choices,severity,607,7,235690,121,3
+VnTLsW96tr,"[""Emergency""]",choices,severity,608,7,235907,120,0
+TQwBbIPTb0,"[""Non Emergency [No Doctor]""]",choices,severity,609,7,235691,121,2
+"31-uvrrUMj","[""Emergency""]",choices,severity,610,7,235692,121,0
+F7Crk-L9EC,"[""Emergency""]",choices,severity,611,7,235693,121,0
+HQdgumyf-b,"[""Emergency""]",choices,severity,636,7,235915,120,0
+oVssrb5-eU,"[""Emergency""]",choices,severity,637,7,235940,121,0
+g0OuAoPdi9,"[""Emergency""]",choices,severity,612,7,235908,120,0
+QQD4aMOum3,"[""Exclude""]",choices,exclude,617,7,235697,121,
+yKlCI0intr,"[""Emergency""]",choices,severity,613,7,235694,121,0
+cChlOHb0my,"[""Emergency""]",choices,severity,614,7,235909,120,0
+kxmwX4quLN,"[""Emergency""]",choices,severity,615,7,235695,121,0
+"44DWBe9z5P","[""Non Emergency [No Doctor]""]",choices,severity,616,7,235696,121,2
+"4ZEGO3AZlV","[""Non Emergency [Doctor]""]",choices,severity,618,7,235698,121,3
+vbUybdUQXX,"[""Emergency""]",choices,severity,619,7,235699,121,0
+"2DSA5Nsnlq","[""Normal""]",choices,severity,682,7,238010,121,1
+BH6tEEZtbp,"[""Non Emergency [Doctor]""]",choices,severity,621,7,235910,120,3
+kJoGVXt-Nt,"[""Emergency""]",choices,severity,622,7,235950,121,0
+cJieJTuCh1,"[""Non Emergency [Doctor]""]",choices,severity,623,7,235949,121,3
+hulMPw_C8g,"[""Exclude""]",choices,exclude,624,7,235948,121,
+CU94INPXcu,"[""Emergency""]",choices,severity,625,7,235911,120,0
+pwLMXND7Jc,"[""Emergency""]",choices,severity,626,7,235947,121,0
+"2tyI6kCPk-","[""Non Emergency [No Doctor]""]",choices,severity,627,7,235946,121,2
+m_ZPNSPs1D,"[""Normal""]",choices,severity,683,7,238009,121,1
+gQG7e65CG4,"[""Normal""]",choices,severity,686,7,238006,121,1
+"8_jZUMH3ss","[""Non Emergency [No Doctor]""]",choices,severity,628,7,235912,120,2
+ebUS5VZBom,"[""Emergency""]",choices,severity,629,7,235945,121,0
+ld8ehNBhOc,"[""Non Emergency [No Doctor]""]",choices,severity,630,7,235913,120,2
+jjFMaISJiO,"[""Emergency""]",choices,severity,631,7,235944,121,0
+FCCJCK4YkV,"[""Emergency""]",choices,severity,632,7,235943,121,0
+h2-EOvp-_y,"[""Emergency""]",choices,severity,633,7,235914,120,0
+vYcul5Fhyf,"[""Emergency""]",choices,severity,634,7,235942,121,0
+Lj1ss_npKL,"[""Normal""]",choices,severity,685,7,238007,121,1
+gd-ioy6ll8,"[""Emergency""]",choices,severity,638,7,235939,121,0
+HMM003uPvm,"[""Emergency""]",choices,severity,639,7,235916,120,0
+_yDjIk59NL,"[""Emergency""]",choices,severity,640,7,235938,121,0
+vGtw_HsC0l,"[""Emergency""]",choices,severity,641,7,235937,121,0
+nTIpzWYGYr,"[""Exclude""]",choices,exclude,642,7,235936,121,
+S46F9Z5fSg,"[""Emergency""]",choices,severity,643,7,235917,120,0
+ahgPy7FPQq,"[""Emergency""]",choices,severity,644,7,235935,121,0
+kz_mjBPFdC,"[""Non Emergency [Doctor]""]",choices,severity,656,7,235927,121,3
+fqtPnNXvcx,"[""Emergency""]",choices,severity,645,7,235934,121,0
+kxUwDVCAI3,"[""Emergency""]",choices,severity,646,7,235918,120,0
+"4-3ZIvw5iT","[""Exclude""]",choices,exclude,647,7,235919,120,
+"7fAwGdVQV1","[""Non Emergency [Doctor]""]",choices,severity,648,7,235933,121,3
+cakmyYGW5K,"[""Exclude""]",choices,exclude,649,7,235932,121,
+fou6XmRc5j,"[""Exclude""]",choices,exclude,650,7,235931,121,
+G6r9fnhWOA,"[""Exclude""]",choices,exclude,651,7,235930,121,
+gTcW-P2DcI,"[""Exclude""]",choices,exclude,652,7,235920,120,
+TAzIDMNYry,"[""Emergency""]",choices,severity,653,7,235929,121,0
+NZRPv9MEjI,"[""Emergency""]",choices,severity,654,7,235928,121,0
+PAAwc_iDsy,"[""Emergency""]",choices,severity,655,7,235921,120,0
+OzlG0HpgEA,"[""Emergency""]",choices,severity,657,7,235922,120,0
+RgilXQ9eu3,"[""Emergency""]",choices,severity,659,7,235923,120,0
+JDjaSqsT6-,"[""Exclude""]",choices,exclude,660,7,235924,120,
+yNTLjFWm1N,"[""Emergency""]",choices,severity,661,7,235925,120,0
+"4gWBX2j9Ls","[""Emergency""]",choices,severity,672,7,238020,121,0
+f5hqcWscrM,"[""Exclude""]",choices,exclude,679,7,238013,121,
+CdexfKOo4Q,"[""Non Emergency [No Doctor]""]",choices,severity,681,7,238011,121,2
+hpVz1xwoX0,"[""Non Emergency [No Doctor]""]",choices,severity,684,7,238008,121,2
+UC1LPxa2yI,"[""Non Emergency [No Doctor]""]",choices,severity,687,7,238005,121,2
+DMF88wbfQt,"[""Exclude""]",choices,exclude,1866,7,236585,121,
+pFVCoNPLmh,"[""Emergency""]",choices,severity,1876,7,236894,120,0
+d7Ik33WXD_,"[""Non Emergency [Doctor]""]",choices,severity,1884,7,236687,121,3
+Xeg-JV6KNq,"[""Non Emergency [No Doctor]""]",choices,severity,1893,7,236755,120,2
+FUc-5AROE7,"[""Emergency""]",choices,severity,1898,7,236771,120,0
+cs5AKCtXxT,"[""Emergency""]",choices,severity,1902,7,237016,121,0
+Jsl7sncuSK,"[""Emergency""]",choices,severity,1906,7,237021,121,0
+rlQu4p9Vrt,"[""Emergency""]",choices,severity,1910,7,237023,121,0
+"5X3hX9DwPY","[""Non Emergency [No Doctor]""]",choices,severity,1913,7,236830,120,2
+hQB99gifoP,"[""Non Emergency [No Doctor]""]",choices,severity,1916,7,236892,120,2
+"4cmA9kNsLe","[""Emergency""]",choices,severity,1918,7,236905,120,0
+GD-X3yT9eN,"[""Non Emergency [No Doctor]""]",choices,severity,1920,7,236908,120,2
+EhKFL25htK,"[""Emergency""]",choices,severity,1922,7,237033,121,0
+qPJY0iUJoO,"[""Non Emergency [No Doctor]""]",choices,severity,1923,7,236912,120,2
+vIzMhbSfxe,"[""Non Emergency [Doctor]""]",choices,severity,1983,7,236932,120,3
+ycaRAaDxvN,"[""Normal""]",choices,severity,688,7,238004,121,1
+"2nIG4KIqJ0","[""Normal""]",choices,severity,689,7,238003,121,1
+Xxx44JZpfq,"[""Normal""]",choices,severity,690,7,238002,121,1
+GrfYNjKQE0,"[""Normal""]",choices,severity,691,7,238001,121,1
+GK2oFoB9vb,"[""Normal""]",choices,severity,693,7,237999,121,1
+"9-BlfEG4-g","[""Exclude""]",choices,exclude,694,7,237998,121,
+gmFldYUfCf,"[""Normal""]",choices,severity,695,7,237997,121,1
+-PUSsSr8DK,"[""Normal""]",choices,severity,696,7,237996,121,1
+vM36MP0uvo,"[""Normal""]",choices,severity,697,7,237995,121,1
+"8VyopX5H6M","[""Normal""]",choices,severity,698,7,237994,121,1
+B0ivM2xHAL,"[""Normal""]",choices,severity,699,7,237993,121,1
+L-CJ7AB_o4,"[""Normal""]",choices,severity,700,7,237992,121,1
+ZDqLImKgs7,"[""Normal""]",choices,severity,706,7,237986,121,1
+qJPJePO_U2,"[""Non Emergency [No Doctor]""]",choices,severity,701,7,237991,121,2
+Ljkmt0fpHf,"[""Normal""]",choices,severity,702,7,237990,121,1
+"6-DUWoTusH","[""Normal""]",choices,severity,703,7,237989,121,1
+UMPKg9werF,"[""Normal""]",choices,severity,704,7,237988,121,1
+"5byiQm_3e7","[""Normal""]",choices,severity,705,7,237987,121,1
+"0rqJNZBEmC","[""Normal""]",choices,severity,707,7,237985,121,1
+EbCKXZWMx9,"[""Normal""]",choices,severity,708,7,237984,121,1
+-oFKFcJWH6,"[""Non Emergency [No Doctor]""]",choices,severity,709,7,237983,121,2
+"9z0-9o-0hH","[""Normal""]",choices,severity,710,7,237982,121,1
+EJkaR5qhnW,"[""Normal""]",choices,severity,711,7,237981,121,1
+gYugShof84,"[""Normal""]",choices,severity,712,7,237980,121,1
+cL4CYL_-VE,"[""Normal""]",choices,severity,713,7,237979,121,1
+"3DufQWPmnG","[""Normal""]",choices,severity,714,7,237978,121,1
+u_mX4M65Ba,"[""Normal""]",choices,severity,715,7,237977,121,1
+iP4KhhEtXj,"[""Normal""]",choices,severity,716,7,237976,121,1
+IqdN5Vc7RP,"[""Normal""]",choices,severity,717,7,237975,121,1
+"2buQfIzuOn","[""Normal""]",choices,severity,718,7,237974,121,1
+YLs2eHfVuC,"[""Normal""]",choices,severity,719,7,237973,121,1
+Yu4uW9cMrD,"[""Normal""]",choices,severity,720,7,237972,121,1
+_SYYradDnb,"[""Normal""]",choices,severity,721,7,237971,121,1
+rsbyefMq-M,"[""Normal""]",choices,severity,722,7,237970,121,1
+_Abu41sLny,"[""Normal""]",choices,severity,723,7,237969,121,1
+dstEJl1t5d,"[""Normal""]",choices,severity,724,7,237968,121,1
+raiw8Y7HB_,"[""Normal""]",choices,severity,725,7,237967,121,1
+"1SsbUFhyxI","[""Non Emergency [No Doctor]""]",choices,severity,726,7,237966,121,2
+"2WYXTi7P1D","[""Normal""]",choices,severity,727,7,237965,121,1
+aW2TxC54-Z,"[""Exclude""]",choices,exclude,728,7,237964,121,
+F8cr7KSddz,"[""Non Emergency [No Doctor]""]",choices,severity,729,7,237963,121,2
+DVOKoMeMU6,"[""Normal""]",choices,severity,730,7,237962,121,1
+JrHkPzdGyh,"[""Normal""]",choices,severity,731,7,237961,121,1
+m1bvw-TOcH,"[""Normal""]",choices,severity,732,7,237960,121,1
+uzEvgbn4gf,"[""Normal""]",choices,severity,733,7,237959,121,1
+aMzKzsoRN4,"[""Normal""]",choices,severity,734,7,237958,121,1
+fjQ8emq7xk,"[""Normal""]",choices,severity,735,7,237957,121,1
+UfVJTsviXC,"[""Normal""]",choices,severity,736,7,237956,121,1
+ApWI7q6sM_,"[""Normal""]",choices,severity,737,7,237955,121,1
+HENx1DrPs4,"[""Normal""]",choices,severity,738,7,237954,121,1
+uBoTL522eg,"[""Normal""]",choices,severity,739,7,237953,121,1
+usHi_EnPxS,"[""Normal""]",choices,severity,740,7,237952,121,1
+tBmXakwR3t,"[""Non Emergency [No Doctor]""]",choices,severity,741,7,237951,121,2
+Cp988eBVdd,"[""Normal""]",choices,severity,742,7,237950,121,1
+TN5d9XHVR0,"[""Non Emergency [No Doctor]""]",choices,severity,743,7,237949,121,2
+RF9NCAfl-o,"[""Normal""]",choices,severity,744,7,237948,121,1
+mNIvt0mN69,"[""Normal""]",choices,severity,745,7,237947,121,1
+tu9H0PzFnv,"[""Non Emergency [No Doctor]""]",choices,severity,746,7,237946,121,2
+qby6OBMCUn,"[""Normal""]",choices,severity,747,7,237945,121,1
+iJJ4qD9Jr0,"[""Normal""]",choices,severity,748,7,237944,121,1
+wqKwoCT30i,"[""Normal""]",choices,severity,749,7,237943,121,1
+P38aWavF95,"[""Normal""]",choices,severity,750,7,237942,121,1
+IuKVyAfh-s,"[""Normal""]",choices,severity,751,7,237941,121,1
+b1dIY0lX7j,"[""Normal""]",choices,severity,752,7,237940,121,1
+"5cIe7bi6B2","[""Normal""]",choices,severity,753,7,237939,121,1
+G_QU7PQniz,"[""Normal""]",choices,severity,754,7,237938,121,1
+-X6-7_OWVL,"[""Normal""]",choices,severity,755,7,237937,121,1
+"4nHfnDBghI","[""Normal""]",choices,severity,756,7,237936,121,1
+fitsXRTVWo,"[""Normal""]",choices,severity,757,7,237935,121,1
+RvF06ZsgJC,"[""Normal""]",choices,severity,779,7,237913,121,1
+Op_cYmcyUy,"[""Normal""]",choices,severity,758,7,237934,121,1
+PbTyDg2sde,"[""Normal""]",choices,severity,759,7,237933,121,1
+jesLnqWqub,"[""Normal""]",choices,severity,760,7,237932,121,1
+qizvNZFoU0,"[""Normal""]",choices,severity,761,7,237931,121,1
+"4W0In9tiiN","[""Normal""]",choices,severity,762,7,237930,121,1
+d6oJQ3O9i6,"[""Normal""]",choices,severity,763,7,237929,121,1
+pYcsqa_6bU,"[""Normal""]",choices,severity,764,7,237928,121,1
+TRXZc8XDh9,"[""Normal""]",choices,severity,765,7,237927,121,1
+Lq6vccLfuY,"[""Normal""]",choices,severity,766,7,237926,121,1
+aahDtpB1DR,"[""Normal""]",choices,severity,767,7,237925,121,1
+rQCr62PdSl,"[""Normal""]",choices,severity,768,7,237924,121,1
+uBAxeT3q3M,"[""Non Emergency [No Doctor]""]",choices,severity,769,7,237923,121,2
+"5Ess5p1Tnl","[""Normal""]",choices,severity,770,7,237922,121,1
+KVyTUcC7vJ,"[""Normal""]",choices,severity,771,7,237921,121,1
+letlsymJug,"[""Normal""]",choices,severity,772,7,237920,121,1
+"3_MNDmRY6E","[""Normal""]",choices,severity,773,7,237919,121,1
+K8Y922wfla,"[""Normal""]",choices,severity,774,7,237918,121,1
+DBAtF4lS7F,"[""Normal""]",choices,severity,775,7,237917,121,1
+BgIbm_DLCG,"[""Normal""]",choices,severity,776,7,237916,121,1
+kErSHJytg8,"[""Normal""]",choices,severity,777,7,237915,121,1
+wMQxNxdF2P,"[""Normal""]",choices,severity,778,7,237914,121,1
+VF7mmo8LCX,"[""Normal""]",choices,severity,780,7,237912,121,1
+LQlYHorJgP,"[""Normal""]",choices,severity,781,7,237911,121,1
+bGKipRZ0Rv,"[""Normal""]",choices,severity,782,7,237910,121,1
+IfB9K2avD4,"[""Normal""]",choices,severity,783,7,237909,121,1
+yhkLxhqTG8,"[""Normal""]",choices,severity,784,7,237908,121,1
+fCK-zkpnrj,"[""Normal""]",choices,severity,785,7,237907,121,1
+YF5WDbPI8E,"[""Normal""]",choices,severity,786,7,237906,121,1
+iirmOEMrjz,"[""Normal""]",choices,severity,787,7,237905,121,1
+QMM2vRUaG5,"[""Normal""]",choices,severity,788,7,237904,121,1
+eIhQ6h6dML,"[""Normal""]",choices,severity,789,7,237903,121,1
+FYj-rXZTMa,"[""Normal""]",choices,severity,790,7,237902,121,1
+hQYkXeHtQR,"[""Non Emergency [No Doctor]""]",choices,severity,791,7,237901,121,2
+NONvc2iUI9,"[""Normal""]",choices,severity,792,7,237900,121,1
+LyonSZNhy6,"[""Normal""]",choices,severity,793,7,237899,121,1
+rmzSJbE_AM,"[""Normal""]",choices,severity,794,7,237898,121,1
+LkjcF2_XXD,"[""Normal""]",choices,severity,795,7,237897,121,1
+"5uupGRwa3F","[""Normal""]",choices,severity,796,7,237896,121,1
+HAssu2loIa,"[""Non Emergency [Doctor]""]",choices,severity,797,7,237895,121,3
+n7itX07Ra5,"[""Normal""]",choices,severity,798,7,237894,121,1
+hVWSS-EMlc,"[""Non Emergency [No Doctor]""]",choices,severity,799,7,237893,121,2
+iBOrKKcE8n,"[""Normal""]",choices,severity,800,7,237892,121,1
+"0zAjTypocG","[""Normal""]",choices,severity,801,7,237891,121,1
+Iin0HFEOVm,"[""Non Emergency [No Doctor]""]",choices,severity,802,7,237890,121,2
+XtHrSIghBU,"[""Emergency""]",choices,severity,803,7,237889,121,0
+-1C1aiHdvY,"[""Normal""]",choices,severity,804,7,237888,121,1
+zWi33lVIBJ,"[""Emergency""]",choices,severity,805,7,237887,121,0
+Te0BDmc3r9,"[""Normal""]",choices,severity,806,7,237886,121,1
+zok5i7j1O4,"[""Normal""]",choices,severity,807,7,237885,121,1
+a8QVsBiMAQ,"[""Normal""]",choices,severity,808,7,237884,121,1
+Ickq37DP-0,"[""Non Emergency [No Doctor]""]",choices,severity,809,7,237883,121,2
+dSv6vy_E7q,"[""Normal""]",choices,severity,810,7,237882,121,1
+lxKB30r3-k,"[""Normal""]",choices,severity,811,7,237881,121,1
+"5BQr5uU5pw","[""Normal""]",choices,severity,812,7,237880,121,1
+"8zHY2KGhYU","[""Normal""]",choices,severity,813,7,237879,121,1
+FQdNd1kohu,"[""Non Emergency [No Doctor]""]",choices,severity,815,7,237877,121,2
+"0HHBDwyNrE","[""Normal""]",choices,severity,816,7,237876,121,1
+cw0pFCWD9k,"[""Normal""]",choices,severity,817,7,237875,121,1
+yY4ueONzz_,"[""Normal""]",choices,severity,818,7,237874,121,1
+"47nWDC5_Hs","[""Normal""]",choices,severity,819,7,237873,121,1
+znl9RIoQSP,"[""Normal""]",choices,severity,820,7,237872,121,1
+v8QwbqGfaJ,"[""Non Emergency [No Doctor]""]",choices,severity,821,7,237871,121,2
+"1b5YNsXNy6","[""Normal""]",choices,severity,822,7,237870,121,1
+"0kJ9NPhP9W","[""Normal""]",choices,severity,823,7,237869,121,1
+d1lxM5jkiF,"[""Normal""]",choices,severity,824,7,237868,121,1
+xlqa7zYecp,"[""Normal""]",choices,severity,825,7,237867,121,1
+dixjk4u19b,"[""Normal""]",choices,severity,826,7,237866,121,1
+hRYZWfmhFw,"[""Normal""]",choices,severity,827,7,237865,121,1
+nkhNdKWhQU,"[""Normal""]",choices,severity,828,7,237864,120,1
+MP7VKsRtxR,"[""Normal""]",choices,severity,829,7,237863,120,1
+HFtIH1X83H,"[""Non Emergency [No Doctor]""]",choices,severity,831,7,237861,120,2
+c1PDq6mODH,"[""Emergency""]",choices,severity,832,7,237860,120,0
+"1I37aBXcsn","[""Exclude""]",choices,exclude,1867,7,236599,121,
+eqIosOQeLI,"[""Normal""]",choices,severity,833,7,237859,120,1
+ATeupaHX1c,"[""Normal""]",choices,severity,834,7,237858,120,1
+ficHwTi-I4,"[""Normal""]",choices,severity,835,7,237857,120,1
+-pPedOvYy5,"[""Normal""]",choices,severity,836,7,237856,120,1
+"4sX0oNnS7e","[""Non Emergency [Doctor]""]",choices,severity,837,7,237855,120,3
+"8Qjsv9jddl","[""Normal""]",choices,severity,838,7,237854,120,1
+FZYST-nXeN,"[""Normal""]",choices,severity,839,7,237853,120,1
+cZWf4oEh6K,"[""Non Emergency [No Doctor]""]",choices,severity,1877,7,236667,121,2
+_iACYzccmH,"[""Emergency""]",choices,severity,1885,7,236939,120,0
+T0RVobeG0J,"[""Normal""]",choices,severity,840,7,237852,120,1
+rxXLogLr1t,"[""Normal""]",choices,severity,841,7,237851,120,1
+MXsM76iCIG,"[""Normal""]",choices,severity,842,7,237850,120,1
+EP5Bpi5NfQ,"[""Normal""]",choices,severity,843,7,237849,120,1
+BotoJP90UZ,"[""Normal""]",choices,severity,844,7,237848,120,1
+OFcraNJyT9,"[""Normal""]",choices,severity,845,7,237847,120,1
+LVzdxjBi0m,"[""Normal""]",choices,severity,846,7,237846,120,1
+sIoyed49CO,"[""Normal""]",choices,severity,847,7,237845,120,1
+VkpTHYK-Xf,"[""Normal""]",choices,severity,848,7,237844,120,1
+N1NJCC0IXg,"[""Normal""]",choices,severity,849,7,237843,120,1
+"3DqC4auyB3","[""Normal""]",choices,severity,850,7,237842,120,1
+YW66bd5wNe,"[""Normal""]",choices,severity,851,7,237841,120,1
+"36Vid-98kW","[""Normal""]",choices,severity,852,7,237840,120,1
+iWtoo_LYYh,"[""Non Emergency [No Doctor]""]",choices,severity,853,7,237839,120,2
+"5631l4bOmS","[""Normal""]",choices,severity,854,7,237838,120,1
+wOGtmtuT3Q,"[""Normal""]",choices,severity,855,7,237837,120,1
+_b4oAFBQgs,"[""Exclude""]",choices,exclude,856,7,237836,120,
+ham8uWnizn,"[""Normal""]",choices,severity,857,7,237835,120,1
+gF5cMaDqYB,"[""Normal""]",choices,severity,858,7,237834,120,1
+ntaBkH2d1z,"[""Normal""]",choices,severity,859,7,237833,120,1
+Wa3l825jBW,"[""Normal""]",choices,severity,860,7,237832,120,1
+KQTUGOLW1e,"[""Normal""]",choices,severity,861,7,237831,120,1
+phihaLQWul,"[""Exclude""]",choices,exclude,862,7,237830,120,
+iglc4mFPjw,"[""Normal""]",choices,severity,863,7,237829,120,1
+h47HfB8_si,"[""Normal""]",choices,severity,864,7,237828,120,1
+qkLxhpC7_r,"[""Normal""]",choices,severity,865,7,237827,120,1
+FbAXE6HJjM,"[""Normal""]",choices,severity,866,7,237826,120,1
+bL2_pTowWB,"[""Normal""]",choices,severity,867,7,237825,120,1
+rhdUt-o2UO,"[""Normal""]",choices,severity,868,7,237824,120,1
+TFinbkx2h3,"[""Normal""]",choices,severity,869,7,237823,120,1
+"0i4Prz8cAg","[""Normal""]",choices,severity,870,7,237822,120,1
+LdALC4qL6A,"[""Normal""]",choices,severity,871,7,237821,120,1
+prwmkhrNne,"[""Normal""]",choices,severity,872,7,237820,120,1
+_Jtfwv7tIT,"[""Normal""]",choices,severity,873,7,237819,120,1
+"7j1sCG8v6R","[""Normal""]",choices,severity,874,7,237818,120,1
+TrHbv1o9_k,"[""Normal""]",choices,severity,875,7,237817,120,1
+OG4zqJPsO-,"[""Normal""]",choices,severity,876,7,237816,120,1
+"8ddZY__DmJ","[""Normal""]",choices,severity,877,7,237811,120,1
+KbQjA0TxKD,"[""Normal""]",choices,severity,878,7,237812,120,1
+NKcofmrsmV,"[""Normal""]",choices,severity,879,7,237814,120,1
+jv5bQZeSi9,"[""Normal""]",choices,severity,880,7,237813,120,1
+r4VOhSU2zi,"[""Normal""]",choices,severity,881,7,237810,120,1
+jkRH3KjDC2,"[""Normal""]",choices,severity,882,7,237809,120,1
+uuNROC5fqO,"[""Normal""]",choices,severity,883,7,237808,120,1
+hfu6qj6Uak,"[""Normal""]",choices,severity,884,7,237807,120,1
+IutP59Sany,"[""Non Emergency [Doctor]""]",choices,severity,885,7,237806,120,3
+SnJj8cjw8d,"[""Normal""]",choices,severity,886,7,237805,120,1
+_gq0K-VDwz,"[""Normal""]",choices,severity,887,7,237804,120,1
+pGHYs_6JAS,"[""Normal""]",choices,severity,888,7,237803,120,1
+fWE2XnedfN,"[""Normal""]",choices,severity,889,7,237802,120,1
+"0JpG6z8aUm","[""Normal""]",choices,severity,890,7,237801,120,1
+yu-J1sRnyd,"[""Normal""]",choices,severity,891,7,237800,120,1
+R7xgyWCkdN,"[""Normal""]",choices,severity,892,7,237799,120,1
+m_BsvP0_sS,"[""Normal""]",choices,severity,893,7,237797,120,1
+BVAqAfbFBd,"[""Normal""]",choices,severity,894,7,237796,120,1
+CbENkkUFzl,"[""Normal""]",choices,severity,895,7,237795,120,1
+kPAOYD7GcA,"[""Normal""]",choices,severity,896,7,237794,120,1
+yqDYH8rRAD,"[""Normal""]",choices,severity,897,7,237793,120,1
+tNbnbaf_nY,"[""Normal""]",choices,severity,898,7,237792,120,1
+E4RwibXz5v,"[""Normal""]",choices,severity,899,7,237791,120,1
+"7yT232Ao8u","[""Normal""]",choices,severity,900,7,237790,120,1
+nl4lN6qXzc,"[""Normal""]",choices,severity,901,7,237789,120,1
+hDl8LHcRc5,"[""Normal""]",choices,severity,902,7,237788,120,1
+"2mLVy8d2GQ","[""Normal""]",choices,severity,903,7,237787,120,1
+"9Ja68QUnIy","[""Normal""]",choices,severity,904,7,237786,120,1
+lwmpjqN4Av,"[""Normal""]",choices,severity,905,7,237785,120,1
+lWbmi4_JV9,"[""Non Emergency [No Doctor]""]",choices,severity,906,7,237784,120,2
+"8a6U-k2cxW","[""Normal""]",choices,severity,907,7,237783,120,1
+dzTYbgeZIJ,"[""Normal""]",choices,severity,908,7,237782,120,1
+DqxteCSWPR,"[""Normal""]",choices,severity,909,7,237781,120,1
+kQma0knEk_,"[""Normal""]",choices,severity,910,7,237780,120,1
+uN2LjuaCmo,"[""Normal""]",choices,severity,911,7,237779,120,1
+tTkQxNnN0X,"[""Normal""]",choices,severity,912,7,237778,120,1
+kAdXTAkvK6,"[""Normal""]",choices,severity,913,7,237777,120,1
+"7QByxXZtEW","[""Normal""]",choices,severity,914,7,237776,120,1
+jy0DvMj1KU,"[""Normal""]",choices,severity,915,7,237775,120,1
+zDcDckxjW6,"[""Normal""]",choices,severity,916,7,237774,120,1
+z5uPigVqvA,"[""Normal""]",choices,severity,917,7,237773,120,1
+ojC3XDlnnA,"[""Non Emergency [No Doctor]""]",choices,severity,918,7,237772,120,2
+xkMx3LJZ5t,"[""Normal""]",choices,severity,919,7,237771,120,1
+o3vOO2vrBR,"[""Normal""]",choices,severity,920,7,237770,120,1
+"1hQmbor3hI","[""Normal""]",choices,severity,921,7,237769,120,1
+O5qy24kGLc,"[""Normal""]",choices,severity,922,7,237768,120,1
+-BO_fwb0yb,"[""Non Emergency [No Doctor]""]",choices,severity,1868,7,236610,121,2
+DkEhimCZxr,"[""Normal""]",choices,severity,924,7,237766,120,1
+eYSrO4eVMu,"[""Normal""]",choices,severity,925,7,237765,120,1
+"8yxHHMOUGc","[""Normal""]",choices,severity,926,7,237764,120,1
+"7BU21hlqRn","[""Normal""]",choices,severity,927,7,237763,120,1
+gRv5uXlDHR,"[""Normal""]",choices,severity,928,7,237762,120,1
+XiZU9r1eDR,"[""Normal""]",choices,severity,929,7,237761,120,1
+SHSuxhaB6d,"[""Normal""]",choices,severity,930,7,237760,120,1
+NebxC3p-8E,"[""Normal""]",choices,severity,931,7,237759,120,1
+q546EuOcKK,"[""Emergency""]",choices,severity,1878,7,236903,120,0
+"42-WbDMxiw","[""Normal""]",choices,severity,936,7,237754,120,1
+udyD-y2xr2,"[""Non Emergency [Doctor]""]",choices,severity,932,7,237758,120,3
+Kie07DRrbC,"[""Normal""]",choices,severity,933,7,237757,120,1
+hh2HpDwdI1,"[""Normal""]",choices,severity,934,7,237756,120,1
+iw2NkwKB4I,"[""Normal""]",choices,severity,935,7,237755,120,1
+"2gdG5vmfW3","[""Normal""]",choices,severity,938,7,237752,120,1
+ngdxLUnt6u,"[""Normal""]",choices,severity,939,7,237751,120,1
+ZGl3pfuLxQ,"[""Normal""]",choices,severity,937,7,237753,120,1
+te5ROB0Z81,"[""Normal""]",choices,severity,940,7,237750,120,1
+oMd8-FPC9c,"[""Normal""]",choices,severity,941,7,237749,120,1
+gcX4EjLbIY,"[""Normal""]",choices,severity,942,7,237748,120,1
+_DgIs1FCzL,"[""Normal""]",choices,severity,943,7,237747,120,1
+W1qc1L6o1o,"[""Normal""]",choices,severity,944,7,237746,120,1
+GWrOlscCS5,"[""Normal""]",choices,severity,945,7,237745,120,1
+HLgu1_dfdG,"[""Normal""]",choices,severity,946,7,237744,120,1
+kv5Lo1UX8y,"[""Normal""]",choices,severity,947,7,237743,120,1
+"282R0dYBDc","[""Normal""]",choices,severity,948,7,237742,120,1
+axYA9pbr_r,"[""Normal""]",choices,severity,949,7,237741,120,1
+M1yqk2s2o-,"[""Normal""]",choices,severity,950,7,237740,120,1
+gk45LXvImd,"[""Normal""]",choices,severity,951,7,237739,120,1
+FAGnmqSFyo,"[""Normal""]",choices,severity,952,7,237738,120,1
+yghcG1V5bT,"[""Normal""]",choices,severity,953,7,237737,120,1
+JZ6_XnsKQc,"[""Normal""]",choices,severity,954,7,237736,120,1
+qYeSWqVLwS,"[""Normal""]",choices,severity,955,7,237735,120,1
+yEr-BKUt5J,"[""Normal""]",choices,severity,956,7,237734,120,1
+n5vARerh0Q,"[""Normal""]",choices,severity,957,7,237733,120,1
+"0XvW4_BEQT","[""Normal""]",choices,severity,958,7,237732,120,1
+vKxZQRO2AN,"[""Normal""]",choices,severity,959,7,237731,120,1
+u-JxTBFehV,"[""Non Emergency [No Doctor]""]",choices,severity,2010,7,237082,121,2
+YuRNYP2vM6,"[""Non Emergency [No Doctor]""]",choices,severity,960,7,237798,18,2
+W3DGoR6aaB,"[""Non Emergency [No Doctor]""]",choices,severity,923,7,237767,120,2
+i4uLPt2C11,"[""Emergency""]",choices,severity,961,7,235965,121,0
+NQeK4jIPTz,"[""Non Emergency [No Doctor]""]",choices,severity,962,7,235979,121,2
+tUOCDsan-a,"[""Non Emergency [No Doctor]""]",choices,severity,964,7,235964,121,2
+vLs6vXAhfo,"[""Emergency""]",choices,severity,965,7,235972,121,0
+nGGrO8Uh0X,"[""Emergency""]",choices,severity,1886,7,236692,121,0
+"1Sh0XD8cps","[""Emergency""]",choices,severity,967,7,235953,121,0
+_CrwlReaHc,"[""Emergency""]",choices,severity,978,7,235992,121,0
+z3axoP9gnR,"[""Emergency""]",choices,severity,966,7,235978,121,0
+gFrI9IiYyF,"[""Emergency""]",choices,severity,968,7,235956,121,0
+rr9d3MhiD3,"[""Non Emergency [Doctor]""]",choices,severity,969,7,235960,121,3
+L0E7AROHhx,"[""Non Emergency [Doctor]""]",choices,severity,970,7,235963,121,3
+hZ_G7L0jNK,"[""Non Emergency [No Doctor]""]",choices,severity,971,7,235968,121,2
+NlAeVcYRnZ,"[""Exclude""]",choices,exclude,963,7,235957,121,
+CcKySrzPuz,"[""Emergency""]",choices,severity,972,7,235975,121,0
+"0b4rFZzH2H","[""Emergency""]",choices,severity,973,7,235980,121,0
+MrLE_Mt9YZ,"[""Emergency""]",choices,severity,974,7,236001,121,0
+"9ph1m3N4j_","[""Non Emergency [No Doctor]""]",choices,severity,975,7,236010,121,2
+tk3tIq2xrD,"[""Emergency""]",choices,severity,976,7,236034,121,0
+LWxeHbd76H,"[""Non Emergency [No Doctor]""]",choices,severity,980,7,235973,121,2
+hxScYO_9o0,"[""Non Emergency [Doctor]""]",choices,severity,979,7,235961,121,3
+BAxg0JVHJw,"[""Non Emergency [Doctor]""]",choices,severity,982,7,236201,120,3
+DWLu7OmfRW,"[""Normal""]",choices,severity,984,7,236202,120,1
+YuHBCjOPWp,"[""Non Emergency [No Doctor]""]",choices,severity,985,7,235991,121,2
+uaP_87idhN,"[""Emergency""]",choices,severity,986,7,235954,121,0
+"9A68cAxDAU","[""Non Emergency [No Doctor]""]",choices,severity,1869,7,236867,120,2
+MaKyKV0ycU,"[""Non Emergency [Doctor]""]",choices,severity,988,7,235959,121,3
+-BmMCxPkKx,"[""Emergency""]",choices,severity,989,7,235967,121,0
+li9-jjqSyu,"[""Emergency""]",choices,severity,990,7,235981,121,0
+yWSTLAHqOP,"[""Non Emergency [Doctor]""]",choices,severity,991,7,235984,121,3
+ucc9Ngcp-8,"[""Non Emergency [No Doctor]""]",choices,severity,993,7,236205,120,2
+bPWxUYgB71,"[""Emergency""]",choices,severity,996,7,236206,120,0
+eNtKYP3Jh-,"[""Emergency""]",choices,severity,992,7,236204,120,0
+xViYh3AFHG,"[""Non Emergency [No Doctor]""]",choices,severity,994,7,235988,121,2
+p7BBO9F3oo,"[""Emergency""]",choices,severity,997,7,236016,121,0
+boSI-SeImS,"[""Emergency""]",choices,severity,987,7,236203,120,0
+MYNi_Ve3cY,"[""Non Emergency [Doctor]""]",choices,severity,995,7,235993,121,3
+ZgKZbDhXO-,"[""Normal""]",choices,severity,998,7,236207,120,1
+JkqysfRcg4,"[""Non Emergency [No Doctor]""]",choices,severity,1000,7,236051,121,2
+hxcCrqqzPF,"[""Non Emergency [Doctor]""]",choices,severity,1001,7,235951,121,3
+j9ec0YZjSK,"[""Emergency""]",choices,severity,1002,7,236208,120,0
+GTZN4NHAb4,"[""Normal""]",choices,severity,1003,7,236209,120,1
+nt-Rmvd4T5,"[""Emergency""]",choices,severity,1004,7,235952,121,0
+Z0dvpdyk35,"[""Non Emergency [Doctor]""]",choices,severity,1005,7,236210,120,3
+fPZ-HGlKhp,"[""Non Emergency [No Doctor]""]",choices,severity,1006,7,235955,121,2
+"5ilD7aWGqp","[""Non Emergency [No Doctor]""]",choices,severity,1007,7,235958,121,2
+Pw9UTy4oiu,"[""Emergency""]",choices,severity,1009,7,235962,121,0
+p1LEBZK3es,"[""Emergency""]",choices,severity,1016,7,236216,120,0
+lx6KIAVY0s,"[""Emergency""]",choices,severity,1008,7,236806,120,0
+"5hAF2t8XFe","[""Non Emergency [No Doctor]""]",choices,severity,1010,7,235966,121,2
+rknI0JwvTT,"[""Emergency""]",choices,severity,1011,7,236213,120,0
+pTkjFhkJrz,"[""Emergency""]",choices,severity,1012,7,235969,121,0
+H27ay66SwQ,"[""Emergency""]",choices,severity,1013,7,236214,120,0
+tNlfuNmpRd,"[""Emergency""]",choices,severity,1014,7,236215,120,0
+rTysHUcQAp,"[""Emergency""]",choices,severity,1015,7,235970,121,0
+Gf86OGyT3c,"[""Emergency""]",choices,severity,1017,7,236217,120,0
+QMrbzQp4hb,"[""Non Emergency [Doctor]""]",choices,severity,1018,7,236218,120,3
+BSMy_i_Yzd,"[""Non Emergency [Doctor]""]",choices,severity,1037,7,236228,120,3
+_OhhidIHWu,"[""Emergency""]",choices,severity,1019,7,236219,120,0
+qJKcs72jz2,"[""Non Emergency [Doctor]""]",choices,severity,1020,7,236221,120,3
+F7PIFIUYH_,"[""Emergency""]",choices,severity,1021,7,235976,121,0
+A-yocgpoDl,"[""Emergency""]",choices,severity,1022,7,236222,120,0
+e3oGDtJFAH,"[""Emergency""]",choices,severity,1870,7,236659,121,0
+ZOghxh-CsF,"[""Emergency""]",choices,severity,1032,7,235987,121,0
+obe9VlpL_X,"[""Non Emergency [Doctor]""]",choices,severity,1023,7,236223,120,3
+KVf2t8ETBd,"[""Emergency""]",choices,severity,1033,7,235989,121,0
+b6unV3h9V5,"[""Emergency""]",choices,severity,1025,7,236224,120,0
+ZuzvYv0yap,"[""Emergency""]",choices,severity,1026,7,236225,120,0
+hCTQhGyTFX,"[""Emergency""]",choices,severity,1027,7,235982,121,0
+e876XM52MZ,"[""Emergency""]",choices,severity,1028,7,236226,120,0
+g8JbcgbfGq,"[""Non Emergency [Doctor]""]",choices,severity,1029,7,235983,121,3
+GvdZMT9OJz,"[""Emergency""]",choices,severity,1030,7,236227,120,0
+mi6PXW9XwY,"[""Emergency""]",choices,severity,1031,7,235986,121,0
+jiWaGuS6_5,"[""Emergency""]",choices,severity,1034,7,235990,121,0
+"5849Z93fJd","[""Non Emergency [Doctor]""]",choices,severity,1035,7,235995,121,3
+d_sVYmLPAZ,"[""Non Emergency [No Doctor]""]",choices,severity,1036,7,235996,121,2
+YgEzq726iG,"[""Emergency""]",choices,severity,1038,7,236229,120,0
+Bs4OczO5Qr,"[""Emergency""]",choices,severity,1039,7,235998,121,0
+"9_dD2-hwrW","[""Non Emergency [No Doctor]""]",choices,severity,1040,7,235999,121,2
+RMyZauh23A,"[""Non Emergency [No Doctor]""]",choices,severity,1041,7,236003,121,2
+I5ey4c29EF,"[""Emergency""]",choices,severity,1042,7,236004,121,0
+UuswbGZ6Xh,"[""Non Emergency [Doctor]""]",choices,severity,1043,7,236006,121,3
+i6ICGIWcRV,"[""Emergency""]",choices,severity,1044,7,236007,121,0
+q1xXCa7-xy,"[""Non Emergency [Doctor]""]",choices,severity,1045,7,236012,121,3
+WXAdHyVk7F,"[""Emergency""]",choices,severity,1046,7,236015,121,0
+WRbZFkmwgJ,"[""Non Emergency [No Doctor]""]",choices,severity,1047,7,236032,121,2
+XMP8Fajgru,"[""Emergency""]",choices,severity,1048,7,236230,120,0
+W7qJiiTjXK,"[""Emergency""]",choices,severity,1049,7,236231,120,0
+WaNSi5nq_u,"[""Emergency""]",choices,severity,1050,7,236232,120,0
+bjMBdrtaPK,"[""Emergency""]",choices,severity,1051,7,236233,120,0
+cfX4b1gnfd,"[""Emergency""]",choices,severity,1052,7,236033,121,0
+eWeoIh-mBA,"[""Normal""]",choices,severity,1053,7,236038,121,1
+vbYOjaYZCZ,"[""Emergency""]",choices,severity,1054,7,236234,120,0
+X2AE114OOy,"[""Non Emergency [Doctor]""]",choices,severity,1055,7,236235,120,3
+RLHldB9EPn,"[""Emergency""]",choices,severity,1071,7,236065,121,0
+NY8cyjQEZ8,"[""Emergency""]",choices,severity,1056,7,236041,121,0
+O6ZjK4XzYT,"[""Non Emergency [Doctor]""]",choices,severity,1057,7,236236,120,3
+"09etcIIJyd","[""Emergency""]",choices,severity,1058,7,236237,120,0
+"8-0k-YneVL","[""Non Emergency [Doctor]""]",choices,severity,1059,7,236238,120,3
+zoOqZVwdqO,"[""Non Emergency [No Doctor]""]",choices,severity,1060,7,236045,121,2
+YFr8EbIuVx,"[""Emergency""]",choices,severity,1061,7,236048,121,0
+_MbZoZwdka,"[""Emergency""]",choices,severity,1062,7,236239,120,0
+dmTqzc8nHH,"[""Emergency""]",choices,severity,1063,7,236049,121,0
+oH5lut4OFT,"[""Non Emergency [No Doctor]""]",choices,severity,1064,7,236052,121,2
+-PmrwrNpKP,"[""Normal""]",choices,severity,1065,7,236053,121,1
+rGM7kqVEv7,"[""Emergency""]",choices,severity,1066,7,236055,121,0
+"7qXw7thDbz","[""Exclude""]",choices,exclude,1067,7,236056,121,
+fBqVsWLoBy,"[""Emergency""]",choices,severity,1068,7,236061,121,0
+"2WZmUMcSyq","[""Exclude""]",choices,exclude,1069,7,236062,121,
+zOaenjYVed,"[""Emergency""]",choices,severity,1070,7,236064,121,0
+-fnrIVidvr,"[""Non Emergency [Doctor]""]",choices,severity,1072,7,236068,121,3
+IvWUBGRR4d,"[""Non Emergency [Doctor]""]",choices,severity,1073,7,236069,121,3
+J-OdP1T1nE,"[""Exclude""]",choices,exclude,1074,7,236071,121,
+elEircWReJ,"[""Exclude""]",choices,exclude,1075,7,236072,121,
+Kel_KGxjMs,"[""Emergency""]",choices,severity,1076,7,236243,120,0
+"9RAYpS5CU1","[""Emergency""]",choices,severity,1077,7,236244,120,0
+a2M4pScmQo,"[""Emergency""]",choices,severity,1078,7,236076,121,0
+pxyIs8L13j,"[""Normal""]",choices,severity,1887,7,236725,120,1
+"5vjyVlKevl","[""Emergency""]",choices,severity,1081,7,236142,121,0
+aNSv5ofkCJ,"[""Emergency""]",choices,severity,1082,7,236246,120,0
+"8dWKDI2KEt","[""Emergency""]",choices,severity,1083,7,236143,121,0
+MtN7QRoQ0E,"[""Non Emergency [Doctor]""]",choices,severity,1084,7,236146,121,3
+Ufvtm6Qa5W,"[""Emergency""]",choices,severity,1085,7,236247,120,0
+d2BvOA1c5h,"[""Emergency""]",choices,severity,1086,7,236248,120,0
+gk-jJ0rTuy,"[""Emergency""]",choices,severity,1087,7,236147,121,0
+mycOvx05ic,"[""Exclude""]",choices,exclude,1088,7,236149,121,
+dcQnKk-RAb,"[""Emergency""]",choices,severity,1089,7,236211,120,0
+"6mGh6d904Y","[""Non Emergency [No Doctor]""]",choices,severity,1090,7,236150,121,2
+OTGJscnUwE,"[""Emergency""]",choices,severity,1091,7,236241,120,0
+"4qk044RT_M","[""Emergency""]",choices,severity,1092,7,235971,121,0
+dfC66eR8SM,"[""Emergency""]",choices,severity,1093,7,235994,121,0
+JbQL9xGQBu,"[""Non Emergency [No Doctor]""]",choices,severity,1095,7,236000,121,2
+-ujX0XP9Fv,"[""Normal""]",choices,severity,1096,7,236002,121,1
+btAHOsojW3,"[""Non Emergency [Doctor]""]",choices,severity,1097,7,236009,121,3
+r1IblhEWYN,"[""Non Emergency [No Doctor]""]",choices,severity,1098,7,236253,120,2
+XgqImkvX-o,"[""Non Emergency [No Doctor]""]",choices,severity,1099,7,236011,121,2
+sc-OQFSOQ7,"[""Emergency""]",choices,severity,1100,7,236257,120,0
+CEbvN4Yu3e,"[""Non Emergency [No Doctor]""]",choices,severity,1102,7,236258,120,2
+VwZf9VlKIz,"[""Emergency""]",choices,severity,1103,7,236014,121,0
+Rkuah238lP,"[""Emergency""]",choices,severity,1104,7,236260,120,0
+h2WOJsaYCA,"[""Non Emergency [Doctor]""]",choices,severity,1105,7,236019,121,3
+P7dMR7Q0_y,"[""Emergency""]",choices,severity,1106,7,236261,120,0
+eve75e0xxy,"[""Emergency""]",choices,severity,1107,7,236264,120,0
+"4C4JUiv1Ap","[""Non Emergency [No Doctor]""]",choices,severity,1108,7,236020,121,2
+rFAXgocWyh,"[""Emergency""]",choices,severity,1109,7,236265,120,0
+OnmF_IiS5m,"[""Emergency""]",choices,severity,1931,7,237042,121,0
+Fvo40uIn9l,"[""Emergency""]",choices,severity,1101,7,236013,121,0
+RuFDveAZNU,"[""Emergency""]",choices,severity,1110,7,236267,120,0
+"79cQrvNX4_","[""Emergency""]",choices,severity,1112,7,236274,120,0
+m-ocbg2XlI,"[""Emergency""]",choices,severity,1113,7,236275,120,0
+papWQrGFDN,"[""Emergency""]",choices,severity,1114,7,236277,120,0
+nLvMNRJUAf,"[""Emergency""]",choices,severity,1115,7,236278,120,0
+gQKaVlqTrS,"[""Non Emergency [No Doctor]""]",choices,severity,1116,7,236022,121,2
+"3vA3c-ihXV","[""Non Emergency [No Doctor]""]",choices,severity,1117,7,236282,120,2
+bLsgXN0BaK,"[""Emergency""]",choices,severity,1118,7,236284,120,0
+sWONVBFM6F,"[""Emergency""]",choices,severity,1119,7,236266,120,0
+pwTx1-FNRK,"[""Non Emergency [No Doctor]""]",choices,severity,1120,7,236270,120,2
+ckwj7H3v9H,"[""Emergency""]",choices,severity,1121,7,236271,120,0
+"4Yi9o8Zqao","[""Emergency""]",choices,severity,1125,7,236291,120,0
+couEw4wCZH,"[""Emergency""]",choices,severity,1122,7,236279,120,0
+JN0tP00-yb,"[""Non Emergency [No Doctor]""]",choices,severity,1123,7,236280,120,2
+tmuZ5Bhb3L,"[""Emergency""]",choices,severity,1124,7,236289,120,0
+blIritrYjQ,"[""Emergency""]",choices,severity,1126,7,236292,120,0
+"6aIQTQHxqY","[""Normal""]",choices,severity,1266,7,236494,120,1
+zOoAPWP4o6,"[""Emergency""]",choices,severity,1127,7,236298,120,0
+V-27-slqNR,"[""Non Emergency [Doctor]""]",choices,severity,1128,7,236299,120,3
+QTqsQGpvt_,"[""Emergency""]",choices,severity,1129,7,236301,120,0
+my6wxAZhLW,"[""Emergency""]",choices,severity,1130,7,236302,120,0
+lPeLyYz1bd,"[""Emergency""]",choices,severity,1131,7,236305,120,0
+iYWcyW1cNJ,"[""Non Emergency [Doctor]""]",choices,severity,1132,7,236306,120,3
+L7Qs9KDC5C,"[""Emergency""]",choices,severity,1133,7,236308,120,0
+oG9Jpb2A4I,"[""Emergency""]",choices,severity,1135,7,236313,120,0
+Om3lMZo8XA,"[""Emergency""]",choices,severity,1136,7,236314,120,0
+Bd_FbYqE-0,"[""Non Emergency [Doctor]""]",choices,severity,1137,7,236316,120,3
+prsilsC1HJ,"[""Emergency""]",choices,severity,1138,7,236317,120,0
+yYKEakLSSU,"[""Non Emergency [Doctor]""]",choices,severity,1139,7,236320,120,3
+"0uLuRP-TFw","[""Non Emergency [No Doctor]""]",choices,severity,1140,7,236321,120,2
+ryPXW84oSh,"[""Non Emergency [No Doctor]""]",choices,severity,1141,7,236323,120,2
+d21keU1ayE,"[""Emergency""]",choices,severity,1142,7,236324,120,0
+"5Waw2q6SXl","[""Normal""]",choices,severity,1267,7,236496,120,1
+UQMPEL_3az,"[""Non Emergency [No Doctor]""]",choices,severity,1143,7,236329,120,2
+"0WUFvWevoW","[""Emergency""]",choices,severity,1144,7,236347,120,0
+"8Z00e-0tzj","[""Emergency""]",choices,severity,1145,7,236352,120,0
+KsDB7dksP2,"[""Emergency""]",choices,severity,1146,7,236353,120,0
+kMT8vOEOov,"[""Emergency""]",choices,severity,1147,7,236356,120,0
+C_e8_GHIf9,"[""Emergency""]",choices,severity,1148,7,236357,120,0
+X6HvTLtkmJ,"[""Non Emergency [No Doctor]""]",choices,severity,1149,7,236359,120,2
+K9ij4nbkdP,"[""Non Emergency [No Doctor]""]",choices,severity,1150,7,236360,120,2
+bpTqkUmid7,"[""Emergency""]",choices,severity,1151,7,236364,120,0
+TR-a5nKLy-,"[""Emergency""]",choices,severity,1152,7,236365,120,0
+ih0YqGbF-p,"[""Emergency""]",choices,severity,1153,7,236367,120,0
+RNgT7GM0Bq,"[""Emergency""]",choices,severity,1154,7,236087,120,0
+"5G3f3ALvqy","[""Emergency""]",choices,severity,1155,7,236088,120,0
+lppugrBU18,"[""Non Emergency [Doctor]""]",choices,severity,1156,7,236473,120,3
+ZEF-v7k-Ii,"[""Emergency""]",choices,severity,1157,7,236273,120,0
+lLSpvkKhsy,"[""Emergency""]",choices,severity,1160,7,236296,120,0
+aGffeBMFIb,"[""Emergency""]",choices,severity,1161,7,236297,120,0
+g1mLKsCeHp,"[""Emergency""]",choices,severity,1162,7,236304,120,0
+"9pGTHRfV9j","[""Normal""]",choices,severity,1163,7,236307,120,1
+uFQGTKyj0O,"[""Emergency""]",choices,severity,1164,7,236311,120,0
+FI_5DYBq8J,"[""Non Emergency [No Doctor]""]",choices,severity,1165,7,236312,120,2
+XL2bngcoc2,"[""Emergency""]",choices,severity,1167,7,236325,120,0
+KTqIPmSBxi,"[""Emergency""]",choices,severity,1168,7,236327,120,0
+uTw04vfB2L,"[""Emergency""]",choices,severity,1169,7,236328,120,0
+nZHuDDFdpL,"[""Non Emergency [No Doctor]""]",choices,severity,1170,7,236332,120,2
+W6DrmuW7UZ,"[""Emergency""]",choices,severity,1171,7,236333,120,0
+"2gWKgnSNOS","[""Emergency""]",choices,severity,1172,7,236335,120,0
+"21lqLXWEE1","[""Non Emergency [Doctor]""]",choices,severity,1173,7,236342,120,3
+wfvJor-Rqo,"[""Non Emergency [Doctor]""]",choices,severity,1174,7,236344,120,3
+YlysS4tS_9,"[""Emergency""]",choices,severity,1176,7,236349,120,0
+jPwOB6sIN5,"[""Emergency""]",choices,severity,1177,7,236350,120,0
+izfnempND6,"[""Emergency""]",choices,severity,1178,7,236354,120,0
+kSclMtCTXM,"[""Emergency""]",choices,severity,1179,7,236355,120,0
+uNbMB2YAr2,"[""Emergency""]",choices,severity,1180,7,236363,120,0
+YMiteFldCr,"[""Normal""]",choices,severity,1181,7,236504,120,1
+pZOAh8deSs,"[""Non Emergency [No Doctor]""]",choices,severity,1182,7,236381,120,2
+aiFzkwvWrS,"[""Emergency""]",choices,severity,1184,7,236385,120,0
+ZN72JAL-gP,"[""Non Emergency [Doctor]""]",choices,severity,1185,7,236386,120,3
+w8-SSDIA2S,"[""Non Emergency [No Doctor]""]",choices,severity,1186,7,236005,120,2
+"5TJsnfLf2N","[""Non Emergency [Doctor]""]",choices,severity,1187,7,236388,120,3
+tHnKRqBWyM,"[""Emergency""]",choices,severity,1188,7,236027,120,0
+gDl63FdOyL,"[""Emergency""]",choices,severity,1189,7,236394,120,0
+"1K0dT9ZaJ9","[""Emergency""]",choices,severity,1190,7,236040,120,0
+FbwxPfsRps,"[""Normal""]",choices,severity,1191,7,236035,120,1
+ImdlTGINXc,"[""Emergency""]",choices,severity,1192,7,236037,120,0
+O5bBUwquD5,"[""Non Emergency [Doctor]""]",choices,severity,1193,7,236212,120,3
+c5EbaazpyM,"[""Emergency""]",choices,severity,1194,7,236547,120,0
+GsSjqVtZyd,"[""Emergency""]",choices,severity,1195,7,236330,120,0
+gdvbsy4OnO,"[""Non Emergency [No Doctor]""]",choices,severity,1196,7,236387,120,2
+rzapKB9ZIK,"[""Emergency""]",choices,severity,1198,7,236392,120,0
+hBQhBvAdYH,"[""Non Emergency [No Doctor]""]",choices,severity,1199,7,236393,120,2
+be5Cgi-fvA,"[""Non Emergency [Doctor]""]",choices,severity,1200,7,236396,120,3
+bmk5UM68Td,"[""Emergency""]",choices,severity,1201,7,236397,120,0
+lfS1dO3Lps,"[""Emergency""]",choices,severity,1202,7,236402,120,0
+iP8XeAzvfC,"[""Non Emergency [Doctor]""]",choices,severity,1203,7,236420,120,3
+CLR5CXIsyW,"[""Emergency""]",choices,severity,1204,7,236421,120,0
+aWiQxR66XW,"[""Emergency""]",choices,severity,1205,7,236422,120,0
+ZJANgCEz_A,"[""Non Emergency [No Doctor]""]",choices,severity,1206,7,236425,120,2
+"7uMEe-N76p","[""Non Emergency [Doctor]""]",choices,severity,1207,7,236426,120,3
+"7jurx6Vxmy","[""Emergency""]",choices,severity,1208,7,236428,120,0
+UqwMnnQEWC,"[""Normal""]",choices,severity,1209,7,236429,120,1
+HJVF0-Dpzt,"[""Normal""]",choices,severity,1210,7,236433,120,1
+fTPji0ksWM,"[""Emergency""]",choices,severity,1211,7,236094,120,0
+XORO_mbVeS,"[""Non Emergency [Doctor]""]",choices,severity,1212,7,236368,120,3
+ecDZLXKKHm,"[""Non Emergency [No Doctor]""]",choices,severity,1937,7,237048,121,2
+vFDlOTAgcM,"[""Emergency""]",choices,severity,1213,7,236370,120,0
+Pt1ZAFWEzi,"[""Emergency""]",choices,severity,1214,7,236371,120,0
+PUcLabjzKr,"[""Normal""]",choices,severity,1215,7,236374,120,1
+MSz9buk4Fv,"[""Emergency""]",choices,severity,1216,7,236375,120,0
+NeS8KqWWCb,"[""Non Emergency [Doctor]""]",choices,severity,1217,7,236377,120,3
+r56Y7j3Y8Y,"[""Non Emergency [No Doctor]""]",choices,severity,1218,7,236378,120,2
+CJea23Rtvm,"[""Emergency""]",choices,severity,1228,7,236336,120,0
+Ni-MQRxh4o,"[""Emergency""]",choices,severity,1219,7,236384,120,0
+N6Uj2xNIsA,"[""Emergency""]",choices,severity,1220,7,236390,120,0
+gc7-6kq5xn,"[""Emergency""]",choices,severity,1221,7,236395,120,0
+MrVJnJUG4b,"[""Emergency""]",choices,severity,1222,7,236403,120,0
+eDRt7ytPiU,"[""Emergency""]",choices,severity,1223,7,236406,120,0
+AvojqhRB-6,"[""Non Emergency [No Doctor]""]",choices,severity,1224,7,236411,120,2
+Xq4bE3dafy,"[""Emergency""]",choices,severity,1225,7,236319,120,0
+"4KFRrum_T_","[""Emergency""]",choices,severity,1226,7,236326,120,0
+wSg-Dz_bjE,"[""Emergency""]",choices,severity,1227,7,236334,120,0
+"49bI_rPQbJ","[""Emergency""]",choices,severity,1229,7,236339,120,0
+xekgtgkt4j,"[""Non Emergency [Doctor]""]",choices,severity,1230,7,236343,120,3
+VDCuwe4A99,"[""Non Emergency [Doctor]""]",choices,severity,1231,7,236346,120,3
+AwXNIv7jWw,"[""Emergency""]",choices,severity,1232,7,236369,120,0
+LCiXq9wNsx,"[""Emergency""]",choices,severity,1233,7,236376,120,0
+"5eNfQkUWEv","[""Emergency""]",choices,severity,1234,7,236383,120,0
+dQGoEiVlTb,"[""Emergency""]",choices,severity,1235,7,236391,120,0
+vSvr25HYbV,"[""Emergency""]",choices,severity,1236,7,236399,120,0
+ojh4jdScu8,"[""Emergency""]",choices,severity,1237,7,236400,120,0
+vxYr2u_5K3,"[""Emergency""]",choices,severity,1238,7,236407,120,0
+DZTH4K-hRo,"[""Emergency""]",choices,severity,1239,7,236408,120,0
+Oq1-nOIHB3,"[""Non Emergency [No Doctor]""]",choices,severity,1240,7,236410,120,2
+-ISMGE_c43,"[""Emergency""]",choices,severity,1241,7,236412,120,0
+jcCgp6hjVc,"[""Emergency""]",choices,severity,1242,7,236415,120,0
+EQpQTxY6oe,"[""Emergency""]",choices,severity,1243,7,236416,120,0
+JdrUKTIQM1,"[""Non Emergency [Doctor]""]",choices,severity,1244,7,236418,120,3
+DilfYLEast,"[""Emergency""]",choices,severity,1245,7,236450,120,0
+ug84WrV7OV,"[""Emergency""]",choices,severity,1246,7,236453,120,0
+ZXakTXXh9Q,"[""Emergency""]",choices,severity,1247,7,236454,120,0
+"3Euc3NjitX","[""Emergency""]",choices,severity,1248,7,236457,120,0
+tDd3jPGAlX,"[""Normal""]",choices,severity,1249,7,236458,120,1
+"1eyaxyHQCw","[""Non Emergency [Doctor]""]",choices,severity,1250,7,236460,120,3
+WUwkGu5NH6,"[""Non Emergency [No Doctor]""]",choices,severity,1251,7,236461,120,2
+"2H1MvFHnJQ","[""Emergency""]",choices,severity,1252,7,236465,120,0
+Qah6gPPwkr,"[""Non Emergency [Doctor]""]",choices,severity,1253,7,236361,120,3
+HDz6HiBqPK,"[""Non Emergency [No Doctor]""]",choices,severity,1254,7,236366,120,2
+"58l3f9WOOe","[""Non Emergency [No Doctor]""]",choices,severity,1255,7,236443,120,2
+FhPijEDUqm,"[""Emergency""]",choices,severity,1256,7,236444,120,0
+tzaCrgfhR-,"[""Emergency""]",choices,severity,1257,7,236446,120,0
+m9Eygq91mA,"[""Emergency""]",choices,severity,1258,7,236447,120,0
+m2U_fYDUmM,"[""Emergency""]",choices,severity,1259,7,236455,120,0
+"3MtwAFZ84K","[""Normal""]",choices,severity,1260,7,236479,120,1
+JZZT7n1cig,"[""Non Emergency [No Doctor]""]",choices,severity,1261,7,236482,120,2
+f2_Y4GEBt-,"[""Normal""]",choices,severity,1262,7,236485,120,1
+T1biIQZovh,"[""Normal""]",choices,severity,1263,7,236488,120,1
+WcPzmpljby,"[""Normal""]",choices,severity,1264,7,236489,120,1
+vM6hAmfZ76,"[""Emergency""]",choices,severity,1265,7,236493,120,0
+rWtVLeznSG,"[""Emergency""]",choices,severity,1268,7,236379,120,0
+Zz4Bv4lUdg,"[""Non Emergency [No Doctor]""]",choices,severity,1269,7,236427,120,2
+S1D0OpII00,"[""Non Emergency [Doctor]""]",choices,severity,1270,7,236430,120,3
+k6K3B0bnQa,"[""Non Emergency [No Doctor]""]",choices,severity,1271,7,236432,120,2
+NAtS82tLPV,"[""Non Emergency [Doctor]""]",choices,severity,1272,7,236434,120,3
+xoxyQ-KeYf,"[""Emergency""]",choices,severity,1273,7,236438,120,0
+WF7H6Qy-vb,"[""Emergency""]",choices,severity,1274,7,236439,120,0
+Pq0pSje0d7,"[""Emergency""]",choices,severity,1275,7,236441,120,0
+GQQZ6Dzgot,"[""Emergency""]",choices,severity,1276,7,236442,120,0
+Zzu7nWsul6,"[""Emergency""]",choices,severity,1277,7,236449,120,0
+Ab2-Xp3NPw,"[""Emergency""]",choices,severity,1278,7,236451,120,0
+"18DEUKFrgf","[""Emergency""]",choices,severity,1279,7,236456,120,0
+"532ij-SpIE","[""Normal""]",choices,severity,1280,7,236459,120,1
+iTEig28_rs,"[""Normal""]",choices,severity,1281,7,236467,120,1
+PRH3kYhCwh,"[""Emergency""]",choices,severity,1282,7,236491,120,0
+tO1ExmY2eR,"[""Normal""]",choices,severity,1283,7,236492,120,1
+bvyE8wVX5K,"[""Normal""]",choices,severity,1284,7,236498,120,1
+unA7bij8wz,"[""Non Emergency [Doctor]""]",choices,severity,1285,7,236499,120,3
+HUF3OysG7C,"[""Non Emergency [No Doctor]""]",choices,severity,1286,7,236501,120,2
+j1nmtmaMjv,"[""Emergency""]",choices,severity,1287,7,236502,120,0
+RmHTi9wKOP,"[""Emergency""]",choices,severity,1288,7,236507,120,0
+-7aGUwClqn,"[""Non Emergency [No Doctor]""]",choices,severity,1289,7,236508,120,2
+lwxMEti7z2,"[""Emergency""]",choices,severity,1290,7,236445,120,0
+kCoK6zMvO0,"[""Emergency""]",choices,severity,1291,7,236440,120,0
+vqVpMV-5Hg,"[""Normal""]",choices,severity,1292,7,236463,120,1
+Mn5wO7AGIt,"[""Non Emergency [Doctor]""]",choices,severity,1293,7,236464,120,3
+uFrh4AKZ0l,"[""Non Emergency [No Doctor]""]",choices,severity,1294,7,236468,120,2
+yWNfrPtEGK,"[""Emergency""]",choices,severity,1295,7,236469,120,0
+KN5E1QkLT6,"[""Normal""]",choices,severity,1296,7,236472,120,1
+"7yY7Qwf2do","[""Normal""]",choices,severity,1297,7,236474,120,1
+-JzOPXzxAf,"[""Normal""]",choices,severity,1298,7,236476,120,1
+aMlm39um1p,"[""Non Emergency [No Doctor]""]",choices,severity,1299,7,236477,120,2
+"2Wljf_sKJ1","[""Normal""]",choices,severity,1300,7,236484,120,1
+hYdLqUUf17,"[""Emergency""]",choices,severity,1301,7,236517,120,0
+"4YLnInJjIq","[""Non Emergency [Doctor]""]",choices,severity,1302,7,236518,120,3
+YWAl2_IVBM,"[""Emergency""]",choices,severity,1303,7,236522,120,0
+-4J7XofCl4,"[""Emergency""]",choices,severity,1304,7,236524,120,0
+GhKtCKIH3e,"[""Emergency""]",choices,severity,1305,7,236525,120,0
+XiJbTkEqC7,"[""Emergency""]",choices,severity,1306,7,236554,120,0
+YhcCa9n5WV,"[""Emergency""]",choices,severity,1307,7,236557,120,0
+WIL4wzyjGm,"[""Emergency""]",choices,severity,1308,7,236558,120,0
+H0AccHghH1,"[""Emergency""]",choices,severity,1309,7,236560,120,0
+a-Hey4sEAm,"[""Emergency""]",choices,severity,1310,7,236561,120,0
+zjdgzfWf7U,"[""Emergency""]",choices,severity,1311,7,236566,120,0
+"9S3JPNf-rZ","[""Emergency""]",choices,severity,1312,7,236567,120,0
+LWI0s9BRoy,"[""Emergency""]",choices,severity,1313,7,236569,120,0
+JcA_JTjnZL,"[""Emergency""]",choices,severity,1314,7,236570,120,0
+N8fG9ebkWf,"[""Non Emergency [No Doctor]""]",choices,severity,1315,7,236573,120,2
+ChzxMY9bxO,"[""Non Emergency [Doctor]""]",choices,severity,1316,7,236574,120,3
+EsZZ93miHH,"[""Emergency""]",choices,severity,1317,7,236576,120,0
+Pxq90-JWDf,"[""Non Emergency [No Doctor]""]",choices,severity,1318,7,236577,120,2
+BT8DEOrhBQ,"[""Emergency""]",choices,severity,1319,7,236581,120,0
+Uw6nvzVu7e,"[""Emergency""]",choices,severity,1320,7,236582,120,0
+hdy2gjCFee,"[""Emergency""]",choices,severity,1321,7,236584,120,0
+GRCPSB8_KM,"[""Emergency""]",choices,severity,1322,7,236865,120,0
+KxcwbLCg9U,"[""Non Emergency [Doctor]""]",choices,severity,1323,7,236611,120,3
+"8BY10MlLXu","[""Emergency""]",choices,severity,1324,7,236612,120,0
+VblXVprl1Y,"[""Emergency""]",choices,severity,1325,7,236614,120,0
+"33iyGScWEs","[""Emergency""]",choices,severity,1326,7,236615,120,0
+APMBfKkYAm,"[""Emergency""]",choices,severity,1327,7,236622,120,0
+Tow_sFNLw2,"[""Emergency""]",choices,severity,1328,7,236623,120,0
+er2MCv4M5t,"[""Non Emergency [Doctor]""]",choices,severity,1329,7,236626,120,3
+B6UtPZKprG,"[""Emergency""]",choices,severity,1330,7,236629,120,0
+"0vsEfDHPwf","[""Emergency""]",choices,severity,1331,7,236630,120,0
+vbIkweERyz,"[""Emergency""]",choices,severity,1332,7,236654,120,0
+rYDsX6ikkm,"[""Non Emergency [Doctor]""]",choices,severity,1333,7,236656,120,3
+ZVMpoTkK-H,"[""Non Emergency [No Doctor]""]",choices,severity,1334,7,236660,120,2
+QUQS8CrguM,"[""Normal""]",choices,severity,1335,7,236462,120,1
+WOvgwfwDUP,"[""Non Emergency [Doctor]""]",choices,severity,1336,7,236466,120,3
+OisjT1fQgf,"[""Non Emergency [No Doctor]""]",choices,severity,1337,7,236470,120,2
+CCa1rRwsPr,"[""Normal""]",choices,severity,1338,7,236471,120,1
+Zo_QXSJKSU,"[""Normal""]",choices,severity,1339,7,236475,120,1
+-nBgYt_EEc,"[""Normal""]",choices,severity,1340,7,237695,120,1
+WTs25b0lNa,"[""Emergency""]",choices,severity,1341,7,237489,120,0
+b5uc5Zx-Qw,"[""Normal""]",choices,severity,1342,7,237490,120,1
+"8nYkIHJy-w","[""Non Emergency [No Doctor]""]",choices,severity,1343,7,237491,120,2
+GHDuvdXYFc,"[""Emergency""]",choices,severity,1344,7,237493,120,0
+oRxIrzfFm6,"[""Emergency""]",choices,severity,1345,7,237494,120,0
+krbT0raYS9,"[""Normal""]",choices,severity,1346,7,237495,120,1
+Grc3zlEAv_,"[""Non Emergency [Doctor]""]",choices,severity,1347,7,237496,120,3
+vwU_EM_FzH,"[""Emergency""]",choices,severity,1348,7,237497,120,0
+rKV7y-BM1D,"[""Non Emergency [Doctor]""]",choices,severity,1349,7,237498,120,3
+"3kNEUXRSDG","[""Non Emergency [Doctor]""]",choices,severity,1350,7,237499,120,3
+KaFvDEG_VX,"[""Emergency""]",choices,severity,1351,7,237500,120,0
+"5O7LxcoTMF","[""Normal""]",choices,severity,1352,7,237501,120,1
+NSgcbZN08f,"[""Normal""]",choices,severity,1353,7,237502,120,1
+uO3tQKTjNp,"[""Normal""]",choices,severity,1354,7,237503,120,1
+n5eDh3IzXT,"[""Normal""]",choices,severity,1355,7,237504,120,1
+O7BYTdC4V-,"[""Normal""]",choices,severity,1356,7,237505,120,1
+trJpeMVY8c,"[""Normal""]",choices,severity,1357,7,237506,120,1
+jwF1aDqtin,"[""Emergency""]",choices,severity,1358,7,237507,120,0
+pmVRGlfGFZ,"[""Normal""]",choices,severity,1359,7,237508,120,1
+NRJuu4yPmk,"[""Non Emergency [Doctor]""]",choices,severity,1360,7,237509,120,3
+"0KGLuGkgRd","[""Non Emergency [Doctor]""]",choices,severity,1361,7,237510,120,3
+hlKBc1VsKA,"[""Non Emergency [Doctor]""]",choices,severity,1362,7,237511,120,3
+aEWx4tnPuu,"[""Non Emergency [Doctor]""]",choices,severity,1363,7,237512,120,3
+"6kLWG1m1S9","[""Normal""]",choices,severity,1364,7,237513,120,1
+qkVlWcAqm6,"[""Normal""]",choices,severity,1365,7,237514,120,1
+"8yQ3Ir77DO","[""Normal""]",choices,severity,1366,7,237515,120,1
+WUtDnsQPvw,"[""Normal""]",choices,severity,1367,7,237516,120,1
+irmd54r9vB,"[""Non Emergency [Doctor]""]",choices,severity,1368,7,237517,120,3
+W-4sQ4N4Gg,"[""Emergency""]",choices,severity,1369,7,237518,120,0
+DBaTiobJ_J,"[""Emergency""]",choices,severity,1370,7,237519,120,0
+vct8xguJAW,"[""Non Emergency [No Doctor]""]",choices,severity,1371,7,237520,120,2
+"3VwzEEMahM","[""Non Emergency [Doctor]""]",choices,severity,1372,7,237521,120,3
+"0U-_Sgc8PY","[""Emergency""]",choices,severity,1373,7,236538,120,0
+ilr3LsGAyE,"[""Emergency""]",choices,severity,1374,7,236543,120,0
+"1OO1lBpiez","[""Emergency""]",choices,severity,1375,7,236546,120,0
+OFio1EMige,"[""Emergency""]",choices,severity,1376,7,236551,120,0
+"6-jRHwiJsV","[""Non Emergency [Doctor]""]",choices,severity,1377,7,236597,120,3
+g0L7-UZ4t1,"[""Emergency""]",choices,severity,1378,7,236643,120,0
+"4_8JIW2rhE","[""Emergency""]",choices,severity,1379,7,236642,120,0
+gY9t7uIqep,"[""Non Emergency [No Doctor]""]",choices,severity,1380,7,236645,120,2
+AWPhb1CkS2,"[""Emergency""]",choices,severity,1381,7,236646,120,0
+Tn9cS9vd9z,"[""Emergency""]",choices,severity,1382,7,236054,120,0
+snpemAREUA,"[""Non Emergency [No Doctor]""]",choices,severity,1939,7,237049,121,2
+_EuXnAmcSh,"[""Emergency""]",choices,severity,1383,7,236031,120,0
+MAjMfRSoqN,"[""Emergency""]",choices,severity,1079,7,236086,121,0
+fx9BPxld9P,"[""Emergency""]",choices,severity,999,7,236050,121,0
+fpc3gcPkie,"[""Emergency""]",choices,severity,977,7,235974,121,0
+xHgz14RFO7,"[""Emergency""]",choices,severity,1024,7,235977,121,0
+n0mlmYIVMN,"[""Emergency""]",choices,severity,1384,7,236042,121,0
+LjvLWSNuJQ,"[""Emergency""]",choices,severity,1385,7,236074,121,0
+OtjXcLVjcy,"[""Emergency""]",choices,severity,1386,7,236024,121,0
+KJ4Do-ieF0,"[""Emergency""]",choices,severity,1387,7,236059,121,0
+TdpXpZDh0w,"[""Emergency""]",choices,severity,1388,7,236073,121,0
+GSLd-_r4Av,"[""Emergency""]",choices,severity,1390,7,236023,121,0
+DKklFAJIbj,"[""Non Emergency [No Doctor]""]",choices,severity,1391,7,236028,121,2
+FI63KUZBaY,"[""Emergency""]",choices,severity,1392,7,236046,121,0
+"3w5Avb1Fm9","[""Emergency""]",choices,severity,1393,7,236058,121,0
+VaI2M_pHpi,"[""Emergency""]",choices,severity,1394,7,236066,121,0
+Twd0myNyxw,"[""Normal""]",choices,severity,1620,7,236587,120,1
+eaVNpFrsI_,"[""Emergency""]",choices,severity,1395,7,236075,121,0
+KZNGcMtiiL,"[""Emergency""]",choices,severity,1396,7,236101,121,0
+XnUF-4V0ha,"[""Emergency""]",choices,severity,1397,7,236104,121,0
+vmC9lRpv-1,"[""Emergency""]",choices,severity,1398,7,236110,121,0
+XZ1TIjyy6z,"[""Non Emergency [Doctor]""]",choices,severity,1400,7,236135,121,3
+xV3aNKdLK1,"[""Emergency""]",choices,severity,1401,7,235997,121,0
+"7Vn0MVFdth","[""Emergency""]",choices,severity,1402,7,236008,121,0
+wEyfZ7dbkm,"[""Emergency""]",choices,severity,1403,7,236018,121,0
+hQMqxfOOWM,"[""Emergency""]",choices,severity,1404,7,236025,121,0
+"4ghy51Vy23","[""Emergency""]",choices,severity,1405,7,236026,121,0
+uHV1fgBsQW,"[""Emergency""]",choices,severity,1406,7,236029,121,0
+g2DJ5lFdbv,"[""Non Emergency [No Doctor]""]",choices,severity,1407,7,236030,121,2
+pSG_jeOhu9,"[""Emergency""]",choices,severity,1408,7,236043,121,0
+x2ur9_YCBK,"[""Non Emergency [No Doctor]""]",choices,severity,1409,7,236044,121,2
+vT_QDd708A,"[""Non Emergency [Doctor]""]",choices,severity,1410,7,236047,121,3
+m-uvy6M-j7,"[""Normal""]",choices,severity,1808,7,236497,121,1
+"4G-_aRFS4r","[""Emergency""]",choices,severity,1411,7,236083,121,0
+-PzfTeBCyn,"[""Emergency""]",choices,severity,1412,7,236102,121,0
+Aosqi58MKk,"[""Non Emergency [Doctor]""]",choices,severity,1413,7,236067,121,3
+Lt2Ku7RxSL,"[""Emergency""]",choices,severity,1414,7,236082,121,0
+sm4p5Hk-lV,"[""Non Emergency [Doctor]""]",choices,severity,1415,7,236093,121,3
+NqhXVdo5he,"[""Emergency""]",choices,severity,1416,7,236100,121,0
+PinKjVZEQl,"[""Non Emergency [No Doctor]""]",choices,severity,1417,7,236039,121,2
+c5GiQbKWTY,"[""Emergency""]",choices,severity,1418,7,236063,121,0
+"9NNejZfO0P","[""Emergency""]",choices,severity,1419,7,236078,121,0
+nodRBrMnOt,"[""Emergency""]",choices,severity,1420,7,236081,121,0
+"00TYsHy4A0","[""Emergency""]",choices,severity,1421,7,236089,121,0
+EZjZIvgq3n,"[""Emergency""]",choices,severity,1422,7,236099,121,0
+"9ZtAnhoxv8","[""Emergency""]",choices,severity,1423,7,236057,121,0
+"4RZ9S4Lu3X","[""Exclude""]",choices,exclude,1424,7,236077,121,
+"3sLKY2qsWT","[""Emergency""]",choices,severity,1425,7,236090,121,0
+CG895mQ49I,"[""Emergency""]",choices,severity,1426,7,236091,121,0
+kP0cR0qEly,"[""Emergency""]",choices,severity,1427,7,236096,121,0
+b5G_oAnJ5P,"[""Non Emergency [No Doctor]""]",choices,severity,2030,7,236763,120,2
+TztMj1RVMv,"[""Emergency""]",choices,severity,1428,7,236103,121,0
+d_AdK-f585,"[""Emergency""]",choices,severity,1429,7,236021,121,0
+"91SbH47ynP","[""Non Emergency [No Doctor]""]",choices,severity,1430,7,236036,121,2
+zhOxZLfqjn,"[""Exclude""]",choices,exclude,1431,7,236070,121,
+qYVA3MAgAx,"[""Emergency""]",choices,severity,1432,7,236079,121,0
+UvYrzupXwT,"[""Emergency""]",choices,severity,1433,7,236080,121,0
+Pw0CWDLgTv,"[""Emergency""]",choices,severity,1434,7,236084,121,0
+tIc4wfEzlO,"[""Emergency""]",choices,severity,1435,7,236085,121,0
+"4Sjij_z2oe","[""Emergency""]",choices,severity,1437,7,236105,121,0
+"4_-9LHPHxm","[""Emergency""]",choices,severity,1438,7,236106,121,0
+ru1pvti27t,"[""Non Emergency [Doctor]""]",choices,severity,1439,7,236109,121,3
+"8ZEzXVyITL","[""Non Emergency [Doctor]""]",choices,severity,1440,7,236115,121,3
+RqAqWioOMX,"[""Emergency""]",choices,severity,1441,7,236118,121,0
+K7wJc-s1w5,"[""Emergency""]",choices,severity,1442,7,236122,121,0
+lnwAJY_2hB,"[""Emergency""]",choices,severity,1443,7,236125,121,0
+"7h76DqisfU","[""Emergency""]",choices,severity,1444,7,236130,121,0
+c4Jc1w9OFF,"[""Emergency""]",choices,severity,1445,7,236131,121,0
+Gy9mPKXAyA,"[""Exclude""]",choices,exclude,1446,7,236136,121,
+znif4z2yCm,"[""Emergency""]",choices,severity,1447,7,236139,121,0
+RJGKu---3s,"[""Emergency""]",choices,severity,1448,7,236192,121,0
+"3PD_HRGYAd","[""Emergency""]",choices,severity,1449,7,236193,121,0
+-4gMgz2kc_,"[""Exclude""]",choices,exclude,1450,7,236060,121,
+Eoylj41l7P,"[""Exclude""]",choices,exclude,1451,7,236092,121,
+RfsBiIA6qF,"[""Emergency""]",choices,severity,1452,7,236097,121,0
+Fq9JWRtPHk,"[""Emergency""]",choices,severity,1453,7,236098,121,0
+eV1VxhbrBS,"[""Emergency""]",choices,severity,1454,7,236107,121,0
+Vbgx7c4MwG,"[""Emergency""]",choices,severity,1455,7,236108,121,0
+CvpJ3LH6Wo,"[""Non Emergency [Doctor]""]",choices,severity,1456,7,236111,121,3
+tPy2NS8Ggh,"[""Exclude""]",choices,exclude,1457,7,236112,121,
+iMcay_yjfh,"[""Emergency""]",choices,severity,1458,7,236116,121,0
+yRvS_iPGTo,"[""Emergency""]",choices,severity,1459,7,236117,121,0
+PC585VE5Lc,"[""Emergency""]",choices,severity,1460,7,236119,121,0
+XsJEl4mg4n,"[""Emergency""]",choices,severity,1461,7,236120,121,0
+LIRKAxkwUn,"[""Emergency""]",choices,severity,1462,7,236123,121,0
+GLlKAZ68u-,"[""Emergency""]",choices,severity,1463,7,236124,121,0
+i1vVlPpGrY,"[""Exclude""]",choices,exclude,1464,7,236126,121,
+"8i0777OuZy","[""Emergency""]",choices,severity,1465,7,236127,121,0
+bUihz9-KDr,"[""Emergency""]",choices,severity,1466,7,236132,121,0
+xusjH5J5lC,"[""Emergency""]",choices,severity,1467,7,236133,121,0
+"0tcshmxYkK","[""Exclude""]",choices,exclude,1468,7,236137,121,
+_azGzAFo4O,"[""Emergency""]",choices,severity,1469,7,236138,121,0
+NgSccVJn8F,"[""Emergency""]",choices,severity,1470,7,236141,121,0
+"1rwWSpYoUU","[""Emergency""]",choices,severity,1471,7,236144,121,0
+fafxZdyb0g,"[""Emergency""]",choices,severity,1472,7,236148,121,0
+IaWQCom4id,"[""Emergency""]",choices,severity,1473,7,236151,121,0
+VbzIiMtBdu,"[""Emergency""]",choices,severity,1475,7,236156,121,0
+RBoJ17gZR8,"[""Emergency""]",choices,severity,1476,7,236158,121,0
+l1kLQeQfm2,"[""Non Emergency [Doctor]""]",choices,severity,1477,7,236179,121,3
+f-dzNqm7N9,"[""Emergency""]",choices,severity,1478,7,236180,121,0
+tn5WpO-EYb,"[""Emergency""]",choices,severity,1474,7,236155,121,0
+oAGp8z33aM,"[""Non Emergency [No Doctor]""]",choices,severity,1479,7,236182,121,2
+"5ioqleoiMl","[""Emergency""]",choices,severity,1480,7,236183,121,0
+MTVu8KGAHH,"[""Emergency""]",choices,severity,1481,7,236189,121,0
+VrINbDznYz,"[""Non Emergency [No Doctor]""]",choices,severity,1482,7,236190,121,2
+"0L8YkrRkc5","[""Emergency""]",choices,severity,1483,7,236194,121,0
+dv9cn03Zj4,"[""Non Emergency [Doctor]""]",choices,severity,1484,7,236195,121,3
+Zvn0ERih8r,"[""Non Emergency [No Doctor]""]",choices,severity,1485,7,236198,121,2
+b9nePTeCHX,"[""Emergency""]",choices,severity,1486,7,236199,121,0
+bMqAczCSpQ,"[""Emergency""]",choices,severity,1487,7,236240,121,0
+z5pHYdmsGZ,"[""Non Emergency [No Doctor]""]",choices,severity,1489,7,236254,121,2
+pGLrSDLVlb,"[""Non Emergency [No Doctor]""]",choices,severity,1490,7,236255,121,2
+UER-fhcnnr,"[""Emergency""]",choices,severity,1491,7,236259,121,0
+K9ddFgwtRQ,"[""Emergency""]",choices,severity,1492,7,236262,121,0
+"0TLnhd3vKv","[""Emergency""]",choices,severity,1493,7,236272,121,0
+Y_iVkbdSpF,"[""Non Emergency [Doctor]""]",choices,severity,1494,7,236281,121,3
+AH9CtBuQLw,"[""Emergency""]",choices,severity,1495,7,236285,121,0
+tWjkhKDGM0,"[""Exclude""]",choices,exclude,1496,7,236286,121,
+tEC-g4nk97,"[""Non Emergency [No Doctor]""]",choices,severity,2031,7,237097,121,2
+"8PXAWmjt3_","[""Non Emergency [Doctor]""]",choices,severity,1498,7,236300,121,3
+L1kPuYHYVt,"[""Exclude""]",choices,exclude,1511,7,236549,121,
+txWib9PCQK,"[""Non Emergency [Doctor]""]",choices,severity,1497,7,236295,121,3
+iTdhXAUoNB,"[""Emergency""]",choices,severity,1499,7,236310,121,0
+tAJJQa1hIa,"[""Emergency""]",choices,severity,1500,7,236315,121,0
+zSHttY7GYW,"[""Emergency""]",choices,severity,1501,7,236337,121,0
+fBcwFinhva,"[""Emergency""]",choices,severity,1502,7,236338,121,0
+ZNVxeDSIej,"[""Emergency""]",choices,severity,1503,7,236341,121,0
+Z0Ut2vz-RY,"[""Emergency""]",choices,severity,1504,7,236348,121,0
+UziJtfni96,"[""Emergency""]",choices,severity,1505,7,236372,121,0
+kmBciFLd4f,"[""Non Emergency [No Doctor]""]",choices,severity,1506,7,236417,121,2
+x2UdKrCqRH,"[""Exclude""]",choices,exclude,1507,7,236539,121,
+aRLAEaacA-,"[""Emergency""]",choices,severity,1508,7,236540,121,0
+_KV0BOhTAq,"[""Exclude""]",choices,exclude,1509,7,236544,121,
+VoWTIKAShB,"[""Exclude""]",choices,exclude,1510,7,236545,121,
+qgLEW4sDfb,"[""Emergency""]",choices,severity,1512,7,236550,121,0
+qNAwMyXhNs,"[""Emergency""]",choices,severity,1513,7,236113,121,0
+kxBjPAFQIG,"[""Emergency""]",choices,severity,1514,7,236114,121,0
+lRZ9j1f4I-,"[""Emergency""]",choices,severity,1515,7,236128,121,0
+R6zfNjbCDY,"[""Emergency""]",choices,severity,1516,7,236129,121,0
+RabXSJ-lXF,"[""Emergency""]",choices,severity,1517,7,236152,121,0
+ElLAf_ztCy,"[""Emergency""]",choices,severity,1519,7,236157,121,0
+ZJx6TMpoNY,"[""Emergency""]",choices,severity,1520,7,236159,121,0
+K7N-9CQ3F_,"[""Emergency""]",choices,severity,1521,7,236163,121,0
+"108e213GKl","[""Emergency""]",choices,severity,1522,7,236164,121,0
+ZSWKOBel1t,"[""Non Emergency [Doctor]""]",choices,severity,1523,7,236166,121,3
+VgXzQ7KHRS,"[""Non Emergency [Doctor]""]",choices,severity,1524,7,236167,121,3
+G05Jxew3N8,"[""Emergency""]",choices,severity,1525,7,236170,121,0
+mRhiZDFYGu,"[""Non Emergency [No Doctor]""]",choices,severity,1526,7,236171,121,2
+Xzb_7_ADzr,"[""Exclude""]",choices,exclude,1527,7,236173,121,
+M4e1_P6c18,"[""Emergency""]",choices,severity,1528,7,236174,121,0
+"2MJMUousdW","[""Non Emergency [Doctor]""]",choices,severity,1529,7,236181,121,3
+JEpI8yNwzY,"[""Emergency""]",choices,severity,1530,7,236184,121,0
+F0LblPaDwa,"[""Emergency""]",choices,severity,1531,7,236186,121,0
+bEDVgCWZgD,"[""Exclude""]",choices,exclude,1532,7,236187,121,
+"3vt3-ipI0X","[""Emergency""]",choices,severity,1533,7,236178,121,0
+N6cuwsOR9N,"[""Exclude""]",choices,exclude,1534,7,236287,121,
+k5oRc_7U89,"[""Emergency""]",choices,severity,1535,7,236162,121,0
+fS6AOYsveT,"[""Emergency""]",choices,severity,1536,7,236177,121,0
+C4Lz4hHjGu,"[""Non Emergency [No Doctor]""]",choices,severity,1537,7,236249,121,2
+ThZiSdgXm_,"[""Non Emergency [No Doctor]""]",choices,severity,1538,7,236283,121,2
+i5W0D_1Urw,"[""Emergency""]",choices,severity,1539,7,236145,121,0
+bopxA6r-Bc,"[""Emergency""]",choices,severity,1540,7,236161,121,0
+"90rPl8m0kV","[""Emergency""]",choices,severity,1541,7,236191,121,0
+"5xRjSyDtuY","[""Emergency""]",choices,severity,1542,7,236269,121,0
+"3MEkdby9pW","[""Emergency""]",choices,severity,1543,7,236154,121,0
+kAMrgqDN0Z,"[""Non Emergency [Doctor]""]",choices,severity,1544,7,236513,120,3
+XCPs6voPok,"[""Emergency""]",choices,severity,1545,7,236165,121,0
+rSvz2JGwTD,"[""Emergency""]",choices,severity,1546,7,236514,120,0
+"31Jq2hUgOB","[""Emergency""]",choices,severity,1547,7,236168,121,0
+b-CzQ-Okvm,"[""Non Emergency [No Doctor]""]",choices,severity,2035,7,237099,121,2
+CWlA87KMZL,"[""Emergency""]",choices,severity,1548,7,236516,120,0
+Imezg1X1w4,"[""Emergency""]",choices,severity,1549,7,236519,120,0
+"71WBUlh0pc","[""Emergency""]",choices,severity,1550,7,236175,121,0
+_utsVOABkY,"[""Exclude""]",choices,exclude,1551,7,236188,121,
+"0Ekm5yd9Fp","[""Emergency""]",choices,severity,1552,7,236523,120,0
+GjnZB0LIaW,"[""Emergency""]",choices,severity,1553,7,236196,121,0
+VxIBdzvXe7,"[""Non Emergency [Doctor]""]",choices,severity,1554,7,236250,121,3
+"9FTDU85FSW","[""Emergency""]",choices,severity,1555,7,236263,121,0
+"3znj8hm9jc","[""Emergency""]",choices,severity,1556,7,236121,121,0
+"5D0hscKjtj","[""Exclude""]",choices,exclude,1557,7,236140,121,
+kHj_90CI8e,"[""Emergency""]",choices,severity,1558,7,236528,120,0
+"1NE6ZT8USf","[""Emergency""]",choices,severity,1559,7,236160,121,0
+dvyw3zY1P6,"[""Non Emergency [Doctor]""]",choices,severity,1560,7,236169,121,3
+"9ObHZwOHtj","[""Emergency""]",choices,severity,1561,7,236533,120,0
+QFwnvKkc1k,"[""Emergency""]",choices,severity,1562,7,236534,120,0
+Q55oX5Jrqv,"[""Emergency""]",choices,severity,1563,7,236537,120,0
+yjwL433018,"[""Non Emergency [No Doctor]""]",choices,severity,2040,7,237105,121,2
+"9XH_pZ79Xo","[""Non Emergency [Doctor]""]",choices,severity,1564,7,236172,121,3
+NGkjJNbyHe,"[""Emergency""]",choices,severity,1565,7,236548,120,0
+b8B8wa0PsJ,"[""Emergency""]",choices,severity,1566,7,236358,121,0
+WS7biYZAZu,"[""Non Emergency [Doctor]""]",choices,severity,1567,7,236431,121,3
+DtRq8Hs3Ti,"[""Emergency""]",choices,severity,1568,7,236288,121,0
+W1sxNAuc1b,"[""Emergency""]",choices,severity,1569,7,236351,121,0
+ozMK2tnZxA,"[""Non Emergency [No Doctor]""]",choices,severity,1570,7,236405,121,2
+iBb2sGZ8xq,"[""Non Emergency [Doctor]""]",choices,severity,1571,7,236424,121,3
+"2oTTvbCt7M","[""Normal""]",choices,severity,1572,7,236197,121,1
+LA8jU5VJYr,"[""Emergency""]",choices,severity,1573,7,236256,121,0
+GyAElp9Wll,"[""Emergency""]",choices,severity,1574,7,236303,121,0
+WcWDdFsmsA,"[""Non Emergency [No Doctor]""]",choices,severity,1575,7,236340,121,2
+nBUhMrejyP,"[""Emergency""]",choices,severity,1577,7,236380,121,0
+"70FOAqpqph","[""Exclude""]",choices,exclude,1578,7,236423,121,
+oqXHA_2Scw,"[""Emergency""]",choices,severity,1579,7,236565,120,0
+QZJDg32duX,"[""Non Emergency [No Doctor]""]",choices,severity,1580,7,236220,121,2
+tnHTX4749Y,"[""Emergency""]",choices,severity,1581,7,236568,120,0
+h5nQl1V_3n,"[""Normal""]",choices,severity,2077,7,237207,121,1
+o5-sww2T2n,"[""Non Emergency [Doctor]""]",choices,severity,1582,7,236293,121,3
+nhHKJp8shA,"[""Emergency""]",choices,severity,1584,7,236601,120,0
+uuEqiwp-MZ,"[""Emergency""]",choices,severity,1585,7,236602,120,0
+PMh_kPg5R8,"[""Emergency""]",choices,severity,1586,7,236604,120,0
+"6agMiCnnvX","[""Non Emergency [Doctor]""]",choices,severity,1587,7,236608,120,3
+uhOodnn0a0,"[""Non Emergency [No Doctor]""]",choices,severity,1588,7,236605,120,2
+"8i0hoUkWaa","[""Non Emergency [Doctor]""]",choices,severity,1589,7,236609,120,3
+n-LLW4wUy1,"[""Emergency""]",choices,severity,1590,7,236613,120,0
+"3_pknFSg7U","[""Normal""]",choices,severity,1591,7,236616,120,1
+CQvDxvmRtp,"[""Emergency""]",choices,severity,1592,7,236621,120,0
+"3rK_h_KZNq","[""Normal""]",choices,severity,1593,7,236624,120,1
+uzpbwERwtk,"[""Emergency""]",choices,severity,1594,7,236627,120,0
+-f88mTkmVy,"[""Emergency""]",choices,severity,1595,7,236628,120,0
+cqmfq7Hjyo,"[""Emergency""]",choices,severity,1596,7,236633,120,0
+"6LigrhwYrn","[""Non Emergency [No Doctor]""]",choices,severity,1597,7,236634,120,2
+NFJDWOlQHn,"[""Normal""]",choices,severity,1598,7,236636,120,1
+sqyPcAqJCp,"[""Non Emergency [No Doctor]""]",choices,severity,1599,7,236637,120,2
+zl7kr_YeBY,"[""Emergency""]",choices,severity,1600,7,236641,120,0
+AR2SFfOq7p,"[""Emergency""]",choices,severity,1601,7,236674,120,0
+Hkeh3VWP5c,"[""Emergency""]",choices,severity,1602,7,236678,120,0
+B-iAZd02Lv,"[""Emergency""]",choices,severity,1603,7,236681,120,0
+dAUqRR0uZ7,"[""Non Emergency [No Doctor]""]",choices,severity,1604,7,236682,120,2
+"2JhH0Iu4wM","[""Non Emergency [Doctor]""]",choices,severity,1605,7,236176,120,3
+em5z8oFo1f,"[""Normal""]",choices,severity,1606,7,236495,120,1
+XbNCpNvsVO,"[""Normal""]",choices,severity,1607,7,236506,120,1
+D3Lq7QHVw_,"[""Emergency""]",choices,severity,1608,7,236509,120,0
+"56amAsOPjl","[""Normal""]",choices,severity,1609,7,236511,120,1
+jxwBMTzufO,"[""Emergency""]",choices,severity,1610,7,236512,120,0
+cMAQLshEZU,"[""Emergency""]",choices,severity,1612,7,236688,120,0
+Sy8DVjWAiw,"[""Emergency""]",choices,severity,1613,7,236541,120,0
+SKhVeMreNP,"[""Emergency""]",choices,severity,1614,7,236542,120,0
+EaQAPBynsQ,"[""Non Emergency [No Doctor]""]",choices,severity,1615,7,236553,120,2
+uD1ftFiP1L,"[""Non Emergency [No Doctor]""]",choices,severity,1616,7,236555,120,2
+mvwF325yx6,"[""Non Emergency [Doctor]""]",choices,severity,1617,7,236564,120,3
+U0hLqqU4j0,"[""Emergency""]",choices,severity,1618,7,236575,120,0
+qWC4kvWw9x,"[""Normal""]",choices,severity,1619,7,236586,120,1
+"5T2JDtNFmL","[""Emergency""]",choices,severity,1621,7,236589,120,0
+XbW5lw1yuu,"[""Non Emergency [Doctor]""]",choices,severity,1622,7,236590,120,3
+EWNkpKV9ML,"[""Non Emergency [Doctor]""]",choices,severity,1623,7,236593,120,3
+QqshsWER4R,"[""Non Emergency [Doctor]""]",choices,severity,1624,7,236594,120,3
+jF-3e1y24O,"[""Emergency""]",choices,severity,1625,7,236596,120,0
+vRDYarKzEy,"[""Emergency""]",choices,severity,1626,7,236598,120,0
+GkopqBtsLI,"[""Non Emergency [Doctor]""]",choices,severity,1627,7,236606,120,3
+MiJXh8QTcX,"[""Emergency""]",choices,severity,1628,7,236607,120,0
+LCz0t8tyvB,"[""Non Emergency [Doctor]""]",choices,severity,1629,7,236618,120,3
+"9zwMO8UVX9","[""Non Emergency [Doctor]""]",choices,severity,1630,7,236625,120,3
+BZiuSE4bL9,"[""Emergency""]",choices,severity,1631,7,236631,120,0
+"9IuD0SndHY","[""Emergency""]",choices,severity,1632,7,236635,120,0
+Vqsau8z-mQ,"[""Emergency""]",choices,severity,1633,7,236638,120,0
+jldCPIZSVa,"[""Non Emergency [No Doctor]""]",choices,severity,1634,7,236648,120,2
+"0cLTWVEcd-","[""Non Emergency [Doctor]""]",choices,severity,1635,7,236649,120,3
+tw50T7s4dC,"[""Emergency""]",choices,severity,1636,7,236651,120,0
+-fnmlVyWA5,"[""Non Emergency [No Doctor]""]",choices,severity,1637,7,236652,120,2
+"0ssWZNtqI1","[""Emergency""]",choices,severity,1638,7,236740,120,0
+"4vIab5i-wq","[""Emergency""]",choices,severity,1639,7,236673,120,0
+GCu-q3boSJ,"[""Non Emergency [Doctor]""]",choices,severity,1640,7,236683,120,3
+uimgkaC01M,"[""Non Emergency [No Doctor]""]",choices,severity,1641,7,236685,120,2
+iM1w9VAqtL,"[""Emergency""]",choices,severity,1642,7,236686,120,0
+d-ibkaKI-I,"[""Emergency""]",choices,severity,1653,7,236711,120,0
+JWLSxz0zDn,"[""Emergency""]",choices,severity,1643,7,236690,120,0
+zoMcMvP0M4,"[""Non Emergency [No Doctor]""]",choices,severity,1644,7,236691,120,2
+_jgOxEpAqh,"[""Emergency""]",choices,severity,1645,7,236693,120,0
+"2OHpRERC_V","[""Emergency""]",choices,severity,1646,7,236694,120,0
+sPuaWlYW2S,"[""Emergency""]",choices,severity,1647,7,236701,120,0
+PucDjs8wbg,"[""Emergency""]",choices,severity,1648,7,236702,120,0
+zbmfXL5f0N,"[""Non Emergency [No Doctor]""]",choices,severity,1649,7,236704,120,2
+"2_SQ1GQU5G","[""Non Emergency [Doctor]""]",choices,severity,1650,7,236705,120,3
+EjFvjR1X5o,"[""Non Emergency [No Doctor]""]",choices,severity,1651,7,236708,120,2
+"7GFHrLcIXv","[""Non Emergency [No Doctor]""]",choices,severity,1652,7,236709,120,2
+Abet8eTx6z,"[""Non Emergency [No Doctor]""]",choices,severity,1654,7,236712,120,2
+HyGmWBZaE8,"[""Emergency""]",choices,severity,1655,7,236716,120,0
+Fcw9mZlYBu,"[""Non Emergency [Doctor]""]",choices,severity,1656,7,236717,120,3
+"0XATpUcaPb","[""Non Emergency [No Doctor]""]",choices,severity,1657,7,236719,120,2
+AJN1nNm8je,"[""Emergency""]",choices,severity,1658,7,236720,120,0
+HxjvuD9Cib,"[""Emergency""]",choices,severity,1659,7,236723,120,0
+"0AK6AqQCLV","[""Emergency""]",choices,severity,1660,7,236724,120,0
+FpBMp4R0Lr,"[""Emergency""]",choices,severity,1661,7,236726,120,0
+RFwNrixHvn,"[""Emergency""]",choices,severity,1662,7,236727,120,0
+PS6TzMiVmK,"[""Non Emergency [Doctor]""]",choices,severity,1663,7,236732,120,3
+"2MXtTbG4kc","[""Emergency""]",choices,severity,1665,7,236735,120,0
+aKswV3-n-u,"[""Non Emergency [No Doctor]""]",choices,severity,1666,7,236783,120,2
+w1QTMajGKw,"[""Emergency""]",choices,severity,1667,7,236766,120,0
+"0j004nw6XT","[""Emergency""]",choices,severity,1668,7,236767,120,0
+pFAg0pt_fU,"[""Non Emergency [No Doctor]""]",choices,severity,1669,7,236769,120,2
+"51xGKM5MRS","[""Emergency""]",choices,severity,1670,7,236770,120,0
+a4kvgcDMC8,"[""Emergency""]",choices,severity,1671,7,236774,120,0
+hoYGVOayM-,"[""Emergency""]",choices,severity,1672,7,236775,120,0
+LxDoTaHc1l,"[""Non Emergency [No Doctor]""]",choices,severity,1673,7,236778,120,2
+DKjxfRI7f_,"[""Non Emergency [Doctor]""]",choices,severity,1674,7,236781,120,3
+"3bMbIWJsKC","[""Emergency""]",choices,severity,1675,7,236736,120,0
+qVbsV3ymac,"[""Emergency""]",choices,severity,1676,7,236730,120,0
+"2MtoS-3wjC","[""Non Emergency [No Doctor]""]",choices,severity,1677,7,236729,120,2
+Li7abkT0TM,"[""Non Emergency [No Doctor]""]",choices,severity,1678,7,236737,120,2
+vD0VHmQ9d6,"[""Emergency""]",choices,severity,1679,7,236559,120,0
+BgckvamdvY,"[""Emergency""]",choices,severity,1680,7,236562,120,0
+Blbjff1XYl,"[""Non Emergency [No Doctor]""]",choices,severity,1682,7,236579,120,2
+JflkPweOHL,"[""Emergency""]",choices,severity,1683,7,236583,120,0
+ZGEdE9cKaE,"[""Non Emergency [No Doctor]""]",choices,severity,1684,7,236592,120,2
+JRz1hlXnk_,"[""Emergency""]",choices,severity,1685,7,236595,120,0
+bZxScViNkl,"[""Non Emergency [No Doctor]""]",choices,severity,1686,7,236600,120,2
+W7V3AocGCD,"[""Emergency""]",choices,severity,1687,7,236639,120,0
+ug2PYJZ1Y8,"[""Non Emergency [No Doctor]""]",choices,severity,1688,7,236647,120,2
+fLdKaB_4px,"[""Emergency""]",choices,severity,1689,7,236571,120,0
+Yzm9WYNOZX,"[""Non Emergency [No Doctor]""]",choices,severity,1690,7,236591,120,2
+"2XVCUXc9Es","[""Emergency""]",choices,severity,1691,7,236620,120,0
+J6GBwEt13_,"[""Non Emergency [No Doctor]""]",choices,severity,1692,7,236632,120,2
+lAYS53ddcZ,"[""Emergency""]",choices,severity,1693,7,236644,120,0
+_GTbPyyAW4,"[""Non Emergency [No Doctor]""]",choices,severity,1695,7,236662,120,2
+PfTsQsJ8xs,"[""Non Emergency [No Doctor]""]",choices,severity,1696,7,236664,120,2
+Ozop7nzqyt,"[""Emergency""]",choices,severity,1697,7,236665,120,0
+M4qaCaQH2a,"[""Emergency""]",choices,severity,1698,7,236668,120,0
+duViKt1jXc,"[""Non Emergency [No Doctor]""]",choices,severity,1699,7,236655,120,2
+"7K33-zN5-f","[""Emergency""]",choices,severity,1700,7,236653,120,0
+u7OKS--5dk,"[""Normal""]",choices,severity,1701,7,236658,120,1
+"5daYcFyl5s","[""Emergency""]",choices,severity,1702,7,236672,120,0
+tvX11N_SHG,"[""Emergency""]",choices,severity,1703,7,236676,120,0
+n6nvVq7egS,"[""Non Emergency [Doctor]""]",choices,severity,1704,7,236677,120,3
+iXBXW5ZE5I,"[""Emergency""]",choices,severity,1705,7,236684,120,0
+WRQkN2-5DI,"[""Non Emergency [No Doctor]""]",choices,severity,2042,7,237107,121,2
+JM21CR35Da,"[""Non Emergency [Doctor]""]",choices,severity,1706,7,236714,120,3
+"3j_ovE5OyO","[""Non Emergency [No Doctor]""]",choices,severity,1707,7,236715,120,2
+fnzNj4vVMy,"[""Emergency""]",choices,severity,1708,7,236721,120,0
+_xEm-mtg21,"[""Emergency""]",choices,severity,1709,7,236722,120,0
+IFeAMdB_bf,"[""Emergency""]",choices,severity,1710,7,236734,120,0
+AClfjWuK_3,"[""Emergency""]",choices,severity,1711,7,236741,120,0
+EFsG6FXsLs,"[""Emergency""]",choices,severity,1714,7,236749,120,0
+JxKEN57a9a,"[""Emergency""]",choices,severity,1715,7,236750,120,0
+uBDDYcgJt6,"[""Non Emergency [No Doctor]""]",choices,severity,1716,7,236753,120,2
+QrhtFN2wm0,"[""Non Emergency [No Doctor]""]",choices,severity,1717,7,236754,120,2
+-CVBdaMlMi,"[""Emergency""]",choices,severity,1718,7,236756,120,0
+ntM6miPrYW,"[""Non Emergency [Doctor]""]",choices,severity,1719,7,236757,120,3
+WagTvo9YhR,"[""Non Emergency [No Doctor]""]",choices,severity,1720,7,236761,120,2
+i_rxbtHylx,"[""Emergency""]",choices,severity,1721,7,236796,120,0
+oGT-hsI_DT,"[""Non Emergency [No Doctor]""]",choices,severity,1722,7,236797,120,2
+hWmaPm5u4B,"[""Non Emergency [No Doctor]""]",choices,severity,2050,7,237111,121,2
+"30MxSfZiny","[""Emergency""]",choices,severity,1723,7,236800,120,0
+ZqkIroUgsN,"[""Emergency""]",choices,severity,1724,7,236803,120,0
+"4y37JaJcyR","[""Non Emergency [No Doctor]""]",choices,severity,1725,7,236804,120,2
+bGMTh_531T,"[""Emergency""]",choices,severity,1726,7,236809,120,0
+S5BWobUboH,"[""Emergency""]",choices,severity,1727,7,236810,120,0
+pF6vcx7_dy,"[""Emergency""]",choices,severity,1728,7,236812,120,0
+a5T85xYgPs,"[""Emergency""]",choices,severity,1729,7,236813,120,0
+lL3bdV-_0w,"[""Emergency""]",choices,severity,1730,7,236816,120,0
+o8VNK5apa8,"[""Non Emergency [No Doctor]""]",choices,severity,1731,7,236817,120,2
+nZg__TetBi,"[""Emergency""]",choices,severity,1732,7,236819,120,0
+k--myoyaDF,"[""Non Emergency [No Doctor]""]",choices,severity,1733,7,236820,120,2
+nnEhkUxOz2,"[""Non Emergency [No Doctor]""]",choices,severity,1734,7,236824,120,2
+Dcvxyrn5yF,"[""Non Emergency [No Doctor]""]",choices,severity,1735,7,236825,120,2
+"9nYlHXY58d","[""Emergency""]",choices,severity,1736,7,236827,120,0
+Cbm4DAq0sg,"[""Non Emergency [No Doctor]""]",choices,severity,1737,7,236828,120,2
+_3wkw7G0Tu,"[""Emergency""]",choices,severity,1738,7,236831,120,0
+eIcFtcO4cv,"[""Non Emergency [No Doctor]""]",choices,severity,1773,7,236839,120,2
+e7JRIkOouA,"[""Non Emergency [No Doctor]""]",choices,severity,1739,7,236832,120,2
+"0_tFesuMlK","[""Non Emergency [No Doctor]""]",choices,severity,1740,7,236835,120,2
+-7Pu4SiJBv,"[""Non Emergency [No Doctor]""]",choices,severity,1741,7,236840,120,2
+CSkrT3sFKE,"[""Emergency""]",choices,severity,1742,7,236841,120,0
+q9u7TLdACJ,"[""Non Emergency [No Doctor]""]",choices,severity,1743,7,236843,120,2
+YtkNroDUdt,"[""Normal""]",choices,severity,1744,7,236847,120,1
+BdKFqwoOEl,"[""Non Emergency [No Doctor]""]",choices,severity,1745,7,236848,120,2
+lPUfx2wizW,"[""Emergency""]",choices,severity,1746,7,236850,120,0
+_vC7pPWmz6,"[""Emergency""]",choices,severity,1747,7,236851,120,0
+vfhTOpOkco,"[""Non Emergency [No Doctor]""]",choices,severity,1748,7,236855,120,2
+fkl1hJwxTA,"[""Emergency""]",choices,severity,1749,7,236856,120,0
+lHB7imdUis,"[""Non Emergency [Doctor]""]",choices,severity,1750,7,236859,120,3
+"1NVoeg3fuc","[""Emergency""]",choices,severity,1751,7,236862,120,0
+EpkfHITdkO,"[""Emergency""]",choices,severity,1752,7,236863,120,0
+OkDJ0-w8dk,"[""Non Emergency [No Doctor]""]",choices,severity,1753,7,236760,120,2
+lwApT4lJXD,"[""Emergency""]",choices,severity,1754,7,236762,120,0
+w8wDbNkcmr,"[""Emergency""]",choices,severity,1755,7,236764,120,0
+IJPiHL8g3i,"[""Emergency""]",choices,severity,1756,7,236765,120,0
+MgQ4KjQBbT,"[""Non Emergency [No Doctor]""]",choices,severity,1757,7,236772,120,2
+hemOV4r9XD,"[""Emergency""]",choices,severity,1758,7,236889,120,0
+jLPVbt01TD,"[""Non Emergency [No Doctor]""]",choices,severity,1759,7,236779,120,2
+"1gAEYXv8N4","[""Non Emergency [No Doctor]""]",choices,severity,1760,7,236785,120,2
+"7M2I7GCrQe","[""Emergency""]",choices,severity,1761,7,236786,120,0
+WRzFNbNgxP,"[""Emergency""]",choices,severity,1762,7,236788,120,0
+wEbeT9AWcm,"[""Non Emergency [Doctor]""]",choices,severity,1763,7,236792,120,3
+CZ-MAKeUaW,"[""Emergency""]",choices,severity,1764,7,236793,120,0
+hIF1Uxx4DK,"[""Emergency""]",choices,severity,1765,7,236795,120,0
+dLSN8rnuzw,"[""Non Emergency [No Doctor]""]",choices,severity,1766,7,236798,120,2
+BekN1AmYxP,"[""Emergency""]",choices,severity,1767,7,236811,120,0
+aRI_ptu4J7,"[""Emergency""]",choices,severity,1768,7,236814,120,0
+UlrMEQG_a7,"[""Emergency""]",choices,severity,1769,7,236818,120,0
+JcVb5JC5YW,"[""Non Emergency [No Doctor]""]",choices,severity,1770,7,236826,120,2
+WsNtvNmHsB,"[""Emergency""]",choices,severity,1771,7,236829,120,0
+dzHlW4nsZr,"[""Non Emergency [Doctor]""]",choices,severity,1772,7,236833,120,3
+VrJt6hzF-I,"[""Emergency""]",choices,severity,1774,7,236842,120,0
+"4hwH6OOUfo","[""Non Emergency [No Doctor]""]",choices,severity,1775,7,236845,120,2
+DMphdKl_yG,"[""Emergency""]",choices,severity,1776,7,236846,120,0
+hLH1BayigE,"[""Non Emergency [No Doctor]""]",choices,severity,1777,7,236853,120,2
+TLrhJFWhN2,"[""Emergency""]",choices,severity,1778,7,236860,120,0
+oKbLgP-YH7,"[""Emergency""]",choices,severity,1779,7,236868,120,0
+I36XYJ2i7G,"[""Emergency""]",choices,severity,1780,7,236869,120,0
+jYqw57iqph,"[""Non Emergency [No Doctor]""]",choices,severity,1781,7,236871,120,2
+"8CvX7IeZtY","[""Emergency""]",choices,severity,1782,7,236886,120,0
+VXlzU5F3sb,"[""Emergency""]",choices,severity,1783,7,236887,120,0
+wUjmIbMyPn,"[""Emergency""]",choices,severity,1784,7,236890,120,0
+UEIqHAkeLp,"[""Normal""]",choices,severity,1785,7,236891,120,1
+x_qjVRH16F,"[""Non Emergency [No Doctor]""]",choices,severity,1786,7,236895,120,2
+UFD5Qr8QC8,"[""Non Emergency [No Doctor]""]",choices,severity,1787,7,236898,120,2
+-oe5XZwn9W,"[""Emergency""]",choices,severity,1788,7,236902,120,0
+QqJ7kSfIDG,"[""Non Emergency [No Doctor]""]",choices,severity,1789,7,236436,121,2
+"1afSthMD5U","[""Non Emergency [No Doctor]""]",choices,severity,1790,7,236505,121,2
+h7l79ZmRl_,"[""Non Emergency [No Doctor]""]",choices,severity,1791,7,236373,121,2
+o55EVLyrOU,"[""Non Emergency [No Doctor]""]",choices,severity,1792,7,236435,121,2
+Nx9OflTr4o,"[""Emergency""]",choices,severity,1793,7,236483,121,0
+axfsqk243u,"[""Non Emergency [No Doctor]""]",choices,severity,1794,7,236503,121,2
+CeiltClV9i,"[""Emergency""]",choices,severity,1795,7,236290,121,0
+MgVIc_lBdO,"[""Emergency""]",choices,severity,1796,7,236362,121,0
+vW5t-h9IMv,"[""Emergency""]",choices,severity,1797,7,236452,121,0
+LMzx21vPgb,"[""Non Emergency [No Doctor]""]",choices,severity,1798,7,236481,121,2
+MgZ_9Tcdq_,"[""Emergency""]",choices,severity,1799,7,236490,121,0
+aWMDhU3r78,"[""Emergency""]",choices,severity,1800,7,236799,120,0
+OsD3iud5gD,"[""Non Emergency [Doctor]""]",choices,severity,1801,7,236805,120,3
+"7lpAsktETu","[""Emergency""]",choices,severity,1802,7,236935,120,0
+F7Uh_Qbh5Y,"[""Emergency""]",choices,severity,1804,7,236815,120,0
+o4wWGlgY8r,"[""Non Emergency [Doctor]""]",choices,severity,1805,7,236821,120,3
+V9U8GNZeK5,"[""Emergency""]",choices,severity,1806,7,236437,121,0
+TRK-c9fXzP,"[""Emergency""]",choices,severity,1807,7,236448,121,0
+Wab9DljpLX,"[""Non Emergency [Doctor]""]",choices,severity,1809,7,236185,121,3
+rmZIVapDXg,"[""Non Emergency [No Doctor]""]",choices,severity,1810,7,236834,120,2
+li6Uxp84Ws,"[""Non Emergency [No Doctor]""]",choices,severity,1811,7,236252,121,2
+AQnKLrIkgb,"[""Emergency""]",choices,severity,1812,7,236318,121,0
+QGnUnC6lJD,"[""Emergency""]",choices,severity,1814,7,236331,121,0
+Bpj-O9cHEM,"[""Non Emergency [No Doctor]""]",choices,severity,1815,7,236404,121,2
+"0eldLGqiiN","[""Emergency""]",choices,severity,1816,7,236838,120,0
+LRfMyCkuBS,"[""Emergency""]",choices,severity,1817,7,236409,121,0
+CvFWw8s4jh,"[""Non Emergency [No Doctor]""]",choices,severity,1818,7,236414,121,2
+mdbtDvjvVC,"[""Emergency""]",choices,severity,1819,7,236844,120,0
+Ysx1_NE2x0,"[""Non Emergency [No Doctor]""]",choices,severity,1821,7,236478,121,2
+H2kr3Gh3CO,"[""Non Emergency [No Doctor]""]",choices,severity,1822,7,236854,120,2
+"3yMKU_Lmo7","[""Exclude""]",choices,exclude,1823,7,236535,121,
+vLsIZJixRl,"[""Non Emergency [Doctor]""]",choices,severity,1824,7,236650,121,3
+GLt4cB6JjK,"[""Emergency""]",choices,severity,1825,7,236857,120,0
+Y7ngg7FCil,"[""Non Emergency [Doctor]""]",choices,severity,1820,7,236419,121,3
+cyyD7WUgDe,"[""Non Emergency [No Doctor]""]",choices,severity,1826,7,236515,121,2
+EYUdI_JF9_,"[""Non Emergency [No Doctor]""]",choices,severity,1827,7,236861,120,2
+UEEB33aSxE,"[""Non Emergency [No Doctor]""]",choices,severity,1828,7,236864,120,2
+cJbcV0AaeW,"[""Emergency""]",choices,severity,1829,7,236532,121,0
+vnTh0Sc5Vl,"[""Exclude""]",choices,exclude,1830,7,236588,121,
+XUjtZ2Ozwj,"[""Emergency""]",choices,severity,1831,7,236875,120,0
+K9RD5hbImh,"[""Emergency""]",choices,severity,1832,7,236876,120,0
+kXMWQ2VI8t,"[""Emergency""]",choices,severity,1833,7,236879,120,0
+d53BcLwwll,"[""Non Emergency [No Doctor]""]",choices,severity,1834,7,236882,120,2
+Q2Svoy2yV-,"[""Non Emergency [No Doctor]""]",choices,severity,1835,7,236640,121,2
+INovkV5303,"[""Emergency""]",choices,severity,1841,7,236531,121,0
+"1Or-wBO5zY","[""Emergency""]",choices,severity,1836,7,236883,120,0
+Ev43oK00ZL,"[""Normal""]",choices,severity,1837,7,236885,120,1
+M1gODF7ZNs,"[""Emergency""]",choices,severity,1838,7,236510,121,0
+uXlgJTV8Lf,"[""Exclude""]",choices,exclude,1839,7,236526,121,
+nnCeTWZgVv,"[""Emergency""]",choices,severity,1840,7,236888,120,0
+gRwitgeOzH,"[""Non Emergency [No Doctor]""]",choices,severity,1842,7,236896,120,2
+NC6mnEvALJ,"[""Emergency""]",choices,severity,1844,7,236897,120,0
+GUkVGkuuEM,"[""Emergency""]",choices,severity,1845,7,236900,120,0
+-oe79YSTBz,"[""Emergency""]",choices,severity,1846,7,236619,121,0
+"6rLoFIwlSk","[""Normal""]",choices,severity,1847,7,236520,121,1
+p9X-opST0f,"[""Non Emergency [No Doctor]""]",choices,severity,1848,7,236521,121,2
+lRIpFTTmm3,"[""Emergency""]",choices,severity,1080,7,236245,120,0
+yZY4Lm6UiW,"[""Non Emergency [No Doctor]""]",choices,severity,1850,7,236801,120,2
+aQZunS6RhI,"[""Non Emergency [No Doctor]""]",choices,severity,1859,7,236480,121,2
+Q37BO1YlZZ,"[""Non Emergency [No Doctor]""]",choices,severity,1849,7,236572,121,2
+L6fj2bvBq5,"[""Non Emergency [Doctor]""]",choices,severity,1851,7,236822,120,3
+"6lGS6VWFDI","[""Non Emergency [No Doctor]""]",choices,severity,1852,7,236580,121,2
+HmCkzlpOMx,"[""Emergency""]",choices,severity,1853,7,236823,120,0
+eY7bSljTSn,"[""Non Emergency [No Doctor]""]",choices,severity,1855,7,236837,120,2
+gnrcvjvE54,"[""Non Emergency [No Doctor]""]",choices,severity,1857,7,236413,121,2
+"7iZxoU-yc_","[""Non Emergency [Doctor]""]",choices,severity,1858,7,236849,120,3
+Mjlg474zAz,"[""Normal""]",choices,severity,1860,7,236487,121,1
+CEGP85fpRp,"[""Emergency""]",choices,severity,1843,7,236563,121,0
+cD7AoaPSfW,"[""Emergency""]",choices,severity,1924,7,237034,121,0
+eDPxDqty2P,"[""Emergency""]",choices,severity,1925,7,237038,121,0
+"76XhzAJekE","[""Emergency""]",choices,severity,1927,7,237039,121,0
+Y7iq4JVddi,"[""Non Emergency [No Doctor]""]",choices,severity,1928,7,236915,120,2
+r7aSqdacCp,"[""Emergency""]",choices,severity,1929,7,237041,121,0
+fo6zl3vD9u,"[""Non Emergency [No Doctor]""]",choices,severity,1930,7,236916,120,2
+OjNNe7JKlh,"[""Non Emergency [No Doctor]""]",choices,severity,1932,7,236920,120,2
+G8BdJGN6LS,"[""Emergency""]",choices,severity,1933,7,237045,121,0
+byrxjq4ZgE,"[""Non Emergency [No Doctor]""]",choices,severity,1934,7,236921,120,2
+HIhG4lYKvT,"[""Non Emergency [No Doctor]""]",choices,severity,1935,7,236923,120,2
+"8W_EU1eGbk","[""Emergency""]",choices,severity,1936,7,237046,121,0
+-1MfIonR-0,"[""Emergency""]",choices,severity,1938,7,236924,120,0
+EGtOJB_H_U,"[""Exclude""]",choices,exclude,1940,7,237055,121,
+g4fYgzJ8p4,"[""Emergency""]",choices,severity,1941,7,237056,121,0
+xtwbaMMYzN,"[""Non Emergency [No Doctor]""]",choices,severity,1942,7,236927,120,2
+abm6ju1c0U,"[""Emergency""]",choices,severity,1943,7,237019,121,0
+vMHRevsOGC,"[""Emergency""]",choices,severity,1944,7,236928,120,0
+Xv5SzZfU61,"[""Emergency""]",choices,severity,1945,7,236930,120,0
+_9_lGaeibL,"[""Emergency""]",choices,severity,1946,7,237027,121,0
+L4PYdCaBQo,"[""Emergency""]",choices,severity,1947,7,236931,120,0
+s6OhI0huRs,"[""Emergency""]",choices,severity,1949,7,236937,120,0
+a5-e2Hpkn4,"[""Emergency""]",choices,severity,1948,7,237028,121,0
+ZYAZyRTgWl,"[""Emergency""]",choices,severity,1950,7,236938,120,0
+eSk_G7wcvO,"[""Emergency""]",choices,severity,1951,7,236941,120,0
+EOjG0_TI20,"[""Non Emergency [Doctor]""]",choices,severity,1952,7,236942,120,3
+tG61XPP_f-,"[""Non Emergency [Doctor]""]",choices,severity,1953,7,237032,121,3
+W_IVP5jkq-,"[""Emergency""]",choices,severity,1954,7,236945,120,0
+"4pbMjQBKgy","[""Emergency""]",choices,severity,1955,7,236946,120,0
+jPBDpJ2Ta4,"[""Emergency""]",choices,severity,1956,7,237035,121,0
+JcHGQsz96x,"[""Emergency""]",choices,severity,1957,7,236948,120,0
+qfiaIUJJgt,"[""Emergency""]",choices,severity,1964,7,236744,120,0
+w7H-q2x1ey,"[""Emergency""]",choices,severity,1958,7,237040,121,0
+mouFDU6kIS,"[""Non Emergency [No Doctor]""]",choices,severity,1959,7,236949,120,2
+QhAW0jnZI1,"[""Emergency""]",choices,severity,1960,7,237043,121,0
+ctl54ZiNvJ,"[""Emergency""]",choices,severity,1962,7,237047,121,0
+JoN9b-RnRA,"[""Non Emergency [No Doctor]""]",choices,severity,1963,7,236742,120,2
+Cyla5LPBm0,"[""Emergency""]",choices,severity,1965,7,237050,121,0
+CHScGL1vM1,"[""Non Emergency [No Doctor]""]",choices,severity,2059,7,237120,121,2
+KhYEdUz1pE,"[""Emergency""]",choices,severity,1966,7,236745,120,0
+"2gr6etpoci","[""Emergency""]",choices,severity,1967,7,236780,120,0
+ZegNyKKhQW,"[""Non Emergency [No Doctor]""]",choices,severity,1968,7,236782,120,2
+JnR26mBMev,"[""Non Emergency [Doctor]""]",choices,severity,1969,7,236790,120,3
+f9NtZ7og_u,"[""Non Emergency [Doctor]""]",choices,severity,1970,7,237057,121,3
+Ad-C4tcweI,"[""Emergency""]",choices,severity,1971,7,236807,120,0
+"9vtaz97K9R","[""Emergency""]",choices,severity,1972,7,236852,120,0
+RUqt1iJXJ9,"[""Emergency""]",choices,severity,1973,7,236870,120,0
+bGRuVjmwHu,"[""Emergency""]",choices,severity,1974,7,237058,121,0
+OCDZPyOGfJ,"[""Non Emergency [No Doctor]""]",choices,severity,1975,7,236874,120,2
+cukhNUs5Gu,"[""Emergency""]",choices,severity,1976,7,237060,121,0
+"2EZyBBF6Hd","[""Emergency""]",choices,severity,1977,7,236909,120,0
+"8RsJS9kyZJ","[""Non Emergency [No Doctor]""]",choices,severity,1978,7,237064,121,2
+GeX29d_jhu,"[""Emergency""]",choices,severity,1979,7,236922,120,0
+MOgfYZ7_25,"[""Non Emergency [No Doctor]""]",choices,severity,1980,7,236925,120,2
+"2VXSH2DTfv","[""Emergency""]",choices,severity,1981,7,237065,121,0
+"9sjCOE9ssM","[""Emergency""]",choices,severity,1982,7,236929,120,0
+QhxhWzQRYw,"[""Emergency""]",choices,severity,1984,7,236944,120,0
+"3hPAxqDODt","[""Emergency""]",choices,severity,1985,7,236947,120,0
+uR3oB-n3mq,"[""Emergency""]",choices,severity,1986,7,236951,120,0
+GLHlGLjDRI,"[""Non Emergency [No Doctor]""]",choices,severity,1987,7,236952,120,2
+_aCLvh89YL,"[""Emergency""]",choices,severity,1988,7,237067,121,0
+VDgmP9Kp-S,"[""Non Emergency [Doctor]""]",choices,severity,1989,7,236955,120,3
+mD-SLfI79r,"[""Non Emergency [No Doctor]""]",choices,severity,1990,7,236956,120,2
+iweQooidgq,"[""Emergency""]",choices,severity,1991,7,237068,121,0
+obnzmhiv0V,"[""Emergency""]",choices,severity,1992,7,236958,120,0
+uqaBNukf6o,"[""Non Emergency [No Doctor]""]",choices,severity,1993,7,236959,120,2
+"6QyRF-WdaH","[""Non Emergency [No Doctor]""]",choices,severity,1994,7,236964,120,2
+IeY2jmXVhI,"[""Non Emergency [No Doctor]""]",choices,severity,1995,7,237072,121,2
+si3J0GhDql,"[""Non Emergency [No Doctor]""]",choices,severity,1996,7,236967,120,2
+"915BZAPQ4M","[""Non Emergency [No Doctor]""]",choices,severity,1997,7,236968,120,2
+Q-dIuxgntg,"[""Emergency""]",choices,severity,1998,7,237073,121,0
+xLYx4fc8I6,"[""Emergency""]",choices,severity,1999,7,236971,120,0
+S8kYGq2dHK,"[""Emergency""]",choices,severity,2000,7,236972,120,0
+cNyQUr7nJi,"[""Emergency""]",choices,severity,2001,7,237075,121,0
+V80heeCDgE,"[""Emergency""]",choices,severity,2002,7,236974,120,0
+H6zgwVXrMN,"[""Emergency""]",choices,severity,2003,7,236975,120,0
+wnjIqcgCDz,"[""Non Emergency [No Doctor]""]",choices,severity,2004,7,236980,120,2
+pXbz9GtuPZ,"[""Emergency""]",choices,severity,2006,7,237076,121,0
+FjC1Dh_KeG,"[""Emergency""]",choices,severity,2007,7,237079,121,0
+"4U9CGdxrkB","[""Emergency""]",choices,severity,2008,7,236983,120,0
+aAqXHI3RcJ,"[""Exclude""]",choices,exclude,2009,7,237080,121,
+"7gWi9slIgo","[""Emergency""]",choices,severity,2011,7,236984,120,0
+"9RwWd75tmp","[""Emergency""]",choices,severity,2012,7,236987,120,0
+"5V9_grc1lQ","[""Non Emergency [No Doctor]""]",choices,severity,2013,7,237083,121,2
+U6WvYsBFDB,"[""Emergency""]",choices,severity,2014,7,236988,120,0
+M8T9idvgRk,"[""Non Emergency [No Doctor]""]",choices,severity,2015,7,237089,121,2
+ETj8tcvdWY,"[""Emergency""]",choices,severity,2016,7,236990,120,0
+"3qJKONvs0n","[""Non Emergency [No Doctor]""]",choices,severity,2017,7,237090,121,2
+"47Y2C0XSt9","[""Non Emergency [No Doctor]""]",choices,severity,2018,7,236991,120,2
+QIgm5BJ-XR,"[""Non Emergency [No Doctor]""]",choices,severity,2019,7,237092,121,2
+cMxSg89EX4,"[""Emergency""]",choices,severity,2020,7,236995,120,0
+jmwJ095737,"[""Non Emergency [No Doctor]""]",choices,severity,2021,7,236695,120,2
+Z-OHS9MqCa,"[""Emergency""]",choices,severity,2022,7,236696,120,0
+"4Su2PcG9Av","[""Emergency""]",choices,severity,2023,7,236700,120,0
+In0_jDSeN6,"[""Non Emergency [Doctor]""]",choices,severity,2024,7,237093,121,3
+MixbIxQDm1,"[""Emergency""]",choices,severity,2025,7,236697,120,0
+jv9te9ynRQ,"[""Non Emergency [No Doctor]""]",choices,severity,2070,7,237199,121,2
+HSF7ww97tN,"[""Non Emergency [Doctor]""]",choices,severity,2026,7,236698,120,3
+HHwRSCUDUy,"[""Non Emergency [No Doctor]""]",choices,severity,2027,7,236710,120,2
+i6Fiyatkny,"[""Emergency""]",choices,severity,2028,7,236759,120,0
+szzOttcfUV,"[""Non Emergency [No Doctor]""]",choices,severity,2029,7,237096,121,2
+VB_l94TSPA,"[""Non Emergency [No Doctor]""]",choices,severity,2032,7,236784,120,2
+EuJPNSqCCP,"[""Non Emergency [No Doctor]""]",choices,severity,2033,7,236878,120,2
+f5FYKtggov,"[""Emergency""]",choices,severity,2034,7,236880,120,0
+drUaCTnE89,"[""Non Emergency [No Doctor]""]",choices,severity,2036,7,237100,121,2
+"4pypKzbhXH","[""Emergency""]",choices,severity,2037,7,236910,120,0
+uRwhwMsIpL,"[""Emergency""]",choices,severity,2038,7,236919,120,0
+hFHpbtmNWN,"[""Non Emergency [No Doctor]""]",choices,severity,2039,7,237104,121,2
+C-YA0n7rBu,"[""Emergency""]",choices,severity,2041,7,236926,120,0
+vSOxHPcpIG,"[""Non Emergency [No Doctor]""]",choices,severity,2043,7,236934,120,2
+UWJw-ToB_F,"[""Non Emergency [Doctor]""]",choices,severity,2044,7,237108,121,3
+ZntXoeHe9R,"[""Emergency""]",choices,severity,2045,7,236936,120,0
+isp7UNRS1m,"[""Emergency""]",choices,severity,2046,7,236954,120,0
+fGrboK1RhX,"[""Non Emergency [No Doctor]""]",choices,severity,2073,7,237204,121,2
+b_fvgaKsy8,"[""Emergency""]",choices,severity,2047,7,236960,120,0
+lc5KxkdE9C,"[""Emergency""]",choices,severity,2048,7,236973,120,0
+QfSCvnpKe3,"[""Emergency""]",choices,severity,2049,7,236976,120,0
+ykuwJPBoJT,"[""Non Emergency [Doctor]""]",choices,severity,2051,7,236978,120,3
+TzKJL_49KN,"[""Non Emergency [No Doctor]""]",choices,severity,2052,7,236979,120,2
+iFOZM_gGqX,"[""Non Emergency [No Doctor]""]",choices,severity,2053,7,237112,121,2
+COLPZKLDXd,"[""Non Emergency [No Doctor]""]",choices,severity,2054,7,236993,120,2
+SPv_DPlXrt,"[""Emergency""]",choices,severity,2055,7,237114,121,0
+QPqbDyVaAS,"[""Non Emergency [Doctor]""]",choices,severity,2056,7,236994,120,3
+"93p8Lmz33z","[""Emergency""]",choices,severity,2057,7,236997,120,0
+SyhIflWKx4,"[""Emergency""]",choices,severity,2058,7,237115,121,0
+UO8wLLLVU1,"[""Non Emergency [No Doctor]""]",choices,severity,2060,7,236998,120,2
+VFiX8gQfgh,"[""Non Emergency [Doctor]""]",choices,severity,2061,7,237138,121,3
+pr0fJ3Xhl5,"[""Emergency""]",choices,severity,2062,7,236933,120,0
+wTczbD7UD_,"[""Non Emergency [No Doctor]""]",choices,severity,2063,7,237192,121,2
+"3Dv1odFnIG","[""Non Emergency [No Doctor]""]",choices,severity,2064,7,237193,121,2
+fw8GSe0v80,"[""Emergency""]",choices,severity,2065,7,237196,121,0
+cYQtBFEk8d,"[""Non Emergency [Doctor]""]",choices,severity,2066,7,236617,120,3
+gS7vAFifW-,"[""Emergency""]",choices,severity,2067,7,237197,121,0
+Nig5enGqCM,"[""Emergency""]",choices,severity,2068,7,236670,120,0
+"6lCWzgHoC8","[""Emergency""]",choices,severity,2071,7,237200,121,0
+"1JSGmCRGLM","[""Emergency""]",choices,severity,2072,7,236699,120,0
+GPaYvWQgC9,"[""Non Emergency [No Doctor]""]",choices,severity,2074,7,237205,121,2
+h2q9tjtWvV,"[""Emergency""]",choices,severity,2075,7,236706,120,0
+Y2QJhL_DXw,"[""Non Emergency [Doctor]""]",choices,severity,2069,7,236679,120,3
+orWhswcmkm,"[""Non Emergency [No Doctor]""]",choices,severity,2078,7,237208,121,2
+ipEfrUOmy9,"[""Non Emergency [No Doctor]""]",choices,severity,2079,7,236752,120,2
+"2s-ejmC1wf","[""Exclude""]",choices,exclude,2080,7,237211,121,
+"86tB-sVKAV","[""Non Emergency [No Doctor]""]",choices,severity,2081,7,237212,121,2
+KnxaPdIR8q,"[""Non Emergency [No Doctor]""]",choices,severity,2082,7,237101,120,2
+yK_Oi5yBCU,"[""Non Emergency [No Doctor]""]",choices,severity,1488,7,236242,121,2
+UkzlloiRBJ,"[""Non Emergency [No Doctor]""]",choices,severity,1813,7,236836,120,2
+sAyWE60c2j,"[""Non Emergency [Doctor]""]",choices,severity,1094,7,236251,120,3
+Ykexdt81z7,"[""Non Emergency [No Doctor]""]",choices,severity,1111,7,236268,120,2
+red-GCKgu_,"[""Non Emergency [No Doctor]""]",choices,severity,1134,7,236309,120,2
+n22zH3wF96,"[""Non Emergency [No Doctor]""]",choices,severity,1197,7,236389,120,2
+GZh3XAuuCi,"[""Non Emergency [Doctor]""]",choices,severity,1166,7,236322,120,3
+"2Bk-74RBuu","[""Non Emergency [Doctor]""]",choices,severity,1389,7,236017,121,3
+fhSbAk1b3q,"[""Emergency""]",choices,severity,1583,7,236398,121,0
+wQuktBzeCz,"[""Non Emergency [Doctor]""]",choices,severity,1803,7,236401,121,3
+hXT70KHIxu,"[""Emergency""]",choices,severity,2083,7,236486,18,0
+fR1ock0u5v,"[""Exclude""]",choices,exclude,1611,7,236529,120,
+"6nIAfqWl7C","[""Non Emergency [Doctor]""]",choices,severity,1576,7,236556,120,3
+fA4JjSjxaQ,"[""Non Emergency [No Doctor]""]",choices,severity,1856,7,236657,121,2
+YB_N6wEPJ7,"[""Emergency""]",choices,severity,2084,7,236675,18,0
+"6Pygdh7bm9","[""Emergency""]",choices,severity,2085,7,236680,18,0
+vPA6TeohHB,"[""Non Emergency [Doctor]""]",choices,severity,1664,7,236733,120,3
+FHV9ceLRwG,"[""Non Emergency [Doctor]""]",choices,severity,1854,7,236603,121,3
+dbxMnguRpQ,"[""Non Emergency [No Doctor]""]",choices,severity,1915,7,236858,120,2
+"5cx7Sy-Azn","[""Emergency""]",choices,severity,2086,7,236791,18,0
+kod1SEWIjh,"[""Non Emergency [No Doctor]""]",choices,severity,1911,7,236808,120,2
+WU8A6z4WT2,"[""Emergency""]",choices,severity,1926,7,236913,120,0
+KgRYLOk26F,"[""Emergency""]",choices,severity,983,7,235985,121,0
+m_F54lUlQs,"[""Non Emergency [Doctor]""]",choices,severity,1399,7,236134,121,3

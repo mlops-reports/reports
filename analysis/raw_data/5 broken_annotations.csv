@@ -1,0 +1,5 @@
+"task_id","from_name","text","choice"
+235478,exclusion_criteria,"[""edema""]","[""Emergency""]"
+235883,exclusion_criteria,"[""macroadenoma""]","[""Emergency""]"
+235885,exclusion_criteria,"[""mass_lesion""]","[""Non Emergency [Doctor]""]"
+235898,exclusion_criteria,"[""follow_up""]","[""Emergency""]"
