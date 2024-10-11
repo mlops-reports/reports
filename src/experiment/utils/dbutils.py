@@ -136,7 +136,9 @@ class DatabaseUtils:
             self.refresh_connection()
             assert self.engine is not None
 
-        if not sql.lower().strip().startswith("select"):
+        if not sql.lower().strip().startswith(
+            "select"
+        ) and not sql.lower().strip().startswith("with"):
             raise QueryError(
                 "An SQL write statement passed to the read operation function."
             )
