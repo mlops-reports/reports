@@ -1,1 +1,0 @@
-web: mlflow server --p 5000 --host 0.0.0.0 --backend-store-uri postgresql://$MLFLOW_DB_USERNAME:$MLFLOW_DB_PASSWORD@$MLFLOW_DB_HOST:5432/$MLFLOW_DB_NAME --default-artifact-root s3://$MLFLOW_AWS_BUCKET/mlartifacts 
