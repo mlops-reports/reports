@@ -9,11 +9,22 @@ This is a template for the ml experimentation use cases
 3. Install [heroku](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 4. Run the command(s) below
 ```
-make install_dependencies
+make install_dependencies_linux
 make activate_environment
 ```
+
+You can run "make install_dependencies_win" or make install_dependencies_mac for other OS.
+
 Note that poetry fails to install torch dependencies related to cudNN for torch > 2.0.0
 so you might consider to install it via pip.
+
+Lastly, you need to have a CUDA installed on your machine in order to use torch with the
+GPU processors. We trained and tested our model with CUDA 12, which can be installed on
+Linux machines via:
+
+sudo apt install nvidia-cuda-toolkit
+
+If not installed, the model will solely run on CPU, which might be slow.
 
 ## Usage on local machine
 create `.env` file in working directory containing required access tokens
